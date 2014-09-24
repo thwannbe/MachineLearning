@@ -13,6 +13,8 @@
  * Last Update Date -- Sep. 22. 2014
  *
  *****************************************************************************/
+#ifndef __CONCEPTLEARNING__
+#define __CONCEPTLEARNING__
 
 #include <list>
 
@@ -40,18 +42,18 @@ public:
     AttrVal* GethArray(void);
     bool isCover(bool* input);
     bool isMoreGeneralThanEqualTo(Hypothesis h);
-    void generalize(bool* input);
-    void specialize(bool* input);
 };
 
 class S_Bound {
 private:
     list <Hypothesis> sb_Array;   // set of hypothesis in most specific bound
     int AttrNum;
+    friend class G_Bound;
 public:
     void Initialize(int size);
-    void CoverCheckUpdate(bool* n_input);   // n_input should be negative
-    void UpdateBound(bool* p_input);	    // p_input should be positive
+    void CoverCheckUpdate(bool* n_input);	    // n_input should be negative
+    void UpdateBound(bool* p_input);    // p_input should be positive
+    void Generalize(AttrVal* hArray, bool* p_input);
     Result CoverCheck(bool* u_input); // u_input don't have target attr (unknown)
 };
 
@@ -61,8 +63,9 @@ private:
     int AttrNum;
 public:
     void Initialize(int size);
-    void CoverCheckUpdate(bool* p_input);   // p_input should be positive
-    void UpdateBound(bool* n_input);	    // n_input should be negative
+    void CoverCheckUpdate(bool* p_input);		// p_input should be positive
+    void UpdateBound(bool* n_input, void* ptr_S_Bound);	// n_input should be negative
+    void Specialize(AttrVal* hArray, bool* n_input, void* ptr_S_Bound);
     Result CoverCheck(bool* u_input);
 };
 
@@ -77,3 +80,4 @@ public:
     Result CoverCheck(bool* u_input);
 };
 
+#endif /* __CONCEPTLEARNING__ */
