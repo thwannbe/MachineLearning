@@ -1,18 +1,20 @@
-/******************************************************************************
- * concept.h -- concept learning framework header file
- *
- * Author   : Suwon, Oh -- Computer System And Platform Lab.,
- *			 SNU, Korea
- * 
- * Purpose  : Application trial for personal studying
- *
- * Usage    : This program takes two inputs ; one is training examples, and 
- *	    another is input data which has unknown result.
- *	    
- *	   
- * Last Update Date -- Sep. 22. 2014
- *
- *****************************************************************************/
+////////////////////////////////////////////////////////////////////////////////
+///
+/// @brief Concept Learning Framework
+/// @author Suwon Oh <suwon@csap.snu.ac.kr>
+/// @section changelog Change Log
+/// 2014/09/22 Suwon Oh created
+/// 2014/09/24 Suwon Oh implemented prototype
+/// 2014/12/14 Suwon Oh adapted to Doxygen
+///
+/// @section reference_section Reference
+/// MACHINE LEARNING - TOM M. MITCHELL
+/// 
+/// @section purpose_section Purpose
+/// Application trial for personal studying
+///
+////////////////////////////////////////////////////////////////////////////////
+
 #ifndef __CONCEPTLEARNING__
 #define __CONCEPTLEARNING__
 
