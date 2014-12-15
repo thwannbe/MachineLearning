@@ -1,0 +1,230 @@
+\hypertarget{classCScope}{\section{C\-Scope Class Reference}
+\label{classCScope}\index{C\-Scope@{C\-Scope}}
+}
+Inheritance diagram for C\-Scope\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCScope}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf constructors/destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCScope_ae7a3a72387e6f535104aea7c3c4c8737}{C\-Scope} (\hyperlink{classCAstNode}{C\-Ast\-Node} $\ast$ast, \hyperlink{classCScope}{C\-Scope} $\ast$parent=N\-U\-L\-L)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hypertarget{classCScope_a08a765b1fe5c60e25ad428cd05808cf2}{virtual \hyperlink{classCScope_a08a765b1fe5c60e25ad428cd05808cf2}{$\sim$\-C\-Scope} (void)}\label{classCScope_a08a765b1fe5c60e25ad428cd05808cf2}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf properties}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCScope_ad4374438ec6463f3b60e47deb2a06c18}{string \hyperlink{classCScope_ad4374438ec6463f3b60e47deb2a06c18}{Get\-Name} (void) const }\label{classCScope_ad4374438ec6463f3b60e47deb2a06c18}
+
+\begin{DoxyCompactList}\small\item\em return the scope's name \end{DoxyCompactList}\item 
+\hypertarget{classCScope_a9ad71c794f0b90bfcfac8d37a631f014}{\hyperlink{classCScope}{C\-Scope} $\ast$ \hyperlink{classCScope_a9ad71c794f0b90bfcfac8d37a631f014}{Get\-Parent} (void) const }\label{classCScope_a9ad71c794f0b90bfcfac8d37a631f014}
+
+\begin{DoxyCompactList}\small\item\em return a reference to the parent scope \end{DoxyCompactList}\item 
+\hypertarget{classCScope_a96d7dbacc2538a8a350b543705aa6a07}{const vector$<$ \hyperlink{classCScope}{C\-Scope} $\ast$ $>$ \& \hyperlink{classCScope_a96d7dbacc2538a8a350b543705aa6a07}{Get\-Subscopes} (void) const }\label{classCScope_a96d7dbacc2538a8a350b543705aa6a07}
+
+\begin{DoxyCompactList}\small\item\em return a reference to the list of subscopes \end{DoxyCompactList}\item 
+\hypertarget{classCScope_a029745331327478de186edfd91300a59}{\hyperlink{classCSymtab}{C\-Symtab} $\ast$ \hyperlink{classCScope_a029745331327478de186edfd91300a59}{Get\-Symbol\-Table} (void) const }\label{classCScope_a029745331327478de186edfd91300a59}
+
+\begin{DoxyCompactList}\small\item\em return a reference to the symbol table \end{DoxyCompactList}\item 
+virtual \hyperlink{classCSymbol}{C\-Symbol} $\ast$ \hyperlink{classCScope_a4fefc7bc67cc7fdfc86df2dbd53994de}{Get\-Declaration} (void) const =0
+\begin{DoxyCompactList}\small\item\em return the symbol of the scope's declaration \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf block management}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCScope_a077b1f7fe581afd9e7df9888be6e5738}{\hyperlink{classCCodeBlock}{C\-Code\-Block} $\ast$ \hyperlink{classCScope_a077b1f7fe581afd9e7df9888be6e5738}{Get\-Code\-Block} (void) const }\label{classCScope_a077b1f7fe581afd9e7df9888be6e5738}
+
+\begin{DoxyCompactList}\small\item\em get the (first) code block of this scope \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf address management}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCTacTemp}{C\-Tac\-Temp} $\ast$ \hyperlink{classCScope_aab0327ef4227f3949d865c1d86ddd0ff}{Create\-Temp} (const \hyperlink{classCType}{C\-Type} $\ast$type)
+\begin{DoxyCompactList}\small\item\em create a new (unique) temporary \end{DoxyCompactList}\item 
+\hyperlink{classCTacLabel}{C\-Tac\-Label} $\ast$ \hyperlink{classCScope_ae53be5ef4090db0beafe3180dc37a812}{Create\-Label} (const char $\ast$hint=N\-U\-L\-L)
+\begin{DoxyCompactList}\small\item\em create a new (unique) label \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf output}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual ostream \& \hyperlink{classCScope_a550063ff2ce6eaea39066acd84134556}{print} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em print the node to an output stream \end{DoxyCompactList}\item 
+virtual string \hyperlink{classCScope_a7d7064aa88356c64a488a804141d3ef9}{dot\-I\-D} (void) const 
+\begin{DoxyCompactList}\small\item\em return the node I\-D in (dot) string format \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCScope_a8d4df41fe7af86da25f65e587a9cc93a}{to\-Dot} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em return the node's attributes in (dot) string format \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCScope_a1c6c46649b8bdc70fa8b65aa072c556e}{\hyperlink{classCAstNode}{C\-Ast\-Node} $\ast$ \hyperlink{classCScope_a1c6c46649b8bdc70fa8b65aa072c556e}{\-\_\-ast}}\label{classCScope_a1c6c46649b8bdc70fa8b65aa072c556e}
+
+\begin{DoxyCompactList}\small\item\em abstract syntax tree \end{DoxyCompactList}\item 
+\hypertarget{classCScope_afce3d4c7485f09b0ba1fa133fb27b92b}{string \hyperlink{classCScope_afce3d4c7485f09b0ba1fa133fb27b92b}{\-\_\-name}}\label{classCScope_afce3d4c7485f09b0ba1fa133fb27b92b}
+
+\begin{DoxyCompactList}\small\item\em name \end{DoxyCompactList}\item 
+\hypertarget{classCScope_a4015b3caeb2296c71f821e9159a892bb}{\hyperlink{classCSymtab}{C\-Symtab} $\ast$ \hyperlink{classCScope_a4015b3caeb2296c71f821e9159a892bb}{\-\_\-symtab}}\label{classCScope_a4015b3caeb2296c71f821e9159a892bb}
+
+\begin{DoxyCompactList}\small\item\em symbol table \end{DoxyCompactList}\item 
+\hypertarget{classCScope_a04b62cb6718802dbd0209670959c25ed}{\hyperlink{classCScope}{C\-Scope} $\ast$ \hyperlink{classCScope_a04b62cb6718802dbd0209670959c25ed}{\-\_\-parent}}\label{classCScope_a04b62cb6718802dbd0209670959c25ed}
+
+\begin{DoxyCompactList}\small\item\em superordinate scope \end{DoxyCompactList}\item 
+\hypertarget{classCScope_ac09bab9bcd6431ad5755f3bc45d38849}{vector$<$ \hyperlink{classCScope}{C\-Scope} $\ast$ $>$ \hyperlink{classCScope_ac09bab9bcd6431ad5755f3bc45d38849}{\-\_\-children}}\label{classCScope_ac09bab9bcd6431ad5755f3bc45d38849}
+
+\begin{DoxyCompactList}\small\item\em list of functions \end{DoxyCompactList}\item 
+\hypertarget{classCScope_a9f054d93eb89070bae507d736f43404d}{\hyperlink{classCCodeBlock}{C\-Code\-Block} $\ast$ \hyperlink{classCScope_a9f054d93eb89070bae507d736f43404d}{\-\_\-cb}}\label{classCScope_a9f054d93eb89070bae507d736f43404d}
+
+\begin{DoxyCompactList}\small\item\em list of code blocks \end{DoxyCompactList}\item 
+\hypertarget{classCScope_ab8d6ed833850622506a08df30b57d7bc}{unsigned int \hyperlink{classCScope_ab8d6ed833850622506a08df30b57d7bc}{\-\_\-temp\-\_\-id}}\label{classCScope_ab8d6ed833850622506a08df30b57d7bc}
+
+\begin{DoxyCompactList}\small\item\em next id for temporaries \end{DoxyCompactList}\item 
+\hypertarget{classCScope_a81fe2e92f76930f3eb1fdf6bbd9b015b}{unsigned int \hyperlink{classCScope_a81fe2e92f76930f3eb1fdf6bbd9b015b}{\-\_\-label\-\_\-id}}\label{classCScope_a81fe2e92f76930f3eb1fdf6bbd9b015b}
+
+\begin{DoxyCompactList}\small\item\em next id for labels \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCScope_ae7a3a72387e6f535104aea7c3c4c8737}{\index{C\-Scope@{C\-Scope}!C\-Scope@{C\-Scope}}
+\index{C\-Scope@{C\-Scope}!CScope@{C\-Scope}}
+\subsubsection[{C\-Scope}]{\setlength{\rightskip}{0pt plus 5cm}C\-Scope\-::\-C\-Scope (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Ast\-Node} $\ast$}]{ast, }
+\item[{{\bf C\-Scope} $\ast$}]{parent = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classCScope_ae7a3a72387e6f535104aea7c3c4c8737}
+
+
+constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ast} & abstract syntax tree for this scope \\
+\hline
+{\em parent} & superordinate scope, or N\-U\-L\-L if none \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCScope_ae53be5ef4090db0beafe3180dc37a812}{\index{C\-Scope@{C\-Scope}!Create\-Label@{Create\-Label}}
+\index{Create\-Label@{Create\-Label}!CScope@{C\-Scope}}
+\subsubsection[{Create\-Label}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Tac\-Label} $\ast$ C\-Scope\-::\-Create\-Label (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{hint = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classCScope_ae53be5ef4090db0beafe3180dc37a812}
+
+
+create a new (unique) label 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hint} & optional descriptive string \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCScope_aab0327ef4227f3949d865c1d86ddd0ff}{\index{C\-Scope@{C\-Scope}!Create\-Temp@{Create\-Temp}}
+\index{Create\-Temp@{Create\-Temp}!CScope@{C\-Scope}}
+\subsubsection[{Create\-Temp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Tac\-Temp} $\ast$ C\-Scope\-::\-Create\-Temp (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Type} $\ast$}]{type}
+\end{DoxyParamCaption}
+)}}\label{classCScope_aab0327ef4227f3949d865c1d86ddd0ff}
+
+
+create a new (unique) temporary 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & type of the temporary \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCScope_a7d7064aa88356c64a488a804141d3ef9}{\index{C\-Scope@{C\-Scope}!dot\-I\-D@{dot\-I\-D}}
+\index{dot\-I\-D@{dot\-I\-D}!CScope@{C\-Scope}}
+\subsubsection[{dot\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}string C\-Scope\-::dot\-I\-D (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCScope_a7d7064aa88356c64a488a804141d3ef9}
+
+
+return the node I\-D in (dot) string format 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em string} & node I\-D as a string \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCScope_a4fefc7bc67cc7fdfc86df2dbd53994de}{\index{C\-Scope@{C\-Scope}!Get\-Declaration@{Get\-Declaration}}
+\index{Get\-Declaration@{Get\-Declaration}!CScope@{C\-Scope}}
+\subsubsection[{Get\-Declaration}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf C\-Symbol}$\ast$ C\-Scope\-::\-Get\-Declaration (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCScope_a4fefc7bc67cc7fdfc86df2dbd53994de}
+
+
+return the symbol of the scope's declaration 
+
+Only set for procedures/functions; a module will return null. 
+
+Implemented in \hyperlink{classCProcedure_a7cbe3550e66d9fda48b73f1e56b53f22}{C\-Procedure}, and \hyperlink{classCModule_adb70259cf1f2e832a5c8d660667a0dfc}{C\-Module}.
+
+\hypertarget{classCScope_a550063ff2ce6eaea39066acd84134556}{\index{C\-Scope@{C\-Scope}!print@{print}}
+\index{print@{print}!CScope@{C\-Scope}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}ostream \& C\-Scope\-::print (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCScope_a550063ff2ce6eaea39066acd84134556}
+
+
+print the node to an output stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classCProcedure_a579410b1d94780d8f3443f21e1a63542}{C\-Procedure}, and \hyperlink{classCModule_a0fba03ebdf11ef9493b54e452a1afe62}{C\-Module}.
+
+\hypertarget{classCScope_a8d4df41fe7af86da25f65e587a9cc93a}{\index{C\-Scope@{C\-Scope}!to\-Dot@{to\-Dot}}
+\index{to\-Dot@{to\-Dot}!CScope@{C\-Scope}}
+\subsubsection[{to\-Dot}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Scope\-::to\-Dot (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCScope_a8d4df41fe7af86da25f65e587a9cc93a}
+
+
+return the node's attributes in (dot) string format 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em string} & node attributes as a string print the node in dot format to an output stream \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/src/ir.\-h\item 
+src/concept/src/ir.\-cpp\end{DoxyCompactItemize}

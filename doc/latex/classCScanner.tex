@@ -1,0 +1,167 @@
+\hypertarget{classCScanner}{\section{C\-Scanner Class Reference}
+\label{classCScanner}\index{C\-Scanner@{C\-Scanner}}
+}
+
+
+scanner  
+
+
+
+
+{\ttfamily \#include $<$scanner.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCToken}{C\-Token} \hyperlink{classCScanner_aa743238b6e0f9bb4c0382619f8a4a3b5}{Get} (void)
+\begin{DoxyCompactList}\small\item\em return and remove the next token from the input stream \end{DoxyCompactList}\item 
+\hyperlink{classCToken}{C\-Token} \hyperlink{classCScanner_a14a98b8166965e2e65eb48b5540f2693}{Peek} (void) const 
+\begin{DoxyCompactList}\small\item\em peek at the next token in the input stream (without removing it) \end{DoxyCompactList}\item 
+bool \hyperlink{classCScanner_a06080e80d7e579c3983a4320e1e13693}{Good} (void) const 
+\begin{DoxyCompactList}\small\item\em check the status of the scanner \end{DoxyCompactList}\item 
+int \hyperlink{classCScanner_a4f19aa9722e4c9ca08249b4a1026bdf2}{Get\-Line\-Number} (void) const 
+\begin{DoxyCompactList}\small\item\em get the line number of the next token in the input stream \end{DoxyCompactList}\item 
+int \hyperlink{classCScanner_a3fded69d51acabe15f3c57332063d1ed}{Get\-Char\-Position} () const 
+\begin{DoxyCompactList}\small\item\em get the character position of the next token in the input stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf construction/destruction}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCScanner_aee886a122ba3673ef0f1585c8412497d}{C\-Scanner} (istream $\ast$in)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hyperlink{classCScanner_adb38f49a5855b9f4ad96076178e6530e}{C\-Scanner} (string in)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hypertarget{classCScanner_a082ec3b67f08207cdc2b33354c996174}{\hyperlink{classCScanner_a082ec3b67f08207cdc2b33354c996174}{$\sim$\-C\-Scanner} ()}\label{classCScanner_a082ec3b67f08207cdc2b33354c996174}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+scanner 
+
+used by \hyperlink{classCParser}{C\-Parser} to scan (tokenize) Snu\-P\-L/0 code 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCScanner_aee886a122ba3673ef0f1585c8412497d}{\index{C\-Scanner@{C\-Scanner}!C\-Scanner@{C\-Scanner}}
+\index{C\-Scanner@{C\-Scanner}!CScanner@{C\-Scanner}}
+\subsubsection[{C\-Scanner}]{\setlength{\rightskip}{0pt plus 5cm}C\-Scanner\-::\-C\-Scanner (
+\begin{DoxyParamCaption}
+\item[{istream $\ast$}]{in}
+\end{DoxyParamCaption}
+)}}\label{classCScanner_aee886a122ba3673ef0f1585c8412497d}
+
+
+constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream containing the source code \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCScanner_adb38f49a5855b9f4ad96076178e6530e}{\index{C\-Scanner@{C\-Scanner}!C\-Scanner@{C\-Scanner}}
+\index{C\-Scanner@{C\-Scanner}!CScanner@{C\-Scanner}}
+\subsubsection[{C\-Scanner}]{\setlength{\rightskip}{0pt plus 5cm}C\-Scanner\-::\-C\-Scanner (
+\begin{DoxyParamCaption}
+\item[{string}]{in}
+\end{DoxyParamCaption}
+)}}\label{classCScanner_adb38f49a5855b9f4ad96076178e6530e}
+
+
+constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input stream containing the source code \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCScanner_aa743238b6e0f9bb4c0382619f8a4a3b5}{\index{C\-Scanner@{C\-Scanner}!Get@{Get}}
+\index{Get@{Get}!CScanner@{C\-Scanner}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Token} C\-Scanner\-::\-Get (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classCScanner_aa743238b6e0f9bb4c0382619f8a4a3b5}
+
+
+return and remove the next token from the input stream 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em token} & token \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCScanner_a3fded69d51acabe15f3c57332063d1ed}{\index{C\-Scanner@{C\-Scanner}!Get\-Char\-Position@{Get\-Char\-Position}}
+\index{Get\-Char\-Position@{Get\-Char\-Position}!CScanner@{C\-Scanner}}
+\subsubsection[{Get\-Char\-Position}]{\setlength{\rightskip}{0pt plus 5cm}int C\-Scanner\-::\-Get\-Char\-Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCScanner_a3fded69d51acabe15f3c57332063d1ed}
+
+
+get the character position of the next token in the input stream 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em character} & position \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCScanner_a4f19aa9722e4c9ca08249b4a1026bdf2}{\index{C\-Scanner@{C\-Scanner}!Get\-Line\-Number@{Get\-Line\-Number}}
+\index{Get\-Line\-Number@{Get\-Line\-Number}!CScanner@{C\-Scanner}}
+\subsubsection[{Get\-Line\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int C\-Scanner\-::\-Get\-Line\-Number (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCScanner_a4f19aa9722e4c9ca08249b4a1026bdf2}
+
+
+get the line number of the next token in the input stream 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em line} & number \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCScanner_a06080e80d7e579c3983a4320e1e13693}{\index{C\-Scanner@{C\-Scanner}!Good@{Good}}
+\index{Good@{Good}!CScanner@{C\-Scanner}}
+\subsubsection[{Good}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Scanner\-::\-Good (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCScanner_a06080e80d7e579c3983a4320e1e13693}
+
+
+check the status of the scanner 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if the scanner is in an operating (i.\-e., normal) state \\
+\hline
+{\em false} & if an error has occurred \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCScanner_a14a98b8166965e2e65eb48b5540f2693}{\index{C\-Scanner@{C\-Scanner}!Peek@{Peek}}
+\index{Peek@{Peek}!CScanner@{C\-Scanner}}
+\subsubsection[{Peek}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Token} C\-Scanner\-::\-Peek (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classCScanner_a14a98b8166965e2e65eb48b5540f2693}
+
+
+peek at the next token in the input stream (without removing it) 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em token} & token \\
+\hline
+\end{DoxyRetVals}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/src/scanner.\-h\item 
+src/concept/src/scanner.\-cpp\end{DoxyCompactItemize}

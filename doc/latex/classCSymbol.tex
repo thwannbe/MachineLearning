@@ -1,0 +1,186 @@
+\hypertarget{classCSymbol}{\section{C\-Symbol Class Reference}
+\label{classCSymbol}\index{C\-Symbol@{C\-Symbol}}
+}
+
+
+Snu\-P\-L symbol.  
+
+
+
+
+{\ttfamily \#include $<$symtab.\-h$>$}
+
+Inheritance diagram for C\-Symbol\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCSymbol}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual ostream \& \hyperlink{classCSymbol_acf224e60939a51f6b5b1341db0274dbe}{print} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em print the symbol to an output stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf constructor/destructor}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSymbol_a329a43ab5446109d14f6f38061ab39fb}{C\-Symbol} (const string name, E\-Symbol\-Type symboltype, const \hyperlink{classCType}{C\-Type} $\ast$datatype)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hypertarget{classCSymbol_ab00432bd7072d861f45a0eddcd9c24e3}{virtual \hyperlink{classCSymbol_ab00432bd7072d861f45a0eddcd9c24e3}{$\sim$\-C\-Symbol} (void)}\label{classCSymbol_ab00432bd7072d861f45a0eddcd9c24e3}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf symbol handling}\par
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classCSymbol_abe8c7ca8a2203e1b6ed68226f773f107}{Get\-Name} (void) const 
+\begin{DoxyCompactList}\small\item\em return the symbol's identifier \end{DoxyCompactList}\item 
+E\-Symbol\-Type \hyperlink{classCSymbol_a11918e572759d1ff7a3924fec5579479}{Get\-Symbol\-Type} (void) const 
+\begin{DoxyCompactList}\small\item\em return the symbol's type \end{DoxyCompactList}\item 
+void \hyperlink{classCSymbol_a30148aa34e34a26dc4b70a55df18a3ff}{Set\-Data\-Type} (const \hyperlink{classCType}{C\-Type} $\ast$datatype)
+\begin{DoxyCompactList}\small\item\em set the symbol's type \end{DoxyCompactList}\item 
+const \hyperlink{classCType}{C\-Type} $\ast$ \hyperlink{classCSymbol_ad860bf3e84d48e9a3f848897c7320641}{Get\-Data\-Type} (void) const 
+\begin{DoxyCompactList}\small\item\em return the symbol's type \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf memory location}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCSymbol_a85b9a60f3984e72266bc999600bcf45d}{void \hyperlink{classCSymbol_a85b9a60f3984e72266bc999600bcf45d}{Set\-Base\-Register} (string rbase)}\label{classCSymbol_a85b9a60f3984e72266bc999600bcf45d}
+
+\begin{DoxyCompactList}\small\item\em set the base register to access this symbol \end{DoxyCompactList}\item 
+\hypertarget{classCSymbol_a86fcbdd8873d9e53406f1e92fbf647ba}{void \hyperlink{classCSymbol_a86fcbdd8873d9e53406f1e92fbf647ba}{Set\-Offset} (int offset)}\label{classCSymbol_a86fcbdd8873d9e53406f1e92fbf647ba}
+
+\begin{DoxyCompactList}\small\item\em set the offset to access this symbol \end{DoxyCompactList}\item 
+\hypertarget{classCSymbol_a983716b2714ae2e45cb2a45ce32b29de}{string \hyperlink{classCSymbol_a983716b2714ae2e45cb2a45ce32b29de}{Get\-Base\-Register} (void) const }\label{classCSymbol_a983716b2714ae2e45cb2a45ce32b29de}
+
+\begin{DoxyCompactList}\small\item\em get the base register to access this symbol \end{DoxyCompactList}\item 
+\hypertarget{classCSymbol_a82a6711e642e10a720d14d0ac9860405}{int \hyperlink{classCSymbol_a82a6711e642e10a720d14d0ac9860405}{Get\-Offset} (void) const }\label{classCSymbol_a82a6711e642e10a720d14d0ac9860405}
+
+\begin{DoxyCompactList}\small\item\em get the offset to access this symbol \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Snu\-P\-L symbol. 
+
+base class for all symbols 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSymbol_a329a43ab5446109d14f6f38061ab39fb}{\index{C\-Symbol@{C\-Symbol}!C\-Symbol@{C\-Symbol}}
+\index{C\-Symbol@{C\-Symbol}!CSymbol@{C\-Symbol}}
+\subsubsection[{C\-Symbol}]{\setlength{\rightskip}{0pt plus 5cm}C\-Symbol\-::\-C\-Symbol (
+\begin{DoxyParamCaption}
+\item[{const string}]{name, }
+\item[{E\-Symbol\-Type}]{symboltype, }
+\item[{const {\bf C\-Type} $\ast$}]{datatype}
+\end{DoxyParamCaption}
+)}}\label{classCSymbol_a329a43ab5446109d14f6f38061ab39fb}
+
+
+constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & symbol name (identifier) \\
+\hline
+{\em symboltype} & symbol type \\
+\hline
+{\em datatype} & data type of the symbol \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSymbol_ad860bf3e84d48e9a3f848897c7320641}{\index{C\-Symbol@{C\-Symbol}!Get\-Data\-Type@{Get\-Data\-Type}}
+\index{Get\-Data\-Type@{Get\-Data\-Type}!CSymbol@{C\-Symbol}}
+\subsubsection[{Get\-Data\-Type}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Type} $\ast$ C\-Symbol\-::\-Get\-Data\-Type (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classCSymbol_ad860bf3e84d48e9a3f848897c7320641}
+
+
+return the symbol's type 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em type} & symbol type \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCSymbol_abe8c7ca8a2203e1b6ed68226f773f107}{\index{C\-Symbol@{C\-Symbol}!Get\-Name@{Get\-Name}}
+\index{Get\-Name@{Get\-Name}!CSymbol@{C\-Symbol}}
+\subsubsection[{Get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string C\-Symbol\-::\-Get\-Name (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classCSymbol_abe8c7ca8a2203e1b6ed68226f773f107}
+
+
+return the symbol's identifier 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em string} & name \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCSymbol_a11918e572759d1ff7a3924fec5579479}{\index{C\-Symbol@{C\-Symbol}!Get\-Symbol\-Type@{Get\-Symbol\-Type}}
+\index{Get\-Symbol\-Type@{Get\-Symbol\-Type}!CSymbol@{C\-Symbol}}
+\subsubsection[{Get\-Symbol\-Type}]{\setlength{\rightskip}{0pt plus 5cm}E\-Symbol\-Type C\-Symbol\-::\-Get\-Symbol\-Type (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classCSymbol_a11918e572759d1ff7a3924fec5579479}
+
+
+return the symbol's type 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em E\-Symbol\-Type} & symbol type \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCSymbol_acf224e60939a51f6b5b1341db0274dbe}{\index{C\-Symbol@{C\-Symbol}!print@{print}}
+\index{print@{print}!CSymbol@{C\-Symbol}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}ostream \& C\-Symbol\-::print (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCSymbol_acf224e60939a51f6b5b1341db0274dbe}
+
+
+print the symbol to an output stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classCSymProc_a017592961bb61fc763b4929bc9a87ed2}{C\-Sym\-Proc}, \hyperlink{classCSymParam_ad8acc1c101678733957f9ec0ecf72157}{C\-Sym\-Param}, \hyperlink{classCSymLocal_a7f6989353e48305f8496e8a0f34a056e}{C\-Sym\-Local}, and \hyperlink{classCSymGlobal_a4a00583a9edb377b090572fc631e6764}{C\-Sym\-Global}.
+
+\hypertarget{classCSymbol_a30148aa34e34a26dc4b70a55df18a3ff}{\index{C\-Symbol@{C\-Symbol}!Set\-Data\-Type@{Set\-Data\-Type}}
+\index{Set\-Data\-Type@{Set\-Data\-Type}!CSymbol@{C\-Symbol}}
+\subsubsection[{Set\-Data\-Type}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Symbol\-::\-Set\-Data\-Type (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Type} $\ast$}]{datatype}
+\end{DoxyParamCaption}
+)}}\label{classCSymbol_a30148aa34e34a26dc4b70a55df18a3ff}
+
+
+set the symbol's type 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datatype} & symbol type \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/src/symtab.\-h\item 
+src/concept/src/symtab.\-cpp\end{DoxyCompactItemize}

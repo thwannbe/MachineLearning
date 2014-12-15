@@ -1,0 +1,190 @@
+\hypertarget{classCAstDesignator}{\section{C\-Ast\-Designator Class Reference}
+\label{classCAstDesignator}\index{C\-Ast\-Designator@{C\-Ast\-Designator}}
+}
+
+
+A\-S\-T constant operand node.  
+
+
+
+
+{\ttfamily \#include $<$ast.\-h$>$}
+
+Inheritance diagram for C\-Ast\-Designator\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classCAstDesignator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf constructors/destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCAstDesignator_ab7f90bf588b84bd97ed32d8e7b5dbae7}{C\-Ast\-Designator} (\hyperlink{classCToken}{C\-Token} t, const \hyperlink{classCSymbol}{C\-Symbol} $\ast$symbol, \hyperlink{classCAstExpression}{C\-Ast\-Expression} $\ast$offset=N\-U\-L\-L)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf property manipulation}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCAstDesignator_a9df5f3d5eec3df2664090a60cca544b5}{const \hyperlink{classCSymbol}{C\-Symbol} $\ast$ \hyperlink{classCAstDesignator_a9df5f3d5eec3df2664090a60cca544b5}{Get\-Symbol} (void) const }\label{classCAstDesignator_a9df5f3d5eec3df2664090a60cca544b5}
+
+\begin{DoxyCompactList}\small\item\em return the associated symbol \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf type management}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classCAstDesignator_a648dc96e88f1005ae41cd220d2bf82d6}{Type\-Check} (\hyperlink{classCToken}{C\-Token} $\ast$t, string $\ast$msg) const 
+\begin{DoxyCompactList}\small\item\em perform type checking \end{DoxyCompactList}\item 
+\hypertarget{classCAstDesignator_aa9c8ae0725896a746cfc54832de0b105}{virtual const \hyperlink{classCType}{C\-Type} $\ast$ \hyperlink{classCAstDesignator_aa9c8ae0725896a746cfc54832de0b105}{Get\-Type} (void) const }\label{classCAstDesignator_aa9c8ae0725896a746cfc54832de0b105}
+
+\begin{DoxyCompactList}\small\item\em return (compute) the type of the designator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf output}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual ostream \& \hyperlink{classCAstDesignator_ae5ab1b4b8bcd57b837176e305b990473}{print} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em print the node to an output stream \end{DoxyCompactList}\item 
+virtual string \hyperlink{classCAstDesignator_a04c601adba494a707aff43da041212fa}{dot\-Attr} (void) const 
+\begin{DoxyCompactList}\small\item\em return the node's attributes in (dot) string format \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCAstDesignator_a0f0229b0e09646653d7058bd1c118552}{to\-Dot} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em print the node in dot format to an output stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf transformation into T\-A\-C}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCAstDesignator_ae2acbc68ac2afcfa2f816cd434401be8}{virtual \hyperlink{classCTacAddr}{C\-Tac\-Addr} $\ast$ {\bfseries To\-Tac} (\hyperlink{classCCodeBlock}{C\-Code\-Block} $\ast$cb, \hyperlink{classCTacLabel}{C\-Tac\-Label} $\ast$ltrue=N\-U\-L\-L, \hyperlink{classCTacLabel}{C\-Tac\-Label} $\ast$lfalse=N\-U\-L\-L)}\label{classCAstDesignator_ae2acbc68ac2afcfa2f816cd434401be8}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A\-S\-T constant operand node. 
+
+node representing a constand operand node 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCAstDesignator_ab7f90bf588b84bd97ed32d8e7b5dbae7}{\index{C\-Ast\-Designator@{C\-Ast\-Designator}!C\-Ast\-Designator@{C\-Ast\-Designator}}
+\index{C\-Ast\-Designator@{C\-Ast\-Designator}!CAstDesignator@{C\-Ast\-Designator}}
+\subsubsection[{C\-Ast\-Designator}]{\setlength{\rightskip}{0pt plus 5cm}C\-Ast\-Designator\-::\-C\-Ast\-Designator (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token}}]{t, }
+\item[{const {\bf C\-Symbol} $\ast$}]{symbol, }
+\item[{{\bf C\-Ast\-Expression} $\ast$}]{offset = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classCAstDesignator_ab7f90bf588b84bd97ed32d8e7b5dbae7}
+
+\begin{DoxyParams}{Parameters}
+{\em t} & token in input stream (used for error reporting purposes) \\
+\hline
+{\em symbol} & variable symbol \\
+\hline
+{\em offset} & offset expression (for arrays) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCAstDesignator_a04c601adba494a707aff43da041212fa}{\index{C\-Ast\-Designator@{C\-Ast\-Designator}!dot\-Attr@{dot\-Attr}}
+\index{dot\-Attr@{dot\-Attr}!CAstDesignator@{C\-Ast\-Designator}}
+\subsubsection[{dot\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}string C\-Ast\-Designator\-::dot\-Attr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstDesignator_a04c601adba494a707aff43da041212fa}
+
+
+return the node's attributes in (dot) string format 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em string} & node attributes as a string \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \hyperlink{classCAstNode_a9a30718a50f12845e03181846dab1432}{C\-Ast\-Node}.
+
+\hypertarget{classCAstDesignator_ae5ab1b4b8bcd57b837176e305b990473}{\index{C\-Ast\-Designator@{C\-Ast\-Designator}!print@{print}}
+\index{print@{print}!CAstDesignator@{C\-Ast\-Designator}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}ostream \& C\-Ast\-Designator\-::print (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstDesignator_ae5ab1b4b8bcd57b837176e305b990473}
+
+
+print the node to an output stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classCAstNode_aff4622f85ee405f9b9257f91fb3a830e}{C\-Ast\-Node}.
+
+\hypertarget{classCAstDesignator_a0f0229b0e09646653d7058bd1c118552}{\index{C\-Ast\-Designator@{C\-Ast\-Designator}!to\-Dot@{to\-Dot}}
+\index{to\-Dot@{to\-Dot}!CAstDesignator@{C\-Ast\-Designator}}
+\subsubsection[{to\-Dot}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Ast\-Designator\-::to\-Dot (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstDesignator_a0f0229b0e09646653d7058bd1c118552}
+
+
+print the node in dot format to an output stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classCAstNode_ac7b5751f26de6f86fb3b9175caa15391}{C\-Ast\-Node}.
+
+\hypertarget{classCAstDesignator_a648dc96e88f1005ae41cd220d2bf82d6}{\index{C\-Ast\-Designator@{C\-Ast\-Designator}!Type\-Check@{Type\-Check}}
+\index{Type\-Check@{Type\-Check}!CAstDesignator@{C\-Ast\-Designator}}
+\subsubsection[{Type\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Ast\-Designator\-::\-Type\-Check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token} $\ast$}]{t, }
+\item[{string $\ast$}]{msg}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstDesignator_a648dc96e88f1005ae41cd220d2bf82d6}
+
+
+perform type checking 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & (out, optional) type error at token t \\
+\hline
+{\em msg} & (out, optional) type error message \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if no type error has been found \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{classCAstExpression_a301baee7d5f700085371b706db8a3a56}{C\-Ast\-Expression}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/src/ast.\-h\item 
+src/concept/src/ast.\-cpp\end{DoxyCompactItemize}

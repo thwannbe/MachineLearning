@@ -1,0 +1,205 @@
+\hypertarget{classCAstUnaryOp}{\section{C\-Ast\-Unary\-Op Class Reference}
+\label{classCAstUnaryOp}\index{C\-Ast\-Unary\-Op@{C\-Ast\-Unary\-Op}}
+}
+
+
+A\-S\-T unary operation node.  
+
+
+
+
+{\ttfamily \#include $<$ast.\-h$>$}
+
+Inheritance diagram for C\-Ast\-Unary\-Op\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classCAstUnaryOp}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf constructors/destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCAstUnaryOp_a88f0ad991c655e7e24b55e47d9238d00}{C\-Ast\-Unary\-Op} (\hyperlink{classCToken}{C\-Token} t, E\-Operation o, \hyperlink{classCAstExpression}{C\-Ast\-Expression} $\ast$e)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf property manipulation}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCAstExpression}{C\-Ast\-Expression} $\ast$ \hyperlink{classCAstUnaryOp_ad335859d62a6b1c8dfceea60b972b2db}{Get\-Operand} (void) const 
+\begin{DoxyCompactList}\small\item\em return the operand expression \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf type management}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classCAstUnaryOp_a46f64517d4c5c17c205bfd9e7a81779c}{Type\-Check} (\hyperlink{classCToken}{C\-Token} $\ast$t, string $\ast$msg) const 
+\begin{DoxyCompactList}\small\item\em perform type checking \end{DoxyCompactList}\item 
+\hypertarget{classCAstUnaryOp_ab4546d343d046aafd4f092abf7b52ecc}{virtual const \hyperlink{classCType}{C\-Type} $\ast$ \hyperlink{classCAstUnaryOp_ab4546d343d046aafd4f092abf7b52ecc}{Get\-Type} (void) const }\label{classCAstUnaryOp_ab4546d343d046aafd4f092abf7b52ecc}
+
+\begin{DoxyCompactList}\small\item\em return (compute) the type of the expression. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf output}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual ostream \& \hyperlink{classCAstUnaryOp_a870cecc45c81efbd19c678d1d70381f8}{print} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em print the node to an output stream \end{DoxyCompactList}\item 
+virtual string \hyperlink{classCAstUnaryOp_add4c585aa263e4dcc15b624d1f209875}{dot\-Attr} (void) const 
+\begin{DoxyCompactList}\small\item\em return the node's attributes in (dot) string format \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCAstUnaryOp_a921a731e6ddcc88d34a2f206f73b4057}{to\-Dot} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em print the node in dot format to an output stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf transformation into T\-A\-C}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCAstUnaryOp_a4de1f295c6a1212f35e7cf24cd3d69fc}{virtual \hyperlink{classCTacAddr}{C\-Tac\-Addr} $\ast$ {\bfseries To\-Tac} (\hyperlink{classCCodeBlock}{C\-Code\-Block} $\ast$cb, \hyperlink{classCTacLabel}{C\-Tac\-Label} $\ast$ltrue=N\-U\-L\-L, \hyperlink{classCTacLabel}{C\-Tac\-Label} $\ast$lfalse=N\-U\-L\-L)}\label{classCAstUnaryOp_a4de1f295c6a1212f35e7cf24cd3d69fc}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A\-S\-T unary operation node. 
+
+node representing a unary operation 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCAstUnaryOp_a88f0ad991c655e7e24b55e47d9238d00}{\index{C\-Ast\-Unary\-Op@{C\-Ast\-Unary\-Op}!C\-Ast\-Unary\-Op@{C\-Ast\-Unary\-Op}}
+\index{C\-Ast\-Unary\-Op@{C\-Ast\-Unary\-Op}!CAstUnaryOp@{C\-Ast\-Unary\-Op}}
+\subsubsection[{C\-Ast\-Unary\-Op}]{\setlength{\rightskip}{0pt plus 5cm}C\-Ast\-Unary\-Op\-::\-C\-Ast\-Unary\-Op (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token}}]{t, }
+\item[{E\-Operation}]{o, }
+\item[{{\bf C\-Ast\-Expression} $\ast$}]{e}
+\end{DoxyParamCaption}
+)}}\label{classCAstUnaryOp_a88f0ad991c655e7e24b55e47d9238d00}
+
+\begin{DoxyParams}{Parameters}
+{\em t} & token in input stream (used for error reporting purposes) \\
+\hline
+{\em o} & (unary) operation \\
+\hline
+{\em e} & operand \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCAstUnaryOp_add4c585aa263e4dcc15b624d1f209875}{\index{C\-Ast\-Unary\-Op@{C\-Ast\-Unary\-Op}!dot\-Attr@{dot\-Attr}}
+\index{dot\-Attr@{dot\-Attr}!CAstUnaryOp@{C\-Ast\-Unary\-Op}}
+\subsubsection[{dot\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}string C\-Ast\-Unary\-Op\-::dot\-Attr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstUnaryOp_add4c585aa263e4dcc15b624d1f209875}
+
+
+return the node's attributes in (dot) string format 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em string} & node attributes as a string \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \hyperlink{classCAstNode_a9a30718a50f12845e03181846dab1432}{C\-Ast\-Node}.
+
+\hypertarget{classCAstUnaryOp_ad335859d62a6b1c8dfceea60b972b2db}{\index{C\-Ast\-Unary\-Op@{C\-Ast\-Unary\-Op}!Get\-Operand@{Get\-Operand}}
+\index{Get\-Operand@{Get\-Operand}!CAstUnaryOp@{C\-Ast\-Unary\-Op}}
+\subsubsection[{Get\-Operand}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Ast\-Expression} $\ast$ C\-Ast\-Unary\-Op\-::\-Get\-Operand (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classCAstUnaryOp_ad335859d62a6b1c8dfceea60b972b2db}
+
+
+return the operand expression 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em C\-Ast\-Expression$\ast$} & operand expression \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCAstUnaryOp_a870cecc45c81efbd19c678d1d70381f8}{\index{C\-Ast\-Unary\-Op@{C\-Ast\-Unary\-Op}!print@{print}}
+\index{print@{print}!CAstUnaryOp@{C\-Ast\-Unary\-Op}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}ostream \& C\-Ast\-Unary\-Op\-::print (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstUnaryOp_a870cecc45c81efbd19c678d1d70381f8}
+
+
+print the node to an output stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classCAstNode_aff4622f85ee405f9b9257f91fb3a830e}{C\-Ast\-Node}.
+
+\hypertarget{classCAstUnaryOp_a921a731e6ddcc88d34a2f206f73b4057}{\index{C\-Ast\-Unary\-Op@{C\-Ast\-Unary\-Op}!to\-Dot@{to\-Dot}}
+\index{to\-Dot@{to\-Dot}!CAstUnaryOp@{C\-Ast\-Unary\-Op}}
+\subsubsection[{to\-Dot}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Ast\-Unary\-Op\-::to\-Dot (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstUnaryOp_a921a731e6ddcc88d34a2f206f73b4057}
+
+
+print the node in dot format to an output stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classCAstNode_ac7b5751f26de6f86fb3b9175caa15391}{C\-Ast\-Node}.
+
+\hypertarget{classCAstUnaryOp_a46f64517d4c5c17c205bfd9e7a81779c}{\index{C\-Ast\-Unary\-Op@{C\-Ast\-Unary\-Op}!Type\-Check@{Type\-Check}}
+\index{Type\-Check@{Type\-Check}!CAstUnaryOp@{C\-Ast\-Unary\-Op}}
+\subsubsection[{Type\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Ast\-Unary\-Op\-::\-Type\-Check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token} $\ast$}]{t, }
+\item[{string $\ast$}]{msg}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstUnaryOp_a46f64517d4c5c17c205bfd9e7a81779c}
+
+
+perform type checking 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & (out, optional) type error at token t \\
+\hline
+{\em msg} & (out, optional) type error message \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if no type error has been found \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{classCAstExpression_a301baee7d5f700085371b706db8a3a56}{C\-Ast\-Expression}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/src/ast.\-h\item 
+src/concept/src/ast.\-cpp\end{DoxyCompactItemize}

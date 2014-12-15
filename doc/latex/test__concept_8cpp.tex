@@ -1,0 +1,61 @@
+\hypertarget{test__concept_8cpp}{\section{src/concept/test\-\_\-concept.cpp File Reference}
+\label{test__concept_8cpp}\index{src/concept/test\-\_\-concept.\-cpp@{src/concept/test\-\_\-concept.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}concept.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{test__concept_8cpp_a568b3afc214ba30be5bf526d6b27b611}{main} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{test__concept_8cpp_a568b3afc214ba30be5bf526d6b27b611}{\index{test\-\_\-concept.\-cpp@{test\-\_\-concept.\-cpp}!main@{main}}
+\index{main@{main}!test_concept.cpp@{test\-\_\-concept.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{test__concept_8cpp_a568b3afc214ba30be5bf526d6b27b611}
+
+
+Definition at line 6 of file test\-\_\-concept.\-cpp.
+
+
+\begin{DoxyCode}
+6            \{
+7     \hyperlink{class_concept_learning}{ConceptLearning}* cl = \textcolor{keyword}{new} \hyperlink{class_concept_learning}{ConceptLearning};
+8     cl->\hyperlink{class_concept_learning_a44745c32a43e09ce1682efdbd29d01f2}{Initialize}(6);
+9     \textcolor{keywordtype}{bool} i[] = \{ \textcolor{keyword}{true}, \textcolor{keyword}{true}, \textcolor{keyword}{false}, \textcolor{keyword}{true}, \textcolor{keyword}{true}, \textcolor{keyword}{false}, \textcolor{keyword}{true} \};
+10     cl->\hyperlink{class_concept_learning_adcdb0df6a5e877769e46c95f40a139c3}{UpdateVersionSpace}(i);
+11     
+12     i[2] = \textcolor{keyword}{true};
+13     cl->\hyperlink{class_concept_learning_adcdb0df6a5e877769e46c95f40a139c3}{UpdateVersionSpace}(i);
+14     
+15     i[0] = \textcolor{keyword}{false}; i[1] = \textcolor{keyword}{false}; i[5] = \textcolor{keyword}{true}; i[6] = \textcolor{keyword}{false};
+16     cl->\hyperlink{class_concept_learning_adcdb0df6a5e877769e46c95f40a139c3}{UpdateVersionSpace}(i);
+17 
+18     i[0] = \textcolor{keyword}{true}; i[1] = \textcolor{keyword}{true}; i[4] = \textcolor{keyword}{false}; i[6] = \textcolor{keyword}{true};
+19     cl->\hyperlink{class_concept_learning_adcdb0df6a5e877769e46c95f40a139c3}{UpdateVersionSpace}(i);
+20 
+21     \textcolor{keywordtype}{bool} ui[] = \{ \textcolor{keyword}{true}, \textcolor{keyword}{true}, \textcolor{keyword}{false}, \textcolor{keyword}{true}, \textcolor{keyword}{false}, \textcolor{keyword}{true} \};
+22     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066}{Result} ret = cl->\hyperlink{class_concept_learning_a2c918ff637b1d93e123974eaddd17de0}{CoverCheck}(ui);
+23     \textcolor{keywordtype}{char} RETURN[] = \{ \textcolor{charliteral}{'F'}, \textcolor{charliteral}{'T'}, \textcolor{charliteral}{'?'} \};
+24     cout << RETURN[ret] << endl;
+25 
+26     ui[0] = \textcolor{keyword}{false}; ui[1] = \textcolor{keyword}{false}; ui[3] = \textcolor{keyword}{false}; ui[4] = \textcolor{keyword}{true}; ui[5] = \textcolor{keyword}{false};
+27     ret = cl->\hyperlink{class_concept_learning_a2c918ff637b1d93e123974eaddd17de0}{CoverCheck}(ui);
+28     cout << RETURN[ret] << endl;
+29 
+30     ui[0] = \textcolor{keyword}{true}; ui[1] = \textcolor{keyword}{true};
+31     ret = cl->\hyperlink{class_concept_learning_a2c918ff637b1d93e123974eaddd17de0}{CoverCheck}(ui);
+32     cout << RETURN[ret] << endl;
+33 
+34     ui[1] = \textcolor{keyword}{false}; ui[3] = \textcolor{keyword}{true};
+35     ret = cl->\hyperlink{class_concept_learning_a2c918ff637b1d93e123974eaddd17de0}{CoverCheck}(ui);
+36     cout << RETURN[ret] << endl;
+37 
+38     \textcolor{keywordflow}{return} 0;
+39 \}
+\end{DoxyCode}

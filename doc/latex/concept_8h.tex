@@ -1,0 +1,87 @@
+\hypertarget{concept_8h}{\section{src/concept/concept.h File Reference}
+\label{concept_8h}\index{src/concept/concept.\-h@{src/concept/concept.\-h}}
+}
+{\ttfamily \#include $<$list$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_hypothesis}{Hypothesis}
+\item 
+class \hyperlink{class_s___bound}{S\-\_\-\-Bound}
+\item 
+class \hyperlink{class_g___bound}{G\-\_\-\-Bound}
+\item 
+class \hyperlink{class_concept_learning}{Concept\-Learning}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{Attr\-Val} \{ \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86}{v\-False} =0, 
+\hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102}{v\-True}, 
+\hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{v\-All\-Accept}, 
+\hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}{v\-All\-Deny}
+ \}
+\item 
+enum \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066}{Result} \{ \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069}{r\-\_\-false} =0, 
+\hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518}{r\-\_\-true}, 
+\hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\-\_\-dontknow}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{\index{concept.\-h@{concept.\-h}!Attr\-Val@{Attr\-Val}}
+\index{Attr\-Val@{Attr\-Val}!concept.h@{concept.\-h}}
+\subsubsection[{Attr\-Val}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Attr\-Val}}}\label{concept_8h_a9680d29b8d997e4adbf99481b65e897d}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{v\-False@{v\-False}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!v\-False@{v\-False}}\item[{\em 
+\hypertarget{concept_8h_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86}{v\-False}\label{concept_8h_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86}
+}]\index{v\-True@{v\-True}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!v\-True@{v\-True}}\item[{\em 
+\hypertarget{concept_8h_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102}{v\-True}\label{concept_8h_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102}
+}]\index{v\-All\-Accept@{v\-All\-Accept}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!v\-All\-Accept@{v\-All\-Accept}}\item[{\em 
+\hypertarget{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{v\-All\-Accept}\label{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}
+}]\index{v\-All\-Deny@{v\-All\-Deny}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!v\-All\-Deny@{v\-All\-Deny}}\item[{\em 
+\hypertarget{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}{v\-All\-Deny}\label{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 25 of file concept.\-h.
+
+
+\begin{DoxyCode}
+25              \{
+26     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86}{vFalse}=0,     \textcolor{comment}{// means false of this attribute}
+27     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102}{vTrue},     \textcolor{comment}{// means true of this attribute }
+28     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{vAllAccept},       \textcolor{comment}{// can accept any value of attribute ( true or false ) -- '?'}
+29     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}{vAllDeny},       \textcolor{comment}{// deny all value of attribute -- 'null'}
+30 \};
+\end{DoxyCode}
+\hypertarget{concept_8h_a28287671eaf7406afd604bd055ba4066}{\index{concept.\-h@{concept.\-h}!Result@{Result}}
+\index{Result@{Result}!concept.h@{concept.\-h}}
+\subsubsection[{Result}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Result}}}\label{concept_8h_a28287671eaf7406afd604bd055ba4066}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{r\-\_\-false@{r\-\_\-false}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!r\-\_\-false@{r\-\_\-false}}\item[{\em 
+\hypertarget{concept_8h_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069}{r\-\_\-false}\label{concept_8h_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069}
+}]\index{r\-\_\-true@{r\-\_\-true}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!r\-\_\-true@{r\-\_\-true}}\item[{\em 
+\hypertarget{concept_8h_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518}{r\-\_\-true}\label{concept_8h_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518}
+}]\index{r\-\_\-dontknow@{r\-\_\-dontknow}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!r\-\_\-dontknow@{r\-\_\-dontknow}}\item[{\em 
+\hypertarget{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\-\_\-dontknow}\label{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 32 of file concept.\-h.
+
+
+\begin{DoxyCode}
+32             \{
+33     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069}{r\_false}=0,       \textcolor{comment}{// means all hypothesis vote false      }
+34     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518}{r\_true},       \textcolor{comment}{// means all hypothesis vote true}
+35     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\_dontknow}        \textcolor{comment}{// means hypothesis vote is not unanimous}
+36 \};
+\end{DoxyCode}

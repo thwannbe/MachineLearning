@@ -1,0 +1,101 @@
+\hypertarget{classCAstExpression}{\section{C\-Ast\-Expression Class Reference}
+\label{classCAstExpression}\index{C\-Ast\-Expression@{C\-Ast\-Expression}}
+}
+
+
+A\-S\-T expression node.  
+
+
+
+
+{\ttfamily \#include $<$ast.\-h$>$}
+
+Inheritance diagram for C\-Ast\-Expression\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.796610cm]{classCAstExpression}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf constructors/destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCAstExpression_a64a7fea5d837b23806ff591885667826}{C\-Ast\-Expression} (\hyperlink{classCToken}{C\-Token} t)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf type management}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classCAstExpression_a301baee7d5f700085371b706db8a3a56}{Type\-Check} (\hyperlink{classCToken}{C\-Token} $\ast$t, string $\ast$msg) const =0
+\begin{DoxyCompactList}\small\item\em perform type checking \end{DoxyCompactList}\item 
+\hypertarget{classCAstExpression_a820463ab829d31098f8f52c85aefec21}{virtual const \hyperlink{classCType}{C\-Type} $\ast$ \hyperlink{classCAstExpression_a820463ab829d31098f8f52c85aefec21}{Get\-Type} (void) const =0}\label{classCAstExpression_a820463ab829d31098f8f52c85aefec21}
+
+\begin{DoxyCompactList}\small\item\em return (compute) the type of the expression. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf transformation into T\-A\-C}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCAstExpression_ab00c14e5ead27859162da379e755be49}{virtual \hyperlink{classCTacAddr}{C\-Tac\-Addr} $\ast$ {\bfseries To\-Tac} (\hyperlink{classCCodeBlock}{C\-Code\-Block} $\ast$cb, \hyperlink{classCTacLabel}{C\-Tac\-Label} $\ast$ltrue=N\-U\-L\-L, \hyperlink{classCTacLabel}{C\-Tac\-Label} $\ast$lfalse=N\-U\-L\-L)}\label{classCAstExpression_ab00c14e5ead27859162da379e755be49}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A\-S\-T expression node. 
+
+node representing an expression 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCAstExpression_a64a7fea5d837b23806ff591885667826}{\index{C\-Ast\-Expression@{C\-Ast\-Expression}!C\-Ast\-Expression@{C\-Ast\-Expression}}
+\index{C\-Ast\-Expression@{C\-Ast\-Expression}!CAstExpression@{C\-Ast\-Expression}}
+\subsubsection[{C\-Ast\-Expression}]{\setlength{\rightskip}{0pt plus 5cm}C\-Ast\-Expression\-::\-C\-Ast\-Expression (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token}}]{t}
+\end{DoxyParamCaption}
+)}}\label{classCAstExpression_a64a7fea5d837b23806ff591885667826}
+
+\begin{DoxyParams}{Parameters}
+{\em token} & token in input stream (used for error reporting purposes) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCAstExpression_a301baee7d5f700085371b706db8a3a56}{\index{C\-Ast\-Expression@{C\-Ast\-Expression}!Type\-Check@{Type\-Check}}
+\index{Type\-Check@{Type\-Check}!CAstExpression@{C\-Ast\-Expression}}
+\subsubsection[{Type\-Check}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Ast\-Expression\-::\-Type\-Check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token} $\ast$}]{t, }
+\item[{string $\ast$}]{msg}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCAstExpression_a301baee7d5f700085371b706db8a3a56}
+
+
+perform type checking 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & (out, optional) type error at token t \\
+\hline
+{\em msg} & (out, optional) type error message \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if no type error has been found \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \hyperlink{classCAstConstant_a7dcf1fb0ef2da84dcca29a15ff799f6b}{C\-Ast\-Constant}, \hyperlink{classCAstDesignator_a648dc96e88f1005ae41cd220d2bf82d6}{C\-Ast\-Designator}, \hyperlink{classCAstFunctionCall_a74e4ab38c0fd01dcfe8817ad4158e91d}{C\-Ast\-Function\-Call}, \hyperlink{classCAstUnaryOp_a46f64517d4c5c17c205bfd9e7a81779c}{C\-Ast\-Unary\-Op}, and \hyperlink{classCAstBinaryOp_a74ae0aeae3a8c2aabec3c0527bb7d353}{C\-Ast\-Binary\-Op}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/src/ast.\-h\item 
+src/concept/src/ast.\-cpp\end{DoxyCompactItemize}

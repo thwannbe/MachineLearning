@@ -1,0 +1,226 @@
+\hypertarget{classCAstBinaryOp}{\section{C\-Ast\-Binary\-Op Class Reference}
+\label{classCAstBinaryOp}\index{C\-Ast\-Binary\-Op@{C\-Ast\-Binary\-Op}}
+}
+
+
+A\-S\-T binary operation node.  
+
+
+
+
+{\ttfamily \#include $<$ast.\-h$>$}
+
+Inheritance diagram for C\-Ast\-Binary\-Op\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classCAstBinaryOp}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf constructors/destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCAstBinaryOp_a8f483c88e42f43cc75df53faf59b56a5}{C\-Ast\-Binary\-Op} (\hyperlink{classCToken}{C\-Token} t, E\-Operation o, \hyperlink{classCAstExpression}{C\-Ast\-Expression} $\ast$l, \hyperlink{classCAstExpression}{C\-Ast\-Expression} $\ast$r)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf property manipulation}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCAstExpression}{C\-Ast\-Expression} $\ast$ \hyperlink{classCAstBinaryOp_a39fa796bb4da80aab75065ccaf55408a}{Get\-Left} (void) const 
+\begin{DoxyCompactList}\small\item\em return the left operand expression \end{DoxyCompactList}\item 
+\hyperlink{classCAstExpression}{C\-Ast\-Expression} $\ast$ \hyperlink{classCAstBinaryOp_aa808bc2e7f27bc44e7bde9d12c549094}{Get\-Right} (void) const 
+\begin{DoxyCompactList}\small\item\em return the right operand expression \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf type management}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classCAstBinaryOp_a74ae0aeae3a8c2aabec3c0527bb7d353}{Type\-Check} (\hyperlink{classCToken}{C\-Token} $\ast$t, string $\ast$msg) const 
+\begin{DoxyCompactList}\small\item\em perform type checking \end{DoxyCompactList}\item 
+\hypertarget{classCAstBinaryOp_a0bf80d7a8c4b2ea927ce1bd235785c4b}{virtual const \hyperlink{classCType}{C\-Type} $\ast$ \hyperlink{classCAstBinaryOp_a0bf80d7a8c4b2ea927ce1bd235785c4b}{Get\-Type} (void) const }\label{classCAstBinaryOp_a0bf80d7a8c4b2ea927ce1bd235785c4b}
+
+\begin{DoxyCompactList}\small\item\em return (compute) the type of the expression. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf output}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual ostream \& \hyperlink{classCAstBinaryOp_abd991aadb398dc947b479ad4437a1fd5}{print} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em print the node to an output stream \end{DoxyCompactList}\item 
+virtual string \hyperlink{classCAstBinaryOp_a57b33ffe1c3ba6ba7689ebacb377caa0}{dot\-Attr} (void) const 
+\begin{DoxyCompactList}\small\item\em return the node's attributes in (dot) string format \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCAstBinaryOp_a16ae6ed449554de787aae994813c9acc}{to\-Dot} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em print the node in dot format to an output stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf transformation into T\-A\-C}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCAstBinaryOp_a59d2f0e8970ef19817e2c857a96a30e5}{virtual \hyperlink{classCTacAddr}{C\-Tac\-Addr} $\ast$ {\bfseries To\-Tac} (\hyperlink{classCCodeBlock}{C\-Code\-Block} $\ast$cb, \hyperlink{classCTacLabel}{C\-Tac\-Label} $\ast$ltrue=N\-U\-L\-L, \hyperlink{classCTacLabel}{C\-Tac\-Label} $\ast$lfalse=N\-U\-L\-L)}\label{classCAstBinaryOp_a59d2f0e8970ef19817e2c857a96a30e5}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A\-S\-T binary operation node. 
+
+node representing a binary operation 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCAstBinaryOp_a8f483c88e42f43cc75df53faf59b56a5}{\index{C\-Ast\-Binary\-Op@{C\-Ast\-Binary\-Op}!C\-Ast\-Binary\-Op@{C\-Ast\-Binary\-Op}}
+\index{C\-Ast\-Binary\-Op@{C\-Ast\-Binary\-Op}!CAstBinaryOp@{C\-Ast\-Binary\-Op}}
+\subsubsection[{C\-Ast\-Binary\-Op}]{\setlength{\rightskip}{0pt plus 5cm}C\-Ast\-Binary\-Op\-::\-C\-Ast\-Binary\-Op (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token}}]{t, }
+\item[{E\-Operation}]{o, }
+\item[{{\bf C\-Ast\-Expression} $\ast$}]{l, }
+\item[{{\bf C\-Ast\-Expression} $\ast$}]{r}
+\end{DoxyParamCaption}
+)}}\label{classCAstBinaryOp_a8f483c88e42f43cc75df53faf59b56a5}
+
+\begin{DoxyParams}{Parameters}
+{\em t} & token in input stream (used for error reporting purposes) \\
+\hline
+{\em o} & (binary) operation \\
+\hline
+{\em l} & left operand \\
+\hline
+{\em r} & right operand \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCAstBinaryOp_a57b33ffe1c3ba6ba7689ebacb377caa0}{\index{C\-Ast\-Binary\-Op@{C\-Ast\-Binary\-Op}!dot\-Attr@{dot\-Attr}}
+\index{dot\-Attr@{dot\-Attr}!CAstBinaryOp@{C\-Ast\-Binary\-Op}}
+\subsubsection[{dot\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}string C\-Ast\-Binary\-Op\-::dot\-Attr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstBinaryOp_a57b33ffe1c3ba6ba7689ebacb377caa0}
+
+
+return the node's attributes in (dot) string format 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em string} & node attributes as a string \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \hyperlink{classCAstNode_a9a30718a50f12845e03181846dab1432}{C\-Ast\-Node}.
+
+\hypertarget{classCAstBinaryOp_a39fa796bb4da80aab75065ccaf55408a}{\index{C\-Ast\-Binary\-Op@{C\-Ast\-Binary\-Op}!Get\-Left@{Get\-Left}}
+\index{Get\-Left@{Get\-Left}!CAstBinaryOp@{C\-Ast\-Binary\-Op}}
+\subsubsection[{Get\-Left}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Ast\-Expression} $\ast$ C\-Ast\-Binary\-Op\-::\-Get\-Left (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classCAstBinaryOp_a39fa796bb4da80aab75065ccaf55408a}
+
+
+return the left operand expression 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em C\-Ast\-Expression$\ast$} & left operand expression \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCAstBinaryOp_aa808bc2e7f27bc44e7bde9d12c549094}{\index{C\-Ast\-Binary\-Op@{C\-Ast\-Binary\-Op}!Get\-Right@{Get\-Right}}
+\index{Get\-Right@{Get\-Right}!CAstBinaryOp@{C\-Ast\-Binary\-Op}}
+\subsubsection[{Get\-Right}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Ast\-Expression} $\ast$ C\-Ast\-Binary\-Op\-::\-Get\-Right (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classCAstBinaryOp_aa808bc2e7f27bc44e7bde9d12c549094}
+
+
+return the right operand expression 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em C\-Ast\-Expression$\ast$} & right operand expression \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCAstBinaryOp_abd991aadb398dc947b479ad4437a1fd5}{\index{C\-Ast\-Binary\-Op@{C\-Ast\-Binary\-Op}!print@{print}}
+\index{print@{print}!CAstBinaryOp@{C\-Ast\-Binary\-Op}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}ostream \& C\-Ast\-Binary\-Op\-::print (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstBinaryOp_abd991aadb398dc947b479ad4437a1fd5}
+
+
+print the node to an output stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classCAstNode_aff4622f85ee405f9b9257f91fb3a830e}{C\-Ast\-Node}.
+
+\hypertarget{classCAstBinaryOp_a16ae6ed449554de787aae994813c9acc}{\index{C\-Ast\-Binary\-Op@{C\-Ast\-Binary\-Op}!to\-Dot@{to\-Dot}}
+\index{to\-Dot@{to\-Dot}!CAstBinaryOp@{C\-Ast\-Binary\-Op}}
+\subsubsection[{to\-Dot}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Ast\-Binary\-Op\-::to\-Dot (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstBinaryOp_a16ae6ed449554de787aae994813c9acc}
+
+
+print the node in dot format to an output stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classCAstNode_ac7b5751f26de6f86fb3b9175caa15391}{C\-Ast\-Node}.
+
+\hypertarget{classCAstBinaryOp_a74ae0aeae3a8c2aabec3c0527bb7d353}{\index{C\-Ast\-Binary\-Op@{C\-Ast\-Binary\-Op}!Type\-Check@{Type\-Check}}
+\index{Type\-Check@{Type\-Check}!CAstBinaryOp@{C\-Ast\-Binary\-Op}}
+\subsubsection[{Type\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Ast\-Binary\-Op\-::\-Type\-Check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token} $\ast$}]{t, }
+\item[{string $\ast$}]{msg}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstBinaryOp_a74ae0aeae3a8c2aabec3c0527bb7d353}
+
+
+perform type checking 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & (out, optional) type error at token t \\
+\hline
+{\em msg} & (out, optional) type error message \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if no type error has been found \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{classCAstExpression_a301baee7d5f700085371b706db8a3a56}{C\-Ast\-Expression}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/src/ast.\-h\item 
+src/concept/src/ast.\-cpp\end{DoxyCompactItemize}

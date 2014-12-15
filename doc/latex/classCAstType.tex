@@ -1,0 +1,92 @@
+\hypertarget{classCAstType}{\section{C\-Ast\-Type Class Reference}
+\label{classCAstType}\index{C\-Ast\-Type@{C\-Ast\-Type}}
+}
+
+
+A\-S\-T type node.  
+
+
+
+
+{\ttfamily \#include $<$ast.\-h$>$}
+
+Inheritance diagram for C\-Ast\-Type\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCAstType}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCAstType_afc5d5148f353b15ddc1ad10fefc021fd}{const \hyperlink{classCType}{C\-Type} $\ast$ \hyperlink{classCAstType_afc5d5148f353b15ddc1ad10fefc021fd}{Get\-Type} (void) const }\label{classCAstType_afc5d5148f353b15ddc1ad10fefc021fd}
+
+\begin{DoxyCompactList}\small\item\em return the type instance \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf constructors/destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCAstType_a44f1a8303fc01f11aa849f90f47313f9}{C\-Ast\-Type} (\hyperlink{classCToken}{C\-Token} t, const \hyperlink{classCType}{C\-Type} $\ast$type)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf output}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual ostream \& \hyperlink{classCAstType_ab546f0715c60e4b1a050981d763c2954}{print} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em print the node to an output stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A\-S\-T type node. 
+
+node representing a type 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCAstType_a44f1a8303fc01f11aa849f90f47313f9}{\index{C\-Ast\-Type@{C\-Ast\-Type}!C\-Ast\-Type@{C\-Ast\-Type}}
+\index{C\-Ast\-Type@{C\-Ast\-Type}!CAstType@{C\-Ast\-Type}}
+\subsubsection[{C\-Ast\-Type}]{\setlength{\rightskip}{0pt plus 5cm}C\-Ast\-Type\-::\-C\-Ast\-Type (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token}}]{t, }
+\item[{const {\bf C\-Type} $\ast$}]{type}
+\end{DoxyParamCaption}
+)}}\label{classCAstType_a44f1a8303fc01f11aa849f90f47313f9}
+
+\begin{DoxyParams}{Parameters}
+{\em t} & token in input stream (used for error reporting purposes) \\
+\hline
+{\em type} & \hyperlink{classCType}{C\-Type} instance \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCAstType_ab546f0715c60e4b1a050981d763c2954}{\index{C\-Ast\-Type@{C\-Ast\-Type}!print@{print}}
+\index{print@{print}!CAstType@{C\-Ast\-Type}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}ostream \& C\-Ast\-Type\-::print (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstType_ab546f0715c60e4b1a050981d763c2954}
+
+
+print the node to an output stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classCAstNode_aff4622f85ee405f9b9257f91fb3a830e}{C\-Ast\-Node}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/src/ast.\-h\item 
+src/concept/src/ast.\-cpp\end{DoxyCompactItemize}

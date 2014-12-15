@@ -1,0 +1,131 @@
+\hypertarget{class_hypothesis}{\section{Hypothesis Class Reference}
+\label{class_hypothesis}\index{Hypothesis@{Hypothesis}}
+}
+
+
+{\ttfamily \#include $<$concept.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hypothesis_a3bca791c3dcc2aa2f0d1e8dc16fa2cf3}{Hypothesis} (int size, \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{Attr\-Val} $\ast$h\-Array)
+\item 
+\hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{Attr\-Val} $\ast$ \hyperlink{class_hypothesis_a9f7689475f40bcd554b01ad7670aec8a}{Geth\-Array} (void)
+\item 
+bool \hyperlink{class_hypothesis_a65026e3096cc134fb15e54c482b7bd7a}{is\-Cover} (bool $\ast$input)
+\item 
+bool \hyperlink{class_hypothesis_ab8d9d311060a302fe11457b067898e24}{is\-More\-General\-Than\-Equal\-To} (\hyperlink{class_hypothesis}{Hypothesis} h)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 38 of file concept.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_hypothesis_a3bca791c3dcc2aa2f0d1e8dc16fa2cf3}{\index{Hypothesis@{Hypothesis}!Hypothesis@{Hypothesis}}
+\index{Hypothesis@{Hypothesis}!Hypothesis@{Hypothesis}}
+\subsubsection[{Hypothesis}]{\setlength{\rightskip}{0pt plus 5cm}Hypothesis\-::\-Hypothesis (
+\begin{DoxyParamCaption}
+\item[{int}]{size, }
+\item[{{\bf Attr\-Val} $\ast$}]{h\-Array}
+\end{DoxyParamCaption}
+)}}\label{class_hypothesis_a3bca791c3dcc2aa2f0d1e8dc16fa2cf3}
+
+
+Definition at line 9 of file concept.\-cpp.
+
+
+\begin{DoxyCode}
+9                                                 : AttrNum(size) \{
+10     this->hArray = hArray;
+11 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_hypothesis_a9f7689475f40bcd554b01ad7670aec8a}{\index{Hypothesis@{Hypothesis}!Geth\-Array@{Geth\-Array}}
+\index{Geth\-Array@{Geth\-Array}!Hypothesis@{Hypothesis}}
+\subsubsection[{Geth\-Array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Attr\-Val} $\ast$ Hypothesis\-::\-Geth\-Array (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{class_hypothesis_a9f7689475f40bcd554b01ad7670aec8a}
+
+
+Definition at line 13 of file concept.\-cpp.
+
+
+\begin{DoxyCode}
+13                                    \{
+14     \textcolor{keywordflow}{return} hArray;
+15 \}
+\end{DoxyCode}
+\hypertarget{class_hypothesis_a65026e3096cc134fb15e54c482b7bd7a}{\index{Hypothesis@{Hypothesis}!is\-Cover@{is\-Cover}}
+\index{is\-Cover@{is\-Cover}!Hypothesis@{Hypothesis}}
+\subsubsection[{is\-Cover}]{\setlength{\rightskip}{0pt plus 5cm}bool Hypothesis\-::is\-Cover (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$}]{input}
+\end{DoxyParamCaption}
+)}}\label{class_hypothesis_a65026e3096cc134fb15e54c482b7bd7a}
+
+
+Definition at line 17 of file concept.\-cpp.
+
+
+\begin{DoxyCode}
+17                                     \{
+18     \textcolor{keywordtype}{bool} cover = \textcolor{keyword}{true};
+19 
+20     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < AttrNum; i++) \{
+21     \textcolor{keywordflow}{if}(cover) \{
+22         \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal} curVal = hArray[i];
+23         \textcolor{keywordtype}{bool} curInput = input[i];
+24         cover = !((curVal == \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86}{vFalse} && curInput == \textcolor{keyword}{true}) || (curVal == 
+      \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102}{vTrue} && curInput == \textcolor{keyword}{false}) || \(\backslash\)
+25             (curVal == \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}{vAllDeny}));
+26     \}
+27     \}
+28 
+29     \textcolor{keywordflow}{return} cover;
+30 \}
+\end{DoxyCode}
+\hypertarget{class_hypothesis_ab8d9d311060a302fe11457b067898e24}{\index{Hypothesis@{Hypothesis}!is\-More\-General\-Than\-Equal\-To@{is\-More\-General\-Than\-Equal\-To}}
+\index{is\-More\-General\-Than\-Equal\-To@{is\-More\-General\-Than\-Equal\-To}!Hypothesis@{Hypothesis}}
+\subsubsection[{is\-More\-General\-Than\-Equal\-To}]{\setlength{\rightskip}{0pt plus 5cm}bool Hypothesis\-::is\-More\-General\-Than\-Equal\-To (
+\begin{DoxyParamCaption}
+\item[{{\bf Hypothesis}}]{h}
+\end{DoxyParamCaption}
+)}}\label{class_hypothesis_ab8d9d311060a302fe11457b067898e24}
+
+
+Definition at line 32 of file concept.\-cpp.
+
+
+\begin{DoxyCode}
+32                                                       \{
+33     \textcolor{comment}{// h should have same size with this hypothesis}
+34     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}* compare\_with = h.\hyperlink{class_hypothesis_a9f7689475f40bcd554b01ad7670aec8a}{GethArray}();
+35     
+36     \textcolor{keywordtype}{bool} more\_general = \textcolor{keyword}{true};
+37     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < AttrNum; i++) \{
+38     \textcolor{keywordflow}{if}((hArray[i] == \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}{vAllDeny} && compare\_with[i] != \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}{vAllDeny}) || (hArray[i] != 
+      \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{vAllAccept} && compare\_with[i] != \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}{vAllDeny} \(\backslash\)
+39         && hArray[i] != compare\_with[i])) \{
+40         more\_general = \textcolor{keyword}{false};
+41         \textcolor{keywordflow}{break};
+42     \}
+43     \}
+44 
+45     \textcolor{keywordflow}{return} more\_general;
+46 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/\hyperlink{concept_8h}{concept.\-h}\item 
+src/concept/\hyperlink{concept_8cpp}{concept.\-cpp}\end{DoxyCompactItemize}

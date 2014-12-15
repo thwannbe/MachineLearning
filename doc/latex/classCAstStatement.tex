@@ -1,0 +1,111 @@
+\hypertarget{classCAstStatement}{\section{C\-Ast\-Statement Class Reference}
+\label{classCAstStatement}\index{C\-Ast\-Statement@{C\-Ast\-Statement}}
+}
+
+
+A\-S\-T statement node.  
+
+
+
+
+{\ttfamily \#include $<$ast.\-h$>$}
+
+Inheritance diagram for C\-Ast\-Statement\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCAstStatement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf constructors/destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCAstStatement_ab5ca8d71ef8f7a6cdc6835ba12d159e2}{C\-Ast\-Statement} (\hyperlink{classCToken}{C\-Token} token)
+\item 
+\hypertarget{classCAstStatement_af6e9bb90c0f5f67c2bd8f419d264069e}{virtual {\bfseries $\sim$\-C\-Ast\-Statement} (void)}\label{classCAstStatement_af6e9bb90c0f5f67c2bd8f419d264069e}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf statement list management}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCAstStatement_aeecd18f9129e4798c241d15125a09728}{void \hyperlink{classCAstStatement_aeecd18f9129e4798c241d15125a09728}{Set\-Next} (\hyperlink{classCAstStatement}{C\-Ast\-Statement} $\ast$next)}\label{classCAstStatement_aeecd18f9129e4798c241d15125a09728}
+
+\begin{DoxyCompactList}\small\item\em set the next {\itshape statement} \end{DoxyCompactList}\item 
+\hypertarget{classCAstStatement_a15767f00212caa3879fa4e9fc2b3ffc2}{\hyperlink{classCAstStatement}{C\-Ast\-Statement} $\ast$ \hyperlink{classCAstStatement_a15767f00212caa3879fa4e9fc2b3ffc2}{Get\-Next} (void) const }\label{classCAstStatement_a15767f00212caa3879fa4e9fc2b3ffc2}
+
+\begin{DoxyCompactList}\small\item\em get the next {\itshape statement} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf type management}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classCAstStatement_af4e22fa71fa3b1fe73bb361a0fc4ec8b}{Type\-Check} (\hyperlink{classCToken}{C\-Token} $\ast$t, string $\ast$msg) const =0
+\begin{DoxyCompactList}\small\item\em perform type checking \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf transformation into T\-A\-C}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCAstStatement_afea5b8856b81de13f09f385a932c4d5d}{virtual \hyperlink{classCTacAddr}{C\-Tac\-Addr} $\ast$ {\bfseries To\-Tac} (\hyperlink{classCCodeBlock}{C\-Code\-Block} $\ast$cb, \hyperlink{classCTacLabel}{C\-Tac\-Label} $\ast$next)}\label{classCAstStatement_afea5b8856b81de13f09f385a932c4d5d}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A\-S\-T statement node. 
+
+node representing a statement 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCAstStatement_ab5ca8d71ef8f7a6cdc6835ba12d159e2}{\index{C\-Ast\-Statement@{C\-Ast\-Statement}!C\-Ast\-Statement@{C\-Ast\-Statement}}
+\index{C\-Ast\-Statement@{C\-Ast\-Statement}!CAstStatement@{C\-Ast\-Statement}}
+\subsubsection[{C\-Ast\-Statement}]{\setlength{\rightskip}{0pt plus 5cm}C\-Ast\-Statement\-::\-C\-Ast\-Statement (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token}}]{token}
+\end{DoxyParamCaption}
+)}}\label{classCAstStatement_ab5ca8d71ef8f7a6cdc6835ba12d159e2}
+
+\begin{DoxyParams}{Parameters}
+{\em token} & token in input stream (used for error reporting purposes) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCAstStatement_af4e22fa71fa3b1fe73bb361a0fc4ec8b}{\index{C\-Ast\-Statement@{C\-Ast\-Statement}!Type\-Check@{Type\-Check}}
+\index{Type\-Check@{Type\-Check}!CAstStatement@{C\-Ast\-Statement}}
+\subsubsection[{Type\-Check}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool C\-Ast\-Statement\-::\-Type\-Check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token} $\ast$}]{t, }
+\item[{string $\ast$}]{msg}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classCAstStatement_af4e22fa71fa3b1fe73bb361a0fc4ec8b}
+
+
+perform type checking 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & (out, optional) type error at token t \\
+\hline
+{\em msg} & (out, optional) type error message \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if no type error has been found \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \hyperlink{classCAstStatWhile_aa912c2107ee05c485cb49d9da10fd34f}{C\-Ast\-Stat\-While}, \hyperlink{classCAstStatIf_a63d14c54cc9db5aa4438863446a24a27}{C\-Ast\-Stat\-If}, \hyperlink{classCAstStatReturn_a34ecebe160b43f96626c3e216fdd048e}{C\-Ast\-Stat\-Return}, \hyperlink{classCAstStatCall_a36d483642d8853410f0f263ce1d9190b}{C\-Ast\-Stat\-Call}, and \hyperlink{classCAstStatAssign_a4494a00f97f5bdbfb40b46769570d6c1}{C\-Ast\-Stat\-Assign}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/src/ast.\-h\item 
+src/concept/src/ast.\-cpp\end{DoxyCompactItemize}

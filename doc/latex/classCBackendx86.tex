@@ -1,0 +1,152 @@
+\hypertarget{classCBackendx86}{\section{C\-Backendx86 Class Reference}
+\label{classCBackendx86}\index{C\-Backendx86@{C\-Backendx86}}
+}
+
+
+x86 backend  
+
+
+
+
+{\ttfamily \#include $<$backend.\-h$>$}
+
+Inheritance diagram for C\-Backendx86\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCBackendx86}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf constructors/destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCBackendx86_a206ef50ab62a43a5e7959b91b2758711}{{\bfseries C\-Backendx86} (ostream \&out)}\label{classCBackendx86_a206ef50ab62a43a5e7959b91b2758711}
+
+\item 
+\hypertarget{classCBackendx86_afa6d6c74ee32253b7445c00b2a000156}{virtual {\bfseries $\sim$\-C\-Backendx86} (void)}\label{classCBackendx86_afa6d6c74ee32253b7445c00b2a000156}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Member Functions}
+\begin{Indent}{\bf detailed output methods}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCBackendx86_a2bf2900833a3d37c115498a9805caff6}{virtual void {\bfseries Emit\-Header} (void)}\label{classCBackendx86_a2bf2900833a3d37c115498a9805caff6}
+
+\item 
+\hypertarget{classCBackendx86_aba678b88e4fe218137f870301fb501f9}{virtual void {\bfseries Emit\-Code} (void)}\label{classCBackendx86_aba678b88e4fe218137f870301fb501f9}
+
+\item 
+\hypertarget{classCBackendx86_a4ae1d556489ec5d79f20f7c6383e31cf}{virtual void {\bfseries Emit\-Data} (void)}\label{classCBackendx86_a4ae1d556489ec5d79f20f7c6383e31cf}
+
+\item 
+\hypertarget{classCBackendx86_a9e11130bbe7191e605bf831524ab95c7}{virtual void {\bfseries Emit\-Footer} (void)}\label{classCBackendx86_a9e11130bbe7191e605bf831524ab95c7}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf additional methods}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCBackendx86_a044b54c080a16dac6fcb4da1b1aff1c4}{void \hyperlink{classCBackendx86_a044b54c080a16dac6fcb4da1b1aff1c4}{Set\-Scope} (\hyperlink{classCScope}{C\-Scope} $\ast$scope)}\label{classCBackendx86_a044b54c080a16dac6fcb4da1b1aff1c4}
+
+\begin{DoxyCompactList}\small\item\em set the current scope \end{DoxyCompactList}\item 
+\hypertarget{classCBackendx86_ac27f812a834600af173d2a0c56620a05}{\hyperlink{classCScope}{C\-Scope} $\ast$ \hyperlink{classCBackendx86_ac27f812a834600af173d2a0c56620a05}{Get\-Scope} (void) const }\label{classCBackendx86_ac27f812a834600af173d2a0c56620a05}
+
+\begin{DoxyCompactList}\small\item\em get the current scope \end{DoxyCompactList}\item 
+\hypertarget{classCBackendx86_af441776ec2b3cbd1116d4286b005fcd7}{virtual void \hyperlink{classCBackendx86_af441776ec2b3cbd1116d4286b005fcd7}{Emit\-Scope} (\hyperlink{classCScope}{C\-Scope} $\ast$scope)}\label{classCBackendx86_af441776ec2b3cbd1116d4286b005fcd7}
+
+\begin{DoxyCompactList}\small\item\em emit a scope \end{DoxyCompactList}\item 
+\hypertarget{classCBackendx86_af2994ccd494b257ff129754ec4962125}{virtual void \hyperlink{classCBackendx86_af2994ccd494b257ff129754ec4962125}{Emit\-Global\-Data} (\hyperlink{classCScope}{C\-Scope} $\ast$s)}\label{classCBackendx86_af2994ccd494b257ff129754ec4962125}
+
+\begin{DoxyCompactList}\small\item\em emit global data \end{DoxyCompactList}\item 
+\hypertarget{classCBackendx86_a982ab32ae826524afdf87ca4142fa6b7}{virtual void \hyperlink{classCBackendx86_a982ab32ae826524afdf87ca4142fa6b7}{Emit\-Code\-Block} (\hyperlink{classCCodeBlock}{C\-Code\-Block} $\ast$cb, \hyperlink{classCSymtab}{C\-Symtab} $\ast$symtab)}\label{classCBackendx86_a982ab32ae826524afdf87ca4142fa6b7}
+
+\begin{DoxyCompactList}\small\item\em emit a code block \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCBackendx86_a0855ae189e08d402ea85a13df8153f13}{Emit\-Instruction} (\hyperlink{classCTacInstr}{C\-Tac\-Instr} $\ast$i, \hyperlink{classCSymtab}{C\-Symtab} $\ast$symtab)
+\begin{DoxyCompactList}\small\item\em emit an instruction \end{DoxyCompactList}\item 
+\hypertarget{classCBackendx86_aecd080f793a8281d3b3c38c203f108ba}{virtual void \hyperlink{classCBackendx86_aecd080f793a8281d3b3c38c203f108ba}{Emit\-Instruction} (string mnemonic, string args=\char`\"{}\char`\"{}, string comment=\char`\"{}\char`\"{})}\label{classCBackendx86_aecd080f793a8281d3b3c38c203f108ba}
+
+\begin{DoxyCompactList}\small\item\em emit an instruction \end{DoxyCompactList}\item 
+\hypertarget{classCBackendx86_a6141d51432ac2c872a77a22992a01c1a}{string \hyperlink{classCBackendx86_a6141d51432ac2c872a77a22992a01c1a}{Operand} (\hyperlink{classCTac}{C\-Tac} $\ast$op) const }\label{classCBackendx86_a6141d51432ac2c872a77a22992a01c1a}
+
+\begin{DoxyCompactList}\small\item\em return an operand string for {\itshape op} \end{DoxyCompactList}\item 
+\hypertarget{classCBackendx86_a6ef56486e444fbe4102cd67fda2e6d19}{string \hyperlink{classCBackendx86_a6ef56486e444fbe4102cd67fda2e6d19}{Operation} (E\-Operation op) const }\label{classCBackendx86_a6ef56486e444fbe4102cd67fda2e6d19}
+
+\begin{DoxyCompactList}\small\item\em return an operation string for {\itshape op} \end{DoxyCompactList}\item 
+\hypertarget{classCBackendx86_a7a189a9d803ab2ec8dc86378ca4d84d5}{string \hyperlink{classCBackendx86_a7a189a9d803ab2ec8dc86378ca4d84d5}{Imm} (int value) const }\label{classCBackendx86_a7a189a9d803ab2ec8dc86378ca4d84d5}
+
+\begin{DoxyCompactList}\small\item\em return an immediate for {\itshape value} \end{DoxyCompactList}\item 
+\hypertarget{classCBackendx86_a802221dd1ccef7c2a5d3ae3de96766e3}{string \hyperlink{classCBackendx86_a802221dd1ccef7c2a5d3ae3de96766e3}{Label} (\hyperlink{classCTacLabel}{C\-Tac\-Label} $\ast$label) const }\label{classCBackendx86_a802221dd1ccef7c2a5d3ae3de96766e3}
+
+\begin{DoxyCompactList}\small\item\em return a x86-\/label for C\-Taclabel {\itshape label} \end{DoxyCompactList}\item 
+\hypertarget{classCBackendx86_ab649aa760b4fdde7c8fed1bf0e91b8bb}{string \hyperlink{classCBackendx86_ab649aa760b4fdde7c8fed1bf0e91b8bb}{Label} (string label) const }\label{classCBackendx86_ab649aa760b4fdde7c8fed1bf0e91b8bb}
+
+\begin{DoxyCompactList}\small\item\em return a x86-\/label for string {\itshape label} \end{DoxyCompactList}\item 
+\hypertarget{classCBackendx86_a44dd9b997f350c02bb355cac52ce9284}{string \hyperlink{classCBackendx86_a44dd9b997f350c02bb355cac52ce9284}{Condition} (E\-Operation cond) const }\label{classCBackendx86_a44dd9b997f350c02bb355cac52ce9284}
+
+\begin{DoxyCompactList}\small\item\em return the condition suffix for a binary comparison operation \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classCBackendx86_af21f8e9e88307efeb0547c3ceaf078af}{Compute\-Stack\-Offsets} (\hyperlink{classCSymtab}{C\-Symtab} $\ast$symtab, int param\-\_\-ofs, int local\-\_\-ofs)
+\begin{DoxyCompactList}\small\item\em compute the location of local variables, temporaries and arguments on the stack. Returns the total size occupied on the stack as well as the the number of arguments for this scope (if {\itshape nargs} is not N\-U\-L\-L) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCBackendx86_a9e932e94262ef8bd44f6f587a2e4773d}{string \hyperlink{classCBackendx86_a9e932e94262ef8bd44f6f587a2e4773d}{\-\_\-ind}}\label{classCBackendx86_a9e932e94262ef8bd44f6f587a2e4773d}
+
+\begin{DoxyCompactList}\small\item\em indentation \end{DoxyCompactList}\item 
+\hypertarget{classCBackendx86_ae06b295f6122d0433544ff7b28299b7b}{\hyperlink{classCScope}{C\-Scope} $\ast$ \hyperlink{classCBackendx86_ae06b295f6122d0433544ff7b28299b7b}{\-\_\-curr\-\_\-scope}}\label{classCBackendx86_ae06b295f6122d0433544ff7b28299b7b}
+
+\begin{DoxyCompactList}\small\item\em current scope \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+x86 backend 
+
+backend for Intel I\-A32 
+
+\subsection{Member Function Documentation}
+\hypertarget{classCBackendx86_af21f8e9e88307efeb0547c3ceaf078af}{\index{C\-Backendx86@{C\-Backendx86}!Compute\-Stack\-Offsets@{Compute\-Stack\-Offsets}}
+\index{Compute\-Stack\-Offsets@{Compute\-Stack\-Offsets}!CBackendx86@{C\-Backendx86}}
+\subsubsection[{Compute\-Stack\-Offsets}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t C\-Backendx86\-::\-Compute\-Stack\-Offsets (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Symtab} $\ast$}]{symtab, }
+\item[{int}]{param\-\_\-ofs, }
+\item[{int}]{local\-\_\-ofs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCBackendx86_af21f8e9e88307efeb0547c3ceaf078af}
+
+
+compute the location of local variables, temporaries and arguments on the stack. Returns the total size occupied on the stack as well as the the number of arguments for this scope (if {\itshape nargs} is not N\-U\-L\-L) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symtab} & symbol table \\
+\hline
+{\em param\-\_\-ofs} & offset to parameters from base pointer after epilogue \\
+\hline
+{\em local\-\_\-ofs} & offset to local vars from base pointer after epilogue \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCBackendx86_a0855ae189e08d402ea85a13df8153f13}{\index{C\-Backendx86@{C\-Backendx86}!Emit\-Instruction@{Emit\-Instruction}}
+\index{Emit\-Instruction@{Emit\-Instruction}!CBackendx86@{C\-Backendx86}}
+\subsubsection[{Emit\-Instruction}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Backendx86\-::\-Emit\-Instruction (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Tac\-Instr} $\ast$}]{i, }
+\item[{{\bf C\-Symtab} $\ast$}]{symtab}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classCBackendx86_a0855ae189e08d402ea85a13df8153f13}
+
+
+emit an instruction 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & controls if the instruction needs a target label or not \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/src/backend.\-h\item 
+src/concept/src/backend.\-cpp\end{DoxyCompactItemize}

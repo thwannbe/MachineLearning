@@ -1,0 +1,220 @@
+\hypertarget{classCAstStatWhile}{\section{C\-Ast\-Stat\-While Class Reference}
+\label{classCAstStatWhile}\index{C\-Ast\-Stat\-While@{C\-Ast\-Stat\-While}}
+}
+
+
+A\-S\-T while statement node.  
+
+
+
+
+{\ttfamily \#include $<$ast.\-h$>$}
+
+Inheritance diagram for C\-Ast\-Stat\-While\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCAstStatWhile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf constructors/destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCAstStatWhile_aef89ab0da75ad32525e9a65be6fbc77c}{C\-Ast\-Stat\-While} (\hyperlink{classCToken}{C\-Token} t, \hyperlink{classCAstExpression}{C\-Ast\-Expression} $\ast$cond, \hyperlink{classCAstStatement}{C\-Ast\-Statement} $\ast$body)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf property manipulation}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCAstExpression}{C\-Ast\-Expression} $\ast$ \hyperlink{classCAstStatWhile_a704ec78f7588bc0755b192145db22971}{Get\-Condition} (void) const 
+\begin{DoxyCompactList}\small\item\em return the if condition \end{DoxyCompactList}\item 
+\hyperlink{classCAstStatement}{C\-Ast\-Statement} $\ast$ \hyperlink{classCAstStatWhile_a9034a98c20ac8bfe1b7df383203c718a}{Get\-Body} (void) const 
+\begin{DoxyCompactList}\small\item\em return the body \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf type management}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classCAstStatWhile_aa912c2107ee05c485cb49d9da10fd34f}{Type\-Check} (\hyperlink{classCToken}{C\-Token} $\ast$t, string $\ast$msg) const 
+\begin{DoxyCompactList}\small\item\em perform type checking \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf output}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual ostream \& \hyperlink{classCAstStatWhile_a1ec900505fad4cb450b3b3455c7aae5e}{print} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em print the node to an output stream \end{DoxyCompactList}\item 
+virtual string \hyperlink{classCAstStatWhile_a1fedefca201ad200cd23e6eab9a4e5e0}{dot\-Attr} (void) const 
+\begin{DoxyCompactList}\small\item\em return the node's attributes in (dot) string format \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCAstStatWhile_ae80b4f2dc7e99b663eb7e802551964c7}{to\-Dot} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em print the node in dot format to an output stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf transformation into T\-A\-C}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCAstStatWhile_a978aa641c4fc53026fd450c9edb65250}{virtual \hyperlink{classCTacAddr}{C\-Tac\-Addr} $\ast$ {\bfseries To\-Tac} (\hyperlink{classCCodeBlock}{C\-Code\-Block} $\ast$cb, \hyperlink{classCTacLabel}{C\-Tac\-Label} $\ast$next)}\label{classCAstStatWhile_a978aa641c4fc53026fd450c9edb65250}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A\-S\-T while statement node. 
+
+node representing a while statement 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCAstStatWhile_aef89ab0da75ad32525e9a65be6fbc77c}{\index{C\-Ast\-Stat\-While@{C\-Ast\-Stat\-While}!C\-Ast\-Stat\-While@{C\-Ast\-Stat\-While}}
+\index{C\-Ast\-Stat\-While@{C\-Ast\-Stat\-While}!CAstStatWhile@{C\-Ast\-Stat\-While}}
+\subsubsection[{C\-Ast\-Stat\-While}]{\setlength{\rightskip}{0pt plus 5cm}C\-Ast\-Stat\-While\-::\-C\-Ast\-Stat\-While (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token}}]{t, }
+\item[{{\bf C\-Ast\-Expression} $\ast$}]{cond, }
+\item[{{\bf C\-Ast\-Statement} $\ast$}]{body}
+\end{DoxyParamCaption}
+)}}\label{classCAstStatWhile_aef89ab0da75ad32525e9a65be6fbc77c}
+
+\begin{DoxyParams}{Parameters}
+{\em t} & token in input stream (used for error reporting purposes) \\
+\hline
+{\em cond} & while condition (expression) \\
+\hline
+{\em body} & statement list of body \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCAstStatWhile_a1fedefca201ad200cd23e6eab9a4e5e0}{\index{C\-Ast\-Stat\-While@{C\-Ast\-Stat\-While}!dot\-Attr@{dot\-Attr}}
+\index{dot\-Attr@{dot\-Attr}!CAstStatWhile@{C\-Ast\-Stat\-While}}
+\subsubsection[{dot\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}string C\-Ast\-Stat\-While\-::dot\-Attr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstStatWhile_a1fedefca201ad200cd23e6eab9a4e5e0}
+
+
+return the node's attributes in (dot) string format 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em string} & node attributes as a string \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \hyperlink{classCAstNode_a9a30718a50f12845e03181846dab1432}{C\-Ast\-Node}.
+
+\hypertarget{classCAstStatWhile_a9034a98c20ac8bfe1b7df383203c718a}{\index{C\-Ast\-Stat\-While@{C\-Ast\-Stat\-While}!Get\-Body@{Get\-Body}}
+\index{Get\-Body@{Get\-Body}!CAstStatWhile@{C\-Ast\-Stat\-While}}
+\subsubsection[{Get\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Ast\-Statement} $\ast$ C\-Ast\-Stat\-While\-::\-Get\-Body (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classCAstStatWhile_a9034a98c20ac8bfe1b7df383203c718a}
+
+
+return the body 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em C\-Ast\-Statement$\ast$} & body statement sequence \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCAstStatWhile_a704ec78f7588bc0755b192145db22971}{\index{C\-Ast\-Stat\-While@{C\-Ast\-Stat\-While}!Get\-Condition@{Get\-Condition}}
+\index{Get\-Condition@{Get\-Condition}!CAstStatWhile@{C\-Ast\-Stat\-While}}
+\subsubsection[{Get\-Condition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Ast\-Expression} $\ast$ C\-Ast\-Stat\-While\-::\-Get\-Condition (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classCAstStatWhile_a704ec78f7588bc0755b192145db22971}
+
+
+return the if condition 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em C\-Ast\-Expression$\ast$} & if condition \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCAstStatWhile_a1ec900505fad4cb450b3b3455c7aae5e}{\index{C\-Ast\-Stat\-While@{C\-Ast\-Stat\-While}!print@{print}}
+\index{print@{print}!CAstStatWhile@{C\-Ast\-Stat\-While}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}ostream \& C\-Ast\-Stat\-While\-::print (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstStatWhile_a1ec900505fad4cb450b3b3455c7aae5e}
+
+
+print the node to an output stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classCAstNode_aff4622f85ee405f9b9257f91fb3a830e}{C\-Ast\-Node}.
+
+\hypertarget{classCAstStatWhile_ae80b4f2dc7e99b663eb7e802551964c7}{\index{C\-Ast\-Stat\-While@{C\-Ast\-Stat\-While}!to\-Dot@{to\-Dot}}
+\index{to\-Dot@{to\-Dot}!CAstStatWhile@{C\-Ast\-Stat\-While}}
+\subsubsection[{to\-Dot}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Ast\-Stat\-While\-::to\-Dot (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstStatWhile_ae80b4f2dc7e99b663eb7e802551964c7}
+
+
+print the node in dot format to an output stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classCAstNode_ac7b5751f26de6f86fb3b9175caa15391}{C\-Ast\-Node}.
+
+\hypertarget{classCAstStatWhile_aa912c2107ee05c485cb49d9da10fd34f}{\index{C\-Ast\-Stat\-While@{C\-Ast\-Stat\-While}!Type\-Check@{Type\-Check}}
+\index{Type\-Check@{Type\-Check}!CAstStatWhile@{C\-Ast\-Stat\-While}}
+\subsubsection[{Type\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Ast\-Stat\-While\-::\-Type\-Check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token} $\ast$}]{t, }
+\item[{string $\ast$}]{msg}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstStatWhile_aa912c2107ee05c485cb49d9da10fd34f}
+
+
+perform type checking 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & (out, optional) type error at token t \\
+\hline
+{\em msg} & (out, optional) type error message \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if no type error has been found \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{classCAstStatement_af4e22fa71fa3b1fe73bb361a0fc4ec8b}{C\-Ast\-Statement}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/src/ast.\-h\item 
+src/concept/src/ast.\-cpp\end{DoxyCompactItemize}

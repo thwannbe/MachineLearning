@@ -1,0 +1,126 @@
+\hypertarget{classCAstProcedure}{\section{C\-Ast\-Procedure Class Reference}
+\label{classCAstProcedure}\index{C\-Ast\-Procedure@{C\-Ast\-Procedure}}
+}
+
+
+A\-S\-T procedure scope.  
+
+
+
+
+{\ttfamily \#include $<$ast.\-h$>$}
+
+Inheritance diagram for C\-Ast\-Procedure\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCAstProcedure}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf constructors/destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCAstProcedure_a9cb338e9a71b2f47f7f46ed5cf1eb264}{C\-Ast\-Procedure} (\hyperlink{classCToken}{C\-Token} t, const string name, \hyperlink{classCAstScope}{C\-Ast\-Scope} $\ast$parent, \hyperlink{classCSymProc}{C\-Sym\-Proc} $\ast$symbol)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf scope manipulation/querying}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCSymProc}{C\-Sym\-Proc} $\ast$ \hyperlink{classCAstProcedure_ac44e89463cac0f6488e5521e000efd49}{Get\-Symbol} (void) const 
+\begin{DoxyCompactList}\small\item\em return the symbol for this procedure/function \end{DoxyCompactList}\item 
+\hypertarget{classCAstProcedure_ad1c78859aa1852a1e7559bc2bf6922db}{virtual \hyperlink{classCSymbol}{C\-Symbol} $\ast$ \hyperlink{classCAstProcedure_ad1c78859aa1852a1e7559bc2bf6922db}{Create\-Var} (const string ident, const \hyperlink{classCType}{C\-Type} $\ast$type)}\label{classCAstProcedure_ad1c78859aa1852a1e7559bc2bf6922db}
+
+\begin{DoxyCompactList}\small\item\em create a new variable on this scope's level \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf type management}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCAstProcedure_a3f674d90de0ec004d772e3b5406d113d}{virtual const \hyperlink{classCType}{C\-Type} $\ast$ \hyperlink{classCAstProcedure_a3f674d90de0ec004d772e3b5406d113d}{Get\-Type} (void) const }\label{classCAstProcedure_a3f674d90de0ec004d772e3b5406d113d}
+
+\begin{DoxyCompactList}\small\item\em return (compute) the type of this node \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf output}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual string \hyperlink{classCAstProcedure_a48bc0247dc648b1b211652ebade6acd5}{dot\-Attr} (void) const 
+\begin{DoxyCompactList}\small\item\em return the node's attributes in (dot) string format \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A\-S\-T procedure scope. 
+
+node representing a procedure/function scope 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCAstProcedure_a9cb338e9a71b2f47f7f46ed5cf1eb264}{\index{C\-Ast\-Procedure@{C\-Ast\-Procedure}!C\-Ast\-Procedure@{C\-Ast\-Procedure}}
+\index{C\-Ast\-Procedure@{C\-Ast\-Procedure}!CAstProcedure@{C\-Ast\-Procedure}}
+\subsubsection[{C\-Ast\-Procedure}]{\setlength{\rightskip}{0pt plus 5cm}C\-Ast\-Procedure\-::\-C\-Ast\-Procedure (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token}}]{t, }
+\item[{const string}]{name, }
+\item[{{\bf C\-Ast\-Scope} $\ast$}]{parent, }
+\item[{{\bf C\-Sym\-Proc} $\ast$}]{symbol}
+\end{DoxyParamCaption}
+)}}\label{classCAstProcedure_a9cb338e9a71b2f47f7f46ed5cf1eb264}
+
+
+constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & token in input stream (used for error reporting purposes) \\
+\hline
+{\em name} & procedure/function name \\
+\hline
+{\em parent} & superordinate scope (cannot be N\-U\-L\-L) \\
+\hline
+{\em symbol} & symbol representing the procedure/function \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCAstProcedure_a48bc0247dc648b1b211652ebade6acd5}{\index{C\-Ast\-Procedure@{C\-Ast\-Procedure}!dot\-Attr@{dot\-Attr}}
+\index{dot\-Attr@{dot\-Attr}!CAstProcedure@{C\-Ast\-Procedure}}
+\subsubsection[{dot\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}string C\-Ast\-Procedure\-::dot\-Attr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstProcedure_a48bc0247dc648b1b211652ebade6acd5}
+
+
+return the node's attributes in (dot) string format 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em string} & node attributes as a string \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \hyperlink{classCAstNode_a9a30718a50f12845e03181846dab1432}{C\-Ast\-Node}.
+
+\hypertarget{classCAstProcedure_ac44e89463cac0f6488e5521e000efd49}{\index{C\-Ast\-Procedure@{C\-Ast\-Procedure}!Get\-Symbol@{Get\-Symbol}}
+\index{Get\-Symbol@{Get\-Symbol}!CAstProcedure@{C\-Ast\-Procedure}}
+\subsubsection[{Get\-Symbol}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Sym\-Proc} $\ast$ C\-Ast\-Procedure\-::\-Get\-Symbol (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classCAstProcedure_ac44e89463cac0f6488e5521e000efd49}
+
+
+return the symbol for this procedure/function 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em C\-Sym\-Proc$\ast$} & symbol representing this procedure/function \\
+\hline
+\end{DoxyRetVals}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/src/ast.\-h\item 
+src/concept/src/ast.\-cpp\end{DoxyCompactItemize}

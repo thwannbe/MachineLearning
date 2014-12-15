@@ -1,0 +1,221 @@
+\hypertarget{classCAstStatCall}{\section{C\-Ast\-Stat\-Call Class Reference}
+\label{classCAstStatCall}\index{C\-Ast\-Stat\-Call@{C\-Ast\-Stat\-Call}}
+}
+
+
+A\-S\-T procedure call statement node.  
+
+
+
+
+{\ttfamily \#include $<$ast.\-h$>$}
+
+Inheritance diagram for C\-Ast\-Stat\-Call\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCAstStatCall}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf constructors/destructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCAstStatCall_a3d64c62f4c66b12c6b75c46b2c26ad0a}{C\-Ast\-Stat\-Call} (\hyperlink{classCToken}{C\-Token} t, \hyperlink{classCAstFunctionCall}{C\-Ast\-Function\-Call} $\ast$call)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf property manipulation}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCAstFunctionCall}{C\-Ast\-Function\-Call} $\ast$ \hyperlink{classCAstStatCall_a51d892e9c3a36c2b7ebbc3290963ff27}{Get\-Call} (void) const 
+\begin{DoxyCompactList}\small\item\em return the expression representing the call \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf type management}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classCAstStatCall_a36d483642d8853410f0f263ce1d9190b}{Type\-Check} (\hyperlink{classCToken}{C\-Token} $\ast$t, string $\ast$msg) const 
+\begin{DoxyCompactList}\small\item\em perform type checking \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf output}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual ostream \& \hyperlink{classCAstStatCall_a81de938cb27cff3d7b29d6b61ba3607e}{print} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em print the node to an output stream \end{DoxyCompactList}\item 
+virtual string \hyperlink{classCAstStatCall_abf38c5be00c7dd3301cc57aaa01b9944}{dot\-I\-D} (void) const 
+\begin{DoxyCompactList}\small\item\em return the node I\-D in (dot) string format \end{DoxyCompactList}\item 
+virtual string \hyperlink{classCAstStatCall_a2a65ab592a6223d388af8ef6f16caccc}{dot\-Attr} (void) const 
+\begin{DoxyCompactList}\small\item\em return the node's attributes in (dot) string format \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCAstStatCall_a2108865db3d7ef4f4d55dca53a45473e}{to\-Dot} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em print the node in dot format to an output stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf transformation into T\-A\-C}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCAstStatCall_a47b6db8af6362d2c149253d180435c0d}{virtual \hyperlink{classCTacAddr}{C\-Tac\-Addr} $\ast$ {\bfseries To\-Tac} (\hyperlink{classCCodeBlock}{C\-Code\-Block} $\ast$cb, \hyperlink{classCTacLabel}{C\-Tac\-Label} $\ast$next)}\label{classCAstStatCall_a47b6db8af6362d2c149253d180435c0d}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A\-S\-T procedure call statement node. 
+
+node representing a procedure call statement 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCAstStatCall_a3d64c62f4c66b12c6b75c46b2c26ad0a}{\index{C\-Ast\-Stat\-Call@{C\-Ast\-Stat\-Call}!C\-Ast\-Stat\-Call@{C\-Ast\-Stat\-Call}}
+\index{C\-Ast\-Stat\-Call@{C\-Ast\-Stat\-Call}!CAstStatCall@{C\-Ast\-Stat\-Call}}
+\subsubsection[{C\-Ast\-Stat\-Call}]{\setlength{\rightskip}{0pt plus 5cm}C\-Ast\-Stat\-Call\-::\-C\-Ast\-Stat\-Call (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token}}]{t, }
+\item[{{\bf C\-Ast\-Function\-Call} $\ast$}]{call}
+\end{DoxyParamCaption}
+)}}\label{classCAstStatCall_a3d64c62f4c66b12c6b75c46b2c26ad0a}
+
+\begin{DoxyParams}{Parameters}
+{\em t} & token in input stream (used for error reporting purposes) \\
+\hline
+{\em call} & function call node \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCAstStatCall_a2a65ab592a6223d388af8ef6f16caccc}{\index{C\-Ast\-Stat\-Call@{C\-Ast\-Stat\-Call}!dot\-Attr@{dot\-Attr}}
+\index{dot\-Attr@{dot\-Attr}!CAstStatCall@{C\-Ast\-Stat\-Call}}
+\subsubsection[{dot\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}string C\-Ast\-Stat\-Call\-::dot\-Attr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstStatCall_a2a65ab592a6223d388af8ef6f16caccc}
+
+
+return the node's attributes in (dot) string format 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em string} & node attributes as a string \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \hyperlink{classCAstNode_a9a30718a50f12845e03181846dab1432}{C\-Ast\-Node}.
+
+\hypertarget{classCAstStatCall_abf38c5be00c7dd3301cc57aaa01b9944}{\index{C\-Ast\-Stat\-Call@{C\-Ast\-Stat\-Call}!dot\-I\-D@{dot\-I\-D}}
+\index{dot\-I\-D@{dot\-I\-D}!CAstStatCall@{C\-Ast\-Stat\-Call}}
+\subsubsection[{dot\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}string C\-Ast\-Stat\-Call\-::dot\-I\-D (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstStatCall_abf38c5be00c7dd3301cc57aaa01b9944}
+
+
+return the node I\-D in (dot) string format 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em string} & node I\-D as a string \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \hyperlink{classCAstNode_a0cabcca882c1a3e48ffb953581db18ab}{C\-Ast\-Node}.
+
+\hypertarget{classCAstStatCall_a51d892e9c3a36c2b7ebbc3290963ff27}{\index{C\-Ast\-Stat\-Call@{C\-Ast\-Stat\-Call}!Get\-Call@{Get\-Call}}
+\index{Get\-Call@{Get\-Call}!CAstStatCall@{C\-Ast\-Stat\-Call}}
+\subsubsection[{Get\-Call}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\-Ast\-Function\-Call} $\ast$ C\-Ast\-Stat\-Call\-::\-Get\-Call (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{classCAstStatCall_a51d892e9c3a36c2b7ebbc3290963ff27}
+
+
+return the expression representing the call 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em C\-Ast\-Function\-Call$\ast$} & call expression \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCAstStatCall_a81de938cb27cff3d7b29d6b61ba3607e}{\index{C\-Ast\-Stat\-Call@{C\-Ast\-Stat\-Call}!print@{print}}
+\index{print@{print}!CAstStatCall@{C\-Ast\-Stat\-Call}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}ostream \& C\-Ast\-Stat\-Call\-::print (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstStatCall_a81de938cb27cff3d7b29d6b61ba3607e}
+
+
+print the node to an output stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classCAstNode_aff4622f85ee405f9b9257f91fb3a830e}{C\-Ast\-Node}.
+
+\hypertarget{classCAstStatCall_a2108865db3d7ef4f4d55dca53a45473e}{\index{C\-Ast\-Stat\-Call@{C\-Ast\-Stat\-Call}!to\-Dot@{to\-Dot}}
+\index{to\-Dot@{to\-Dot}!CAstStatCall@{C\-Ast\-Stat\-Call}}
+\subsubsection[{to\-Dot}]{\setlength{\rightskip}{0pt plus 5cm}void C\-Ast\-Stat\-Call\-::to\-Dot (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstStatCall_a2108865db3d7ef4f4d55dca53a45473e}
+
+
+print the node in dot format to an output stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classCAstNode_ac7b5751f26de6f86fb3b9175caa15391}{C\-Ast\-Node}.
+
+\hypertarget{classCAstStatCall_a36d483642d8853410f0f263ce1d9190b}{\index{C\-Ast\-Stat\-Call@{C\-Ast\-Stat\-Call}!Type\-Check@{Type\-Check}}
+\index{Type\-Check@{Type\-Check}!CAstStatCall@{C\-Ast\-Stat\-Call}}
+\subsubsection[{Type\-Check}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Ast\-Stat\-Call\-::\-Type\-Check (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Token} $\ast$}]{t, }
+\item[{string $\ast$}]{msg}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCAstStatCall_a36d483642d8853410f0f263ce1d9190b}
+
+
+perform type checking 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & (out, optional) type error at token t \\
+\hline
+{\em msg} & (out, optional) type error message \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if no type error has been found \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{classCAstStatement_af4e22fa71fa3b1fe73bb361a0fc4ec8b}{C\-Ast\-Statement}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/src/ast.\-h\item 
+src/concept/src/ast.\-cpp\end{DoxyCompactItemize}

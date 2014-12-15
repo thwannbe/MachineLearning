@@ -1,0 +1,134 @@
+\hypertarget{classCSymtab}{\section{C\-Symtab Class Reference}
+\label{classCSymtab}\index{C\-Symtab@{C\-Symtab}}
+}
+
+
+Snu\-P\-L symbol table.  
+
+
+
+
+{\ttfamily \#include $<$symtab.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classCSymtab_a3573d6f87f844d983020cf62945ec2d3}{print} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em print the symbol table to an output stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf constructor/destructor}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCSymtab_a24ae77cf6cc0088cd06dd2f3c8b60c69}{\hyperlink{classCSymtab_a24ae77cf6cc0088cd06dd2f3c8b60c69}{C\-Symtab} (void)}\label{classCSymtab_a24ae77cf6cc0088cd06dd2f3c8b60c69}
+
+\begin{DoxyCompactList}\small\item\em constructor for top-\/level symbol table \end{DoxyCompactList}\item 
+\hyperlink{classCSymtab_ab7250068e10c87e4c6448046ef619e0e}{C\-Symtab} (\hyperlink{classCSymtab}{C\-Symtab} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em constructor for subordinate symbol tables \end{DoxyCompactList}\item 
+\hypertarget{classCSymtab_a9732bc2f4a0b4b6ace8689e63c213215}{virtual \hyperlink{classCSymtab_a9732bc2f4a0b4b6ace8689e63c213215}{$\sim$\-C\-Symtab} (void)}\label{classCSymtab_a9732bc2f4a0b4b6ace8689e63c213215}
+
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf symbol handling}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classCSymtab_a6c7f2b6dabbb63f8375ba5e482d3336b}{Add\-Symbol} (\hyperlink{classCSymbol}{C\-Symbol} $\ast$s)
+\begin{DoxyCompactList}\small\item\em add a symbol to the symbol table \end{DoxyCompactList}\item 
+const \hyperlink{classCSymbol}{C\-Symbol} $\ast$ \hyperlink{classCSymtab_a548106c8ef86534dd3d9b5279ace8cab}{Find\-Symbol} (const string name, E\-Scope scope=s\-Global) const 
+\begin{DoxyCompactList}\small\item\em return a symbol with a given name \end{DoxyCompactList}\item 
+\hypertarget{classCSymtab_ac09d0c84d2ad18722be01cdfc4f25582}{vector$<$ \hyperlink{classCSymbol}{C\-Symbol} $\ast$ $>$ \hyperlink{classCSymtab_ac09d0c84d2ad18722be01cdfc4f25582}{Get\-Symbols} (void) const }\label{classCSymtab_ac09d0c84d2ad18722be01cdfc4f25582}
+
+\begin{DoxyCompactList}\small\item\em return a list of all symbols \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Snu\-P\-L symbol table. 
+
+hierarchical symbol table 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCSymtab_ab7250068e10c87e4c6448046ef619e0e}{\index{C\-Symtab@{C\-Symtab}!C\-Symtab@{C\-Symtab}}
+\index{C\-Symtab@{C\-Symtab}!CSymtab@{C\-Symtab}}
+\subsubsection[{C\-Symtab}]{\setlength{\rightskip}{0pt plus 5cm}C\-Symtab\-::\-C\-Symtab (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Symtab} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classCSymtab_ab7250068e10c87e4c6448046ef619e0e}
+
+
+constructor for subordinate symbol tables 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & superordinate symbol table (must not be N\-U\-L\-L) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCSymtab_a6c7f2b6dabbb63f8375ba5e482d3336b}{\index{C\-Symtab@{C\-Symtab}!Add\-Symbol@{Add\-Symbol}}
+\index{Add\-Symbol@{Add\-Symbol}!CSymtab@{C\-Symtab}}
+\subsubsection[{Add\-Symbol}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Symtab\-::\-Add\-Symbol (
+\begin{DoxyParamCaption}
+\item[{{\bf C\-Symbol} $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{classCSymtab_a6c7f2b6dabbb63f8375ba5e482d3336b}
+
+
+add a symbol to the symbol table 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if the symbol was inserted successfully \\
+\hline
+{\em false} & if such a symbol already exists in the local symbol table \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCSymtab_a548106c8ef86534dd3d9b5279ace8cab}{\index{C\-Symtab@{C\-Symtab}!Find\-Symbol@{Find\-Symbol}}
+\index{Find\-Symbol@{Find\-Symbol}!CSymtab@{C\-Symtab}}
+\subsubsection[{Find\-Symbol}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Symbol} $\ast$ C\-Symtab\-::\-Find\-Symbol (
+\begin{DoxyParamCaption}
+\item[{const string}]{name, }
+\item[{E\-Scope}]{scope = {\ttfamily sGlobal}}
+\end{DoxyParamCaption}
+) const}}\label{classCSymtab_a548106c8ef86534dd3d9b5279ace8cab}
+
+
+return a symbol with a given name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & symbol name (identifier) \\
+\hline
+{\em scope} & search scope (default\-: s\-Global) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em \hyperlink{classCSymbol}{C\-Symbol}} & matching symbol or N\-U\-L\-L if not found \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCSymtab_a3573d6f87f844d983020cf62945ec2d3}{\index{C\-Symtab@{C\-Symtab}!print@{print}}
+\index{print@{print}!CSymtab@{C\-Symtab}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}ostream \& C\-Symtab\-::print (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classCSymtab_a3573d6f87f844d983020cf62945ec2d3}
+
+
+print the symbol table to an output stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/src/symtab.\-h\item 
+src/concept/src/symtab.\-cpp\end{DoxyCompactItemize}

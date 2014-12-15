@@ -1,0 +1,213 @@
+\hypertarget{classCArrayType}{\section{C\-Array\-Type Class Reference}
+\label{classCArrayType}\index{C\-Array\-Type@{C\-Array\-Type}}
+}
+
+
+array type  
+
+
+
+
+{\ttfamily \#include $<$type.\-h$>$}
+
+Inheritance diagram for C\-Array\-Type\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCArrayType}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual ostream \& \hyperlink{classCArrayType_abb5c36950850fab59c1f8fe60b2720b8}{print} (ostream \&out, int indent=0) const 
+\begin{DoxyCompactList}\small\item\em print the type to an output stream \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf property querying}\par
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCArrayType_aaf52b2990fb194af4dfd0d0bb5206456}{virtual bool \hyperlink{classCArrayType_aaf52b2990fb194af4dfd0d0bb5206456}{Is\-Array} (void) const }\label{classCArrayType_aaf52b2990fb194af4dfd0d0bb5206456}
+
+\begin{DoxyCompactList}\small\item\em return {\itshape true} for array types, {\itshape false} otherwise \end{DoxyCompactList}\item 
+virtual int \hyperlink{classCArrayType_af21021c15b1796c621fe93135c5d2b5f}{Get\-Size} (void) const 
+\begin{DoxyCompactList}\small\item\em return the storage size for this type \end{DoxyCompactList}\item 
+virtual int \hyperlink{classCArrayType_a11a7cefacbb2dee4784039ed398a0b90}{Get\-Align} (void) const 
+\begin{DoxyCompactList}\small\item\em return the alignment requirements for this type \end{DoxyCompactList}\item 
+const \hyperlink{classCType}{C\-Type} $\ast$ \hyperlink{classCArrayType_a2818f0da73b135b7ffe311b17bdcd4f8}{Get\-Base\-Type} (void) const 
+\begin{DoxyCompactList}\small\item\em return the base type \end{DoxyCompactList}\item 
+int \hyperlink{classCArrayType_a66417b72b3ebdba20eaf993be4d343d1}{Get\-N\-Elem} (void) const 
+\begin{DoxyCompactList}\small\item\em return the element count \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf type comparisons}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classCArrayType_ac1efc1a71cba37cc52d7117623154c23}{Match} (const \hyperlink{classCType}{C\-Type} $\ast$t) const 
+\begin{DoxyCompactList}\small\item\em compare two types \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCArrayType_a7048cacbf0f0e40fc8c783627e14e863}{C\-Array\-Type} (int nelem, const \hyperlink{classCType}{C\-Type} $\ast$basetype)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classCArrayType_afbe628f2f200bdbd3835c1097d5d5131}{class {\bfseries C\-Type\-Manager}}\label{classCArrayType_afbe628f2f200bdbd3835c1097d5d5131}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+array type 
+
+type for array types 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCArrayType_a7048cacbf0f0e40fc8c783627e14e863}{\index{C\-Array\-Type@{C\-Array\-Type}!C\-Array\-Type@{C\-Array\-Type}}
+\index{C\-Array\-Type@{C\-Array\-Type}!CArrayType@{C\-Array\-Type}}
+\subsubsection[{C\-Array\-Type}]{\setlength{\rightskip}{0pt plus 5cm}C\-Array\-Type\-::\-C\-Array\-Type (
+\begin{DoxyParamCaption}
+\item[{int}]{nelem, }
+\item[{const {\bf C\-Type} $\ast$}]{basetype}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classCArrayType_a7048cacbf0f0e40fc8c783627e14e863}
+
+
+constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nelem} & element count \\
+\hline
+{\em basetype} & base type \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCArrayType_a11a7cefacbb2dee4784039ed398a0b90}{\index{C\-Array\-Type@{C\-Array\-Type}!Get\-Align@{Get\-Align}}
+\index{Get\-Align@{Get\-Align}!CArrayType@{C\-Array\-Type}}
+\subsubsection[{Get\-Align}]{\setlength{\rightskip}{0pt plus 5cm}int C\-Array\-Type\-::\-Get\-Align (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCArrayType_a11a7cefacbb2dee4784039ed398a0b90}
+
+
+return the alignment requirements for this type 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & aligmnent in bytes \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{classCType_ac90dd48c9401547e303d547bace4a1a4}{C\-Type}.
+
+\hypertarget{classCArrayType_a2818f0da73b135b7ffe311b17bdcd4f8}{\index{C\-Array\-Type@{C\-Array\-Type}!Get\-Base\-Type@{Get\-Base\-Type}}
+\index{Get\-Base\-Type@{Get\-Base\-Type}!CArrayType@{C\-Array\-Type}}
+\subsubsection[{Get\-Base\-Type}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\-Type}$\ast$ C\-Array\-Type\-::\-Get\-Base\-Type (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCArrayType_a2818f0da73b135b7ffe311b17bdcd4f8}
+
+
+return the base type 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em C\-Type$\ast$} & base type \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCArrayType_a66417b72b3ebdba20eaf993be4d343d1}{\index{C\-Array\-Type@{C\-Array\-Type}!Get\-N\-Elem@{Get\-N\-Elem}}
+\index{Get\-N\-Elem@{Get\-N\-Elem}!CArrayType@{C\-Array\-Type}}
+\subsubsection[{Get\-N\-Elem}]{\setlength{\rightskip}{0pt plus 5cm}int C\-Array\-Type\-::\-Get\-N\-Elem (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCArrayType_a66417b72b3ebdba20eaf993be4d343d1}
+
+
+return the element count 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & element count \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classCArrayType_af21021c15b1796c621fe93135c5d2b5f}{\index{C\-Array\-Type@{C\-Array\-Type}!Get\-Size@{Get\-Size}}
+\index{Get\-Size@{Get\-Size}!CArrayType@{C\-Array\-Type}}
+\subsubsection[{Get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int C\-Array\-Type\-::\-Get\-Size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCArrayType_af21021c15b1796c621fe93135c5d2b5f}
+
+
+return the storage size for this type 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em int} & storage size in bytes \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{classCType_a0332965ec6286e3da7120acb0246b8c5}{C\-Type}.
+
+\hypertarget{classCArrayType_ac1efc1a71cba37cc52d7117623154c23}{\index{C\-Array\-Type@{C\-Array\-Type}!Match@{Match}}
+\index{Match@{Match}!CArrayType@{C\-Array\-Type}}
+\subsubsection[{Match}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-Array\-Type\-::\-Match (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\-Type} $\ast$}]{t}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCArrayType_ac1efc1a71cba37cc52d7117623154c23}
+
+
+compare two types 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & type to compare this type to \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if the types match (are compatible) \\
+\hline
+{\em false} & if the types do not match (are not compatible) \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{classCType_a0af203630037a02b9bb98fd996e65492}{C\-Type}.
+
+\hypertarget{classCArrayType_abb5c36950850fab59c1f8fe60b2720b8}{\index{C\-Array\-Type@{C\-Array\-Type}!print@{print}}
+\index{print@{print}!CArrayType@{C\-Array\-Type}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}ostream \& C\-Array\-Type\-::print (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{int}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCArrayType_abb5c36950850fab59c1f8fe60b2720b8}
+
+
+print the type to an output stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em indent} & indentation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classCType_aed5f7f1a93d166a2d9ce17e5e9053fe5}{C\-Type}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/concept/src/type.\-h\item 
+src/concept/src/type.\-cpp\end{DoxyCompactItemize}
