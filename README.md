@@ -17,9 +17,12 @@ MachineLearning
 
 _src_
 > Machine Learning Algorithm Sources
+
 _lib_
 > Self-implemented Data Structure Libraries
+
 _include_
 > Self-implemented Data Structure Header Files
+
 _doc_
 > Doxygen Outputs
