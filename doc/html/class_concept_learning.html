@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Machine Learning: ConceptLearning Class Reference</title>
+<title>Native Mechanic Intelligent Machine Learning (NamiML): ConceptLearning Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Machine Learning
+   <div id="projectname">Native Mechanic Intelligent Machine Learning (NamiML)
+   &#160;<span id="projectnumber">v 1.1</span>
    </div>
   </td>
  </tr>
@@ -83,6 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_concept_learning-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ConceptLearning Class Reference</div>  </div>
@@ -99,10 +101,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adcdb0df6a5e877769e46c95f40a139c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c918ff637b1d93e123974eaddd17de0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_concept_learning.html#a2c918ff637b1d93e123974eaddd17de0">CoverCheck</a> (bool *u_input)</td></tr>
 <tr class="separator:a2c918ff637b1d93e123974eaddd17de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a8ac1de9ab4694d91cffabda42443a96e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s___bound.html">S_Bound</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_concept_learning.html#a8ac1de9ab4694d91cffabda42443a96e">s_bound</a></td></tr>
+<tr class="separator:a8ac1de9ab4694d91cffabda42443a96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a449a58ac04e18fd981b2e6bf984fd764"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g___bound.html">G_Bound</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_concept_learning.html#a449a58ac04e18fd981b2e6bf984fd764">g_bound</a></td></tr>
+<tr class="separator:a449a58ac04e18fd981b2e6bf984fd764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6bebaccc7f80436856e5ec539feb04c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_concept_learning.html#ae6bebaccc7f80436856e5ec539feb04c">AttrNum</a></td></tr>
+<tr class="separator:ae6bebaccc7f80436856e5ec539feb04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="concept_8h_source.html#l00074">74</a> of file <a class="el" href="concept_8h_source.html">concept.h</a>.</p>
+<p>Definition at line <a class="el" href="concept_8h_source.html#l00076">76</a> of file <a class="el" href="concept_8h_source.html">concept.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a2c918ff637b1d93e123974eaddd17de0"></a>
 <div class="memitem">
@@ -118,17 +129,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="concept_8cpp_source.html#l00338">338</a> of file <a class="el" href="concept_8cpp_source.html">concept.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                                                {</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a> s_ret = s_bound.<a class="code" href="class_s___bound.html#ad42d2df371d817894fd44faff0eadd2f">CoverCheck</a>(u_input);</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a> g_ret = g_bound.<a class="code" href="class_g___bound.html#aea45d16a15dfd2c30985d89f92803b22">CoverCheck</a>(u_input);</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    </div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordflow">return</span> (s_ret == g_ret) ? s_ret : <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a">r_dontknow</a>;</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;}</div>
-<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a></div><div class="ttdeci">Result</div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00032">concept.h:32</a></div></div>
-<div class="ttc" id="class_g___bound_html_aea45d16a15dfd2c30985d89f92803b22"><div class="ttname"><a href="class_g___bound.html#aea45d16a15dfd2c30985d89f92803b22">G_Bound::CoverCheck</a></div><div class="ttdeci">Result CoverCheck(bool *u_input)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00288">concept.cpp:288</a></div></div>
-<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a">r_dontknow</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00035">concept.h:35</a></div></div>
-<div class="ttc" id="class_s___bound_html_ad42d2df371d817894fd44faff0eadd2f"><div class="ttname"><a href="class_s___bound.html#ad42d2df371d817894fd44faff0eadd2f">S_Bound::CoverCheck</a></div><div class="ttdeci">Result CoverCheck(bool *u_input)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00146">concept.cpp:146</a></div></div>
+<p>Definition at line <a class="el" href="concept_8cpp_source.html#l00340">340</a> of file <a class="el" href="concept_8cpp_source.html">concept.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                                                {</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a> s_ret = <a class="code" href="class_concept_learning.html#a8ac1de9ab4694d91cffabda42443a96e">s_bound</a>.<a class="code" href="class_s___bound.html#ad42d2df371d817894fd44faff0eadd2f">CoverCheck</a>(u_input);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a> g_ret = <a class="code" href="class_concept_learning.html#a449a58ac04e18fd981b2e6bf984fd764">g_bound</a>.<a class="code" href="class_g___bound.html#aea45d16a15dfd2c30985d89f92803b22">CoverCheck</a>(u_input);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    </div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordflow">return</span> (s_ret == g_ret) ? s_ret : <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a">r_dontknow</a>;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;}</div>
+<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a></div><div class="ttdeci">Result</div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00034">concept.h:34</a></div></div>
+<div class="ttc" id="class_concept_learning_html_a449a58ac04e18fd981b2e6bf984fd764"><div class="ttname"><a href="class_concept_learning.html#a449a58ac04e18fd981b2e6bf984fd764">ConceptLearning::g_bound</a></div><div class="ttdeci">G_Bound g_bound</div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00079">concept.h:79</a></div></div>
+<div class="ttc" id="class_g___bound_html_aea45d16a15dfd2c30985d89f92803b22"><div class="ttname"><a href="class_g___bound.html#aea45d16a15dfd2c30985d89f92803b22">G_Bound::CoverCheck</a></div><div class="ttdeci">Result CoverCheck(bool *u_input)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00290">concept.cpp:290</a></div></div>
+<div class="ttc" id="class_concept_learning_html_a8ac1de9ab4694d91cffabda42443a96e"><div class="ttname"><a href="class_concept_learning.html#a8ac1de9ab4694d91cffabda42443a96e">ConceptLearning::s_bound</a></div><div class="ttdeci">S_Bound s_bound</div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00078">concept.h:78</a></div></div>
+<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a">r_dontknow</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00037">concept.h:37</a></div></div>
+<div class="ttc" id="class_s___bound_html_ad42d2df371d817894fd44faff0eadd2f"><div class="ttname"><a href="class_s___bound.html#ad42d2df371d817894fd44faff0eadd2f">S_Bound::CoverCheck</a></div><div class="ttdeci">Result CoverCheck(bool *u_input)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00148">concept.cpp:148</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -146,21 +159,24 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="concept_8cpp_source.html#l00302">302</a> of file <a class="el" href="concept_8cpp_source.html">concept.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                         {</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="preprocessor">#if DEBUG_MODE</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor"></span>    cout &lt;&lt; <span class="stringliteral">&quot; &lt;&lt;&lt; Concept Learning Framework (v1.0) &gt;&gt;&gt;&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;-------------------------- INITIALIZATION ----------------------------&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor"></span>    s_bound.<a class="code" href="class_s___bound.html#abeb4548d8a255438173bda64849b0a4d">Initialize</a>(size);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    g_bound.<a class="code" href="class_g___bound.html#a30da552d80a6b169c76cc61410a05b78">Initialize</a>(size);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">#if DEBUG_MODE</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor"></span>    cout &lt;&lt; <span class="stringliteral">&quot;----------------------------------------------------------------------&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor"></span>    AttrNum = size;</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
-<div class="ttc" id="class_s___bound_html_abeb4548d8a255438173bda64849b0a4d"><div class="ttname"><a href="class_s___bound.html#abeb4548d8a255438173bda64849b0a4d">S_Bound::Initialize</a></div><div class="ttdeci">void Initialize(int size)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00048">concept.cpp:48</a></div></div>
-<div class="ttc" id="class_g___bound_html_a30da552d80a6b169c76cc61410a05b78"><div class="ttname"><a href="class_g___bound.html#a30da552d80a6b169c76cc61410a05b78">G_Bound::Initialize</a></div><div class="ttdeci">void Initialize(int size)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00160">concept.cpp:160</a></div></div>
+<p>Definition at line <a class="el" href="concept_8cpp_source.html#l00304">304</a> of file <a class="el" href="concept_8cpp_source.html">concept.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                                         {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor">#if DEBUG_MODE</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor"></span>    cout &lt;&lt; <span class="stringliteral">&quot; &lt;&lt;&lt; Concept Learning Framework (v1.0) &gt;&gt;&gt;&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;-------------------------- INITIALIZATION ----------------------------&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor"></span>    <a class="code" href="class_concept_learning.html#a8ac1de9ab4694d91cffabda42443a96e">s_bound</a>.<a class="code" href="class_s___bound.html#abeb4548d8a255438173bda64849b0a4d">Initialize</a>(size);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <a class="code" href="class_concept_learning.html#a449a58ac04e18fd981b2e6bf984fd764">g_bound</a>.<a class="code" href="class_g___bound.html#a30da552d80a6b169c76cc61410a05b78">Initialize</a>(size);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">#if DEBUG_MODE</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor"></span>    cout &lt;&lt; <span class="stringliteral">&quot;----------------------------------------------------------------------&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="preprocessor"></span>    <a class="code" href="class_concept_learning.html#ae6bebaccc7f80436856e5ec539feb04c">AttrNum</a> = size;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;}</div>
+<div class="ttc" id="class_concept_learning_html_a449a58ac04e18fd981b2e6bf984fd764"><div class="ttname"><a href="class_concept_learning.html#a449a58ac04e18fd981b2e6bf984fd764">ConceptLearning::g_bound</a></div><div class="ttdeci">G_Bound g_bound</div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00079">concept.h:79</a></div></div>
+<div class="ttc" id="class_s___bound_html_abeb4548d8a255438173bda64849b0a4d"><div class="ttname"><a href="class_s___bound.html#abeb4548d8a255438173bda64849b0a4d">S_Bound::Initialize</a></div><div class="ttdeci">void Initialize(int size)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00050">concept.cpp:50</a></div></div>
+<div class="ttc" id="class_g___bound_html_a30da552d80a6b169c76cc61410a05b78"><div class="ttname"><a href="class_g___bound.html#a30da552d80a6b169c76cc61410a05b78">G_Bound::Initialize</a></div><div class="ttdeci">void Initialize(int size)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00162">concept.cpp:162</a></div></div>
+<div class="ttc" id="class_concept_learning_html_ae6bebaccc7f80436856e5ec539feb04c"><div class="ttname"><a href="class_concept_learning.html#ae6bebaccc7f80436856e5ec539feb04c">ConceptLearning::AttrNum</a></div><div class="ttdeci">int AttrNum</div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00080">concept.h:80</a></div></div>
+<div class="ttc" id="class_concept_learning_html_a8ac1de9ab4694d91cffabda42443a96e"><div class="ttname"><a href="class_concept_learning.html#a8ac1de9ab4694d91cffabda42443a96e">ConceptLearning::s_bound</a></div><div class="ttdeci">S_Bound s_bound</div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00078">concept.h:78</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -178,35 +194,105 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="concept_8cpp_source.html#l00315">315</a> of file <a class="el" href="concept_8cpp_source.html">concept.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                                                    {</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="preprocessor">#if DEBUG_MODE</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor"></span>    cout &lt;&lt; <span class="stringliteral">&quot;------------------------------ UPDATE --------------------------------&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot; -: Input &lt; &quot;</span>;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; AttrNum; i++) {</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordtype">int</span> tmp = (input[i]) ? 1 : 0;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    cout &lt;&lt; <a class="code" href="concept_8cpp.html#a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f">SYMBOL</a>[tmp] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    }</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordtype">int</span> ret = (input[AttrNum]) ? 1 : 0;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;&gt; = (&quot;</span> &lt;&lt; <a class="code" href="concept_8cpp.html#a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f">SYMBOL</a>[ret] &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">if</span>(input[AttrNum]) {    <span class="comment">// means positive example</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    g_bound.<a class="code" href="class_g___bound.html#a9344fe22bb13d39a425c5a5b690aace4">CoverCheckUpdate</a>(input);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    s_bound.<a class="code" href="class_s___bound.html#a1391ba6c3f3fab3fd5fa57ecf8e1e66a">UpdateBound</a>(input);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    } <span class="keywordflow">else</span> {    <span class="comment">// means negative example</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    s_bound.<a class="code" href="class_s___bound.html#aee5a88ab73dd09ac42953b6f3545dfe2">CoverCheckUpdate</a>(input);</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    g_bound.<a class="code" href="class_g___bound.html#a8b473f262762ac5b74fdb766ded033aa">UpdateBound</a>(input, &amp;s_bound);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    }</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="preprocessor">#if DEBUG_MODE</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="preprocessor"></span>    cout &lt;&lt; <span class="stringliteral">&quot;----------------------------------------------------------------------&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="ttc" id="class_s___bound_html_a1391ba6c3f3fab3fd5fa57ecf8e1e66a"><div class="ttname"><a href="class_s___bound.html#a1391ba6c3f3fab3fd5fa57ecf8e1e66a">S_Bound::UpdateBound</a></div><div class="ttdeci">void UpdateBound(bool *p_input)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00096">concept.cpp:96</a></div></div>
-<div class="ttc" id="class_g___bound_html_a9344fe22bb13d39a425c5a5b690aace4"><div class="ttname"><a href="class_g___bound.html#a9344fe22bb13d39a425c5a5b690aace4">G_Bound::CoverCheckUpdate</a></div><div class="ttdeci">void CoverCheckUpdate(bool *p_input)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00187">concept.cpp:187</a></div></div>
-<div class="ttc" id="class_g___bound_html_a8b473f262762ac5b74fdb766ded033aa"><div class="ttname"><a href="class_g___bound.html#a8b473f262762ac5b74fdb766ded033aa">G_Bound::UpdateBound</a></div><div class="ttdeci">void UpdateBound(bool *n_input, void *ptr_S_Bound)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00208">concept.cpp:208</a></div></div>
-<div class="ttc" id="concept_8cpp_html_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f"><div class="ttname"><a href="concept_8cpp.html#a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f">SYMBOL</a></div><div class="ttdeci">char SYMBOL[]</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00007">concept.cpp:7</a></div></div>
-<div class="ttc" id="class_s___bound_html_aee5a88ab73dd09ac42953b6f3545dfe2"><div class="ttname"><a href="class_s___bound.html#aee5a88ab73dd09ac42953b6f3545dfe2">S_Bound::CoverCheckUpdate</a></div><div class="ttdeci">void CoverCheckUpdate(bool *n_input)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00075">concept.cpp:75</a></div></div>
+<p>Definition at line <a class="el" href="concept_8cpp_source.html#l00317">317</a> of file <a class="el" href="concept_8cpp_source.html">concept.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                                                    {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="preprocessor">#if DEBUG_MODE</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="preprocessor"></span>    cout &lt;&lt; <span class="stringliteral">&quot;------------------------------ UPDATE --------------------------------&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot; -: Input &lt; &quot;</span>;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_concept_learning.html#ae6bebaccc7f80436856e5ec539feb04c">AttrNum</a>; i++) {</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keywordtype">int</span> tmp = (input[i]) ? 1 : 0;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        cout &lt;&lt; <a class="code" href="concept_8cpp.html#a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f">SYMBOL</a>[tmp] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    }</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordtype">int</span> ret = (input[<a class="code" href="class_concept_learning.html#ae6bebaccc7f80436856e5ec539feb04c">AttrNum</a>]) ? 1 : 0;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;&gt; = (&quot;</span> &lt;&lt; <a class="code" href="concept_8cpp.html#a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f">SYMBOL</a>[ret] &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">if</span>(input[AttrNum]) {    <span class="comment">// means positive example</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <a class="code" href="class_concept_learning.html#a449a58ac04e18fd981b2e6bf984fd764">g_bound</a>.<a class="code" href="class_g___bound.html#a9344fe22bb13d39a425c5a5b690aace4">CoverCheckUpdate</a>(input);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <a class="code" href="class_concept_learning.html#a8ac1de9ab4694d91cffabda42443a96e">s_bound</a>.<a class="code" href="class_s___bound.html#a1391ba6c3f3fab3fd5fa57ecf8e1e66a">UpdateBound</a>(input);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    } <span class="keywordflow">else</span> {    <span class="comment">// means negative example</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <a class="code" href="class_concept_learning.html#a8ac1de9ab4694d91cffabda42443a96e">s_bound</a>.<a class="code" href="class_s___bound.html#aee5a88ab73dd09ac42953b6f3545dfe2">CoverCheckUpdate</a>(input);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <a class="code" href="class_concept_learning.html#a449a58ac04e18fd981b2e6bf984fd764">g_bound</a>.<a class="code" href="class_g___bound.html#a8b473f262762ac5b74fdb766ded033aa">UpdateBound</a>(input, &amp;<a class="code" href="class_concept_learning.html#a8ac1de9ab4694d91cffabda42443a96e">s_bound</a>);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    }</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">#if DEBUG_MODE</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor"></span>    cout &lt;&lt; <span class="stringliteral">&quot;----------------------------------------------------------------------&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="ttc" id="class_s___bound_html_a1391ba6c3f3fab3fd5fa57ecf8e1e66a"><div class="ttname"><a href="class_s___bound.html#a1391ba6c3f3fab3fd5fa57ecf8e1e66a">S_Bound::UpdateBound</a></div><div class="ttdeci">void UpdateBound(bool *p_input)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00098">concept.cpp:98</a></div></div>
+<div class="ttc" id="class_g___bound_html_a9344fe22bb13d39a425c5a5b690aace4"><div class="ttname"><a href="class_g___bound.html#a9344fe22bb13d39a425c5a5b690aace4">G_Bound::CoverCheckUpdate</a></div><div class="ttdeci">void CoverCheckUpdate(bool *p_input)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00189">concept.cpp:189</a></div></div>
+<div class="ttc" id="class_concept_learning_html_a449a58ac04e18fd981b2e6bf984fd764"><div class="ttname"><a href="class_concept_learning.html#a449a58ac04e18fd981b2e6bf984fd764">ConceptLearning::g_bound</a></div><div class="ttdeci">G_Bound g_bound</div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00079">concept.h:79</a></div></div>
+<div class="ttc" id="class_g___bound_html_a8b473f262762ac5b74fdb766ded033aa"><div class="ttname"><a href="class_g___bound.html#a8b473f262762ac5b74fdb766ded033aa">G_Bound::UpdateBound</a></div><div class="ttdeci">void UpdateBound(bool *n_input, void *ptr_S_Bound)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00210">concept.cpp:210</a></div></div>
+<div class="ttc" id="concept_8cpp_html_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f"><div class="ttname"><a href="concept_8cpp.html#a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f">SYMBOL</a></div><div class="ttdeci">char SYMBOL[]</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00009">concept.cpp:9</a></div></div>
+<div class="ttc" id="class_concept_learning_html_ae6bebaccc7f80436856e5ec539feb04c"><div class="ttname"><a href="class_concept_learning.html#ae6bebaccc7f80436856e5ec539feb04c">ConceptLearning::AttrNum</a></div><div class="ttdeci">int AttrNum</div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00080">concept.h:80</a></div></div>
+<div class="ttc" id="class_concept_learning_html_a8ac1de9ab4694d91cffabda42443a96e"><div class="ttname"><a href="class_concept_learning.html#a8ac1de9ab4694d91cffabda42443a96e">ConceptLearning::s_bound</a></div><div class="ttdeci">S_Bound s_bound</div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00078">concept.h:78</a></div></div>
+<div class="ttc" id="class_s___bound_html_aee5a88ab73dd09ac42953b6f3545dfe2"><div class="ttname"><a href="class_s___bound.html#aee5a88ab73dd09ac42953b6f3545dfe2">S_Bound::CoverCheckUpdate</a></div><div class="ttdeci">void CoverCheckUpdate(bool *n_input)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00077">concept.cpp:77</a></div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ae6bebaccc7f80436856e5ec539feb04c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ConceptLearning::AttrNum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="concept_8h_source.html#l00080">80</a> of file <a class="el" href="concept_8h_source.html">concept.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a449a58ac04e18fd981b2e6bf984fd764"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g___bound.html">G_Bound</a> ConceptLearning::g_bound</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="concept_8h_source.html#l00079">79</a> of file <a class="el" href="concept_8h_source.html">concept.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ac1de9ab4694d91cffabda42443a96e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s___bound.html">S_Bound</a> ConceptLearning::s_bound</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="concept_8h_source.html#l00078">78</a> of file <a class="el" href="concept_8h_source.html">concept.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -216,7 +302,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 15 2014 22:55:11 for Machine Learning by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 16 2014 21:44:25 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

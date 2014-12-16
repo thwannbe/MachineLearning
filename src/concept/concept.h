@@ -1,11 +1,16 @@
 ////////////////////////////////////////////////////////////////////////////////
 ///
+/// @file concept.h
 /// @brief Concept Learning Framework
+/// @details Based on Candidate Elimination Algorithm, it predict target @n
+///          concept. It assumes that input is a conjunctive set of attributes @n
+///          including target attribute. All attribute has binary output ( T/F )
 /// @author Suwon Oh <suwon@csap.snu.ac.kr>
 /// @section changelog Change Log
-/// 2014/09/22 Suwon Oh created
-/// 2014/09/24 Suwon Oh implemented prototype
-/// 2014/12/14 Suwon Oh adapted to Doxygen
+/// 2014/09/22 Suwon Oh created @n
+/// 2014/09/24 Suwon Oh implemented prototype @n
+/// 2014/12/14 Suwon Oh adapted to Doxygen @n
+/// 2014/12/16 Suwon Oh adapted self-implemented list library @n
 ///
 /// @section reference_section Reference
 /// MACHINE LEARNING - TOM M. MITCHELL
@@ -13,14 +18,11 @@
 /// @section purpose_section Purpose
 /// Application trial for personal studying
 ///
-////////////////////////////////////////////////////////////////////////////////
 
 #ifndef __CONCEPTLEARNING__
 #define __CONCEPTLEARNING__
 
-#include <list>
-
-using namespace std;
+#include "list.h"
 
 enum AttrVal {
     vFalse=0,		// means false of this attribute

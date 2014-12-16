@@ -1,4 +1,4 @@
-MachineLearning
+Native Mechanic Intelligent Machine Learning (NamiML)
 ===============
 
 ### AUTHOR ###

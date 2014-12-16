@@ -18,6 +18,13 @@ void \hyperlink{class_s___bound_ae266bf5fa4d70959ce3b33ebe2d13dfa}{Generalize} (
 \item 
 \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066}{Result} \hyperlink{class_s___bound_ad42d2df371d817894fd44faff0eadd2f}{Cover\-Check} (bool $\ast$u\-\_\-input)
 \end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list$<$ \hyperlink{class_hypothesis}{Hypothesis} $>$ \hyperlink{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}{sb\-\_\-\-Array}
+\item 
+int \hyperlink{class_s___bound_a04cdddc7f5a38bb02bc8a706c275298f}{Attr\-Num}
+\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,7 +35,7 @@ class \hyperlink{class_s___bound_ada6e422609483cdffa32ad88125d9f0d}{G\-\_\-\-Bou
 \subsection{Detailed Description}
 
 
-Definition at line 49 of file concept.\-h.
+Definition at line 51 of file concept.\-h.
 
 
 
@@ -42,23 +49,23 @@ Definition at line 49 of file concept.\-h.
 )}}\label{class_s___bound_ad42d2df371d817894fd44faff0eadd2f}
 
 
-Definition at line 146 of file concept.\-cpp.
+Definition at line 148 of file concept.\-cpp.
 
 
 \begin{DoxyCode}
-146                                         \{
-147     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066}{Result} ret = \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\_dontknow};
-148     \textcolor{keywordtype}{bool} first\_val;
-149 
-150     \textcolor{keywordflow}{for}(list<Hypothesis>::iterator i = sb\_Array.begin(); i != sb\_Array.end(); i++) \{
-151     \textcolor{keywordflow}{if}(i == sb\_Array.begin())
-152         first\_val = i->isCover(u\_input);
-153     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(i->isCover(u\_input) != first\_val)
-154         \textcolor{keywordflow}{return} \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\_dontknow};
-155     \}
-156 
-157     \textcolor{keywordflow}{return} (first\_val) ? \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518}{r\_true} : \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069}{r\_false};
-158 \}
+148                                         \{
+149     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066}{Result} ret = \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\_dontknow};
+150     \textcolor{keywordtype}{bool} first\_val;
+151 
+152     \textcolor{keywordflow}{for}(list<Hypothesis>::iterator i = \hyperlink{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}{sb\_Array}.begin(); i != \hyperlink{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}{sb\_Array}.end(); i++) \{
+153     \textcolor{keywordflow}{if}(i == \hyperlink{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}{sb\_Array}.begin())
+154         first\_val = i->isCover(u\_input);
+155     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(i->isCover(u\_input) != first\_val)
+156         \textcolor{keywordflow}{return} \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\_dontknow};
+157     \}
+158 
+159     \textcolor{keywordflow}{return} (first\_val) ? \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518}{r\_true} : \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069}{r\_false};
+160 \}
 \end{DoxyCode}
 \hypertarget{class_s___bound_aee5a88ab73dd09ac42953b6f3545dfe2}{\index{S\-\_\-\-Bound@{S\-\_\-\-Bound}!Cover\-Check\-Update@{Cover\-Check\-Update}}
 \index{Cover\-Check\-Update@{Cover\-Check\-Update}!S_Bound@{S\-\_\-\-Bound}}
@@ -69,30 +76,30 @@ Definition at line 146 of file concept.\-cpp.
 )}}\label{class_s___bound_aee5a88ab73dd09ac42953b6f3545dfe2}
 
 
-Definition at line 75 of file concept.\-cpp.
+Definition at line 77 of file concept.\-cpp.
 
 
 \begin{DoxyCode}
-75                                             \{
-76     \textcolor{comment}{// at first, check whether this input is negative}
-77     \textcolor{keywordflow}{if}(n\_input[AttrNum] == \textcolor{keyword}{true}) \{  \textcolor{comment}{// this is positive input}
-78     exit(-1);               \textcolor{comment}{// trap}
-79     \}
-80 
-81     \textcolor{keywordflow}{for}(list<Hypothesis>::iterator i = sb\_Array.begin(); i != sb\_Array.end(); i++) \{
-82     \textcolor{keywordflow}{if}(i->isCover(n\_input)) \{
-83 \textcolor{preprocessor}{#if DEBUG\_MODE}
-84 \textcolor{preprocessor}{}        cout << \textcolor{stringliteral}{" -: S\_Bound Entry < "};
-85         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < AttrNum; j++) \{
-86         cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[i->GethArray()[j]] << \textcolor{stringliteral}{" "};
-87         \}
-88         cout << \textcolor{stringliteral}{"> is deleted."} << endl;
-89 \textcolor{preprocessor}{#endif}
-90 \textcolor{preprocessor}{}        sb\_Array.erase(i);      \textcolor{comment}{// should remove this hypothesis from S\_Bound}
-91         i--;
-92     \}
-93     \}
-94 \}
+77                                             \{
+78     \textcolor{comment}{// at first, check whether this input is negative}
+79     \textcolor{keywordflow}{if}(n\_input[\hyperlink{class_s___bound_a04cdddc7f5a38bb02bc8a706c275298f}{AttrNum}] == \textcolor{keyword}{true}) \{  \textcolor{comment}{// this is positive input}
+80     exit(-1);               \textcolor{comment}{// trap}
+81     \}
+82 
+83     \textcolor{keywordflow}{for}(list<Hypothesis>::iterator i = \hyperlink{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}{sb\_Array}.begin(); i != \hyperlink{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}{sb\_Array}.end(); i++) \{
+84     \textcolor{keywordflow}{if}(i->isCover(n\_input)) \{
+85 \textcolor{preprocessor}{#if DEBUG\_MODE}
+86 \textcolor{preprocessor}{}        cout << \textcolor{stringliteral}{" -: S\_Bound Entry < "};
+87         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \hyperlink{class_s___bound_a04cdddc7f5a38bb02bc8a706c275298f}{AttrNum}; j++) \{
+88         cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[i->GethArray()[j]] << \textcolor{stringliteral}{" "};
+89         \}
+90         cout << \textcolor{stringliteral}{"> is deleted."} << endl;
+91 \textcolor{preprocessor}{#endif}
+92 \textcolor{preprocessor}{}        \hyperlink{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}{sb\_Array}.erase(i);      \textcolor{comment}{// should remove this hypothesis from S\_Bound}
+93         i--;
+94     \}
+95     \}
+96 \}
 \end{DoxyCode}
 \hypertarget{class_s___bound_ae266bf5fa4d70959ce3b33ebe2d13dfa}{\index{S\-\_\-\-Bound@{S\-\_\-\-Bound}!Generalize@{Generalize}}
 \index{Generalize@{Generalize}!S_Bound@{S\-\_\-\-Bound}}
@@ -104,32 +111,32 @@ Definition at line 75 of file concept.\-cpp.
 )}}\label{class_s___bound_ae266bf5fa4d70959ce3b33ebe2d13dfa}
 
 
-Definition at line 123 of file concept.\-cpp.
+Definition at line 125 of file concept.\-cpp.
 
 
 \begin{DoxyCode}
-123                                                        \{
-124 \textcolor{preprocessor}{#if DEBUG\_MODE}
-125 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{" -: < "};
-126 \textcolor{preprocessor}{#endif}
-127 \textcolor{preprocessor}{}    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < AttrNum; i++) \{
-128     \textcolor{keywordflow}{if}(hArray[i] == \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}{vAllDeny}) \{
-129         hArray[i] = (p\_input[i]) ? \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102}{vTrue} : \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86}{vFalse};
-130     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(hArray[i] != \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{vAllAccept}) \{
-131         \textcolor{keywordflow}{if}((hArray[i] == \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102}{vTrue} && !p\_input[i]) || (hArray[i] == \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86}{vFalse} && p\_input[i]))
-132         hArray[i] = \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{vAllAccept};
-133     \}
-134 \textcolor{preprocessor}{#if DEBUG\_MODE}
-135 \textcolor{preprocessor}{}    cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[hArray[i]] << \textcolor{stringliteral}{" "};
-136 \textcolor{preprocessor}{#endif}
-137 \textcolor{preprocessor}{}    \}
-138 \textcolor{preprocessor}{#if DEBUG\_MODE}
-139 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{"> "} << endl;
-140 \textcolor{preprocessor}{#endif}
-141 \textcolor{preprocessor}{}    
-142     \hyperlink{class_hypothesis}{Hypothesis}* h = \textcolor{keyword}{new} \hyperlink{class_hypothesis}{Hypothesis}(AttrNum, hArray);
-143     sb\_Array.push\_back(*h);
-144 \}
+125                                                        \{
+126 \textcolor{preprocessor}{#if DEBUG\_MODE}
+127 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{" -: < "};
+128 \textcolor{preprocessor}{#endif}
+129 \textcolor{preprocessor}{}    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_s___bound_a04cdddc7f5a38bb02bc8a706c275298f}{AttrNum}; i++) \{
+130     \textcolor{keywordflow}{if}(hArray[i] == \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}{vAllDeny}) \{
+131         hArray[i] = (p\_input[i]) ? \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102}{vTrue} : \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86}{vFalse};
+132     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(hArray[i] != \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{vAllAccept}) \{
+133         \textcolor{keywordflow}{if}((hArray[i] == \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102}{vTrue} && !p\_input[i]) || (hArray[i] == \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86}{vFalse} && p\_input[i]))
+134         hArray[i] = \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{vAllAccept};
+135     \}
+136 \textcolor{preprocessor}{#if DEBUG\_MODE}
+137 \textcolor{preprocessor}{}    cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[hArray[i]] << \textcolor{stringliteral}{" "};
+138 \textcolor{preprocessor}{#endif}
+139 \textcolor{preprocessor}{}    \}
+140 \textcolor{preprocessor}{#if DEBUG\_MODE}
+141 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{"> "} << endl;
+142 \textcolor{preprocessor}{#endif}
+143 \textcolor{preprocessor}{}    
+144     \hyperlink{class_hypothesis}{Hypothesis}* h = \textcolor{keyword}{new} \hyperlink{class_hypothesis}{Hypothesis}(AttrNum, hArray);
+145     \hyperlink{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}{sb\_Array}.push\_back(*h);
+146 \}
 \end{DoxyCode}
 \hypertarget{class_s___bound_abeb4548d8a255438173bda64849b0a4d}{\index{S\-\_\-\-Bound@{S\-\_\-\-Bound}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!S_Bound@{S\-\_\-\-Bound}}
@@ -140,36 +147,36 @@ Definition at line 123 of file concept.\-cpp.
 )}}\label{class_s___bound_abeb4548d8a255438173bda64849b0a4d}
 
 
-Definition at line 48 of file concept.\-cpp.
+Definition at line 50 of file concept.\-cpp.
 
 
 \begin{DoxyCode}
-48                                  \{
-49     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}* hArray = \textcolor{keyword}{new} \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}[size];
-50    
-51 \textcolor{preprocessor}{#if DEBUG\_MODE}
-52 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{" -: Most Specific Bound is initialized with ... "} << endl;
-53 
-54     cout << \textcolor{stringliteral}{" -: < "};
-55 \textcolor{preprocessor}{#endif}
-56 \textcolor{preprocessor}{}
-57     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < size; i++) \{
-58     hArray[i] = \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}{vAllDeny};   \textcolor{comment}{// most specific hypothesis}
-59 \textcolor{preprocessor}{#if DEBUG\_MODE}
-60 \textcolor{preprocessor}{}    cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[hArray[i]] << \textcolor{stringliteral}{" "};
-61 \textcolor{preprocessor}{#endif}
-62 \textcolor{preprocessor}{}    \}
-63 
-64 \textcolor{preprocessor}{#if DEBUG\_MODE}
-65 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{"> "} << endl;
-66 \textcolor{preprocessor}{#endif}
-67 \textcolor{preprocessor}{}
-68     \hyperlink{class_hypothesis}{Hypothesis}* hypo = \textcolor{keyword}{new} \hyperlink{class_hypothesis}{Hypothesis}(size, hArray);
-69     
-70     sb\_Array.push\_back(*hypo);
-71 
-72     AttrNum = size;
-73 \}
+50                                  \{
+51     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}* hArray = \textcolor{keyword}{new} \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}[size];
+52    
+53 \textcolor{preprocessor}{#if DEBUG\_MODE}
+54 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{" -: Most Specific Bound is initialized with ... "} << endl;
+55 
+56     cout << \textcolor{stringliteral}{" -: < "};
+57 \textcolor{preprocessor}{#endif}
+58 \textcolor{preprocessor}{}
+59     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < size; i++) \{
+60     hArray[i] = \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}{vAllDeny};   \textcolor{comment}{// most specific hypothesis}
+61 \textcolor{preprocessor}{#if DEBUG\_MODE}
+62 \textcolor{preprocessor}{}    cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[hArray[i]] << \textcolor{stringliteral}{" "};
+63 \textcolor{preprocessor}{#endif}
+64 \textcolor{preprocessor}{}    \}
+65 
+66 \textcolor{preprocessor}{#if DEBUG\_MODE}
+67 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{"> "} << endl;
+68 \textcolor{preprocessor}{#endif}
+69 \textcolor{preprocessor}{}
+70     \hyperlink{class_hypothesis}{Hypothesis}* hypo = \textcolor{keyword}{new} \hyperlink{class_hypothesis}{Hypothesis}(size, hArray);
+71     
+72     \hyperlink{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}{sb\_Array}.push\_back(*hypo);
+73 
+74     \hyperlink{class_s___bound_a04cdddc7f5a38bb02bc8a706c275298f}{AttrNum} = size;
+75 \}
 \end{DoxyCode}
 \hypertarget{class_s___bound_a1391ba6c3f3fab3fd5fa57ecf8e1e66a}{\index{S\-\_\-\-Bound@{S\-\_\-\-Bound}!Update\-Bound@{Update\-Bound}}
 \index{Update\-Bound@{Update\-Bound}!S_Bound@{S\-\_\-\-Bound}}
@@ -180,36 +187,36 @@ Definition at line 48 of file concept.\-cpp.
 )}}\label{class_s___bound_a1391ba6c3f3fab3fd5fa57ecf8e1e66a}
 
 
-Definition at line 96 of file concept.\-cpp.
+Definition at line 98 of file concept.\-cpp.
 
 
 \begin{DoxyCode}
-96                                        \{
-97     \textcolor{comment}{// at first, check whether this input is positive}
-98     \textcolor{keywordflow}{if}(p\_input[AttrNum] == \textcolor{keyword}{false}) \{ \textcolor{comment}{// this is negative input}
-99     exit(-1);           \textcolor{comment}{// trap}
-100     \}
-101     
-102     \textcolor{keywordflow}{for}(list<Hypothesis>::iterator i = sb\_Array.begin(); i != sb\_Array.end(); i++) \{
-103     \textcolor{keywordflow}{if}(!i->isCover(p\_input)) \{  \textcolor{comment}{// for not consistent hypothesis}
-104 \textcolor{preprocessor}{#if DEBUG\_MODE}
-105 \textcolor{preprocessor}{}        cout << \textcolor{stringliteral}{" -: S\_Bound Entry < "};
-106 \textcolor{preprocessor}{#endif}
-107 \textcolor{preprocessor}{}        \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}* hArray = \textcolor{keyword}{new} \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}[AttrNum];
-108         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < AttrNum; j++) \{
-109         hArray[j] = i->GethArray()[j];
-110 \textcolor{preprocessor}{#if DEBUG\_MODE}
-111 \textcolor{preprocessor}{}        cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[hArray[j]] << \textcolor{stringliteral}{" "};
-112 \textcolor{preprocessor}{#endif      }
-113 \textcolor{preprocessor}{}        \}
-114 \textcolor{preprocessor}{#if DEBUG\_MODE}
-115 \textcolor{preprocessor}{}        cout << \textcolor{stringliteral}{"> is updated with ..."} << endl;
-116 \textcolor{preprocessor}{#endif}
-117 \textcolor{preprocessor}{}        sb\_Array.erase(i);
-118         \hyperlink{class_s___bound_ae266bf5fa4d70959ce3b33ebe2d13dfa}{Generalize}(hArray, p\_input);
-119     \}
-120     \}
-121 \}
+98                                        \{
+99     \textcolor{comment}{// at first, check whether this input is positive}
+100     \textcolor{keywordflow}{if}(p\_input[\hyperlink{class_s___bound_a04cdddc7f5a38bb02bc8a706c275298f}{AttrNum}] == \textcolor{keyword}{false}) \{ \textcolor{comment}{// this is negative input}
+101     exit(-1);           \textcolor{comment}{// trap}
+102     \}
+103     
+104     \textcolor{keywordflow}{for}(list<Hypothesis>::iterator i = \hyperlink{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}{sb\_Array}.begin(); i != \hyperlink{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}{sb\_Array}.end(); i++) \{
+105     \textcolor{keywordflow}{if}(!i->isCover(p\_input)) \{  \textcolor{comment}{// for not consistent hypothesis}
+106 \textcolor{preprocessor}{#if DEBUG\_MODE}
+107 \textcolor{preprocessor}{}        cout << \textcolor{stringliteral}{" -: S\_Bound Entry < "};
+108 \textcolor{preprocessor}{#endif}
+109 \textcolor{preprocessor}{}        \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}* hArray = \textcolor{keyword}{new} \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}[\hyperlink{class_s___bound_a04cdddc7f5a38bb02bc8a706c275298f}{AttrNum}];
+110         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \hyperlink{class_s___bound_a04cdddc7f5a38bb02bc8a706c275298f}{AttrNum}; j++) \{
+111         hArray[j] = i->GethArray()[j];
+112 \textcolor{preprocessor}{#if DEBUG\_MODE}
+113 \textcolor{preprocessor}{}        cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[hArray[j]] << \textcolor{stringliteral}{" "};
+114 \textcolor{preprocessor}{#endif      }
+115 \textcolor{preprocessor}{}        \}
+116 \textcolor{preprocessor}{#if DEBUG\_MODE}
+117 \textcolor{preprocessor}{}        cout << \textcolor{stringliteral}{"> is updated with ..."} << endl;
+118 \textcolor{preprocessor}{#endif}
+119 \textcolor{preprocessor}{}        \hyperlink{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}{sb\_Array}.erase(i);
+120         \hyperlink{class_s___bound_ae266bf5fa4d70959ce3b33ebe2d13dfa}{Generalize}(hArray, p\_input);
+121     \}
+122     \}
+123 \}
 \end{DoxyCode}
 
 
@@ -217,6 +224,23 @@ Definition at line 96 of file concept.\-cpp.
 \hypertarget{class_s___bound_ada6e422609483cdffa32ad88125d9f0d}{\index{S\-\_\-\-Bound@{S\-\_\-\-Bound}!G\-\_\-\-Bound@{G\-\_\-\-Bound}}
 \index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!S_Bound@{S\-\_\-\-Bound}}
 \subsubsection[{G\-\_\-\-Bound}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf G\-\_\-\-Bound}\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_s___bound_ada6e422609483cdffa32ad88125d9f0d}
+
+
+Definition at line 55 of file concept.\-h.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_s___bound_a04cdddc7f5a38bb02bc8a706c275298f}{\index{S\-\_\-\-Bound@{S\-\_\-\-Bound}!Attr\-Num@{Attr\-Num}}
+\index{Attr\-Num@{Attr\-Num}!S_Bound@{S\-\_\-\-Bound}}
+\subsubsection[{Attr\-Num}]{\setlength{\rightskip}{0pt plus 5cm}int S\-\_\-\-Bound\-::\-Attr\-Num\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s___bound_a04cdddc7f5a38bb02bc8a706c275298f}
+
+
+Definition at line 54 of file concept.\-h.
+
+\hypertarget{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}{\index{S\-\_\-\-Bound@{S\-\_\-\-Bound}!sb\-\_\-\-Array@{sb\-\_\-\-Array}}
+\index{sb\-\_\-\-Array@{sb\-\_\-\-Array}!S_Bound@{S\-\_\-\-Bound}}
+\subsubsection[{sb\-\_\-\-Array}]{\setlength{\rightskip}{0pt plus 5cm}list$<${\bf Hypothesis}$>$ S\-\_\-\-Bound\-::sb\-\_\-\-Array\hspace{0.3cm}{\ttfamily [private]}}}\label{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}
 
 
 Definition at line 53 of file concept.\-h.

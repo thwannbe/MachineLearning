@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Machine Learning: src/concept/concept.h File Reference</title>
+<title>Native Mechanic Intelligent Machine Learning (NamiML): src/concept/concept.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Machine Learning
+   <div id="projectname">Native Mechanic Intelligent Machine Learning (NamiML)
+   &#160;<span id="projectnumber">v 1.1</span>
    </div>
   </td>
  </tr>
@@ -91,7 +92,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">concept.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;list&gt;</code><br/>
+
+<p>Concept Learning Framework.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="list_8h_source.html">list.h</a>&quot;</code><br/>
 </div>
 <p><a href="concept_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -120,7 +124,28 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="separator:a28287671eaf7406afd604bd055ba4066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Concept Learning Framework. </p>
+<p>Based on Candidate Elimination Algorithm, it predict target <br/>
+ concept. It assumes that input is a conjunctive set of attributes <br/>
+ including target attribute. All attribute has binary output ( T/F ) </p>
+<dl class="section author"><dt>Author</dt><dd>Suwon Oh <a href="#" onclick="location.href='mai'+'lto:'+'suw'+'on'+'@cs'+'ap'+'.sn'+'u.'+'ac.'+'kr'; return false;">suwon<span style="display: none;">.nosp@m.</span>@csa<span style="display: none;">.nosp@m.</span>p.snu<span style="display: none;">.nosp@m.</span>.ac.<span style="display: none;">.nosp@m.</span>kr</a> </dd></dl>
+<h1><a class="anchor" id="changelog"></a>
+Change Log</h1>
+<p>2014/09/22 Suwon Oh created <br/>
+2014/09/24 Suwon Oh implemented prototype <br/>
+2014/12/14 Suwon Oh adapted to Doxygen <br/>
+2014/12/16 Suwon Oh adapted self-implemented list library <br/>
+ </p>
+<h1><a class="anchor" id="reference_section"></a>
+Reference</h1>
+<p>MACHINE LEARNING - TOM M. MITCHELL</p>
+<h1><a class="anchor" id="purpose_section"></a>
+Purpose</h1>
+<p>Application trial for personal studying </p>
+
+<p>Definition in file <a class="el" href="concept_8h_source.html">concept.h</a>.</p>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a class="anchor" id="a9680d29b8d997e4adbf99481b65e897d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -141,17 +166,17 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="concept_8h_source.html#l00025">25</a> of file <a class="el" href="concept_8h_source.html">concept.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;             {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86">vFalse</a>=0,       <span class="comment">// means false of this attribute</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102">vTrue</a>,      <span class="comment">// means true of this attribute </span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f">vAllAccept</a>,     <span class="comment">// can accept any value of attribute ( true or false ) -- &#39;?&#39;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314">vAllDeny</a>,       <span class="comment">// deny all value of attribute -- &#39;null&#39;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
-<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314">vAllDeny</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00029">concept.h:29</a></div></div>
-<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f">vAllAccept</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00028">concept.h:28</a></div></div>
-<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102">vTrue</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00027">concept.h:27</a></div></div>
-<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86">vFalse</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00026">concept.h:26</a></div></div>
+<p>Definition at line <a class="el" href="concept_8h_source.html#l00027">27</a> of file <a class="el" href="concept_8h_source.html">concept.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;             {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86">vFalse</a>=0,       <span class="comment">// means false of this attribute</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102">vTrue</a>,      <span class="comment">// means true of this attribute </span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f">vAllAccept</a>,     <span class="comment">// can accept any value of attribute ( true or false ) -- &#39;?&#39;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314">vAllDeny</a>,       <span class="comment">// deny all value of attribute -- &#39;null&#39;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314">vAllDeny</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00031">concept.h:31</a></div></div>
+<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f">vAllAccept</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00030">concept.h:30</a></div></div>
+<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102">vTrue</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00029">concept.h:29</a></div></div>
+<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86">vFalse</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00028">concept.h:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -173,22 +198,22 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="concept_8h_source.html#l00032">32</a> of file <a class="el" href="concept_8h_source.html">concept.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069">r_false</a>=0,      <span class="comment">// means all hypothesis vote false      </span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518">r_true</a>,     <span class="comment">// means all hypothesis vote true</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a">r_dontknow</a>      <span class="comment">// means hypothesis vote is not unanimous</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
-<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518">r_true</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00034">concept.h:34</a></div></div>
-<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069">r_false</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00033">concept.h:33</a></div></div>
-<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a">r_dontknow</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00035">concept.h:35</a></div></div>
+<p>Definition at line <a class="el" href="concept_8h_source.html#l00034">34</a> of file <a class="el" href="concept_8h_source.html">concept.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069">r_false</a>=0,      <span class="comment">// means all hypothesis vote false      </span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518">r_true</a>,     <span class="comment">// means all hypothesis vote true</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a">r_dontknow</a>      <span class="comment">// means hypothesis vote is not unanimous</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518">r_true</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00036">concept.h:36</a></div></div>
+<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069">r_false</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00035">concept.h:35</a></div></div>
+<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a">r_dontknow</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00037">concept.h:37</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 15 2014 22:55:11 for Machine Learning by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Dec 16 2014 21:44:25 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

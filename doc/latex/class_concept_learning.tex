@@ -14,12 +14,21 @@ void \hyperlink{class_concept_learning_adcdb0df6a5e877769e46c95f40a139c3}{Update
 \item 
 \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066}{Result} \hyperlink{class_concept_learning_a2c918ff637b1d93e123974eaddd17de0}{Cover\-Check} (bool $\ast$u\-\_\-input)
 \end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_s___bound}{S\-\_\-\-Bound} \hyperlink{class_concept_learning_a8ac1de9ab4694d91cffabda42443a96e}{s\-\_\-bound}
+\item 
+\hyperlink{class_g___bound}{G\-\_\-\-Bound} \hyperlink{class_concept_learning_a449a58ac04e18fd981b2e6bf984fd764}{g\-\_\-bound}
+\item 
+int \hyperlink{class_concept_learning_ae6bebaccc7f80436856e5ec539feb04c}{Attr\-Num}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 74 of file concept.\-h.
+Definition at line 76 of file concept.\-h.
 
 
 
@@ -33,16 +42,16 @@ Definition at line 74 of file concept.\-h.
 )}}\label{class_concept_learning_a2c918ff637b1d93e123974eaddd17de0}
 
 
-Definition at line 338 of file concept.\-cpp.
+Definition at line 340 of file concept.\-cpp.
 
 
 \begin{DoxyCode}
-338                                                 \{
-339     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066}{Result} s\_ret = s\_bound.\hyperlink{class_s___bound_ad42d2df371d817894fd44faff0eadd2f}{CoverCheck}(u\_input);
-340     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066}{Result} g\_ret = g\_bound.\hyperlink{class_g___bound_aea45d16a15dfd2c30985d89f92803b22}{CoverCheck}(u\_input);
-341     
-342     \textcolor{keywordflow}{return} (s\_ret == g\_ret) ? s\_ret : \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\_dontknow};
-343 \}
+340                                                 \{
+341     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066}{Result} s\_ret = \hyperlink{class_concept_learning_a8ac1de9ab4694d91cffabda42443a96e}{s\_bound}.\hyperlink{class_s___bound_ad42d2df371d817894fd44faff0eadd2f}{CoverCheck}(u\_input);
+342     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066}{Result} g\_ret = \hyperlink{class_concept_learning_a449a58ac04e18fd981b2e6bf984fd764}{g\_bound}.\hyperlink{class_g___bound_aea45d16a15dfd2c30985d89f92803b22}{CoverCheck}(u\_input);
+343     
+344     \textcolor{keywordflow}{return} (s\_ret == g\_ret) ? s\_ret : \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\_dontknow};
+345 \}
 \end{DoxyCode}
 \hypertarget{class_concept_learning_a44745c32a43e09ce1682efdbd29d01f2}{\index{Concept\-Learning@{Concept\-Learning}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!ConceptLearning@{Concept\-Learning}}
@@ -53,22 +62,22 @@ Definition at line 338 of file concept.\-cpp.
 )}}\label{class_concept_learning_a44745c32a43e09ce1682efdbd29d01f2}
 
 
-Definition at line 302 of file concept.\-cpp.
+Definition at line 304 of file concept.\-cpp.
 
 
 \begin{DoxyCode}
-302                                          \{
-303 \textcolor{preprocessor}{#if DEBUG\_MODE}
-304 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{" <<< Concept Learning Framework (v1.0) >>>"} << endl << endl;
-305     cout << \textcolor{stringliteral}{"-------------------------- INITIALIZATION ----------------------------"} << endl;
-306 \textcolor{preprocessor}{#endif}
-307 \textcolor{preprocessor}{}    s\_bound.\hyperlink{class_s___bound_abeb4548d8a255438173bda64849b0a4d}{Initialize}(size);
-308     g\_bound.\hyperlink{class_g___bound_a30da552d80a6b169c76cc61410a05b78}{Initialize}(size);
-309 \textcolor{preprocessor}{#if DEBUG\_MODE}
-310 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{"----------------------------------------------------------------------"} << endl << endl;
-311 \textcolor{preprocessor}{#endif}
-312 \textcolor{preprocessor}{}    AttrNum = size;
-313 \}
+304                                          \{
+305 \textcolor{preprocessor}{#if DEBUG\_MODE}
+306 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{" <<< Concept Learning Framework (v1.0) >>>"} << endl << endl;
+307     cout << \textcolor{stringliteral}{"-------------------------- INITIALIZATION ----------------------------"} << endl;
+308 \textcolor{preprocessor}{#endif}
+309 \textcolor{preprocessor}{}    \hyperlink{class_concept_learning_a8ac1de9ab4694d91cffabda42443a96e}{s\_bound}.\hyperlink{class_s___bound_abeb4548d8a255438173bda64849b0a4d}{Initialize}(size);
+310     \hyperlink{class_concept_learning_a449a58ac04e18fd981b2e6bf984fd764}{g\_bound}.\hyperlink{class_g___bound_a30da552d80a6b169c76cc61410a05b78}{Initialize}(size);
+311 \textcolor{preprocessor}{#if DEBUG\_MODE}
+312 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{"----------------------------------------------------------------------"} << endl << endl;
+313 \textcolor{preprocessor}{#endif}
+314 \textcolor{preprocessor}{}    \hyperlink{class_concept_learning_ae6bebaccc7f80436856e5ec539feb04c}{AttrNum} = size;
+315 \}
 \end{DoxyCode}
 \hypertarget{class_concept_learning_adcdb0df6a5e877769e46c95f40a139c3}{\index{Concept\-Learning@{Concept\-Learning}!Update\-Version\-Space@{Update\-Version\-Space}}
 \index{Update\-Version\-Space@{Update\-Version\-Space}!ConceptLearning@{Concept\-Learning}}
@@ -79,33 +88,57 @@ Definition at line 302 of file concept.\-cpp.
 )}}\label{class_concept_learning_adcdb0df6a5e877769e46c95f40a139c3}
 
 
-Definition at line 315 of file concept.\-cpp.
+Definition at line 317 of file concept.\-cpp.
 
 
 \begin{DoxyCode}
-315                                                     \{
-316 \textcolor{preprocessor}{#if DEBUG\_MODE}
-317 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{"------------------------------ UPDATE --------------------------------"} << endl;
-318     cout << \textcolor{stringliteral}{" -: Input < "};
-319     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < AttrNum; i++) \{
-320     \textcolor{keywordtype}{int} tmp = (input[i]) ? 1 : 0;
-321     cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[tmp] << \textcolor{stringliteral}{" "};
-322     \}
-323     \textcolor{keywordtype}{int} ret = (input[AttrNum]) ? 1 : 0;
-324     cout << \textcolor{stringliteral}{"> = ("} << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[ret] << \textcolor{stringliteral}{")"} << endl << endl;
-325 \textcolor{preprocessor}{#endif}
-326 \textcolor{preprocessor}{}    \textcolor{keywordflow}{if}(input[AttrNum]) \{    \textcolor{comment}{// means positive example}
-327     g\_bound.\hyperlink{class_g___bound_a9344fe22bb13d39a425c5a5b690aace4}{CoverCheckUpdate}(input);
-328     s\_bound.\hyperlink{class_s___bound_a1391ba6c3f3fab3fd5fa57ecf8e1e66a}{UpdateBound}(input);
-329     \} \textcolor{keywordflow}{else} \{    \textcolor{comment}{// means negative example}
-330     s\_bound.\hyperlink{class_s___bound_aee5a88ab73dd09ac42953b6f3545dfe2}{CoverCheckUpdate}(input);
-331     g\_bound.\hyperlink{class_g___bound_a8b473f262762ac5b74fdb766ded033aa}{UpdateBound}(input, &s\_bound);
-332     \}
-333 \textcolor{preprocessor}{#if DEBUG\_MODE}
-334 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{"----------------------------------------------------------------------"} << endl << endl;
-335 \textcolor{preprocessor}{#endif}
-336 \textcolor{preprocessor}{}\}
+317                                                     \{
+318 \textcolor{preprocessor}{#if DEBUG\_MODE}
+319 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{"------------------------------ UPDATE --------------------------------"} << endl;
+320     cout << \textcolor{stringliteral}{" -: Input < "};
+321     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_concept_learning_ae6bebaccc7f80436856e5ec539feb04c}{AttrNum}; i++) \{
+322         \textcolor{keywordtype}{int} tmp = (input[i]) ? 1 : 0;
+323         cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[tmp] << \textcolor{stringliteral}{" "};
+324     \}
+325     \textcolor{keywordtype}{int} ret = (input[\hyperlink{class_concept_learning_ae6bebaccc7f80436856e5ec539feb04c}{AttrNum}]) ? 1 : 0;
+326     cout << \textcolor{stringliteral}{"> = ("} << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[ret] << \textcolor{stringliteral}{")"} << endl << endl;
+327 \textcolor{preprocessor}{#endif}
+328 \textcolor{preprocessor}{}    \textcolor{keywordflow}{if}(input[AttrNum]) \{    \textcolor{comment}{// means positive example}
+329         \hyperlink{class_concept_learning_a449a58ac04e18fd981b2e6bf984fd764}{g\_bound}.\hyperlink{class_g___bound_a9344fe22bb13d39a425c5a5b690aace4}{CoverCheckUpdate}(input);
+330         \hyperlink{class_concept_learning_a8ac1de9ab4694d91cffabda42443a96e}{s\_bound}.\hyperlink{class_s___bound_a1391ba6c3f3fab3fd5fa57ecf8e1e66a}{UpdateBound}(input);
+331     \} \textcolor{keywordflow}{else} \{    \textcolor{comment}{// means negative example}
+332         \hyperlink{class_concept_learning_a8ac1de9ab4694d91cffabda42443a96e}{s\_bound}.\hyperlink{class_s___bound_aee5a88ab73dd09ac42953b6f3545dfe2}{CoverCheckUpdate}(input);
+333         \hyperlink{class_concept_learning_a449a58ac04e18fd981b2e6bf984fd764}{g\_bound}.\hyperlink{class_g___bound_a8b473f262762ac5b74fdb766ded033aa}{UpdateBound}(input, &\hyperlink{class_concept_learning_a8ac1de9ab4694d91cffabda42443a96e}{s\_bound});
+334     \}
+335 \textcolor{preprocessor}{#if DEBUG\_MODE}
+336 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{"----------------------------------------------------------------------"} << endl << endl;
+337 \textcolor{preprocessor}{#endif}
+338 \textcolor{preprocessor}{}\}
 \end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_concept_learning_ae6bebaccc7f80436856e5ec539feb04c}{\index{Concept\-Learning@{Concept\-Learning}!Attr\-Num@{Attr\-Num}}
+\index{Attr\-Num@{Attr\-Num}!ConceptLearning@{Concept\-Learning}}
+\subsubsection[{Attr\-Num}]{\setlength{\rightskip}{0pt plus 5cm}int Concept\-Learning\-::\-Attr\-Num\hspace{0.3cm}{\ttfamily [private]}}}\label{class_concept_learning_ae6bebaccc7f80436856e5ec539feb04c}
+
+
+Definition at line 80 of file concept.\-h.
+
+\hypertarget{class_concept_learning_a449a58ac04e18fd981b2e6bf984fd764}{\index{Concept\-Learning@{Concept\-Learning}!g\-\_\-bound@{g\-\_\-bound}}
+\index{g\-\_\-bound@{g\-\_\-bound}!ConceptLearning@{Concept\-Learning}}
+\subsubsection[{g\-\_\-bound}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\-\_\-\-Bound} Concept\-Learning\-::g\-\_\-bound\hspace{0.3cm}{\ttfamily [private]}}}\label{class_concept_learning_a449a58ac04e18fd981b2e6bf984fd764}
+
+
+Definition at line 79 of file concept.\-h.
+
+\hypertarget{class_concept_learning_a8ac1de9ab4694d91cffabda42443a96e}{\index{Concept\-Learning@{Concept\-Learning}!s\-\_\-bound@{s\-\_\-bound}}
+\index{s\-\_\-bound@{s\-\_\-bound}!ConceptLearning@{Concept\-Learning}}
+\subsubsection[{s\-\_\-bound}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-\_\-\-Bound} Concept\-Learning\-::s\-\_\-bound\hspace{0.3cm}{\ttfamily [private]}}}\label{class_concept_learning_a8ac1de9ab4694d91cffabda42443a96e}
+
+
+Definition at line 78 of file concept.\-h.
+
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

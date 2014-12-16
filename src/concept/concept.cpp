@@ -1,8 +1,10 @@
 #include "concept.h"
-#include <cstdlib>
+#include <cstdlib> // should be replaced try-catch statement
 #include <iostream>
 
 #define DEBUG_MODE  1
+
+
 
 char SYMBOL[] = {'F', 'T', '?', '-'};
 
@@ -317,18 +319,18 @@ void ConceptLearning::UpdateVersionSpace(bool* input) {
     cout << "------------------------------ UPDATE --------------------------------" << endl;
     cout << " -: Input < ";
     for(int i = 0; i < AttrNum; i++) {
-	int tmp = (input[i]) ? 1 : 0;
-	cout << SYMBOL[tmp] << " ";
+	    int tmp = (input[i]) ? 1 : 0;
+	    cout << SYMBOL[tmp] << " ";
     }
     int ret = (input[AttrNum]) ? 1 : 0;
     cout << "> = (" << SYMBOL[ret] << ")" << endl << endl;
 #endif
     if(input[AttrNum]) {    // means positive example
-	g_bound.CoverCheckUpdate(input);
-	s_bound.UpdateBound(input);
+	    g_bound.CoverCheckUpdate(input);
+	    s_bound.UpdateBound(input);
     } else {	// means negative example
-	s_bound.CoverCheckUpdate(input);
-	g_bound.UpdateBound(input, &s_bound);
+	    s_bound.CoverCheckUpdate(input);
+	    g_bound.UpdateBound(input, &s_bound);
     }
 #if DEBUG_MODE
     cout << "----------------------------------------------------------------------" << endl << endl;
