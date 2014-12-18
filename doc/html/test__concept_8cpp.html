@@ -118,51 +118,49 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="test__concept_8cpp_source.html#l00006">6</a> of file <a class="el" href="test__concept_8cpp_source.html">test_concept.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;           {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="class_concept_learning.html">ConceptLearning</a>* cl = <span class="keyword">new</span> <a class="code" href="class_concept_learning.html">ConceptLearning</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    cl-&gt;<a class="code" href="class_concept_learning.html#a44745c32a43e09ce1682efdbd29d01f2">Initialize</a>(6);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">bool</span> i[] = { <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span> };</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    cl-&gt;<a class="code" href="class_concept_learning.html#adcdb0df6a5e877769e46c95f40a139c3">UpdateVersionSpace</a>(i);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    i[2] = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    cl-&gt;<a class="code" href="class_concept_learning.html#adcdb0df6a5e877769e46c95f40a139c3">UpdateVersionSpace</a>(i);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    i[0] = <span class="keyword">false</span>; i[1] = <span class="keyword">false</span>; i[5] = <span class="keyword">true</span>; i[6] = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    cl-&gt;<a class="code" href="class_concept_learning.html#adcdb0df6a5e877769e46c95f40a139c3">UpdateVersionSpace</a>(i);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    i[0] = <span class="keyword">true</span>; i[1] = <span class="keyword">true</span>; i[4] = <span class="keyword">false</span>; i[6] = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    cl-&gt;<a class="code" href="class_concept_learning.html#adcdb0df6a5e877769e46c95f40a139c3">UpdateVersionSpace</a>(i);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">bool</span> ui[] = { <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span> };</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a> ret = cl-&gt;<a class="code" href="class_concept_learning.html#a2c918ff637b1d93e123974eaddd17de0">CoverCheck</a>(ui);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">char</span> RETURN[] = { <span class="charliteral">&#39;F&#39;</span>, <span class="charliteral">&#39;T&#39;</span>, <span class="charliteral">&#39;?&#39;</span> };</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    cout &lt;&lt; RETURN[ret] &lt;&lt; endl;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    ui[0] = <span class="keyword">false</span>; ui[1] = <span class="keyword">false</span>; ui[3] = <span class="keyword">false</span>; ui[4] = <span class="keyword">true</span>; ui[5] = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ret = cl-&gt;<a class="code" href="class_concept_learning.html#a2c918ff637b1d93e123974eaddd17de0">CoverCheck</a>(ui);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    cout &lt;&lt; RETURN[ret] &lt;&lt; endl;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    ui[0] = <span class="keyword">true</span>; ui[1] = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ret = cl-&gt;<a class="code" href="class_concept_learning.html#a2c918ff637b1d93e123974eaddd17de0">CoverCheck</a>(ui);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    cout &lt;&lt; RETURN[ret] &lt;&lt; endl;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    ui[1] = <span class="keyword">false</span>; ui[3] = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    ret = cl-&gt;<a class="code" href="class_concept_learning.html#a2c918ff637b1d93e123974eaddd17de0">CoverCheck</a>(ui);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    cout &lt;&lt; RETURN[ret] &lt;&lt; endl;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
-<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a></div><div class="ttdeci">Result</div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00034">concept.h:34</a></div></div>
-<div class="ttc" id="class_concept_learning_html_a2c918ff637b1d93e123974eaddd17de0"><div class="ttname"><a href="class_concept_learning.html#a2c918ff637b1d93e123974eaddd17de0">ConceptLearning::CoverCheck</a></div><div class="ttdeci">Result CoverCheck(bool *u_input)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00340">concept.cpp:340</a></div></div>
-<div class="ttc" id="class_concept_learning_html"><div class="ttname"><a href="class_concept_learning.html">ConceptLearning</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00076">concept.h:76</a></div></div>
-<div class="ttc" id="class_concept_learning_html_a44745c32a43e09ce1682efdbd29d01f2"><div class="ttname"><a href="class_concept_learning.html#a44745c32a43e09ce1682efdbd29d01f2">ConceptLearning::Initialize</a></div><div class="ttdeci">void Initialize(int size)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00304">concept.cpp:304</a></div></div>
-<div class="ttc" id="class_concept_learning_html_adcdb0df6a5e877769e46c95f40a139c3"><div class="ttname"><a href="class_concept_learning.html#adcdb0df6a5e877769e46c95f40a139c3">ConceptLearning::UpdateVersionSpace</a></div><div class="ttdeci">void UpdateVersionSpace(bool *input)</div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00317">concept.cpp:317</a></div></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;  <a class="code" href="class_c_e.html">CE</a>* ce = <span class="keyword">new</span> <a class="code" href="class_c_e.html">CE</a>(6);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keywordtype">bool</span> i[] = { <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span> };</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;  ce-&gt;<a class="code" href="class_c_e.html#a73ea02a691a61601d2cbcfb4bbe5a0fc">updateVS</a>(i);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  i[2] = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  ce-&gt;<a class="code" href="class_c_e.html#a73ea02a691a61601d2cbcfb4bbe5a0fc">updateVS</a>(i);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  i[0] = <span class="keyword">false</span>; i[1] = <span class="keyword">false</span>; i[5] = <span class="keyword">true</span>; i[6] = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  ce-&gt;<a class="code" href="class_c_e.html#a73ea02a691a61601d2cbcfb4bbe5a0fc">updateVS</a>(i);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  i[0] = <span class="keyword">true</span>; i[1] = <span class="keyword">true</span>; i[4] = <span class="keyword">false</span>; i[6] = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  ce-&gt;<a class="code" href="class_c_e.html#a73ea02a691a61601d2cbcfb4bbe5a0fc">updateVS</a>(i);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">bool</span> ui[] = { <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">true</span> };</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a> ret = ce-&gt;<a class="code" href="class_c_e.html#a66c1015e6889104f2d64349d2b6f114a">predict</a>(ui);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">char</span> RETURN[] = { <span class="charliteral">&#39;F&#39;</span>, <span class="charliteral">&#39;T&#39;</span>, <span class="charliteral">&#39;?&#39;</span> };</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  cout &lt;&lt; RETURN[ret] &lt;&lt; endl;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  ui[0] = <span class="keyword">false</span>; ui[1] = <span class="keyword">false</span>; ui[3] = <span class="keyword">false</span>; ui[4] = <span class="keyword">true</span>; ui[5] = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  ret = ce-&gt;<a class="code" href="class_c_e.html#a66c1015e6889104f2d64349d2b6f114a">predict</a>(ui);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  cout &lt;&lt; RETURN[ret] &lt;&lt; endl;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  ui[0] = <span class="keyword">true</span>; ui[1] = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  ret = ce-&gt;<a class="code" href="class_c_e.html#a66c1015e6889104f2d64349d2b6f114a">predict</a>(ui);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  cout &lt;&lt; RETURN[ret] &lt;&lt; endl;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  ui[1] = <span class="keyword">false</span>; ui[3] = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  ret = ce-&gt;<a class="code" href="class_c_e.html#a66c1015e6889104f2d64349d2b6f114a">predict</a>(ui);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  cout &lt;&lt; RETURN[ret] &lt;&lt; endl;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a></div><div class="ttdeci">Result</div><div class="ttdoc">Possible Hypothesis Result. </div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00050">concept.h:50</a></div></div>
+<div class="ttc" id="class_c_e_html"><div class="ttname"><a href="class_c_e.html">CE</a></div><div class="ttdoc">Candidate Elmination Algorithm Engine. </div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00259">concept.h:259</a></div></div>
+<div class="ttc" id="class_c_e_html_a73ea02a691a61601d2cbcfb4bbe5a0fc"><div class="ttname"><a href="class_c_e.html#a73ea02a691a61601d2cbcfb4bbe5a0fc">CE::updateVS</a></div><div class="ttdeci">bool updateVS(bool *input)</div><div class="ttdoc">update version space </div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00391">concept.cpp:391</a></div></div>
+<div class="ttc" id="class_c_e_html_a66c1015e6889104f2d64349d2b6f114a"><div class="ttname"><a href="class_c_e.html#a66c1015e6889104f2d64349d2b6f114a">CE::predict</a></div><div class="ttdeci">Result predict(bool *u_input)</div><div class="ttdoc">predict for new unknown instance </div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00414">concept.cpp:414</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 16 2014 21:44:25 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 18 2014 16:38:05 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -26,9 +26,9 @@
 \begin{Indent}{\bf informative attributes}\par
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_list_node}{List\-Node}$<$ T $>$ $\ast$ \hyperlink{class_list_af2c3e1f19c7e67dde94da7ed06a79b87}{get\-Head} (void) const 
+\hyperlink{class_list_node}{List\-Node}$<$ T $>$ $\ast$ \hyperlink{class_list_ac9a6fc5576665cb954e83e322f7fe6ed}{get\-Head} (void) const 
 \begin{DoxyCompactList}\small\item\em return list head node \end{DoxyCompactList}\item 
-\hyperlink{class_list_node}{List\-Node}$<$ T $>$ $\ast$ \hyperlink{class_list_a4fc3be0f87fa727acfb6b6b001433bc9}{get\-Node} (unsigned int index) const 
+\hyperlink{class_list_node}{List\-Node}$<$ T $>$ $\ast$ \hyperlink{class_list_a5aaa131805b461db4664a5dc7a28d7a9}{get\-Node} (unsigned int index) const 
 \begin{DoxyCompactList}\small\item\em return node which have a given index \end{DoxyCompactList}\item 
 T \hyperlink{class_list_aa93404b4c7f3f86a560a0a675f55c9bd}{get\-Content} (unsigned int index) const 
 \begin{DoxyCompactList}\small\item\em return content which is contained given index node \end{DoxyCompactList}\item 
@@ -70,7 +70,7 @@ Definition at line 162 of file list.\-h.
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_list_ae6a4229e888486c01c669894c5da20d9}{\index{List@{List}!List@{List}}
 \index{List@{List}!List@{List}}
-\subsubsection[{List}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf List}$<$ T $>$\-::{\bf List} (
+\subsubsection[{List}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf List}$<$ T $>$\-::{\bf List} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
@@ -79,9 +79,7 @@ Definition at line 162 of file list.\-h.
 
 default constructor 
 
-\hyperlink{class_list}{List} Class.
 
-Double-\/\-Linked \hyperlink{class_list}{List} which can hold various type content. 
 
 Definition at line 173 of file list.\-h.
 
@@ -98,7 +96,7 @@ Definition at line 173 of file list.\-h.
 \end{DoxyCode}
 \hypertarget{class_list_a9ecd03e07c7d1555de8c709f7b438097}{\index{List@{List}!$\sim$\-List@{$\sim$\-List}}
 \index{$\sim$\-List@{$\sim$\-List}!List@{List}}
-\subsubsection[{$\sim$\-List}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf List}$<$ T $>$\-::$\sim${\bf List} (
+\subsubsection[{$\sim$\-List}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf List}$<$ T $>$\-::$\sim${\bf List} (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
@@ -117,7 +115,7 @@ Definition at line 190 of file list.\-h.
 192     \textcolor{keywordflow}{if} (\hyperlink{class_list_a2b29518583aff577590c4f932824c5bf}{head}) \{
 193       \hyperlink{class_list_node}{ListNode <T>}* cur = \hyperlink{class_list_a2b29518583aff577590c4f932824c5bf}{head}->getNext();
 194       \textcolor{keywordflow}{while} (cur != \hyperlink{class_list_a2b29518583aff577590c4f932824c5bf}{head}) \{
-195         \hyperlink{class_list_node}{ListNode <T>}* next = cur->\hyperlink{class_list_node_a5c75fbb5b607f52d50686d42a3f40bef}{getNext}();
+195         \hyperlink{class_list_node}{ListNode <T>}* next = cur->\hyperlink{class_list_node_a35941e2759ff02e220815f806d0f7858}{getNext}();
 196         \textcolor{keyword}{delete}(cur);  \textcolor{comment}{// call ListNode destructor}
 197         cur = next;
 198       \}
@@ -131,7 +129,7 @@ Definition at line 190 of file list.\-h.
 \subsection{Member Function Documentation}
 \hypertarget{class_list_ac8fff7396766358cee488223009ac578}{\index{List@{List}!add\-Node@{add\-Node}}
 \index{add\-Node@{add\-Node}!List@{List}}
-\subsubsection[{add\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf List}$<$ T $>$\-::add\-Node (
+\subsubsection[{add\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool {\bf List}$<$ T $>$\-::add\-Node (
 \begin{DoxyParamCaption}
 \item[{T}]{content}
 \end{DoxyParamCaption}
@@ -160,9 +158,9 @@ Definition at line 261 of file list.\-h.
 263     \hyperlink{class_list_node}{ListNode <T>}* last = \hyperlink{list_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
 264     \textcolor{comment}{// choose last node}
 265     \textcolor{keywordflow}{if} (\hyperlink{class_list_a02655774bc5fa5f8bbff3d2b028525b0}{size} == 0)
-266       last = \hyperlink{class_list_af2c3e1f19c7e67dde94da7ed06a79b87}{getHead}();
+266       last = \hyperlink{class_list_ac9a6fc5576665cb954e83e322f7fe6ed}{getHead}();
 267     \textcolor{keywordflow}{else}
-268       last = \hyperlink{class_list_a4fc3be0f87fa727acfb6b6b001433bc9}{getNode}(\hyperlink{class_list_a02655774bc5fa5f8bbff3d2b028525b0}{size} - 1);
+268       last = \hyperlink{class_list_a5aaa131805b461db4664a5dc7a28d7a9}{getNode}(\hyperlink{class_list_a02655774bc5fa5f8bbff3d2b028525b0}{size} - 1);
 269     
 270     \textcolor{keywordflow}{if} (\hyperlink{class_list_node}{ListNode <T>}* newNode = \textcolor{keyword}{new} \hyperlink{class_list_node}{ListNode <T>}(last, 
       \hyperlink{class_list_a2b29518583aff577590c4f932824c5bf}{head}, content)) \{
@@ -177,7 +175,7 @@ Definition at line 261 of file list.\-h.
 \end{DoxyCode}
 \hypertarget{class_list_af4e9e7db2b56cd948ec225445f3250da}{\index{List@{List}!del\-Node@{del\-Node}}
 \index{del\-Node@{del\-Node}!List@{List}}
-\subsubsection[{del\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf List}$<$ T $>$\-::del\-Node (
+\subsubsection[{del\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool {\bf List}$<$ T $>$\-::del\-Node (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{index}
 \end{DoxyParamCaption}
@@ -207,7 +205,7 @@ Definition at line 284 of file list.\-h.
 287     \textcolor{keywordflow}{if} (index >= \hyperlink{class_list_a02655774bc5fa5f8bbff3d2b028525b0}{size} || \hyperlink{class_list_a02655774bc5fa5f8bbff3d2b028525b0}{size} == 0)
 288       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
 289 
-290     \textcolor{keywordflow}{if} (\hyperlink{class_list_node}{ListNode <T>}* target = \hyperlink{class_list_a4fc3be0f87fa727acfb6b6b001433bc9}{getNode}(index)) \{
+290     \textcolor{keywordflow}{if} (\hyperlink{class_list_node}{ListNode <T>}* target = \hyperlink{class_list_a5aaa131805b461db4664a5dc7a28d7a9}{getNode}(index)) \{
 291       \textcolor{comment}{// unlink}
 292       target->getPrev()->setNext(target->getNext());
 293       target->getNext()->setPrev(target->getPrev());
@@ -220,7 +218,7 @@ Definition at line 284 of file list.\-h.
 \end{DoxyCode}
 \hypertarget{class_list_aa93404b4c7f3f86a560a0a675f55c9bd}{\index{List@{List}!get\-Content@{get\-Content}}
 \index{get\-Content@{get\-Content}!List@{List}}
-\subsubsection[{get\-Content}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf List}$<$ T $>$\-::get\-Content (
+\subsubsection[{get\-Content}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T {\bf List}$<$ T $>$\-::get\-Content (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{index}
 \end{DoxyParamCaption}
@@ -245,16 +243,16 @@ Definition at line 236 of file list.\-h.
 239     \textcolor{keywordflow}{if} (index >= \hyperlink{class_list_a02655774bc5fa5f8bbff3d2b028525b0}{size} || \hyperlink{class_list_a02655774bc5fa5f8bbff3d2b028525b0}{size} == 0)
 240       \textcolor{keywordflow}{return} \hyperlink{list_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
 241 
-242     \textcolor{keywordflow}{return} \hyperlink{class_list_a4fc3be0f87fa727acfb6b6b001433bc9}{getNode}(index)->getContent();
+242     \textcolor{keywordflow}{return} \hyperlink{class_list_a5aaa131805b461db4664a5dc7a28d7a9}{getNode}(index)->getContent();
 243   \}
 \end{DoxyCode}
-\hypertarget{class_list_af2c3e1f19c7e67dde94da7ed06a79b87}{\index{List@{List}!get\-Head@{get\-Head}}
+\hypertarget{class_list_ac9a6fc5576665cb954e83e322f7fe6ed}{\index{List@{List}!get\-Head@{get\-Head}}
 \index{get\-Head@{get\-Head}!List@{List}}
-\subsubsection[{get\-Head}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf List\-Node}$<$ T $>$ $\ast$ {\bf List}$<$ T $>$\-::get\-Head (
+\subsubsection[{get\-Head}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf List\-Node}$<$T$>$$\ast$ {\bf List}$<$ T $>$\-::get\-Head (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_list_af2c3e1f19c7e67dde94da7ed06a79b87}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_list_ac9a6fc5576665cb954e83e322f7fe6ed}
 
 
 return list head node 
@@ -274,13 +272,13 @@ Definition at line 211 of file list.\-h.
 213     \textcolor{keywordflow}{return} \hyperlink{class_list_a2b29518583aff577590c4f932824c5bf}{head};
 214   \}
 \end{DoxyCode}
-\hypertarget{class_list_a4fc3be0f87fa727acfb6b6b001433bc9}{\index{List@{List}!get\-Node@{get\-Node}}
+\hypertarget{class_list_a5aaa131805b461db4664a5dc7a28d7a9}{\index{List@{List}!get\-Node@{get\-Node}}
 \index{get\-Node@{get\-Node}!List@{List}}
-\subsubsection[{get\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf List\-Node}$<$ T $>$ $\ast$ {\bf List}$<$ T $>$\-::get\-Node (
+\subsubsection[{get\-Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf List\-Node}$<$T$>$$\ast$ {\bf List}$<$ T $>$\-::get\-Node (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{index}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_list_a4fc3be0f87fa727acfb6b6b001433bc9}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_list_a5aaa131805b461db4664a5dc7a28d7a9}
 
 
 return node which have a given index 
@@ -304,14 +302,14 @@ Definition at line 219 of file list.\-h.
 225     \textcolor{comment}{// first non-head node}
 226     \hyperlink{class_list_node}{ListNode <T>}* cur = \hyperlink{class_list_a2b29518583aff577590c4f932824c5bf}{head}->getNext();
 227     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < index; i++)
-228       cur = cur->\hyperlink{class_list_node_a5c75fbb5b607f52d50686d42a3f40bef}{getNext}();
+228       cur = cur->\hyperlink{class_list_node_a35941e2759ff02e220815f806d0f7858}{getNext}();
 229 
 230     \textcolor{keywordflow}{return} cur;
 231   \}
 \end{DoxyCode}
 \hypertarget{class_list_a4d8d3acaf718d470e1084814a6155814}{\index{List@{List}!get\-Size@{get\-Size}}
 \index{get\-Size@{get\-Size}!List@{List}}
-\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ unsigned int {\bf List}$<$ T $>$\-::get\-Size (
+\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ unsigned int {\bf List}$<$ T $>$\-::get\-Size (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
@@ -337,7 +335,7 @@ Definition at line 248 of file list.\-h.
 \end{DoxyCode}
 \hypertarget{class_list_adfc10aaf74f0ffc4a48b6ed46c192093}{\index{List@{List}!set\-Content@{set\-Content}}
 \index{set\-Content@{set\-Content}!List@{List}}
-\subsubsection[{set\-Content}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf List}$<$ T $>$\-::set\-Content (
+\subsubsection[{set\-Content}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool {\bf List}$<$ T $>$\-::set\-Content (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{index, }
 \item[{T}]{content}
@@ -370,7 +368,7 @@ Definition at line 306 of file list.\-h.
 309     \textcolor{keywordflow}{if} (index >= \hyperlink{class_list_a02655774bc5fa5f8bbff3d2b028525b0}{size} || \hyperlink{class_list_a02655774bc5fa5f8bbff3d2b028525b0}{size} == 0)
 310       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
 311 
-312     \textcolor{keywordflow}{if} (\hyperlink{class_list_a4fc3be0f87fa727acfb6b6b001433bc9}{getNode}(index)->\hyperlink{class_list_adfc10aaf74f0ffc4a48b6ed46c192093}{setContent}(content))
+312     \textcolor{keywordflow}{if} (\hyperlink{class_list_a5aaa131805b461db4664a5dc7a28d7a9}{getNode}(index)->\hyperlink{class_list_adfc10aaf74f0ffc4a48b6ed46c192093}{setContent}(content))
 313       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
 314     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
 315   \}
@@ -380,7 +378,7 @@ Definition at line 306 of file list.\-h.
 \subsection{Member Data Documentation}
 \hypertarget{class_list_a2b29518583aff577590c4f932824c5bf}{\index{List@{List}!head@{head}}
 \index{head@{head}!List@{List}}
-\subsubsection[{head}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf List\-Node}$<$T$>$$\ast$ {\bf List}$<$ T $>$\-::head\hspace{0.3cm}{\ttfamily [private]}}}\label{class_list_a2b29518583aff577590c4f932824c5bf}
+\subsubsection[{head}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf List\-Node}$<$T$>$$\ast$ {\bf List}$<$ T $>$\-::head\hspace{0.3cm}{\ttfamily [private]}}}\label{class_list_a2b29518583aff577590c4f932824c5bf}
 
 
 \hyperlink{class_list}{List} head list node. 
@@ -391,7 +389,7 @@ Definition at line 165 of file list.\-h.
 
 \hypertarget{class_list_a02655774bc5fa5f8bbff3d2b028525b0}{\index{List@{List}!size@{size}}
 \index{size@{size}!List@{List}}
-\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ unsigned int {\bf List}$<$ T $>$\-::size\hspace{0.3cm}{\ttfamily [private]}}}\label{class_list_a02655774bc5fa5f8bbff3d2b028525b0}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ unsigned int {\bf List}$<$ T $>$\-::size\hspace{0.3cm}{\ttfamily [private]}}}\label{class_list_a02655774bc5fa5f8bbff3d2b028525b0}
 
 
 the number of total nodes 
@@ -402,7 +400,6 @@ Definition at line 166 of file list.\-h.
 
 
 
-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-include/\hyperlink{list_8h}{list.\-h}\item 
-lib/\hyperlink{_list_8cpp}{List.\-cpp}\end{DoxyCompactItemize}
+include/\hyperlink{list_8h}{list.\-h}\end{DoxyCompactItemize}

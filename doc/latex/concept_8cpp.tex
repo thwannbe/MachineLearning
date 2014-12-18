@@ -1,19 +1,47 @@
 \hypertarget{concept_8cpp}{\section{src/concept/concept.cpp File Reference}
 \label{concept_8cpp}\index{src/concept/concept.\-cpp@{src/concept/concept.\-cpp}}
 }
+
+
+Concept Learning Framework Source File.  
+
+
 {\ttfamily \#include \char`\"{}concept.\-h\char`\"{}}\\*
-{\ttfamily \#include $<$cstdlib$>$}\\*
 {\ttfamily \#include $<$iostream$>$}\\*
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \hyperlink{concept_8cpp_ac80a3592e72fd96b772ee47a7d8e0d0a}{D\-E\-B\-U\-G\-\_\-\-M\-O\-D\-E}~1
 \end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{concept_8cpp_a3334c3b48c5ef4c8a07f5d45f5df5087}{is\-Positive} (bool $\ast$input, int size)
+\begin{DoxyCompactList}\small\item\em test input positivity \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 char \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{S\-Y\-M\-B\-O\-L} \mbox{[}$\,$\mbox{]} = \{'F', 'T', '?', '-\/'\}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em symbol table \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Concept Learning Framework Source File. Based on Candidate Elimination Algorithm, it predict target \par
+ concept. It assumes that input is a conjunctive set of attributes \par
+ including target attribute. All attribute has binary output ( T/\-F ) \begin{DoxyAuthor}{Author}
+Suwon Oh \href{mailto:suwon@csap.snu.ac.kr}{\tt suwon@csap.\-snu.\-ac.\-kr} 
+\end{DoxyAuthor}
+\hypertarget{nami_m_l_8h_changelog}{}\subsection{Change Log}\label{nami_m_l_8h_changelog}
+2014/09/22 Suwon Oh created \par
+2014/09/24 Suwon Oh implemented prototype \par
+2014/12/14 Suwon Oh adapted to Doxygen \par
+2014/12/16 Suwon Oh adapted self-\/implemented list library \par
+ \hypertarget{nami_m_l_8h_reference_section}{}\subsection{Reference}\label{nami_m_l_8h_reference_section}
+M\-A\-C\-H\-I\-N\-E L\-E\-A\-R\-N\-I\-N\-G -\/ T\-O\-M M. M\-I\-T\-C\-H\-E\-L\-L\hypertarget{nami_m_l_8h_purpose_section}{}\subsection{Purpose}\label{nami_m_l_8h_purpose_section}
+Application trial for personal studying 
+
+Definition in file \hyperlink{concept_8cpp_source}{concept.\-cpp}.
+
 
 
 \subsection{Macro Definition Documentation}
@@ -22,8 +50,49 @@ char \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{S\-Y\-M\-B\-O\-L
 \subsubsection[{D\-E\-B\-U\-G\-\_\-\-M\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-E\-B\-U\-G\-\_\-\-M\-O\-D\-E~1}}\label{concept_8cpp_ac80a3592e72fd96b772ee47a7d8e0d0a}
 
 
-Definition at line 5 of file concept.\-cpp.
+Definition at line 25 of file concept.\-cpp.
 
+
+
+\subsection{Function Documentation}
+\hypertarget{concept_8cpp_a3334c3b48c5ef4c8a07f5d45f5df5087}{\index{concept.\-cpp@{concept.\-cpp}!is\-Positive@{is\-Positive}}
+\index{is\-Positive@{is\-Positive}!concept.cpp@{concept.\-cpp}}
+\subsubsection[{is\-Positive}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-Positive (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$}]{input, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{concept_8cpp_a3334c3b48c5ef4c8a07f5d45f5df5087}
+
+
+test input positivity 
+
+only available to training example which \par
+ has target attribute value. 
+\begin{DoxyParams}{Parameters}
+{\em input} & training example \\
+\hline
+{\em size} & the number of attributes of the example \par
+ except for target attribute \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if example is positive \\
+\hline
+{\em false} & if example is negative \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 46 of file concept.\-cpp.
+
+
+\begin{DoxyCode}
+47 \{
+48   \textcolor{keywordflow}{return} input[size];
+49 \}
+\end{DoxyCode}
 
 
 \subsection{Variable Documentation}
@@ -32,5 +101,9 @@ Definition at line 5 of file concept.\-cpp.
 \subsubsection[{S\-Y\-M\-B\-O\-L}]{\setlength{\rightskip}{0pt plus 5cm}char S\-Y\-M\-B\-O\-L\mbox{[}$\,$\mbox{]} = \{'F', 'T', '?', '-\/'\}}}\label{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}
 
 
-Definition at line 9 of file concept.\-cpp.
+symbol table 
+
+
+
+Definition at line 33 of file concept.\-cpp.
 

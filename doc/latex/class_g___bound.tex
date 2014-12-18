@@ -3,266 +3,401 @@
 }
 
 
+Most General Bound of Version Space.  
+
+
+
+
 {\ttfamily \#include $<$concept.\-h$>$}
 
 \subsection*{Public Member Functions}
+\begin{Indent}{\bf constructor}\par
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_g___bound_a30da552d80a6b169c76cc61410a05b78}{Initialize} (int size)
+\hyperlink{class_g___bound_af622a6a9136c180b19b038bdb2e5207c}{G\-\_\-\-Bound} (int \hyperlink{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{size})
+\begin{DoxyCompactList}\small\item\em constructor taking the number of attributes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf destructor}\par
+\begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_g___bound_a9344fe22bb13d39a425c5a5b690aace4}{Cover\-Check\-Update} (bool $\ast$p\-\_\-input)
+\hyperlink{class_g___bound_a38ff1d10b4fce5df85429f8196a36964}{$\sim$\-G\-\_\-\-Bound} (void)
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf functional attributes}\par
+\begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_g___bound_a8b473f262762ac5b74fdb766ded033aa}{Update\-Bound} (bool $\ast$n\-\_\-input, void $\ast$ptr\-\_\-\-S\-\_\-\-Bound)
-\item 
-void \hyperlink{class_g___bound_a28f2ef635a7a74db831df0f2da088181}{Specialize} (\hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{Attr\-Val} $\ast$h\-Array, bool $\ast$n\-\_\-input, void $\ast$ptr\-\_\-\-S\-\_\-\-Bound)
-\item 
-\hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066}{Result} \hyperlink{class_g___bound_aea45d16a15dfd2c30985d89f92803b22}{Cover\-Check} (bool $\ast$u\-\_\-input)
-\end{DoxyCompactItemize}
+bool \hyperlink{class_g___bound_ad44aeb38feed0ff7e9a2f29f2ada0ac9}{pos\-Update} (bool $\ast$p\-\_\-input)
+\begin{DoxyCompactList}\small\item\em update g\-\_\-bound with positive training instance \end{DoxyCompactList}\item 
+bool \hyperlink{class_g___bound_a567a0759047141b59389ec0beefb0a6c}{neg\-Update} (bool $\ast$n\-\_\-input, \hyperlink{class_s___bound}{S\-\_\-\-Bound} $\ast$ptr\-\_\-sb)
+\begin{DoxyCompactList}\small\item\em update g\-\_\-bound with negative training instance \end{DoxyCompactList}\item 
+bool \hyperlink{class_g___bound_acd21b1bb8bd73218d5000bf1fd12872e}{specialize} (\hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{Attr\-Val} $\ast$hypo, bool $\ast$n\-\_\-input, \hyperlink{class_s___bound}{S\-\_\-\-Bound} $\ast$ptr\-\_\-sb)
+\begin{DoxyCompactList}\small\item\em specialize hypothesis and enroll to gb\-\_\-\-Array \end{DoxyCompactList}\item 
+\hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066}{Result} \hyperlink{class_g___bound_add933c8bb37f279fcbd3dcff4eea3e76}{predict} (bool $\ast$u\-\_\-input)
+\begin{DoxyCompactList}\small\item\em predict for new instance \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-list$<$ \hyperlink{class_hypothesis}{Hypothesis} $>$ \hyperlink{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}{gb\-\_\-\-Array}
-\item 
-int \hyperlink{class_g___bound_a7f9e3866c5bf5a55f59949e9b2ff4cce}{Attr\-Num}
-\end{DoxyCompactItemize}
+\hyperlink{class_list}{List}$<$ \hyperlink{class_hypothesis}{Hypothesis} $\ast$ $>$ $\ast$ \hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\-\_\-\-Array}
+\begin{DoxyCompactList}\small\item\em set of hypothesis in most general bound \end{DoxyCompactList}\item 
+int \hyperlink{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{size}
+\begin{DoxyCompactList}\small\item\em the number of attributes except for target attribute \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+Most General Bound of Version Space. 
+
+Version Space is hypothesis space whose hypothesis are satisfying \par
+ target attributes as positive. This most general bound is represented \par
+ as lower bound of all hypothesis in version space 
+
+Definition at line 192 of file concept.\-h.
 
 
-Definition at line 64 of file concept.\-h.
 
-
-
-\subsection{Member Function Documentation}
-\hypertarget{class_g___bound_aea45d16a15dfd2c30985d89f92803b22}{\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!Cover\-Check@{Cover\-Check}}
-\index{Cover\-Check@{Cover\-Check}!G_Bound@{G\-\_\-\-Bound}}
-\subsubsection[{Cover\-Check}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Result} G\-\_\-\-Bound\-::\-Cover\-Check (
-\begin{DoxyParamCaption}
-\item[{bool $\ast$}]{u\-\_\-input}
-\end{DoxyParamCaption}
-)}}\label{class_g___bound_aea45d16a15dfd2c30985d89f92803b22}
-
-
-Definition at line 290 of file concept.\-cpp.
-
-
-\begin{DoxyCode}
-290                                         \{
-291     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066}{Result} ret = \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\_dontknow};
-292     \textcolor{keywordtype}{bool} first\_val;
-293 
-294     \textcolor{keywordflow}{for}(list<Hypothesis>::iterator i = \hyperlink{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}{gb\_Array}.begin(); i != \hyperlink{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}{gb\_Array}.end(); i++) \{
-295     \textcolor{keywordflow}{if}(i == \hyperlink{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}{gb\_Array}.begin())
-296         first\_val = i->isCover(u\_input);
-297     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(i->isCover(u\_input) != first\_val)
-298         \textcolor{keywordflow}{return} \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\_dontknow};
-299     \}
-300 
-301     \textcolor{keywordflow}{return} (first\_val) ? \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518}{r\_true} : \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069}{r\_false};
-302 \}
-\end{DoxyCode}
-\hypertarget{class_g___bound_a9344fe22bb13d39a425c5a5b690aace4}{\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!Cover\-Check\-Update@{Cover\-Check\-Update}}
-\index{Cover\-Check\-Update@{Cover\-Check\-Update}!G_Bound@{G\-\_\-\-Bound}}
-\subsubsection[{Cover\-Check\-Update}]{\setlength{\rightskip}{0pt plus 5cm}void G\-\_\-\-Bound\-::\-Cover\-Check\-Update (
-\begin{DoxyParamCaption}
-\item[{bool $\ast$}]{p\-\_\-input}
-\end{DoxyParamCaption}
-)}}\label{class_g___bound_a9344fe22bb13d39a425c5a5b690aace4}
-
-
-Definition at line 189 of file concept.\-cpp.
-
-
-\begin{DoxyCode}
-189                                             \{
-190     \textcolor{comment}{// at first, check whether this input is negative}
-191     \textcolor{keywordflow}{if}(p\_input[\hyperlink{class_g___bound_a7f9e3866c5bf5a55f59949e9b2ff4cce}{AttrNum}] == \textcolor{keyword}{false}) \{ \textcolor{comment}{// this is negative input}
-192     exit(-1);               \textcolor{comment}{// trap}
-193     \}
-194 
-195     \textcolor{keywordflow}{for}(list<Hypothesis>::iterator i = \hyperlink{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}{gb\_Array}.begin(); i != \hyperlink{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}{gb\_Array}.end(); i++) \{
-196     \textcolor{keywordflow}{if}(!i->isCover(p\_input)) \{
-197 \textcolor{preprocessor}{#if DEBUG\_MODE}
-198 \textcolor{preprocessor}{}        cout << \textcolor{stringliteral}{" -: G\_Bound Entry < "};
-199         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \hyperlink{class_g___bound_a7f9e3866c5bf5a55f59949e9b2ff4cce}{AttrNum}; j++) \{
-200         cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[i->GethArray()[j]] << \textcolor{stringliteral}{" "};
-201         \}
-202         cout << \textcolor{stringliteral}{"> is deleted."} << endl;
-203 \textcolor{preprocessor}{#endif}
-204 \textcolor{preprocessor}{}        \hyperlink{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}{gb\_Array}.erase(i);      \textcolor{comment}{// should remove this hypothesis from G\_Bound}
-205         i--;
-206     \}
-207     \}
-208 \}
-\end{DoxyCode}
-\hypertarget{class_g___bound_a30da552d80a6b169c76cc61410a05b78}{\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!Initialize@{Initialize}}
-\index{Initialize@{Initialize}!G_Bound@{G\-\_\-\-Bound}}
-\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void G\-\_\-\-Bound\-::\-Initialize (
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_g___bound_af622a6a9136c180b19b038bdb2e5207c}{\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!G\-\_\-\-Bound@{G\-\_\-\-Bound}}
+\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!G_Bound@{G\-\_\-\-Bound}}
+\subsubsection[{G\-\_\-\-Bound}]{\setlength{\rightskip}{0pt plus 5cm}G\-\_\-\-Bound\-::\-G\-\_\-\-Bound (
 \begin{DoxyParamCaption}
 \item[{int}]{size}
 \end{DoxyParamCaption}
-)}}\label{class_g___bound_a30da552d80a6b169c76cc61410a05b78}
+)}}\label{class_g___bound_af622a6a9136c180b19b038bdb2e5207c}
 
 
-Definition at line 162 of file concept.\-cpp.
+constructor taking the number of attributes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & the number of attributes except for target attribute \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 221 of file concept.\-cpp.
 
 
 \begin{DoxyCode}
-162                                  \{
-163     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}* hArray = \textcolor{keyword}{new} \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}[size];
-164  
-165 \textcolor{preprocessor}{ #if DEBUG\_MODE}
-166 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{" -: Most General Bound is initialized with ... "} << endl;
-167 
-168     cout << \textcolor{stringliteral}{" -: < "};
-169 \textcolor{preprocessor}{#endif}
-170 \textcolor{preprocessor}{}   
-171     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < size; i++) \{
-172     hArray[i] = \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{vAllAccept};   \textcolor{comment}{// most general hypothesis}
-173 
-174 \textcolor{preprocessor}{#if DEBUG\_MODE}
-175 \textcolor{preprocessor}{}    cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[hArray[i]] << \textcolor{stringliteral}{" "};
-176 \textcolor{preprocessor}{#endif}
-177 \textcolor{preprocessor}{}    \}
-178 \textcolor{preprocessor}{#if DEBUG\_MODE}
-179 \textcolor{preprocessor}{}    cout << \textcolor{stringliteral}{"> "} << endl;
-180 \textcolor{preprocessor}{#endif}
-181 \textcolor{preprocessor}{}
-182     \hyperlink{class_hypothesis}{Hypothesis}* hypo = \textcolor{keyword}{new} \hyperlink{class_hypothesis}{Hypothesis}(size, hArray);
-183     
-184     \hyperlink{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}{gb\_Array}.push\_back(*hypo);
-185 
-186     \hyperlink{class_g___bound_a7f9e3866c5bf5a55f59949e9b2ff4cce}{AttrNum} = size;
-187 \}
+221                          : \hyperlink{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{size}(\hyperlink{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{size})
+222 \{
+223   \textcolor{comment}{// create most general hypothesis}
+224   \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}* array = \textcolor{keyword}{new} \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}[\hyperlink{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{size}];
+225 \textcolor{preprocessor}{#if DEBUG\_MODE}
+226 \textcolor{preprocessor}{}  cout << \textcolor{stringliteral}{" -: Most General Bound is initialized with ... "} << endl;
+227   cout << \textcolor{stringliteral}{" -: < "};
+228 \textcolor{preprocessor}{#endif}
+229 \textcolor{preprocessor}{}  \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{size}; i++) \{
+230     array[i] = \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{vAllAccept};    \textcolor{comment}{// most general hypothesis}
+231 \textcolor{preprocessor}{#if DEBUG\_MODE}
+232 \textcolor{preprocessor}{}    cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[array[i]] << \textcolor{stringliteral}{" "};
+233 \textcolor{preprocessor}{#endif}
+234 \textcolor{preprocessor}{}  \}
+235 \textcolor{preprocessor}{#if DEBUG\_MODE}
+236 \textcolor{preprocessor}{}  cout << \textcolor{stringliteral}{"> "} << endl;
+237 \textcolor{preprocessor}{#endif}
+238 \textcolor{preprocessor}{}  \hyperlink{class_hypothesis}{Hypothesis}* hypo = \textcolor{keyword}{new} \hyperlink{class_hypothesis}{Hypothesis}(size, array);
+239   \hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array} = \textcolor{keyword}{new} \hyperlink{class_list}{List <Hypothesis*>}();
+240   \hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array}->\hyperlink{class_list_ac8fff7396766358cee488223009ac578}{addNode}(hypo);
+241 \}
 \end{DoxyCode}
-\hypertarget{class_g___bound_a28f2ef635a7a74db831df0f2da088181}{\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!Specialize@{Specialize}}
-\index{Specialize@{Specialize}!G_Bound@{G\-\_\-\-Bound}}
-\subsubsection[{Specialize}]{\setlength{\rightskip}{0pt plus 5cm}void G\-\_\-\-Bound\-::\-Specialize (
+\hypertarget{class_g___bound_a38ff1d10b4fce5df85429f8196a36964}{\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!$\sim$\-G\-\_\-\-Bound@{$\sim$\-G\-\_\-\-Bound}}
+\index{$\sim$\-G\-\_\-\-Bound@{$\sim$\-G\-\_\-\-Bound}!G_Bound@{G\-\_\-\-Bound}}
+\subsubsection[{$\sim$\-G\-\_\-\-Bound}]{\setlength{\rightskip}{0pt plus 5cm}G\-\_\-\-Bound\-::$\sim$\-G\-\_\-\-Bound (
 \begin{DoxyParamCaption}
-\item[{{\bf Attr\-Val} $\ast$}]{h\-Array, }
-\item[{bool $\ast$}]{n\-\_\-input, }
-\item[{void $\ast$}]{ptr\-\_\-\-S\-\_\-\-Bound}
+\item[{void}]{}
 \end{DoxyParamCaption}
-)}}\label{class_g___bound_a28f2ef635a7a74db831df0f2da088181}
+)}}\label{class_g___bound_a38ff1d10b4fce5df85429f8196a36964}
 
 
-Definition at line 237 of file concept.\-cpp.
+default destructor 
+
+
+
+Definition at line 243 of file concept.\-cpp.
 
 
 \begin{DoxyCode}
-237                                                                           \{
-238     \hyperlink{class_s___bound}{S\_Bound}* ptr\_sb = (\hyperlink{class_s___bound}{S\_Bound}*) ptr\_S\_Bound;
-239     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_g___bound_a7f9e3866c5bf5a55f59949e9b2ff4cce}{AttrNum}; i++) \{
-240     \textcolor{keywordflow}{if}(hArray[i] == \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{vAllAccept}) \{
-241         \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}* new\_hArray = \textcolor{keyword}{new} \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}[\hyperlink{class_g___bound_a7f9e3866c5bf5a55f59949e9b2ff4cce}{AttrNum}];
-242         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \hyperlink{class_g___bound_a7f9e3866c5bf5a55f59949e9b2ff4cce}{AttrNum}; j++) \{
-243         \textcolor{keywordflow}{if}(i == j)
-244             new\_hArray[j] = (n\_input[j]) ? \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86}{vFalse} : \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102}{vTrue};
-245         \textcolor{keywordflow}{else}
-246             new\_hArray[j] = hArray[j];
-247         \}
-248         
-249         \hyperlink{class_hypothesis}{Hypothesis}* tmp\_h = \textcolor{keyword}{new} \hyperlink{class_hypothesis}{Hypothesis}(AttrNum, new\_hArray);
-250 
-251         \textcolor{keywordtype}{bool} isCoverAllSBound = \textcolor{keyword}{true};
-252         \textcolor{keywordflow}{for}(list<Hypothesis>::iterator iter = ptr\_sb->\hyperlink{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}{sb\_Array}.begin(); iter != ptr\_sb->
-      \hyperlink{class_s___bound_a06e45530f4b7a999dfaa17ca73ef1d4f}{sb\_Array}.end(); iter++) \{
-253         \textcolor{keywordflow}{if}(!tmp\_h->\hyperlink{class_hypothesis_ab8d9d311060a302fe11457b067898e24}{isMoreGeneralThanEqualTo}(*iter)) \{
-254             isCoverAllSBound = \textcolor{keyword}{false};
-255             \textcolor{keywordflow}{break};
-256         \}
-257         \}
-258         
-259         \textcolor{keywordflow}{if}(isCoverAllSBound) \{
-260         \textcolor{keywordtype}{bool} isSpecific = \textcolor{keyword}{false};
-261         \textcolor{keywordflow}{for}(list<Hypothesis>::iterator iter = \hyperlink{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}{gb\_Array}.begin(); iter != 
-      \hyperlink{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}{gb\_Array}.end(); iter++) \{
-262             \textcolor{keywordflow}{if}(iter->isMoreGeneralThanEqualTo(*tmp\_h)) \{
-263             isSpecific = \textcolor{keyword}{true};
-264             \textcolor{keywordflow}{break};
-265             \}
-266         \}
-267 
-268         \textcolor{keywordflow}{if}(isSpecific) \{
-269             \textcolor{keyword}{delete}(new\_hArray);
-270             \textcolor{keyword}{delete}(tmp\_h);
-271         \}
-272         \textcolor{keywordflow}{else} \{  \textcolor{comment}{// all conditions satisfied}
-273 \textcolor{preprocessor}{#if DEBUG\_MODE}
-274 \textcolor{preprocessor}{}            cout << \textcolor{stringliteral}{" -: < "};
-275             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \hyperlink{class_g___bound_a7f9e3866c5bf5a55f59949e9b2ff4cce}{AttrNum}; j++) \{
-276             cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[new\_hArray[j]] << \textcolor{stringliteral}{" "};
-277             \}
-278             cout << \textcolor{stringliteral}{"> "} << endl;
-279 \textcolor{preprocessor}{#endif}
-280 \textcolor{preprocessor}{}            \hyperlink{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}{gb\_Array}.push\_back(*tmp\_h);
-281         \}
-282         \} \textcolor{keywordflow}{else} \{
-283         \textcolor{keyword}{delete}(new\_hArray);
-284         \textcolor{keyword}{delete}(tmp\_h);
-285         \}
-286     \}
-287     \}
-288 \}
+244 \{
+245   \textcolor{keywordflow}{if}(\hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array})
+246     \textcolor{keyword}{delete}(\hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array});
+247 \}
 \end{DoxyCode}
-\hypertarget{class_g___bound_a8b473f262762ac5b74fdb766ded033aa}{\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!Update\-Bound@{Update\-Bound}}
-\index{Update\-Bound@{Update\-Bound}!G_Bound@{G\-\_\-\-Bound}}
-\subsubsection[{Update\-Bound}]{\setlength{\rightskip}{0pt plus 5cm}void G\-\_\-\-Bound\-::\-Update\-Bound (
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_g___bound_a567a0759047141b59389ec0beefb0a6c}{\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!neg\-Update@{neg\-Update}}
+\index{neg\-Update@{neg\-Update}!G_Bound@{G\-\_\-\-Bound}}
+\subsubsection[{neg\-Update}]{\setlength{\rightskip}{0pt plus 5cm}bool G\-\_\-\-Bound\-::neg\-Update (
 \begin{DoxyParamCaption}
 \item[{bool $\ast$}]{n\-\_\-input, }
-\item[{void $\ast$}]{ptr\-\_\-\-S\-\_\-\-Bound}
+\item[{{\bf S\-\_\-\-Bound} $\ast$}]{ptr\-\_\-sb}
 \end{DoxyParamCaption}
-)}}\label{class_g___bound_a8b473f262762ac5b74fdb766ded033aa}
+)}}\label{class_g___bound_a567a0759047141b59389ec0beefb0a6c}
 
 
-Definition at line 210 of file concept.\-cpp.
+update g\-\_\-bound with negative training instance 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\-\_\-input} & negative training instance \\
+\hline
+{\em ptr\-\_\-sb} & used for specialization \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if update success \\
+\hline
+{\em false} & if update fail \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 272 of file concept.\-cpp.
 
 
 \begin{DoxyCode}
-210                                                           \{
-211     \textcolor{comment}{// at first, check whether this input is positive}
-212     \textcolor{keywordflow}{if}(n\_input[\hyperlink{class_g___bound_a7f9e3866c5bf5a55f59949e9b2ff4cce}{AttrNum}] == \textcolor{keyword}{true}) \{  \textcolor{comment}{// this is positive input}
-213     exit(-1);           \textcolor{comment}{// trap}
-214     \}
-215     
-216     \textcolor{keywordflow}{for}(list<Hypothesis>::iterator i = \hyperlink{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}{gb\_Array}.begin(); i != \hyperlink{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}{gb\_Array}.end(); i++) \{
-217     \textcolor{keywordflow}{if}(i->isCover(n\_input)) \{  \textcolor{comment}{// for not consistent hypothesis}
-218 \textcolor{preprocessor}{#if DEBUG\_MODE}
-219 \textcolor{preprocessor}{}        cout << \textcolor{stringliteral}{" -: G\_Bound Entry < "};
-220 \textcolor{preprocessor}{#endif}
-221 \textcolor{preprocessor}{}        \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}* hArray = \textcolor{keyword}{new} \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}[\hyperlink{class_g___bound_a7f9e3866c5bf5a55f59949e9b2ff4cce}{AttrNum}];
-222         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \hyperlink{class_g___bound_a7f9e3866c5bf5a55f59949e9b2ff4cce}{AttrNum}; j++) \{
-223         hArray[j] = i->GethArray()[j];
-224 \textcolor{preprocessor}{#if DEBUG\_MODE}
-225 \textcolor{preprocessor}{}        cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[hArray[j]] << \textcolor{stringliteral}{" "};
-226 \textcolor{preprocessor}{#endif      }
-227 \textcolor{preprocessor}{}        \}
-228 \textcolor{preprocessor}{#if DEBUG\_MODE}
-229 \textcolor{preprocessor}{}        cout << \textcolor{stringliteral}{"> is updated with ..."} << endl;
-230 \textcolor{preprocessor}{#endif}
-231 \textcolor{preprocessor}{}        \hyperlink{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}{gb\_Array}.erase(i);
-232         \hyperlink{class_g___bound_a28f2ef635a7a74db831df0f2da088181}{Specialize}(hArray, n\_input, ptr\_S\_Bound);
-233     \}
-234     \}
-235 \}
+272                                                       \{
+273   \textcolor{comment}{// at first, check whether this input is negative}
+274   \textcolor{keywordflow}{if}(\hyperlink{concept_8cpp_a3334c3b48c5ef4c8a07f5d45f5df5087}{isPositive}(n\_input, \hyperlink{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{size}))
+275     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+276 
+277   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array}->\hyperlink{class_list_a4d8d3acaf718d470e1084814a6155814}{getSize}(); i++) \{
+278     \textcolor{keywordflow}{if}(\hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array}->\hyperlink{class_list_aa93404b4c7f3f86a560a0a675f55c9bd}{getContent}(i)->\hyperlink{class_hypothesis_a38c5f393775c1dd9eada90c7e5f163e0}{isCover}(n\_input)) \{
+279 \textcolor{preprocessor}{#if DEBUG\_MODE}
+280 \textcolor{preprocessor}{}      cout << \textcolor{stringliteral}{" -: G\_Bound Entry < "};
+281 \textcolor{preprocessor}{#endif}
+282 \textcolor{preprocessor}{}      \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}* copy = \textcolor{keyword}{new} \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}[\hyperlink{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{size}];
+283       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \hyperlink{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{size}; j++) \{
+284         copy[j] = \hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array}->\hyperlink{class_list_aa93404b4c7f3f86a560a0a675f55c9bd}{getContent}(i)->\hyperlink{class_hypothesis_a601cd415f0c319f3be507951336d3bda}{getHypo}()[j];
+285 \textcolor{preprocessor}{#if DEBUG\_MODE}
+286 \textcolor{preprocessor}{}        cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[copy[j]] << \textcolor{stringliteral}{" "};
+287 \textcolor{preprocessor}{#endif      }
+288 \textcolor{preprocessor}{}      \}
+289 \textcolor{preprocessor}{#if DEBUG\_MODE}
+290 \textcolor{preprocessor}{}      cout << \textcolor{stringliteral}{"> is updated with ..."} << endl;
+291 \textcolor{preprocessor}{#endif}
+292 \textcolor{preprocessor}{}      \textcolor{keywordflow}{if}(!\hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array}->\hyperlink{class_list_af4e9e7db2b56cd948ec225445f3250da}{delNode}(i))
+293         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+294       \textcolor{keywordflow}{if}(!\hyperlink{class_g___bound_acd21b1bb8bd73218d5000bf1fd12872e}{specialize}(copy, n\_input, ptr\_sb))
+295         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+296     \}
+297   \}
+298   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+299 \}
+\end{DoxyCode}
+\hypertarget{class_g___bound_ad44aeb38feed0ff7e9a2f29f2ada0ac9}{\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!pos\-Update@{pos\-Update}}
+\index{pos\-Update@{pos\-Update}!G_Bound@{G\-\_\-\-Bound}}
+\subsubsection[{pos\-Update}]{\setlength{\rightskip}{0pt plus 5cm}bool G\-\_\-\-Bound\-::pos\-Update (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$}]{p\-\_\-input}
+\end{DoxyParamCaption}
+)}}\label{class_g___bound_ad44aeb38feed0ff7e9a2f29f2ada0ac9}
+
+
+update g\-\_\-bound with positive training instance 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\-\_\-input} & positive training instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if update success \\
+\hline
+{\em false} & if update fail \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 249 of file concept.\-cpp.
+
+
+\begin{DoxyCode}
+250 \{
+251   \textcolor{comment}{// at first, check whether this input is positive}
+252   \textcolor{keywordflow}{if}(!\hyperlink{concept_8cpp_a3334c3b48c5ef4c8a07f5d45f5df5087}{isPositive}(p\_input, \hyperlink{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{size}))
+253     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+254 
+255   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array}->\hyperlink{class_list_a4d8d3acaf718d470e1084814a6155814}{getSize}(); i++) \{
+256     \textcolor{keywordflow}{if}(!\hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array}->\hyperlink{class_list_aa93404b4c7f3f86a560a0a675f55c9bd}{getContent}(i)->\hyperlink{class_hypothesis_a38c5f393775c1dd9eada90c7e5f163e0}{isCover}(p\_input)) \{
+257 \textcolor{preprocessor}{#if DEBUG\_MODE}
+258 \textcolor{preprocessor}{}      cout << \textcolor{stringliteral}{" -: G\_Bound Entry < "};
+259       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \hyperlink{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{size}; j++) \{
+260         cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[\hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array}->\hyperlink{class_list_aa93404b4c7f3f86a560a0a675f55c9bd}{getContent}(i)->\hyperlink{class_hypothesis_a601cd415f0c319f3be507951336d3bda}{getHypo}()[j]] << \textcolor{stringliteral}{" "};
+261       \}
+262       cout << \textcolor{stringliteral}{"> is deleted."} << endl;
+263 \textcolor{preprocessor}{#endif}
+264 \textcolor{preprocessor}{}      \textcolor{keywordflow}{if}(!\hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array}->\hyperlink{class_list_af4e9e7db2b56cd948ec225445f3250da}{delNode}(i))
+265         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+266       i--; \textcolor{comment}{// rearrange array}
+267     \}
+268   \}
+269   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+270 \}
+\end{DoxyCode}
+\hypertarget{class_g___bound_add933c8bb37f279fcbd3dcff4eea3e76}{\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!predict@{predict}}
+\index{predict@{predict}!G_Bound@{G\-\_\-\-Bound}}
+\subsubsection[{predict}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Result} G\-\_\-\-Bound\-::predict (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$}]{u\-\_\-input}
+\end{DoxyParamCaption}
+)}}\label{class_g___bound_add933c8bb37f279fcbd3dcff4eea3e76}
+
+
+predict for new instance 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u\-\_\-input} & new instance which has no target attribute information \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em r\-\_\-false} & all hypothesis votes false \\
+\hline
+{\em r\-\_\-true} & all hypothesis votes true \\
+\hline
+{\em r\-\_\-dontknow} & hypothesis votes non-\/unanimous \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 356 of file concept.\-cpp.
+
+
+\begin{DoxyCode}
+356                                      \{
+357   \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066}{Result} ret = \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\_dontknow};
+358   \textcolor{keywordtype}{bool} first\_val;
+359 
+360   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array}->\hyperlink{class_list_a4d8d3acaf718d470e1084814a6155814}{getSize}(); i++) \{
+361     \textcolor{keywordflow}{if}(i == 0)
+362       first\_val = \hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array}->\hyperlink{class_list_aa93404b4c7f3f86a560a0a675f55c9bd}{getContent}(i)->\hyperlink{class_hypothesis_a38c5f393775c1dd9eada90c7e5f163e0}{isCover}(u\_input);
+363     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array}->\hyperlink{class_list_aa93404b4c7f3f86a560a0a675f55c9bd}{getContent}(i)->\hyperlink{class_hypothesis_a38c5f393775c1dd9eada90c7e5f163e0}{isCover}(u\_input) != first\_val)
+364       \textcolor{keywordflow}{return} \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\_dontknow};
+365   \}
+366 
+367   \textcolor{keywordflow}{return} (first\_val) ? \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518}{r\_true} : \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069}{r\_false};
+368 \}
+\end{DoxyCode}
+\hypertarget{class_g___bound_acd21b1bb8bd73218d5000bf1fd12872e}{\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!specialize@{specialize}}
+\index{specialize@{specialize}!G_Bound@{G\-\_\-\-Bound}}
+\subsubsection[{specialize}]{\setlength{\rightskip}{0pt plus 5cm}bool G\-\_\-\-Bound\-::specialize (
+\begin{DoxyParamCaption}
+\item[{{\bf Attr\-Val} $\ast$}]{hypo, }
+\item[{bool $\ast$}]{n\-\_\-input, }
+\item[{{\bf S\-\_\-\-Bound} $\ast$}]{ptr\-\_\-sb}
+\end{DoxyParamCaption}
+)}}\label{class_g___bound_acd21b1bb8bd73218d5000bf1fd12872e}
+
+
+specialize hypothesis and enroll to gb\-\_\-\-Array 
+
+used for neg\-Update, and automatically enroll to gb\-\_\-\-Array 
+\begin{DoxyParams}{Parameters}
+{\em hypo} & copied hypothesis attribute array \\
+\hline
+{\em n\-\_\-input} & compared new training example \\
+\hline
+{\em ptr\-\_\-sb} & used for comparing with \hyperlink{class_s___bound}{S\-\_\-\-Bound} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if enroll success \\
+\hline
+{\em false} & if enroll fail \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 301 of file concept.\-cpp.
+
+
+\begin{DoxyCode}
+301                                                                       \{
+302   \textcolor{comment}{// search modifiable attribute}
+303   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{size}; i++) \{
+304     \textcolor{keywordflow}{if}(hypo[i] == \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{vAllAccept}) \{
+305       \textcolor{comment}{// make next more specific hypothesis}
+306       \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}* next\_sp = \textcolor{keyword}{new} \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{AttrVal}[\hyperlink{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{size}];
+307       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \hyperlink{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{size}; j++) \{
+308         \textcolor{keywordflow}{if}(i == j)
+309           next\_sp[j] = (n\_input[j]) ? \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86}{vFalse} : \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102}{vTrue};
+310         \textcolor{keywordflow}{else}
+311           next\_sp[j] = hypo[j];
+312       \}
+313       
+314       \textcolor{comment}{// check it is general than S\_Bound h}
+315       \hyperlink{class_hypothesis}{Hypothesis}* tmp\_h = \textcolor{keyword}{new} \hyperlink{class_hypothesis}{Hypothesis}(size, next\_sp);
+316       \textcolor{keywordtype}{bool} isCoverAllSBound = \textcolor{keyword}{true};
+317       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < ptr\_sb->\hyperlink{class_s___bound_a2fa303e4f1e4c2df793e1474f0aa6481}{sb\_Array}->\hyperlink{class_list_a4d8d3acaf718d470e1084814a6155814}{getSize}(); j++) \{
+318         \textcolor{keywordflow}{if}(!tmp\_h->\hyperlink{class_hypothesis_ad0d80b24404c0398ef502740b5115f4a}{isMoreGeneralThanEqualTo}(ptr\_sb->
+      \hyperlink{class_s___bound_a2fa303e4f1e4c2df793e1474f0aa6481}{sb\_Array}->\hyperlink{class_list_aa93404b4c7f3f86a560a0a675f55c9bd}{getContent}(j))) \{
+319           isCoverAllSBound = \textcolor{keyword}{false};
+320           \textcolor{keywordflow}{break};
+321         \}
+322       \}
+323       
+324       \textcolor{comment}{// check it is specific than other G\_Bound h}
+325       \textcolor{keywordflow}{if}(isCoverAllSBound) \{
+326         \textcolor{keywordtype}{bool} isSpecific = \textcolor{keyword}{false};
+327         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < \hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array}->\hyperlink{class_list_a4d8d3acaf718d470e1084814a6155814}{getSize}(); j++) \{
+328           \textcolor{keywordflow}{if}(\hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array}->\hyperlink{class_list_aa93404b4c7f3f86a560a0a675f55c9bd}{getContent}(j)->\hyperlink{class_hypothesis_ad0d80b24404c0398ef502740b5115f4a}{isMoreGeneralThanEqualTo}(
+      tmp\_h)) \{
+329             isSpecific = \textcolor{keyword}{true};
+330             \textcolor{keywordflow}{break};
+331           \}
+332         \}
+333         
+334         \textcolor{keywordflow}{if}(isSpecific) \{
+335           \textcolor{keyword}{delete}(tmp\_h);
+336         \}
+337         \textcolor{keywordflow}{else} \{  \textcolor{comment}{// all conditions satisfied}
+338 \textcolor{preprocessor}{#if DEBUG\_MODE}
+339 \textcolor{preprocessor}{}          cout << \textcolor{stringliteral}{" -: < "};
+340           \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \hyperlink{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{size}; j++) \{
+341             cout << \hyperlink{concept_8cpp_a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f}{SYMBOL}[next\_sp[j]] << \textcolor{stringliteral}{" "};
+342           \}
+343           cout << \textcolor{stringliteral}{"> "} << endl;
+344 \textcolor{preprocessor}{#endif}
+345 \textcolor{preprocessor}{}          \textcolor{keywordflow}{if}(!\hyperlink{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{gb\_Array}->\hyperlink{class_list_ac8fff7396766358cee488223009ac578}{addNode}(tmp\_h))
+346             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+347         \}
+348       \} \textcolor{keywordflow}{else} \{
+349         \textcolor{keyword}{delete}(tmp\_h);
+350       \}
+351     \}
+352   \}
+353   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+354 \}
 \end{DoxyCode}
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_g___bound_a7f9e3866c5bf5a55f59949e9b2ff4cce}{\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!Attr\-Num@{Attr\-Num}}
-\index{Attr\-Num@{Attr\-Num}!G_Bound@{G\-\_\-\-Bound}}
-\subsubsection[{Attr\-Num}]{\setlength{\rightskip}{0pt plus 5cm}int G\-\_\-\-Bound\-::\-Attr\-Num\hspace{0.3cm}{\ttfamily [private]}}}\label{class_g___bound_a7f9e3866c5bf5a55f59949e9b2ff4cce}
-
-
-Definition at line 67 of file concept.\-h.
-
-\hypertarget{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}{\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!gb\-\_\-\-Array@{gb\-\_\-\-Array}}
+\hypertarget{class_g___bound_ac6492431679144fc64b83228f12c0c1a}{\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!gb\-\_\-\-Array@{gb\-\_\-\-Array}}
 \index{gb\-\_\-\-Array@{gb\-\_\-\-Array}!G_Bound@{G\-\_\-\-Bound}}
-\subsubsection[{gb\-\_\-\-Array}]{\setlength{\rightskip}{0pt plus 5cm}list$<${\bf Hypothesis}$>$ G\-\_\-\-Bound\-::gb\-\_\-\-Array\hspace{0.3cm}{\ttfamily [private]}}}\label{class_g___bound_ace60790dcb7f10a2caa157abe1aa838f}
+\subsubsection[{gb\-\_\-\-Array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf List}$<${\bf Hypothesis}$\ast$$>$$\ast$ G\-\_\-\-Bound\-::gb\-\_\-\-Array\hspace{0.3cm}{\ttfamily [private]}}}\label{class_g___bound_ac6492431679144fc64b83228f12c0c1a}
 
 
-Definition at line 66 of file concept.\-h.
+set of hypothesis in most general bound 
+
+
+
+Definition at line 194 of file concept.\-h.
+
+\hypertarget{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}{\index{G\-\_\-\-Bound@{G\-\_\-\-Bound}!size@{size}}
+\index{size@{size}!G_Bound@{G\-\_\-\-Bound}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int G\-\_\-\-Bound\-::size\hspace{0.3cm}{\ttfamily [private]}}}\label{class_g___bound_a2583e4243c89d01b3131ce8fb40940a9}
+
+
+the number of attributes except for target attribute 
+
+
+
+Definition at line 195 of file concept.\-h.
 
 
 

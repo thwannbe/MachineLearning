@@ -1,345 +1,419 @@
+////////////////////////////////////////////////////////////////////////////////
+///
+/// @file concept.cpp
+/// @brief Concept Learning Framework Source File
+/// @details Based on Candidate Elimination Algorithm, it predict target @n
+///          concept. It assumes that input is a conjunctive set of attributes @n
+///          including target attribute. All attribute has binary output ( T/F )
+/// @author Suwon Oh <suwon@csap.snu.ac.kr>
+/// @section changelog Change Log
+/// 2014/09/22 Suwon Oh created @n
+/// 2014/09/24 Suwon Oh implemented prototype @n
+/// 2014/12/14 Suwon Oh adapted to Doxygen @n
+/// 2014/12/16 Suwon Oh adapted self-implemented list library @n
+///
+/// @section reference_section Reference
+/// MACHINE LEARNING - TOM M. MITCHELL
+/// 
+/// @section purpose_section Purpose
+/// Application trial for personal studying
+///
+
 #include "concept.h"
-#include <cstdlib> // should be replaced try-catch statement
 #include <iostream>
 
 #define DEBUG_MODE  1
 
+using namespace std;
 
+////////////////////////////////////////////////////////////////////////////////
+///
+/// @brief symbol table
 
 char SYMBOL[] = {'F', 'T', '?', '-'};
 
-Hypothesis::Hypothesis(int size, AttrVal* hArray) : AttrNum(size) {
-    this->hArray = hArray;
+////////////////////////////////////////////////////////////////////////////////
+///
+/// @brief test input positivity
+/// @details only available to training example which @n
+///          has target attribute value.
+/// @param input training example
+/// @param size the number of attributes of the example @n
+///        except for target attribute
+/// @retval true if example is positive
+/// @retval false if example is negative
+
+bool isPositive(bool* input, int size)
+{
+  return input[size];
 }
 
-AttrVal* Hypothesis::GethArray(void) {
-    return hArray;
+Hypothesis::Hypothesis(int size, AttrVal* hypo) : size(size) {
+  this->hypo = hypo;
 }
 
-bool Hypothesis::isCover(bool* input) {
-    bool cover = true;
+Hypothesis::~Hypothesis() {
+  if(hypo)
+    delete(hypo);
+}
 
-    for(int i = 0; i < AttrNum; i++) {
-	if(cover) {
-	    AttrVal curVal = hArray[i];
-	    bool curInput = input[i];
-	    cover = !((curVal == vFalse && curInput == true) || (curVal == vTrue && curInput == false) || \
-		    (curVal == vAllDeny));
-	}
+AttrVal* Hypothesis::getHypo(void) const
+{
+  return hypo;
+}
+
+bool Hypothesis::isCover(bool* input) const
+{
+  bool cover = true;
+
+  for(int i = 0; i < size; i++) {
+    if(cover) {
+      AttrVal curVal = hypo[i];
+      bool curInput = input[i];
+      // if cover is true, continue to search
+      cover = !((curVal == vFalse && curInput == true) || \
+                (curVal == vTrue && curInput == false) || \
+                (curVal == vAllDeny));
     }
+  }
 
-    return cover;
+  return cover;
 }
 
-bool Hypothesis::isMoreGeneralThanEqualTo(Hypothesis h) {
-    // h should have same size with this hypothesis
-    AttrVal* compare_with = h.GethArray();
-    
-    bool more_general = true;
-    for(int i = 0; i < AttrNum; i++) {
-	if((hArray[i] == vAllDeny && compare_with[i] != vAllDeny) || (hArray[i] != vAllAccept && compare_with[i] != vAllDeny \
-	    && hArray[i] != compare_with[i])) {
-	    more_general = false;
-	    break;
-	}
+bool Hypothesis::isMoreGeneralThanEqualTo(Hypothesis* h) const
+{
+  // h should have same size with this hypothesis
+  AttrVal* compare = h->getHypo();
+  
+  bool more_general = true;
+  for(int i = 0; i < size; i++) {
+    if((hypo[i] == vAllDeny && compare[i] != vAllDeny) || \
+      (hypo[i] != vAllAccept && compare[i] != vAllDeny && \
+      hypo[i] != compare[i])) {
+      more_general = false;
+      break;
     }
+  }
 
-    return more_general;
+  return more_general;
 }
 
-void S_Bound::Initialize(int size) {
-    AttrVal* hArray = new AttrVal[size];
-   
+S_Bound::S_Bound(int size) : size(size)
+{
+  // create most specific hypothesis
+  AttrVal* array = new AttrVal[size];
 #if DEBUG_MODE
-    cout << " -: Most Specific Bound is initialized with ... " << endl;
-
-    cout << " -: < ";
+  cout << " -: Most Specific Bound is initialized with ... " << endl;
+  cout << " -: < ";
 #endif
-
-    for(int i = 0; i < size; i++) {
-	hArray[i] = vAllDeny;	// most specific hypothesis
+  for(int i = 0; i < size; i++) {
+    array[i] = vAllDeny;	// most specific hypothesis
 #if DEBUG_MODE
-	cout << SYMBOL[hArray[i]] << " ";
+    cout << SYMBOL[array[i]] << " ";
 #endif
-    }
-
+  }
 #if DEBUG_MODE
-    cout << "> " << endl;
+  cout << "> " << endl;
 #endif
-
-    Hypothesis* hypo = new Hypothesis(size, hArray);
-    
-    sb_Array.push_back(*hypo);
-
-    AttrNum = size;
+  Hypothesis* hypo = new Hypothesis(size, array);
+  sb_Array = new List <Hypothesis*>();
+  sb_Array->addNode(hypo);
 }
 
-void S_Bound::CoverCheckUpdate(bool* n_input) {
-    // at first, check whether this input is negative
-    if(n_input[AttrNum] == true) {  // this is positive input
-	exit(-1);   		    // trap
-    }
+S_Bound::~S_Bound()
+{
+  if(sb_Array)
+    delete(sb_Array);
+}
 
-    for(list<Hypothesis>::iterator i = sb_Array.begin(); i != sb_Array.end(); i++) {
-	if(i->isCover(n_input)) {
+bool S_Bound::negUpdate(bool* n_input)
+{
+  // at first, check whether this input is negative
+  if(isPositive(n_input, size))
+	  return false;
+
+  for(unsigned int i = 0; i < sb_Array->getSize(); i++) {
+	  if(sb_Array->getContent(i)->isCover(n_input)) {
 #if DEBUG_MODE
 	    cout << " -: S_Bound Entry < ";
-	    for(int j = 0; j < AttrNum; j++) {
-		cout << SYMBOL[i->GethArray()[j]] << " ";
+	    for(int j = 0; j < size; j++) {
+		    cout << SYMBOL[sb_Array->getContent(i)->getHypo()[j]] << " ";
 	    }
 	    cout << "> is deleted." << endl;
 #endif
-	    sb_Array.erase(i);	    // should remove this hypothesis from S_Bound
-	    i--;
-	}
-    }
+	    if(!sb_Array->delNode(i))
+        return false;
+      i--; // rearrange array
+	  }
+  }
+  return true;
 }
 
-void S_Bound::UpdateBound(bool* p_input) {
-    // at first, check whether this input is positive
-    if(p_input[AttrNum] == false) { // this is negative input
-	exit(-1);		    // trap
-    }
-    
-    for(list<Hypothesis>::iterator i = sb_Array.begin(); i != sb_Array.end(); i++) {
-	if(!i->isCover(p_input)) {  // for not consistent hypothesis
+bool S_Bound::posUpdate(bool* p_input)
+{
+  // at first, check whether this input is positive
+  if(!isPositive(p_input, size))
+    return false;
+
+  for(unsigned int i = 0; i < sb_Array->getSize(); i++) {
+    if(!sb_Array->getContent(i)->isCover(p_input)) {
+    // should be more generalized
 #if DEBUG_MODE
-	    cout << " -: S_Bound Entry < ";
+      cout << " -: S_Bound Entry < ";
 #endif
-	    AttrVal* hArray = new AttrVal[AttrNum];
-	    for(int j = 0; j < AttrNum; j++) {
-		hArray[j] = i->GethArray()[j];
+      AttrVal* copy = new AttrVal[size];
+      for(int j = 0; j < size; j++) {
+        copy[j] = sb_Array->getContent(i)->getHypo()[j];
 #if DEBUG_MODE
-		cout << SYMBOL[hArray[j]] << " ";
+        cout << SYMBOL[copy[j]] << " ";
 #endif		
-	    }
+      }
 #if DEBUG_MODE
-	    cout << "> is updated with ..." << endl;
+      cout << "> is updated with ..." << endl;
 #endif
-	    sb_Array.erase(i);
-	    Generalize(hArray, p_input);
-	}
+      // replace generalized one
+      if(!sb_Array->delNode(i))
+        return false;
+      if(!sb_Array->addNode(generalize(copy, p_input)))
+        return false;
     }
+  }
+  return true;
 }
 
-void S_Bound::Generalize(AttrVal* hArray, bool* p_input) {
+Hypothesis* S_Bound::generalize(AttrVal* hypo, bool* p_input) {
 #if DEBUG_MODE
-    cout << " -: < ";
+  cout << " -: < ";
 #endif
-    for(int i = 0; i < AttrNum; i++) {
-	if(hArray[i] == vAllDeny) {
-	    hArray[i] = (p_input[i]) ? vTrue : vFalse;
-	} else if(hArray[i] != vAllAccept) {
-	    if((hArray[i] == vTrue && !p_input[i]) || (hArray[i] == vFalse && p_input[i]))
-		hArray[i] = vAllAccept;
-	}
-#if DEBUG_MODE
-	cout << SYMBOL[hArray[i]] << " ";
-#endif
+  for(int i = 0; i < size; i++) {
+    if(hypo[i] == vAllDeny) {
+      hypo[i] = (p_input[i]) ? vTrue : vFalse;
+    } else if(hypo[i] != vAllAccept) {
+      if((hypo[i] == vTrue && !p_input[i]) || (hypo[i] == vFalse && p_input[i]))
+        hypo[i] = vAllAccept;
     }
 #if DEBUG_MODE
-    cout << "> " << endl;
+    cout << SYMBOL[hypo[i]] << " ";
 #endif
-    
-    Hypothesis* h = new Hypothesis(AttrNum, hArray);
-    sb_Array.push_back(*h);
+  }
+#if DEBUG_MODE
+  cout << "> " << endl;
+#endif
+
+  Hypothesis* h = new Hypothesis(size, hypo);
+  return h;
 }
 
-Result S_Bound::CoverCheck(bool* u_input) {
-    Result ret = r_dontknow;
-    bool first_val;
+Result S_Bound::predict(bool* u_input) {
+  Result ret = r_dontknow;
+  bool first_val;
 
-    for(list<Hypothesis>::iterator i = sb_Array.begin(); i != sb_Array.end(); i++) {
-	if(i == sb_Array.begin())
-	    first_val = i->isCover(u_input);
-	else if(i->isCover(u_input) != first_val)
-	    return r_dontknow;
-    }
+  for(unsigned int i = 0; i < sb_Array->getSize(); i++) {
+    if(i == 0)
+      first_val = sb_Array->getContent(i)->isCover(u_input);
+    else if(sb_Array->getContent(i)->isCover(u_input) != first_val)
+      return r_dontknow;
+  }
 
-    return (first_val) ? r_true : r_false;
+  return (first_val) ? r_true : r_false;
 }
 
-void G_Bound::Initialize(int size) {
-    AttrVal* hArray = new AttrVal[size];
- 
- #if DEBUG_MODE
-    cout << " -: Most General Bound is initialized with ... " << endl;
-
-    cout << " -: < ";
-#endif
-   
-    for(int i = 0; i < size; i++) {
-	hArray[i] = vAllAccept;	// most general hypothesis
-
+G_Bound::G_Bound(int size) : size(size)
+{
+  // create most general hypothesis
+  AttrVal* array = new AttrVal[size];
 #if DEBUG_MODE
-	cout << SYMBOL[hArray[i]] << " ";
+  cout << " -: Most General Bound is initialized with ... " << endl;
+  cout << " -: < ";
 #endif
-    }
+  for(int i = 0; i < size; i++) {
+    array[i] = vAllAccept;	// most general hypothesis
 #if DEBUG_MODE
-    cout << "> " << endl;
+    cout << SYMBOL[array[i]] << " ";
 #endif
-
-    Hypothesis* hypo = new Hypothesis(size, hArray);
-    
-    gb_Array.push_back(*hypo);
-
-    AttrNum = size;
+  }
+#if DEBUG_MODE
+  cout << "> " << endl;
+#endif
+  Hypothesis* hypo = new Hypothesis(size, array);
+  gb_Array = new List <Hypothesis*>();
+  gb_Array->addNode(hypo);
 }
 
-void G_Bound::CoverCheckUpdate(bool* p_input) {
-    // at first, check whether this input is negative
-    if(p_input[AttrNum] == false) { // this is negative input
-	exit(-1);   		    // trap
-    }
-
-    for(list<Hypothesis>::iterator i = gb_Array.begin(); i != gb_Array.end(); i++) {
-	if(!i->isCover(p_input)) {
-#if DEBUG_MODE
-	    cout << " -: G_Bound Entry < ";
-	    for(int j = 0; j < AttrNum; j++) {
-		cout << SYMBOL[i->GethArray()[j]] << " ";
-	    }
-	    cout << "> is deleted." << endl;
-#endif
-	    gb_Array.erase(i);	    // should remove this hypothesis from G_Bound
-	    i--;
-	}
-    }
+G_Bound::~G_Bound()
+{
+  if(gb_Array)
+    delete(gb_Array);
 }
 
-void G_Bound::UpdateBound(bool* n_input, void* ptr_S_Bound) {
-    // at first, check whether this input is positive
-    if(n_input[AttrNum] == true) {  // this is positive input
-	exit(-1);		    // trap
-    }
-    
-    for(list<Hypothesis>::iterator i = gb_Array.begin(); i != gb_Array.end(); i++) {
-	if(i->isCover(n_input)) {  // for not consistent hypothesis
+bool G_Bound::posUpdate(bool* p_input)
+{
+  // at first, check whether this input is positive
+  if(!isPositive(p_input, size))
+    return false;
+
+  for(unsigned int i = 0; i < gb_Array->getSize(); i++) {
+    if(!gb_Array->getContent(i)->isCover(p_input)) {
 #if DEBUG_MODE
-	    cout << " -: G_Bound Entry < ";
+      cout << " -: G_Bound Entry < ";
+      for(int j = 0; j < size; j++) {
+        cout << SYMBOL[gb_Array->getContent(i)->getHypo()[j]] << " ";
+      }
+      cout << "> is deleted." << endl;
 #endif
-	    AttrVal* hArray = new AttrVal[AttrNum];
-	    for(int j = 0; j < AttrNum; j++) {
-		hArray[j] = i->GethArray()[j];
+      if(!gb_Array->delNode(i))
+        return false;
+      i--; // rearrange array
+    }
+  }
+  return true;
+}
+
+bool G_Bound::negUpdate(bool* n_input, S_Bound* ptr_sb) {
+  // at first, check whether this input is negative
+  if(isPositive(n_input, size))
+    return false;
+
+  for(unsigned int i = 0; i < gb_Array->getSize(); i++) {
+    if(gb_Array->getContent(i)->isCover(n_input)) {
 #if DEBUG_MODE
-		cout << SYMBOL[hArray[j]] << " ";
+      cout << " -: G_Bound Entry < ";
+#endif
+      AttrVal* copy = new AttrVal[size];
+      for(int j = 0; j < size; j++) {
+        copy[j] = gb_Array->getContent(i)->getHypo()[j];
+#if DEBUG_MODE
+        cout << SYMBOL[copy[j]] << " ";
 #endif		
-	    }
+      }
 #if DEBUG_MODE
-	    cout << "> is updated with ..." << endl;
+      cout << "> is updated with ..." << endl;
 #endif
-	    gb_Array.erase(i);
-	    Specialize(hArray, n_input, ptr_S_Bound);
-	}
+      if(!gb_Array->delNode(i))
+        return false;
+      if(!specialize(copy, n_input, ptr_sb))
+        return false;
     }
+  }
+  return true;
 }
 
-void G_Bound::Specialize(AttrVal* hArray, bool* n_input, void* ptr_S_Bound) {
-    S_Bound* ptr_sb = (S_Bound*) ptr_S_Bound;
-    for(int i = 0; i < AttrNum; i++) {
-	if(hArray[i] == vAllAccept) {
-	    AttrVal* new_hArray = new AttrVal[AttrNum];
-	    for(int j = 0; j < AttrNum; j++) {
-		if(i == j)
-		    new_hArray[j] = (n_input[j]) ? vFalse : vTrue;
-		else
-		    new_hArray[j] = hArray[j];
-	    }
-	    
-	    Hypothesis* tmp_h = new Hypothesis(AttrNum, new_hArray);
-
-	    bool isCoverAllSBound = true;
-	    for(list<Hypothesis>::iterator iter = ptr_sb->sb_Array.begin(); iter != ptr_sb->sb_Array.end(); iter++) {
-		if(!tmp_h->isMoreGeneralThanEqualTo(*iter)) {
-		    isCoverAllSBound = false;
-		    break;
-		}
-	    }
-	    
-	    if(isCoverAllSBound) {
-		bool isSpecific = false;
-		for(list<Hypothesis>::iterator iter = gb_Array.begin(); iter != gb_Array.end(); iter++) {
-		    if(iter->isMoreGeneralThanEqualTo(*tmp_h)) {
-			isSpecific = true;
-			break;
-		    }
-		}
-
-		if(isSpecific) {
-		    delete(new_hArray);
-		    delete(tmp_h);
-		}
-		else {	// all conditions satisfied
+bool G_Bound::specialize(AttrVal* hypo, bool* n_input, S_Bound* ptr_sb) {
+  // search modifiable attribute
+  for(int i = 0; i < size; i++) {
+    if(hypo[i] == vAllAccept) {
+      // make next more specific hypothesis
+      AttrVal* next_sp = new AttrVal[size];
+      for(int j = 0; j < size; j++) {
+        if(i == j)
+          next_sp[j] = (n_input[j]) ? vFalse : vTrue;
+        else
+          next_sp[j] = hypo[j];
+      }
+      
+      // check it is general than S_Bound h
+      Hypothesis* tmp_h = new Hypothesis(size, next_sp);
+      bool isCoverAllSBound = true;
+      for(unsigned int j = 0; j < ptr_sb->sb_Array->getSize(); j++) {
+        if(!tmp_h->isMoreGeneralThanEqualTo(ptr_sb->sb_Array->getContent(j))) {
+          isCoverAllSBound = false;
+          break;
+        }
+      }
+      
+      // check it is specific than other G_Bound h
+      if(isCoverAllSBound) {
+        bool isSpecific = false;
+        for(unsigned int j = 0; j < gb_Array->getSize(); j++) {
+          if(gb_Array->getContent(j)->isMoreGeneralThanEqualTo(tmp_h)) {
+            isSpecific = true;
+            break;
+          }
+        }
+        
+        if(isSpecific) {
+          delete(tmp_h);
+        }
+        else {	// all conditions satisfied
 #if DEBUG_MODE
-		    cout << " -: < ";
-		    for(int j = 0; j < AttrNum; j++) {
-			cout << SYMBOL[new_hArray[j]] << " ";
-		    }
-		    cout << "> " << endl;
+          cout << " -: < ";
+          for(int j = 0; j < size; j++) {
+            cout << SYMBOL[next_sp[j]] << " ";
+          }
+          cout << "> " << endl;
 #endif
-		    gb_Array.push_back(*tmp_h);
-		}
-	    } else {
-		delete(new_hArray);
-		delete(tmp_h);
-	    }
-	}
+          if(!gb_Array->addNode(tmp_h))
+            return false;
+        }
+      } else {
+        delete(tmp_h);
+      }
     }
+  }
+  return true;
 }
 
-Result G_Bound::CoverCheck(bool* u_input) {
-    Result ret = r_dontknow;
-    bool first_val;
+Result G_Bound::predict(bool* u_input) {
+  Result ret = r_dontknow;
+  bool first_val;
 
-    for(list<Hypothesis>::iterator i = gb_Array.begin(); i != gb_Array.end(); i++) {
-	if(i == gb_Array.begin())
-	    first_val = i->isCover(u_input);
-	else if(i->isCover(u_input) != first_val)
-	    return r_dontknow;
-    }
+  for(unsigned int i = 0; i < gb_Array->getSize(); i++) {
+    if(i == 0)
+      first_val = gb_Array->getContent(i)->isCover(u_input);
+    else if(gb_Array->getContent(i)->isCover(u_input) != first_val)
+      return r_dontknow;
+  }
 
-    return (first_val) ? r_true : r_false;
+  return (first_val) ? r_true : r_false;
 }
 
-void ConceptLearning::Initialize(int size) {
+CE::CE(int size) : size(size)
+{
 #if DEBUG_MODE
-    cout << " <<< Concept Learning Framework (v1.0) >>>" << endl << endl;
-    cout << "-------------------------- INITIALIZATION ----------------------------" << endl;
+  cout << "          <<< Candidate Elimination Framework (v1.0) >>>" << endl << endl;
+  cout << "-------------------------- INITIALIZATION ----------------------------" << endl;
 #endif
-    s_bound.Initialize(size);
-    g_bound.Initialize(size);
+  s_bound = new S_Bound(size);
+  g_bound = new G_Bound(size);
 #if DEBUG_MODE
-    cout << "----------------------------------------------------------------------" << endl << endl;
-#endif
-    AttrNum = size;
-}
-
-void ConceptLearning::UpdateVersionSpace(bool* input) {
-#if DEBUG_MODE
-    cout << "------------------------------ UPDATE --------------------------------" << endl;
-    cout << " -: Input < ";
-    for(int i = 0; i < AttrNum; i++) {
-	    int tmp = (input[i]) ? 1 : 0;
-	    cout << SYMBOL[tmp] << " ";
-    }
-    int ret = (input[AttrNum]) ? 1 : 0;
-    cout << "> = (" << SYMBOL[ret] << ")" << endl << endl;
-#endif
-    if(input[AttrNum]) {    // means positive example
-	    g_bound.CoverCheckUpdate(input);
-	    s_bound.UpdateBound(input);
-    } else {	// means negative example
-	    s_bound.CoverCheckUpdate(input);
-	    g_bound.UpdateBound(input, &s_bound);
-    }
-#if DEBUG_MODE
-    cout << "----------------------------------------------------------------------" << endl << endl;
+  cout << "----------------------------------------------------------------------" << endl << endl;
 #endif
 }
 
-Result ConceptLearning::CoverCheck(bool* u_input) {
-    Result s_ret = s_bound.CoverCheck(u_input);
-    Result g_ret = g_bound.CoverCheck(u_input);
-    
-    return (s_ret == g_ret) ? s_ret : r_dontknow;
+CE::~CE()
+{
+  if(s_bound)
+    delete(s_bound);
+  if(g_bound)
+    delete(g_bound);
+}
+
+bool CE::updateVS(bool* input) {
+#if DEBUG_MODE
+  cout << "------------------------------ UPDATE --------------------------------" << endl;
+  cout << " -: Input < ";
+  for(int i = 0; i < size; i++) {
+    int tmp = (input[i]) ? 1 : 0;
+    cout << SYMBOL[tmp] << " ";
+  }
+  int ret = (input[size]) ? 1 : 0;
+  cout << "> = (" << SYMBOL[ret] << ")" << endl << endl;
+#endif
+  if(input[size]) {    // means positive example
+    g_bound->posUpdate(input);
+    s_bound->posUpdate(input);
+  } else {	// means negative example
+    s_bound->negUpdate(input);
+    g_bound->negUpdate(input, s_bound);
+  }
+#if DEBUG_MODE
+  cout << "----------------------------------------------------------------------" << endl << endl;
+#endif
+}
+
+Result CE::predict(bool* u_input) {
+  Result s_ret = s_bound->predict(u_input);
+  Result g_ret = g_bound->predict(u_input);
+
+  return (s_ret == g_ret) ? s_ret : r_dontknow;
 }

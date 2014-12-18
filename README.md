@@ -18,11 +18,8 @@ Native Mechanic Intelligent Machine Learning (NamiML)
 _src_
 > Machine Learning Algorithm Sources
 
-_lib_
-> Self-implemented Data Structure Libraries
-
 _include_
-> Self-implemented Data Structure Header Files
+> Self-implemented Data Structure Library Files
 
 _doc_
 > Doxygen Outputs

@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Concept Learning Framework.  
+<p>Concept Learning Framework Header File.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="list_8h_source.html">list.h</a>&quot;</code><br/>
 </div>
@@ -102,12 +102,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hypothesis.html">Hypothesis</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concept Learning Base <a class="el" href="class_hypothesis.html" title="Concept Learning Base Hypothesis Class. ">Hypothesis</a> Class.  <a href="class_hypothesis.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s___bound.html">S_Bound</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most Specific Bound of Version Space.  <a href="class_s___bound.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_g___bound.html">G_Bound</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most General Bound of Version Space.  <a href="class_g___bound.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_concept_learning.html">ConceptLearning</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_e.html">CE</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Candidate Elmination Algorithm Engine.  <a href="class_c_e.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -117,15 +121,17 @@ Enumerations</h2></td></tr>
 <a class="el" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f">vAllAccept</a>, 
 <a class="el" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314">vAllDeny</a>
  }</td></tr>
+<tr class="memdesc:a9680d29b8d997e4adbf99481b65e897d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible Attribute Values.  <a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897d">More...</a><br/></td></tr>
 <tr class="separator:a9680d29b8d997e4adbf99481b65e897d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28287671eaf7406afd604bd055ba4066"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a> { <a class="el" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069">r_false</a> =0, 
 <a class="el" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518">r_true</a>, 
 <a class="el" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a">r_dontknow</a>
  }</td></tr>
+<tr class="memdesc:a28287671eaf7406afd604bd055ba4066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible <a class="el" href="class_hypothesis.html" title="Concept Learning Base Hypothesis Class. ">Hypothesis</a> Result.  <a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">More...</a><br/></td></tr>
 <tr class="separator:a28287671eaf7406afd604bd055ba4066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Concept Learning Framework. </p>
+<div class="textblock"><p>Concept Learning Framework Header File. </p>
 <p>Based on Candidate Elimination Algorithm, it predict target <br/>
  concept. It assumes that input is a conjunctive set of attributes <br/>
  including target attribute. All attribute has binary output ( T/F ) </p>
@@ -155,28 +161,37 @@ Purpose</h1>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Possible Attribute Values. </p>
+<p>Each attributes not only can have true or false, but also can have <br/>
+ AllAccept ( which has symbol as '?' ) and AllDeny ( which has symbol <br/>
+ as 'null' ) </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86"></a>vFalse</em>&nbsp;</td><td class="fielddoc">
+<p>means false of this attribute &ndash; 'T' </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102"></a>vTrue</em>&nbsp;</td><td class="fielddoc">
+<p>means true of this attribute &ndash; 'F' </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f"></a>vAllAccept</em>&nbsp;</td><td class="fielddoc">
+<p>can accept any value of attribute ( true or false ) &ndash; '?' </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314"></a>vAllDeny</em>&nbsp;</td><td class="fielddoc">
+<p>deny all value of attribute &ndash; 'null' </p>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="concept_8h_source.html#l00027">27</a> of file <a class="el" href="concept_8h_source.html">concept.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;             {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86">vFalse</a>=0,       <span class="comment">// means false of this attribute</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102">vTrue</a>,      <span class="comment">// means true of this attribute </span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f">vAllAccept</a>,     <span class="comment">// can accept any value of attribute ( true or false ) -- &#39;?&#39;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314">vAllDeny</a>,       <span class="comment">// deny all value of attribute -- &#39;null&#39;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
-<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314">vAllDeny</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00031">concept.h:31</a></div></div>
-<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f">vAllAccept</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00030">concept.h:30</a></div></div>
-<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102">vTrue</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00029">concept.h:29</a></div></div>
-<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86">vFalse</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00028">concept.h:28</a></div></div>
+<p>Definition at line <a class="el" href="concept_8h_source.html#l00035">35</a> of file <a class="el" href="concept_8h_source.html">concept.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;             {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86">vFalse</a>=0,           </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102">vTrue</a>,            </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f">vAllAccept</a>,       </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314">vAllDeny</a>,           </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314">vAllDeny</a></div><div class="ttdoc">deny all value of attribute – &amp;#39;null&amp;#39; </div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00039">concept.h:39</a></div></div>
+<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f">vAllAccept</a></div><div class="ttdoc">can accept any value of attribute ( true or false ) – &amp;#39;?&amp;#39; </div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00038">concept.h:38</a></div></div>
+<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102">vTrue</a></div><div class="ttdoc">means true of this attribute – &amp;#39;F&amp;#39; </div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00037">concept.h:37</a></div></div>
+<div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86">vFalse</a></div><div class="ttdoc">means false of this attribute – &amp;#39;T&amp;#39; </div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00036">concept.h:36</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -189,31 +204,40 @@ Purpose</h1>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Possible <a class="el" href="class_hypothesis.html" title="Concept Learning Base Hypothesis Class. ">Hypothesis</a> Result. </p>
+<p>Candidate Elimination Algorithm predict new instance searching all <br/>
+ hypothesis space and voting their result for new instance. If they <br/>
+ output same result as true or false, it will result T / F. Otherwise <br/>
+ their result is not unanimous, then it will result dontknow. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069"></a>r_false</em>&nbsp;</td><td class="fielddoc">
+<p>means all hypothesis vote false </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518"></a>r_true</em>&nbsp;</td><td class="fielddoc">
+<p>means all hypothesis vote true </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a"></a>r_dontknow</em>&nbsp;</td><td class="fielddoc">
+<p>means hypothesis vote is not unanimous </p>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="concept_8h_source.html#l00034">34</a> of file <a class="el" href="concept_8h_source.html">concept.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069">r_false</a>=0,      <span class="comment">// means all hypothesis vote false      </span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518">r_true</a>,     <span class="comment">// means all hypothesis vote true</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a">r_dontknow</a>      <span class="comment">// means hypothesis vote is not unanimous</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
-<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518">r_true</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00036">concept.h:36</a></div></div>
-<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069">r_false</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00035">concept.h:35</a></div></div>
-<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a">r_dontknow</a></div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00037">concept.h:37</a></div></div>
+<p>Definition at line <a class="el" href="concept_8h_source.html#l00050">50</a> of file <a class="el" href="concept_8h_source.html">concept.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069">r_false</a>=0,        </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518">r_true</a>,           </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a">r_dontknow</a>        </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518">r_true</a></div><div class="ttdoc">means all hypothesis vote true </div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00052">concept.h:52</a></div></div>
+<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069">r_false</a></div><div class="ttdoc">means all hypothesis vote false </div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00051">concept.h:51</a></div></div>
+<div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a">r_dontknow</a></div><div class="ttdoc">means hypothesis vote is not unanimous </div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00053">concept.h:53</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 16 2014 21:44:25 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 18 2014 16:38:05 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

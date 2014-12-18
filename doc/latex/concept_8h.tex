@@ -3,7 +3,7 @@
 }
 
 
-Concept Learning Framework.  
+Concept Learning Framework Header File.  
 
 
 {\ttfamily \#include \char`\"{}list.\-h\char`\"{}}\\*
@@ -11,13 +11,13 @@ Concept Learning Framework.
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{class_hypothesis}{Hypothesis}
-\item 
+\begin{DoxyCompactList}\small\item\em Concept Learning Base \hyperlink{class_hypothesis}{Hypothesis} Class. \end{DoxyCompactList}\item 
 class \hyperlink{class_s___bound}{S\-\_\-\-Bound}
-\item 
+\begin{DoxyCompactList}\small\item\em Most Specific Bound of Version Space. \end{DoxyCompactList}\item 
 class \hyperlink{class_g___bound}{G\-\_\-\-Bound}
-\item 
-class \hyperlink{class_concept_learning}{Concept\-Learning}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Most General Bound of Version Space. \end{DoxyCompactList}\item 
+class \hyperlink{class_c_e}{C\-E}
+\begin{DoxyCompactList}\small\item\em Candidate Elmination Algorithm Engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,27 +26,27 @@ enum \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{Attr\-Val} \{ \hyp
 \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{v\-All\-Accept}, 
 \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}{v\-All\-Deny}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Possible Attribute Values. \end{DoxyCompactList}\item 
 enum \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066}{Result} \{ \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069}{r\-\_\-false} =0, 
 \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518}{r\-\_\-true}, 
 \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\-\_\-dontknow}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Possible \hyperlink{class_hypothesis}{Hypothesis} Result. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Concept Learning Framework. Based on Candidate Elimination Algorithm, it predict target \par
+Concept Learning Framework Header File. Based on Candidate Elimination Algorithm, it predict target \par
  concept. It assumes that input is a conjunctive set of attributes \par
  including target attribute. All attribute has binary output ( T/\-F ) \begin{DoxyAuthor}{Author}
 Suwon Oh \href{mailto:suwon@csap.snu.ac.kr}{\tt suwon@csap.\-snu.\-ac.\-kr} 
 \end{DoxyAuthor}
-\hypertarget{concept_8h_changelog}{}\subsection{Change Log}\label{concept_8h_changelog}
+\hypertarget{nami_m_l_8h_changelog}{}\subsection{Change Log}\label{nami_m_l_8h_changelog}
 2014/09/22 Suwon Oh created \par
 2014/09/24 Suwon Oh implemented prototype \par
 2014/12/14 Suwon Oh adapted to Doxygen \par
 2014/12/16 Suwon Oh adapted self-\/implemented list library \par
- \hypertarget{concept_8h_reference_section}{}\subsection{Reference}\label{concept_8h_reference_section}
-M\-A\-C\-H\-I\-N\-E L\-E\-A\-R\-N\-I\-N\-G -\/ T\-O\-M M. M\-I\-T\-C\-H\-E\-L\-L\hypertarget{concept_8h_purpose_section}{}\subsection{Purpose}\label{concept_8h_purpose_section}
+ \hypertarget{nami_m_l_8h_reference_section}{}\subsection{Reference}\label{nami_m_l_8h_reference_section}
+M\-A\-C\-H\-I\-N\-E L\-E\-A\-R\-N\-I\-N\-G -\/ T\-O\-M M. M\-I\-T\-C\-H\-E\-L\-L\hypertarget{nami_m_l_8h_purpose_section}{}\subsection{Purpose}\label{nami_m_l_8h_purpose_section}
 Application trial for personal studying 
 
 Definition in file \hyperlink{concept_8h_source}{concept.\-h}.
@@ -57,55 +57,68 @@ Definition in file \hyperlink{concept_8h_source}{concept.\-h}.
 \hypertarget{concept_8h_a9680d29b8d997e4adbf99481b65e897d}{\index{concept.\-h@{concept.\-h}!Attr\-Val@{Attr\-Val}}
 \index{Attr\-Val@{Attr\-Val}!concept.h@{concept.\-h}}
 \subsubsection[{Attr\-Val}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Attr\-Val}}}\label{concept_8h_a9680d29b8d997e4adbf99481b65e897d}
-\begin{Desc}
+
+
+Possible Attribute Values. 
+
+Each attributes not only can have true or false, but also can have \par
+ All\-Accept ( which has symbol as '?' ) and All\-Deny ( which has symbol \par
+ as 'null' ) \begin{Desc}
 \item[Enumerator]\par
 \begin{description}
 \index{v\-False@{v\-False}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!v\-False@{v\-False}}\item[{\em 
 \hypertarget{concept_8h_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86}{v\-False}\label{concept_8h_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86}
-}]\index{v\-True@{v\-True}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!v\-True@{v\-True}}\item[{\em 
+}]means false of this attribute -- 'T' \index{v\-True@{v\-True}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!v\-True@{v\-True}}\item[{\em 
 \hypertarget{concept_8h_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102}{v\-True}\label{concept_8h_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102}
-}]\index{v\-All\-Accept@{v\-All\-Accept}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!v\-All\-Accept@{v\-All\-Accept}}\item[{\em 
+}]means true of this attribute -- 'F' \index{v\-All\-Accept@{v\-All\-Accept}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!v\-All\-Accept@{v\-All\-Accept}}\item[{\em 
 \hypertarget{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{v\-All\-Accept}\label{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}
-}]\index{v\-All\-Deny@{v\-All\-Deny}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!v\-All\-Deny@{v\-All\-Deny}}\item[{\em 
+}]can accept any value of attribute ( true or false ) -- '?' \index{v\-All\-Deny@{v\-All\-Deny}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!v\-All\-Deny@{v\-All\-Deny}}\item[{\em 
 \hypertarget{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}{v\-All\-Deny}\label{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}
-}]\end{description}
+}]deny all value of attribute -- 'null' \end{description}
 \end{Desc}
 
 
-Definition at line 27 of file concept.\-h.
+Definition at line 35 of file concept.\-h.
 
 
 \begin{DoxyCode}
-27              \{
-28     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86}{vFalse}=0,     \textcolor{comment}{// means false of this attribute}
-29     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102}{vTrue},     \textcolor{comment}{// means true of this attribute }
-30     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{vAllAccept},       \textcolor{comment}{// can accept any value of attribute ( true or false ) -- '?'}
-31     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}{vAllDeny},       \textcolor{comment}{// deny all value of attribute -- 'null'}
-32 \};
+35              \{
+36     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6abf5f6bc00d14e28def1d3fe93a3d86}{vFalse}=0,         
+37     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897daa93dca41b1b135be638ced74a424f102}{vTrue},           
+38     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da6e098ab4d58e23ef1a840e0a338ef96f}{vAllAccept},         
+39     \hyperlink{concept_8h_a9680d29b8d997e4adbf99481b65e897da11f228b43fc46c19132632500bcaf314}{vAllDeny},           
+40 \};
 \end{DoxyCode}
 \hypertarget{concept_8h_a28287671eaf7406afd604bd055ba4066}{\index{concept.\-h@{concept.\-h}!Result@{Result}}
 \index{Result@{Result}!concept.h@{concept.\-h}}
 \subsubsection[{Result}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Result}}}\label{concept_8h_a28287671eaf7406afd604bd055ba4066}
-\begin{Desc}
+
+
+Possible \hyperlink{class_hypothesis}{Hypothesis} Result. 
+
+Candidate Elimination Algorithm predict new instance searching all \par
+ hypothesis space and voting their result for new instance. If they \par
+ output same result as true or false, it will result T / F. Otherwise \par
+ their result is not unanimous, then it will result dontknow. \begin{Desc}
 \item[Enumerator]\par
 \begin{description}
 \index{r\-\_\-false@{r\-\_\-false}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!r\-\_\-false@{r\-\_\-false}}\item[{\em 
 \hypertarget{concept_8h_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069}{r\-\_\-false}\label{concept_8h_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069}
-}]\index{r\-\_\-true@{r\-\_\-true}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!r\-\_\-true@{r\-\_\-true}}\item[{\em 
+}]means all hypothesis vote false \index{r\-\_\-true@{r\-\_\-true}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!r\-\_\-true@{r\-\_\-true}}\item[{\em 
 \hypertarget{concept_8h_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518}{r\-\_\-true}\label{concept_8h_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518}
-}]\index{r\-\_\-dontknow@{r\-\_\-dontknow}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!r\-\_\-dontknow@{r\-\_\-dontknow}}\item[{\em 
+}]means all hypothesis vote true \index{r\-\_\-dontknow@{r\-\_\-dontknow}!concept.\-h@{concept.\-h}}\index{concept.\-h@{concept.\-h}!r\-\_\-dontknow@{r\-\_\-dontknow}}\item[{\em 
 \hypertarget{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\-\_\-dontknow}\label{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}
-}]\end{description}
+}]means hypothesis vote is not unanimous \end{description}
 \end{Desc}
 
 
-Definition at line 34 of file concept.\-h.
+Definition at line 50 of file concept.\-h.
 
 
 \begin{DoxyCode}
-34             \{
-35     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069}{r\_false}=0,       \textcolor{comment}{// means all hypothesis vote false      }
-36     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518}{r\_true},       \textcolor{comment}{// means all hypothesis vote true}
-37     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\_dontknow}        \textcolor{comment}{// means hypothesis vote is not unanimous}
-38 \};
+50             \{
+51     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a339d23333f4367cfe712cfd15b19c069}{r\_false}=0,         
+52     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518}{r\_true},             
+53     \hyperlink{concept_8h_a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a}{r\_dontknow}          
+54 \};
 \end{DoxyCode}

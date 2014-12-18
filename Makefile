@@ -1,5 +1,5 @@
 CC=g++
-INCLUDE = -I lib -I include
+INCLUDE=-I include
 OBJS = test.o List.o
 
 .PHONY: all clean

@@ -87,13 +87,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">concept.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Concept Learning Framework Source File.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="concept_8h_source.html">concept.h</a>&quot;</code><br/>
-<code>#include &lt;cstdlib&gt;</code><br/>
 <code>#include &lt;iostream&gt;</code><br/>
 </div>
 <p><a href="concept_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -103,12 +106,40 @@ Macros</h2></td></tr>
 <tr class="memitem:ac80a3592e72fd96b772ee47a7d8e0d0a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="concept_8cpp.html#ac80a3592e72fd96b772ee47a7d8e0d0a">DEBUG_MODE</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:ac80a3592e72fd96b772ee47a7d8e0d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a3334c3b48c5ef4c8a07f5d45f5df5087"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="concept_8cpp.html#a3334c3b48c5ef4c8a07f5d45f5df5087">isPositive</a> (bool *input, int size)</td></tr>
+<tr class="memdesc:a3334c3b48c5ef4c8a07f5d45f5df5087"><td class="mdescLeft">&#160;</td><td class="mdescRight">test input positivity  <a href="#a3334c3b48c5ef4c8a07f5d45f5df5087">More...</a><br/></td></tr>
+<tr class="separator:a3334c3b48c5ef4c8a07f5d45f5df5087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="concept_8cpp.html#a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f">SYMBOL</a> [] = {'F', 'T', '?', '-'}</td></tr>
+<tr class="memdesc:a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">symbol table  <a href="#a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f">More...</a><br/></td></tr>
 <tr class="separator:a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Concept Learning Framework Source File. </p>
+<p>Based on Candidate Elimination Algorithm, it predict target <br/>
+ concept. It assumes that input is a conjunctive set of attributes <br/>
+ including target attribute. All attribute has binary output ( T/F ) </p>
+<dl class="section author"><dt>Author</dt><dd>Suwon Oh <a href="#" onclick="location.href='mai'+'lto:'+'suw'+'on'+'@cs'+'ap'+'.sn'+'u.'+'ac.'+'kr'; return false;">suwon<span style="display: none;">.nosp@m.</span>@csa<span style="display: none;">.nosp@m.</span>p.snu<span style="display: none;">.nosp@m.</span>.ac.<span style="display: none;">.nosp@m.</span>kr</a> </dd></dl>
+<h1><a class="anchor" id="changelog"></a>
+Change Log</h1>
+<p>2014/09/22 Suwon Oh created <br/>
+2014/09/24 Suwon Oh implemented prototype <br/>
+2014/12/14 Suwon Oh adapted to Doxygen <br/>
+2014/12/16 Suwon Oh adapted self-implemented list library <br/>
+ </p>
+<h1><a class="anchor" id="reference_section"></a>
+Reference</h1>
+<p>MACHINE LEARNING - TOM M. MITCHELL</p>
+<h1><a class="anchor" id="purpose_section"></a>
+Purpose</h1>
+<p>Application trial for personal studying </p>
+
+<p>Definition in file <a class="el" href="concept_8cpp_source.html">concept.cpp</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="ac80a3592e72fd96b772ee47a7d8e0d0a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -119,8 +150,59 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="concept_8cpp_source.html#l00005">5</a> of file <a class="el" href="concept_8cpp_source.html">concept.cpp</a>.</p>
+<p>Definition at line <a class="el" href="concept_8cpp_source.html#l00025">25</a> of file <a class="el" href="concept_8cpp_source.html">concept.cpp</a>.</p>
 
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a3334c3b48c5ef4c8a07f5d45f5df5087"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isPositive </td>
+          <td>(</td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>test input positivity </p>
+<p>only available to training example which <br/>
+ has target attribute value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>training example </td></tr>
+    <tr><td class="paramname">size</td><td>the number of attributes of the example <br/>
+ except for target attribute </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>if example is positive </td></tr>
+    <tr><td class="paramname">false</td><td>if example is negative </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="concept_8cpp_source.html#l00046">46</a> of file <a class="el" href="concept_8cpp_source.html">concept.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">return</span> input[size];</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -134,14 +216,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="concept_8cpp_source.html#l00009">9</a> of file <a class="el" href="concept_8cpp_source.html">concept.cpp</a>.</p>
+<p>symbol table </p>
+
+<p>Definition at line <a class="el" href="concept_8cpp_source.html#l00033">33</a> of file <a class="el" href="concept_8cpp_source.html">concept.cpp</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Dec 16 2014 21:44:25 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 18 2014 16:38:05 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
