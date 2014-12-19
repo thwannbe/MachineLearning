@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Native Mechanic Intelligent Machine Learning (NamiML): src/concept/concept.cpp Source File</title>
+<title>Native Mechanic Intelligent Machine Learning (NamiML): src/concept.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_321c345b7a43712abacf48fd98b440ac.html">concept</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="concept_8h.html">concept.h</a>&quot;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="concept_8cpp.html#ac80a3592e72fd96b772ee47a7d8e0d0a">   25</a></span>&#160;<span class="preprocessor">#define DEBUG_MODE  1</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="concept_8cpp.html#ac80a3592e72fd96b772ee47a7d8e0d0a">   25</a></span>&#160;<span class="preprocessor">#define DEBUG_MODE  0</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
@@ -447,34 +447,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;}</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;</div>
 <div class="line"><a name="l00391"></a><span class="lineno"><a class="line" href="class_c_e.html#a73ea02a691a61601d2cbcfb4bbe5a0fc">  391</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_c_e.html#a73ea02a691a61601d2cbcfb4bbe5a0fc">CE::updateVS</a>(<span class="keywordtype">bool</span>* input) {</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="preprocessor">#if DEBUG_MODE</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="preprocessor"></span>  cout &lt;&lt; <span class="stringliteral">&quot;------------------------------ UPDATE --------------------------------&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  cout &lt;&lt; <span class="stringliteral">&quot; -: Input &lt; &quot;</span>;</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_c_e.html#a379f23d0ec5cc0448ad7c1428403e005">size</a>; i++) {</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordtype">int</span> tmp = (input[i]) ? 1 : 0;</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    cout &lt;&lt; <a class="code" href="concept_8cpp.html#a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f">SYMBOL</a>[tmp] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;  }</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  <span class="keywordtype">int</span> ret = (input[<a class="code" href="class_c_e.html#a379f23d0ec5cc0448ad7c1428403e005">size</a>]) ? 1 : 0;</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  cout &lt;&lt; <span class="stringliteral">&quot;&gt; = (&quot;</span> &lt;&lt; <a class="code" href="concept_8cpp.html#a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f">SYMBOL</a>[ret] &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">if</span>(input[size]) {    <span class="comment">// means positive example</span></div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <a class="code" href="class_c_e.html#a3da8db7000668aa321d9321119a83aab">g_bound</a>-&gt;<a class="code" href="class_g___bound.html#ad44aeb38feed0ff7e9a2f29f2ada0ac9">posUpdate</a>(input);</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <a class="code" href="class_c_e.html#a9a2c44f7213356ff82f0ef3dbcf2e3cc">s_bound</a>-&gt;<a class="code" href="class_s___bound.html#a819f6cff5025a4916e6c1e5c798721f5">posUpdate</a>(input);</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;  } <span class="keywordflow">else</span> {  <span class="comment">// means negative example</span></div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <a class="code" href="class_c_e.html#a9a2c44f7213356ff82f0ef3dbcf2e3cc">s_bound</a>-&gt;<a class="code" href="class_s___bound.html#a022c42224af39423c1251ca345fe31de">negUpdate</a>(input);</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <a class="code" href="class_c_e.html#a3da8db7000668aa321d9321119a83aab">g_bound</a>-&gt;<a class="code" href="class_g___bound.html#a567a0759047141b59389ec0beefb0a6c">negUpdate</a>(input, <a class="code" href="class_c_e.html#a9a2c44f7213356ff82f0ef3dbcf2e3cc">s_bound</a>);</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;  }</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="preprocessor">#if DEBUG_MODE</span></div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="preprocessor"></span>  cout &lt;&lt; <span class="stringliteral">&quot;----------------------------------------------------------------------&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;</div>
-<div class="line"><a name="l00414"></a><span class="lineno"><a class="line" href="class_c_e.html#a66c1015e6889104f2d64349d2b6f114a">  414</a></span>&#160;<a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a> <a class="code" href="class_c_e.html#a66c1015e6889104f2d64349d2b6f114a">CE::predict</a>(<span class="keywordtype">bool</span>* u_input) {</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;  <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a> s_ret = <a class="code" href="class_c_e.html#a9a2c44f7213356ff82f0ef3dbcf2e3cc">s_bound</a>-&gt;<a class="code" href="class_s___bound.html#a4bea23a52a99756a86c7c883a578ae40">predict</a>(u_input);</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;  <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a> g_ret = <a class="code" href="class_c_e.html#a3da8db7000668aa321d9321119a83aab">g_bound</a>-&gt;<a class="code" href="class_g___bound.html#add933c8bb37f279fcbd3dcff4eea3e76">predict</a>(u_input);</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;  <span class="keywordflow">return</span> (s_ret == g_ret) ? s_ret : <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a">r_dontknow</a>;</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;}</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;  <span class="keywordtype">bool</span> success;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="preprocessor">#if DEBUG_MODE</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="preprocessor"></span>  cout &lt;&lt; <span class="stringliteral">&quot;------------------------------ UPDATE --------------------------------&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  cout &lt;&lt; <span class="stringliteral">&quot; -: Input &lt; &quot;</span>;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_c_e.html#a379f23d0ec5cc0448ad7c1428403e005">size</a>; i++) {</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordtype">int</span> tmp = (input[i]) ? 1 : 0;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    cout &lt;&lt; <a class="code" href="concept_8cpp.html#a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f">SYMBOL</a>[tmp] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  }</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  <span class="keywordtype">int</span> ret = (input[<a class="code" href="class_c_e.html#a379f23d0ec5cc0448ad7c1428403e005">size</a>]) ? 1 : 0;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;  cout &lt;&lt; <span class="stringliteral">&quot;&gt; = (&quot;</span> &lt;&lt; <a class="code" href="concept_8cpp.html#a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f">SYMBOL</a>[ret] &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">if</span>(input[size]) {    <span class="comment">// means positive example</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    success = <a class="code" href="class_c_e.html#a3da8db7000668aa321d9321119a83aab">g_bound</a>-&gt;<a class="code" href="class_g___bound.html#ad44aeb38feed0ff7e9a2f29f2ada0ac9">posUpdate</a>(input);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    success &amp;= <a class="code" href="class_c_e.html#a9a2c44f7213356ff82f0ef3dbcf2e3cc">s_bound</a>-&gt;<a class="code" href="class_s___bound.html#a819f6cff5025a4916e6c1e5c798721f5">posUpdate</a>(input);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  } <span class="keywordflow">else</span> {  <span class="comment">// means negative example</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    success = <a class="code" href="class_c_e.html#a9a2c44f7213356ff82f0ef3dbcf2e3cc">s_bound</a>-&gt;<a class="code" href="class_s___bound.html#a022c42224af39423c1251ca345fe31de">negUpdate</a>(input);</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    success &amp;= <a class="code" href="class_c_e.html#a3da8db7000668aa321d9321119a83aab">g_bound</a>-&gt;<a class="code" href="class_g___bound.html#a567a0759047141b59389ec0beefb0a6c">negUpdate</a>(input, <a class="code" href="class_c_e.html#a9a2c44f7213356ff82f0ef3dbcf2e3cc">s_bound</a>);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;  }</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;<span class="preprocessor">#if DEBUG_MODE</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="preprocessor"></span>  cout &lt;&lt; <span class="stringliteral">&quot;----------------------------------------------------------------------&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">return</span> success;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;}</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;</div>
+<div class="line"><a name="l00416"></a><span class="lineno"><a class="line" href="class_c_e.html#a66c1015e6889104f2d64349d2b6f114a">  416</a></span>&#160;<a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a> <a class="code" href="class_c_e.html#a66c1015e6889104f2d64349d2b6f114a">CE::predict</a>(<span class="keywordtype">bool</span>* u_input) {</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;  <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a> pred;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;<span class="preprocessor">#if DEBUG_MODE</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;<span class="preprocessor"></span>  cout &lt;&lt; <span class="stringliteral">&quot;------------------------------ PREDICT -------------------------------&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;  cout &lt;&lt; <span class="stringliteral">&quot; -: New instance &lt; &quot;</span>;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_c_e.html#a379f23d0ec5cc0448ad7c1428403e005">size</a>; i++) {</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordtype">int</span> tmp = (u_input[i]) ? 1 : 0;</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    cout &lt;&lt; <a class="code" href="concept_8cpp.html#a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f">SYMBOL</a>[tmp] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;  }</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;  <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a> s_ret = <a class="code" href="class_c_e.html#a9a2c44f7213356ff82f0ef3dbcf2e3cc">s_bound</a>-&gt;<a class="code" href="class_s___bound.html#a4bea23a52a99756a86c7c883a578ae40">predict</a>(u_input);</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;  <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066">Result</a> g_ret = <a class="code" href="class_c_e.html#a3da8db7000668aa321d9321119a83aab">g_bound</a>-&gt;<a class="code" href="class_g___bound.html#add933c8bb37f279fcbd3dcff4eea3e76">predict</a>(u_input);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;  </div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;  pred = (s_ret == g_ret) ? s_ret : <a class="code" href="concept_8h.html#a28287671eaf7406afd604bd055ba4066ade65c573d392b6610c69b8996f70426a">r_dontknow</a>;</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="preprocessor">#if DEBUG_MODE</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;<span class="preprocessor"></span>  cout &lt;&lt; <span class="stringliteral">&quot;=&gt; (&quot;</span> &lt;&lt; <a class="code" href="concept_8cpp.html#a6a0fcd5aed2dc21ce5f79cbe7c3a8e2f">SYMBOL</a>[pred] &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;  cout &lt;&lt; <span class="stringliteral">&quot;----------------------------------------------------------------------&quot;</span> &lt;&lt; endl &lt;&lt; endl;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="preprocessor"></span>  <span class="keywordflow">return</span> pred;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;}</div>
 <div class="ttc" id="concept_8h_html_a9680d29b8d997e4adbf99481b65e897d"><div class="ttname"><a href="concept_8h.html#a9680d29b8d997e4adbf99481b65e897d">AttrVal</a></div><div class="ttdeci">AttrVal</div><div class="ttdoc">Possible Attribute Values. </div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00035">concept.h:35</a></div></div>
 <div class="ttc" id="class_s___bound_html_a9742961078971270b164bb793b64ee06"><div class="ttname"><a href="class_s___bound.html#a9742961078971270b164bb793b64ee06">S_Bound::size</a></div><div class="ttdeci">int size</div><div class="ttdoc">the number of attributes except for target attribute </div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00130">concept.h:130</a></div></div>
 <div class="ttc" id="concept_8h_html_a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518"><div class="ttname"><a href="concept_8h.html#a28287671eaf7406afd604bd055ba4066a5a0ce17c2bc93e5b29e36c6318db3518">r_true</a></div><div class="ttdoc">means all hypothesis vote true </div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00052">concept.h:52</a></div></div>
@@ -520,7 +537,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_s___bound_html_a28f0422a496646053461879bd46ab787"><div class="ttname"><a href="class_s___bound.html#a28f0422a496646053461879bd46ab787">S_Bound::generalize</a></div><div class="ttdeci">Hypothesis * generalize(AttrVal *hypo, bool *p_input)</div><div class="ttdoc">generalize hypothesis </div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00184">concept.cpp:184</a></div></div>
 <div class="ttc" id="class_g___bound_html_a2583e4243c89d01b3131ce8fb40940a9"><div class="ttname"><a href="class_g___bound.html#a2583e4243c89d01b3131ce8fb40940a9">G_Bound::size</a></div><div class="ttdeci">int size</div><div class="ttdoc">the number of attributes except for target attribute </div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00195">concept.h:195</a></div></div>
 <div class="ttc" id="class_list_html_a4d8d3acaf718d470e1084814a6155814"><div class="ttname"><a href="class_list.html#a4d8d3acaf718d470e1084814a6155814">List::getSize</a></div><div class="ttdeci">unsigned int getSize(void) const </div><div class="ttdoc">return the number of nodes which the list has </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00248">list.h:248</a></div></div>
-<div class="ttc" id="class_c_e_html_a66c1015e6889104f2d64349d2b6f114a"><div class="ttname"><a href="class_c_e.html#a66c1015e6889104f2d64349d2b6f114a">CE::predict</a></div><div class="ttdeci">Result predict(bool *u_input)</div><div class="ttdoc">predict for new unknown instance </div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00414">concept.cpp:414</a></div></div>
+<div class="ttc" id="class_c_e_html_a66c1015e6889104f2d64349d2b6f114a"><div class="ttname"><a href="class_c_e.html#a66c1015e6889104f2d64349d2b6f114a">CE::predict</a></div><div class="ttdeci">Result predict(bool *u_input)</div><div class="ttdoc">predict for new unknown instance </div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00416">concept.cpp:416</a></div></div>
 <div class="ttc" id="class_list_html_aa93404b4c7f3f86a560a0a675f55c9bd"><div class="ttname"><a href="class_list.html#aa93404b4c7f3f86a560a0a675f55c9bd">List::getContent</a></div><div class="ttdeci">T getContent(unsigned int index) const </div><div class="ttdoc">return content which is contained given index node </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00236">list.h:236</a></div></div>
 <div class="ttc" id="class_hypothesis_html_a2fda5511fef4765414c3229ea6780e1e"><div class="ttname"><a href="class_hypothesis.html#a2fda5511fef4765414c3229ea6780e1e">Hypothesis::size</a></div><div class="ttdeci">int size</div><div class="ttdoc">The number of total attributes for hypothesis except for target attribute. </div><div class="ttdef"><b>Definition:</b> <a href="concept_8h_source.html#l00067">concept.h:67</a></div></div>
 <div class="ttc" id="class_g___bound_html_a567a0759047141b59389ec0beefb0a6c"><div class="ttname"><a href="class_g___bound.html#a567a0759047141b59389ec0beefb0a6c">G_Bound::negUpdate</a></div><div class="ttdeci">bool negUpdate(bool *n_input, S_Bound *ptr_sb)</div><div class="ttdoc">update g_bound with negative training instance </div><div class="ttdef"><b>Definition:</b> <a href="concept_8cpp_source.html#l00272">concept.cpp:272</a></div></div>
@@ -528,7 +545,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 18 2014 17:28:08 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Dec 19 2014 20:12:21 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

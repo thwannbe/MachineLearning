@@ -22,7 +22,7 @@
 #include "concept.h"
 #include <iostream>
 
-#define DEBUG_MODE  1
+#define DEBUG_MODE  0
 
 using namespace std;
 
@@ -389,6 +389,7 @@ CE::~CE()
 }
 
 bool CE::updateVS(bool* input) {
+  bool success;
 #if DEBUG_MODE
   cout << "------------------------------ UPDATE --------------------------------" << endl;
   cout << " -: Input < ";
@@ -400,20 +401,36 @@ bool CE::updateVS(bool* input) {
   cout << "> = (" << SYMBOL[ret] << ")" << endl << endl;
 #endif
   if(input[size]) {    // means positive example
-    g_bound->posUpdate(input);
-    s_bound->posUpdate(input);
+    success = g_bound->posUpdate(input);
+    success &= s_bound->posUpdate(input);
   } else {	// means negative example
-    s_bound->negUpdate(input);
-    g_bound->negUpdate(input, s_bound);
+    success = s_bound->negUpdate(input);
+    success &= g_bound->negUpdate(input, s_bound);
   }
 #if DEBUG_MODE
   cout << "----------------------------------------------------------------------" << endl << endl;
 #endif
+  return success;
 }
 
 Result CE::predict(bool* u_input) {
+  Result pred;
+#if DEBUG_MODE
+  cout << "------------------------------ PREDICT -------------------------------" << endl;
+  cout << " -: New instance < ";
+  for(int i = 0; i < size; i++) {
+    int tmp = (u_input[i]) ? 1 : 0;
+    cout << SYMBOL[tmp] << " ";
+  }
+#endif
+
   Result s_ret = s_bound->predict(u_input);
   Result g_ret = g_bound->predict(u_input);
-
-  return (s_ret == g_ret) ? s_ret : r_dontknow;
+  
+  pred = (s_ret == g_ret) ? s_ret : r_dontknow;
+#if DEBUG_MODE
+  cout << "=> (" << SYMBOL[pred] << ")" << endl;
+  cout << "----------------------------------------------------------------------" << endl << endl;
+#endif
+  return pred;
 }

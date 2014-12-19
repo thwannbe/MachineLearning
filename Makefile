@@ -1,17 +1,18 @@
 CC=g++
+
 INCLUDE=-I include
-OBJS = test.o List.o
+
+SOURCES=$(SRCDIR)/*.cpp
+
+SRCDIR=./src
 
 .PHONY: all clean
 
-all: test
+all: namiML
 
-test: $(OBJS) ; $(LD) $(LDFLAGS) -o $@ $^
-
-$(OBJS): $($@:.o=.c)
-	$(CC) $(CCFLAGS) -o $@ $^
+namiML: $(SOURCES)
+	$(CC) -o $@ $^ $(INCLUDE)
 
 clean:
-	rm test
-	rm *.o
+	rm namiML
 
