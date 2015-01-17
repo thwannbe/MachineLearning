@@ -6,12 +6,15 @@ SOURCES=$(SRCDIR)/*.cpp
 
 SRCDIR=./src
 
-.PHONY: all clean
+.PHONY: all doc clean
 
 all: namiML
 
 namiML: $(SOURCES)
 	$(CC) -o $@ $^ $(INCLUDE)
+
+doc:
+	doxygen
 
 clean:
 	rm namiML

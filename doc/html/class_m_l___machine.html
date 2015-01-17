@@ -108,8 +108,8 @@ Inheritance diagram for ML_Machine:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">constructor &amp; destructor</div></td></tr>
-<tr class="memitem:a77ae97dfd8afe250cf2e4a906ef8368f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l___machine.html#a77ae97dfd8afe250cf2e4a906ef8368f">ML_Machine</a> (istream *<a class="el" href="class_m_l___machine.html#a35580662723c5334ec34e0db40188be8">input</a>, istream *<a class="el" href="class_m_l___machine.html#a29433edd7c19a929c198aaa28ebfb4f4">training</a>, ostream *<a class="el" href="class_m_l___machine.html#a5a2d7f1791c5cc7289e42bb089f56779">output</a>)</td></tr>
-<tr class="separator:a77ae97dfd8afe250cf2e4a906ef8368f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83382cce22d7cd559fdd82a3b6449cf2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l___machine.html#a83382cce22d7cd559fdd82a3b6449cf2">ML_Machine</a> (ios *<a class="el" href="class_m_l___machine.html#a2307b21095440bff3d95f083ea612343">input</a>, ios *<a class="el" href="class_m_l___machine.html#a33d3af8f47884d6deead5235564c29eb">training</a>, ostream *<a class="el" href="class_m_l___machine.html#a5a2d7f1791c5cc7289e42bb089f56779">output</a>)</td></tr>
+<tr class="separator:a83382cce22d7cd559fdd82a3b6449cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf95093d9d78e11a50cc6b34f1bb0f66"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l___machine.html#abf95093d9d78e11a50cc6b34f1bb0f66">~ML_Machine</a> (void)</td></tr>
 <tr class="separator:abf95093d9d78e11a50cc6b34f1bb0f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">functional attributes</div></td></tr>
@@ -117,15 +117,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adc4862cb2890135c78f986ab8f09d1a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9cc11e8475137f8fe9017685d49c73c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l___machine.html#af9cc11e8475137f8fe9017685d49c73c">predict</a> (void)=0</td></tr>
 <tr class="separator:af9cc11e8475137f8fe9017685d49c73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9050d02df5a44d26ba1c1bf15b877f87"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l___machine.html#a9050d02df5a44d26ba1c1bf15b877f87">generate</a> (void)=0</td></tr>
+<tr class="separator:a9050d02df5a44d26ba1c1bf15b877f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a35580662723c5334ec34e0db40188be8"><td class="memItemLeft" align="right" valign="top">istream *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l___machine.html#a35580662723c5334ec34e0db40188be8">input</a></td></tr>
-<tr class="memdesc:a35580662723c5334ec34e0db40188be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">new instance input stream  <a href="#a35580662723c5334ec34e0db40188be8">More...</a><br/></td></tr>
-<tr class="separator:a35580662723c5334ec34e0db40188be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29433edd7c19a929c198aaa28ebfb4f4"><td class="memItemLeft" align="right" valign="top">istream *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l___machine.html#a29433edd7c19a929c198aaa28ebfb4f4">training</a></td></tr>
-<tr class="memdesc:a29433edd7c19a929c198aaa28ebfb4f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">training data input stream  <a href="#a29433edd7c19a929c198aaa28ebfb4f4">More...</a><br/></td></tr>
-<tr class="separator:a29433edd7c19a929c198aaa28ebfb4f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2307b21095440bff3d95f083ea612343"><td class="memItemLeft" align="right" valign="top">ios *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l___machine.html#a2307b21095440bff3d95f083ea612343">input</a></td></tr>
+<tr class="memdesc:a2307b21095440bff3d95f083ea612343"><td class="mdescLeft">&#160;</td><td class="mdescRight">new instance io stream  <a href="#a2307b21095440bff3d95f083ea612343">More...</a><br/></td></tr>
+<tr class="separator:a2307b21095440bff3d95f083ea612343"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33d3af8f47884d6deead5235564c29eb"><td class="memItemLeft" align="right" valign="top">ios *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l___machine.html#a33d3af8f47884d6deead5235564c29eb">training</a></td></tr>
+<tr class="memdesc:a33d3af8f47884d6deead5235564c29eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">training data io stream  <a href="#a33d3af8f47884d6deead5235564c29eb">More...</a><br/></td></tr>
+<tr class="separator:a33d3af8f47884d6deead5235564c29eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a2d7f1791c5cc7289e42bb089f56779"><td class="memItemLeft" align="right" valign="top">ostream *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_l___machine.html#a5a2d7f1791c5cc7289e42bb089f56779">output</a></td></tr>
 <tr class="memdesc:a5a2d7f1791c5cc7289e42bb089f56779"><td class="mdescLeft">&#160;</td><td class="mdescRight">output stream  <a href="#a5a2d7f1791c5cc7289e42bb089f56779">More...</a><br/></td></tr>
 <tr class="separator:a5a2d7f1791c5cc7289e42bb089f56779"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,22 +135,22 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Machine Learning Abstarct Machine Framework. </p>
 
-<p>Definition at line <a class="el" href="nami_m_l_8h_source.html#l00049">49</a> of file <a class="el" href="nami_m_l_8h_source.html">namiML.h</a>.</p>
+<p>Definition at line <a class="el" href="nami_m_l_8h_source.html#l00051">51</a> of file <a class="el" href="nami_m_l_8h_source.html">namiML.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a77ae97dfd8afe250cf2e4a906ef8368f"></a>
+<a class="anchor" id="a83382cce22d7cd559fdd82a3b6449cf2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">ML_Machine::ML_Machine </td>
           <td>(</td>
-          <td class="paramtype">istream *&#160;</td>
+          <td class="paramtype">ios *&#160;</td>
           <td class="paramname"><em>input</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">istream *&#160;</td>
+          <td class="paramtype">ios *&#160;</td>
           <td class="paramname"><em>training</em>, </td>
         </tr>
         <tr>
@@ -166,11 +168,11 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p><a class="el" href="class_m_l___machine.html" title="Machine Learning Abstarct Machine Framework. ">ML_Machine</a> </p>
 
-<p>Definition at line <a class="el" href="nami_m_l_8cpp_source.html#l00242">242</a> of file <a class="el" href="nami_m_l_8cpp_source.html">namiML.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  : <a class="code" href="class_m_l___machine.html#a35580662723c5334ec34e0db40188be8">input</a>(<a class="code" href="class_m_l___machine.html#a35580662723c5334ec34e0db40188be8">input</a>), <a class="code" href="class_m_l___machine.html#a29433edd7c19a929c198aaa28ebfb4f4">training</a>(<a class="code" href="class_m_l___machine.html#a29433edd7c19a929c198aaa28ebfb4f4">training</a>), <a class="code" href="class_m_l___machine.html#a5a2d7f1791c5cc7289e42bb089f56779">output</a>(<a class="code" href="class_m_l___machine.html#a5a2d7f1791c5cc7289e42bb089f56779">output</a>) {}</div>
-<div class="ttc" id="class_m_l___machine_html_a5a2d7f1791c5cc7289e42bb089f56779"><div class="ttname"><a href="class_m_l___machine.html#a5a2d7f1791c5cc7289e42bb089f56779">ML_Machine::output</a></div><div class="ttdeci">ostream * output</div><div class="ttdoc">output stream </div><div class="ttdef"><b>Definition:</b> <a href="nami_m_l_8h_source.html#l00053">namiML.h:53</a></div></div>
-<div class="ttc" id="class_m_l___machine_html_a29433edd7c19a929c198aaa28ebfb4f4"><div class="ttname"><a href="class_m_l___machine.html#a29433edd7c19a929c198aaa28ebfb4f4">ML_Machine::training</a></div><div class="ttdeci">istream * training</div><div class="ttdoc">training data input stream </div><div class="ttdef"><b>Definition:</b> <a href="nami_m_l_8h_source.html#l00052">namiML.h:52</a></div></div>
-<div class="ttc" id="class_m_l___machine_html_a35580662723c5334ec34e0db40188be8"><div class="ttname"><a href="class_m_l___machine.html#a35580662723c5334ec34e0db40188be8">ML_Machine::input</a></div><div class="ttdeci">istream * input</div><div class="ttdoc">new instance input stream </div><div class="ttdef"><b>Definition:</b> <a href="nami_m_l_8h_source.html#l00051">namiML.h:51</a></div></div>
+<p>Definition at line <a class="el" href="nami_m_l_8cpp_source.html#l00376">376</a> of file <a class="el" href="nami_m_l_8cpp_source.html">namiML.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  : <a class="code" href="class_m_l___machine.html#a2307b21095440bff3d95f083ea612343">input</a>(<a class="code" href="class_m_l___machine.html#a2307b21095440bff3d95f083ea612343">input</a>), <a class="code" href="class_m_l___machine.html#a33d3af8f47884d6deead5235564c29eb">training</a>(<a class="code" href="class_m_l___machine.html#a33d3af8f47884d6deead5235564c29eb">training</a>), <a class="code" href="class_m_l___machine.html#a5a2d7f1791c5cc7289e42bb089f56779">output</a>(<a class="code" href="class_m_l___machine.html#a5a2d7f1791c5cc7289e42bb089f56779">output</a>) {}</div>
+<div class="ttc" id="class_m_l___machine_html_a33d3af8f47884d6deead5235564c29eb"><div class="ttname"><a href="class_m_l___machine.html#a33d3af8f47884d6deead5235564c29eb">ML_Machine::training</a></div><div class="ttdeci">ios * training</div><div class="ttdoc">training data io stream </div><div class="ttdef"><b>Definition:</b> <a href="nami_m_l_8h_source.html#l00054">namiML.h:54</a></div></div>
+<div class="ttc" id="class_m_l___machine_html_a5a2d7f1791c5cc7289e42bb089f56779"><div class="ttname"><a href="class_m_l___machine.html#a5a2d7f1791c5cc7289e42bb089f56779">ML_Machine::output</a></div><div class="ttdeci">ostream * output</div><div class="ttdoc">output stream </div><div class="ttdef"><b>Definition:</b> <a href="nami_m_l_8h_source.html#l00055">namiML.h:55</a></div></div>
+<div class="ttc" id="class_m_l___machine_html_a2307b21095440bff3d95f083ea612343"><div class="ttname"><a href="class_m_l___machine.html#a2307b21095440bff3d95f083ea612343">ML_Machine::input</a></div><div class="ttdeci">ios * input</div><div class="ttdoc">new instance io stream </div><div class="ttdef"><b>Definition:</b> <a href="nami_m_l_8h_source.html#l00053">namiML.h:53</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -196,12 +198,38 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="nami_m_l_8cpp_source.html#l00245">245</a> of file <a class="el" href="nami_m_l_8cpp_source.html">namiML.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;{}</div>
+<p>Definition at line <a class="el" href="nami_m_l_8cpp_source.html#l00379">379</a> of file <a class="el" href="nami_m_l_8cpp_source.html">namiML.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9050d02df5a44d26ba1c1bf15b877f87"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ML_Machine::generate </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_c_e___machine.html#a6601d4ab85261b7f9da5f1781cbc3ef7">CE_Machine</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="af9cc11e8475137f8fe9017685d49c73c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -255,7 +283,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a35580662723c5334ec34e0db40188be8"></a>
+<a class="anchor" id="a2307b21095440bff3d95f083ea612343"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -263,7 +291,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">istream* ML_Machine::input</td>
+          <td class="memname">ios* ML_Machine::input</td>
         </tr>
       </table>
   </td>
@@ -273,9 +301,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>new instance input stream </p>
+<p>new instance io stream </p>
 
-<p>Definition at line <a class="el" href="nami_m_l_8h_source.html#l00051">51</a> of file <a class="el" href="nami_m_l_8h_source.html">namiML.h</a>.</p>
+<p>Definition at line <a class="el" href="nami_m_l_8h_source.html#l00053">53</a> of file <a class="el" href="nami_m_l_8h_source.html">namiML.h</a>.</p>
 
 </div>
 </div>
@@ -299,11 +327,11 @@ Protected Attributes</h2></td></tr>
 
 <p>output stream </p>
 
-<p>Definition at line <a class="el" href="nami_m_l_8h_source.html#l00053">53</a> of file <a class="el" href="nami_m_l_8h_source.html">namiML.h</a>.</p>
+<p>Definition at line <a class="el" href="nami_m_l_8h_source.html#l00055">55</a> of file <a class="el" href="nami_m_l_8h_source.html">namiML.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a29433edd7c19a929c198aaa28ebfb4f4"></a>
+<a class="anchor" id="a33d3af8f47884d6deead5235564c29eb"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -311,7 +339,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">istream* ML_Machine::training</td>
+          <td class="memname">ios* ML_Machine::training</td>
         </tr>
       </table>
   </td>
@@ -321,9 +349,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>training data input stream </p>
+<p>training data io stream </p>
 
-<p>Definition at line <a class="el" href="nami_m_l_8h_source.html#l00052">52</a> of file <a class="el" href="nami_m_l_8h_source.html">namiML.h</a>.</p>
+<p>Definition at line <a class="el" href="nami_m_l_8h_source.html#l00054">54</a> of file <a class="el" href="nami_m_l_8h_source.html">namiML.h</a>.</p>
 
 </div>
 </div>
@@ -334,7 +362,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 19 2014 20:12:21 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jan 17 2015 21:46:35 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

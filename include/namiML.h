@@ -24,6 +24,8 @@
 /// 2014/12/18 Suwon Oh adapted to Doxygen @n
 /// 2014/12/18 Suwon Oh added to concept learning framework @n
 /// 2014/12/19 Suwon Oh finished first version @n
+/// 2015/01/17 Suwon Oh option update @n
+/// 2015/01/17 Suwon Oh added generating input & train functions for CE@n
 ///
 /// @section reference_section Reference
 /// MACHINE LEARNING - TOM M. MITCHELL
@@ -48,13 +50,13 @@ using namespace std;
 
 class ML_Machine {
 protected:
-  istream *input;       ///< new instance input stream
-  istream *training;    ///< training data input stream
+  ios     *input;       ///< new instance io stream
+  ios     *training;    ///< training data io stream
   ostream *output;      ///< output stream
 public:
   /// @name constructor & destructor
   /// @{
-  ML_Machine(istream *input, istream *training, ostream *output);
+  ML_Machine(ios *input, ios *training, ostream *output);
   virtual ~ML_Machine(void);
   /// @}
 
@@ -62,6 +64,7 @@ public:
   /// @{
   virtual bool train(void) = 0;
   virtual bool predict(void) = 0;
+  virtual bool generate(void) = 0;
   /// @}
 };
 
@@ -83,10 +86,10 @@ public:
   
   /// @brief CE constructor
   ///
-  /// @param input new instance input stream
-  /// @param training training data input stream
+  /// @param input new instance io stream
+  /// @param training training data io stream
   /// @param output output stream
-  CE_Machine(istream *input, istream *training, ostream *output);
+  CE_Machine(ios *input, ios *training, ostream *output);
 
   /// @brief CE destructor
   virtual ~CE_Machine(void);
@@ -106,6 +109,12 @@ public:
   /// @retval true if prediction succeeds
   /// @retval false if prediction fails 
   virtual bool predict(void);
+
+  /// @brief generate CE input and train data
+  ///
+  /// @retval true if generation succeeds
+  /// @retval false if generation fails
+  virtual bool generate(void);
   
   /// @brief ignore blank in input stream
   ///
