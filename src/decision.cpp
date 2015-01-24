@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 ///
-/// @file decision.h
-/// @brief Decision Tree Learning Framework Header File
+/// @file decision.cpp
+/// @brief Decision Tree Learning Framework Source File
 /// @details Based on ID3 algorithm. Also, I modified it allows a target @n
 ///          attribute to have multiple values rather than binary value. @n
 ///
