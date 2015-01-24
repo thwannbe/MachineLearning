@@ -7,6 +7,7 @@ var searchData=
   ['_7eg_5fbound',['~G_Bound',['../class_g___bound.html#a38ff1d10b4fce5df85429f8196a36964',1,'G_Bound']]],
   ['_7ehypothesis',['~Hypothesis',['../class_hypothesis.html#acfa0ddc17cf13b4bea420119e85e0b85',1,'Hypothesis']]],
   ['_7eid3',['~ID3',['../class_i_d3.html#aacd9aaf1a616ddecd82da77a79b14994',1,'ID3']]],
+  ['_7eid3_5fmachine',['~ID3_Machine',['../class_i_d3___machine.html#aa06c1fd2ec32ed341cc55d82502c9a39',1,'ID3_Machine']]],
   ['_7elist',['~List',['../class_list.html#a9ecd03e07c7d1555de8c709f7b438097',1,'List']]],
   ['_7elistnode',['~ListNode',['../class_list_node.html#a63111deefbeeb3975c8d045a1e4be5b4',1,'ListNode']]],
   ['_7eml_5fmachine',['~ML_Machine',['../class_m_l___machine.html#abf95093d9d78e11a50cc6b34f1bb0f66',1,'ML_Machine']]],

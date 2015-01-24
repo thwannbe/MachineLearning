@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['id3',['ID3',['../class_i_d3.html',1,'ID3'],['../class_i_d3.html#ae1883c7293f08e51028ddcfb507b9c08',1,'ID3::ID3()']]],
-  ['ignoreblank',['ignoreBlank',['../class_c_e___machine.html#a7182400e0721d9249ad1309ecec96b7b',1,'CE_Machine']]],
+  ['id3',['ID3',['../class_i_d3.html',1,'ID3'],['../class_i_d3.html#ae1883c7293f08e51028ddcfb507b9c08',1,'ID3::ID3()'],['../class_i_d3___machine.html#aad91e58458d4700d43cd5c01ad55f71f',1,'ID3_Machine::id3()']]],
+  ['id3_5fmachine',['ID3_Machine',['../class_i_d3___machine.html',1,'ID3_Machine'],['../class_i_d3___machine.html#af1c7e54017c41de488d04ce09da758b9',1,'ID3_Machine::ID3_Machine()']]],
+  ['ignoreblank',['ignoreBlank',['../nami_m_l_8cpp.html#a946b8a71f2956b4dd0566f12f8bab89c',1,'namiML.cpp']]],
   ['input',['input',['../class_m_l___machine.html#a2307b21095440bff3d95f083ea612343',1,'ML_Machine']]],
   ['iscover',['isCover',['../class_hypothesis.html#a38c5f393775c1dd9eada90c7e5f163e0',1,'Hypothesis']]],
   ['isleaf',['isLeaf',['../class_d_tree_node.html#a2cfaa385a4d4b7b438f947745f0d2252',1,'DTreeNode']]],

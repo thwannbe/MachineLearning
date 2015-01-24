@@ -26,6 +26,7 @@
 /// 2014/12/19 Suwon Oh finished first version @n
 /// 2015/01/17 Suwon Oh option update @n
 /// 2015/01/17 Suwon Oh added generating input & train functions for CE@n
+/// 2015/01/23 Suwon Oh added decision tree learning @n
 ///
 /// @section reference_section Reference
 /// MACHINE LEARNING - TOM M. MITCHELL
@@ -40,6 +41,7 @@
 #include <iostream>     ///< for standard output
 #include <fstream>      ///< managing console output
 #include "concept.h"
+#include "decision.h"
 
 using namespace std;
 
@@ -69,11 +71,10 @@ public:
   /// @}
 };
 
-
 ////////////////////////////////////////////////////////////////////////////////
 ///
 /// @brief Candidate Elmination Abstarct Machine
-/// @details CE_MACHINE provides abstract layer to outer framework of 
+/// @details CE_MACHINE provides abstract layer to outer framework of CE 
 ///
 
 class CE_Machine : public ML_Machine {
@@ -117,11 +118,55 @@ public:
   /// @retval true if generation succeeds
   /// @retval false if generation fails
   virtual bool generate(void);
+  /// @}
+};
+
+////////////////////////////////////////////////////////////////////////////////
+///
+/// @brief ID3 Learning Abstarct Machine
+/// @details ID3_MACHINE provides abstract layer to outer framework of ID3
+///
+
+class ID3_Machine : public ML_Machine {
+private:
+  ID3* id3;         ///< ID3 engine
+
+public:
+  /// @name constructor & destructor
+  /// @{
   
-  /// @brief ignore blank in input stream
+  /// @brief ID3 constructor
   ///
-  /// @param i input stream pointer
-  void ignoreBlank(istream *i);
+  /// @param input new instance io stream
+  /// @param training training data io stream
+  /// @param answer answer data io stream
+  /// @param output output stream
+  ID3_Machine(ios *input, ios *training, ios *answer, ostream *output);
+
+  /// @brief CE destructor
+  virtual ~ID3_Machine(void);
+  /// @}
+  
+  /// @name functional attributes
+  /// @{
+  
+  /// @brief train ID3
+  ///
+  /// @retval true if training succeeds
+  /// @retval false if training fails
+  virtual bool train(void);
+
+  /// @brief predict ID3
+  ///
+  /// @retval true if prediction succeeds
+  /// @retval false if prediction fails 
+  virtual bool predict(void);
+
+  /// @brief generate ID3 input and train data
+  ///
+  /// @retval true if generation succeeds
+  /// @retval false if generation fails
+  virtual bool generate(void);
   /// @}
 };
 

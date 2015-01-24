@@ -17,6 +17,7 @@
 /// 2014/12/19 Suwon Oh finished first version @n
 /// 2015/01/17 Suwon Oh option update @n
 /// 2015/01/17 Suwon Oh added generating input & train functions for CE@n
+/// 2015/01/23 Suwon Oh added decision tree learning @n
 ///
 /// @section reference_section Reference
 /// MACHINE LEARNING - TOM M. MITCHELL
@@ -222,6 +223,16 @@ bool isOptionValid(int argc, char* argv[]) {
 
   printError("INVALID OPTIONS");
   return false;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// 
+/// @brief ignore blank character from input stream
+/// 
+void ignoreBlank(istream *i)
+{
+  while(i->peek() == '\n' || i->peek() == '\t' || i->peek() == ' ')
+    i->get();
 }
 
 int main(int argc, char* argv[])  ///< taking options
@@ -776,8 +787,4 @@ unknown input data" << endl;
   return true;
 }
 
-void CE_Machine::ignoreBlank(istream *i)
-{
-  while(i->peek() == '\n' || i->peek() == '\t' || i->peek() == ' ')
-    i->get();
-}
+
