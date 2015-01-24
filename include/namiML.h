@@ -52,11 +52,12 @@ class ML_Machine {
 protected:
   ios     *input;       ///< new instance io stream
   ios     *training;    ///< training data io stream
+  ios     *answer;      ///< answer data io stream
   ostream *output;      ///< output stream
 public:
   /// @name constructor & destructor
   /// @{
-  ML_Machine(ios *input, ios *training, ostream *output);
+  ML_Machine(ios *input, ios *training, ios *answer, ostream *output);
   virtual ~ML_Machine(void);
   /// @}
 
@@ -88,8 +89,9 @@ public:
   ///
   /// @param input new instance io stream
   /// @param training training data io stream
+  /// @param answer answer data io stream
   /// @param output output stream
-  CE_Machine(ios *input, ios *training, ostream *output);
+  CE_Machine(ios *input, ios *training, ios *answer, ostream *output);
 
   /// @brief CE destructor
   virtual ~CE_Machine(void);

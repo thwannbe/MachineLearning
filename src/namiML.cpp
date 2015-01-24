@@ -50,28 +50,30 @@ void namiTerm(void) {
 /// 
 /// @brief print help message
 void printHelp(void) {
-  cout <<    "///" << "  Usage: namiML <-g / -p> -m [MODE] -i [INPUT] -t [T-DATA] (-o [OUTPUT])"
+  cout <<    "///" << "  Usage: namiML <-g / -p> -m [MODE] -i [INPUT] -t [T-DATA] (-o [OUTPUT]) (-x [ANSWER])"
   << endl << "///"
   << endl << "///" << "  < Example > :"
   << endl << "///" << "              namiML -g -m concept"
-  << endl << "///" << "              namiML -g -m decision -i input.txt -t train.txt"
-  << endl << "///" << "              namiML -p -m concept -i input.txt -t train.txt -o output.txt"
+  << endl << "///" << "              namiML -g -m decision -i input.txt -t train.txt -o answer.txt"
+  << endl << "///" << "              namiML -p -m concept -i input.txt -t train.txt -o output.txt -x answer.txt"
   << endl << "///" << "              namiML -p -m decision -i data/IN.txt -t data/TRAIN.txt"
   << endl << "///"
   << endl << "///" << "  OPTION LIST ; Each option must be only one or not"
   << endl << "///"
-  << endl << "///" << "    -g       generate a training data file and a new instance file (no need output file)"
+  << endl << "///" << "    -g       generate a training data file and a new instance file (output means answer)"
   << endl << "///" << "    -p       predict output about given input data and training data"
   << endl << "///" << "    -h       print this help message (no other options)"
   << endl << "///" << "    -m       choose machine learning mode"
   << endl << "///" << "    -i       choose a new instance file (-g option default : ./input.txt)"
   << endl << "///" << "    -t       choose a training data file (-g option default : ./train.txt)"
-  << endl << "///" << "    -o       determine an output file name (optional)"
+  << endl << "///" << "    -o       determine an output file name (-p option default : ./output.txt, -g : ./answer.txt)"
+  << endl << "///" << "    -x       perfomance test for generated input & train set (only with predict)"
   << endl << "///"
   << endl << "///" << "  [MODE]     mode type"
   << endl << "///" << "  [INPUT]    input file name"
   << endl << "///" << "  [T-DATA]   training data file name"
-  << endl << "///" << "  [OUTPUT]   output file name (default : ./output.txt)"
+  << endl << "///" << "  [OUTPUT]   output file name (-g default : ./output.txt, -p default : ./answer.txt)"
+  << endl << "///" << "  [ANSWER]   answer file name for generated examples"
   << endl << "///"
   << endl << "///" << "  MODE LIST"
   << endl << "///"
@@ -97,8 +99,8 @@ void printError(const char* message) {
 /// 
 /// @brief global valid option information
 ///
-static char gl_valid_option_set[] = { 'g', 'p', 'm', 'i', 't', 'o', 'h' };
-static int gl_num_valid_option = 7;
+static char gl_valid_option_set[] = { 'g', 'p', 'm', 'i', 't', 'o', 'h', 'x' };
+static int gl_num_valid_option = 8;
 
 ////////////////////////////////////////////////////////////////////////////////
 /// 
@@ -170,7 +172,8 @@ bool isOptionValid(int argc, char* argv[]) {
       
       // couple option handling ('m', 'i', 't', 'o')
       if (argv[i][1] == 'm' || argv[i][1] == 'i' || \
-          argv[i][1] == 't' || argv[i][1] == 'o') {
+          argv[i][1] == 't' || argv[i][1] == 'o' || \
+          argv[i][1] == 'x') {
         // check if there is second option
         if (i >= (argc - 1)) { // check if this option is the last one
           printError("THERE IS NO SECOND OPTION");
@@ -205,8 +208,8 @@ bool isOptionValid(int argc, char* argv[]) {
   }
   
   if (findOption('g', argc, argv)) { // generation logical check
-    if (findOption('o', argc, argv)) {
-      printError("GENERATION DON'T NEED OUTPUT FILE");
+    if (findOption('x', argc, argv)) {
+      printError("GENERATION CAN't EXECUTE A PERFORMANCE TEST (IT'S ONLY FOR PREDICTION)");
       return false;
     }
     
@@ -244,15 +247,13 @@ int main(int argc, char* argv[])  ///< taking options
     return 0;
   }
 
-  bool isPredict = false;
-  if (findOption('p', argc, argv))
-    isPredict = true;
-
-  if (isPredict) { // do prediction
-    ofstream*     output;    ///< output file stream
-    ifstream*      input;     ///< new instance file stream
-    ifstream*      training;  ///< training data file stream
-    ML_Machine*   machine;   ///< machine learning engine
+  if (findOption('p', argc, argv)) { // do prediction
+    ofstream*     output;         ///< output file stream
+    ifstream*     input;          ///< new instance file stream
+    ifstream*     training;       ///< training data file stream
+    ifstream*     answer;         ///< answer data file stream
+    ML_Machine*   machine;        ///< machine learning engine
+    bool          isGen = false;  ///< true if input is gen by generator
 
     // input file stream open
     input = new ifstream(argv[findOption('i', argc, argv) + 1]);
@@ -283,11 +284,17 @@ int main(int argc, char* argv[])  ///< taking options
       namiTerm();
       exit(1);
     }
+    
+    // answer file stream open
+    if (findOption('x', argc, argv))
+      answer = new ifstream(argv[findOption('x', argc, argv) + 1]);
+    else
+      answer = NULL;
 
     // select machine algorithm
     const char* mode = argv[findOption('m', argc, argv) + 1];
     if (strcmp(mode, "concept") == 0) {
-      machine = new CE_Machine(input, training, output);
+      machine = new CE_Machine(input, training, answer, output);
     }
     else {
       printError("NO SUCH MODE");
@@ -301,7 +308,7 @@ int main(int argc, char* argv[])  ///< taking options
       namiTerm();
       exit(1);
     }
-
+    
     // do predict
     if (!machine->predict()) {
       printError("PREDICT ERROR");
@@ -312,11 +319,13 @@ int main(int argc, char* argv[])  ///< taking options
     // close all streams
     input->close();
     training->close();
+    answer->close();
     output->close();
   } else { // do generating input and training data
     ofstream*      input;     ///< new instance file stream
     ofstream*      training;  ///< training data file stream
-    ML_Machine*   machine;   ///< machine learning engine
+    ofstream*      answer;    ///< answer data file stream
+    ML_Machine*    machine;   ///< machine learning engine
     
     // input file stream open
     if (int iIndex = findOption('i', argc, argv)) //optional
@@ -340,11 +349,24 @@ int main(int argc, char* argv[])  ///< taking options
       namiTerm();
       exit(1);
     }
+    
+    // answer file stream open
+    if (int aIndex = findOption('o', argc, argv)) //optional
+      answer = new ofstream(argv[aIndex+1]);
+    else
+      answer = new ofstream("answer.txt");
+    if (!answer->is_open()) {
+      input->close();
+      training->close();
+      printError("ANSWER FILE OPEN ERROR");
+      namiTerm();
+      exit(1);
+    }
 
     // select machine algorithm
     const char* mode = argv[findOption('m', argc, argv) + 1];
     if (strcmp(mode, "concept") == 0) {
-      machine = new CE_Machine(input, training, NULL);
+      machine = new CE_Machine(input, training, answer, NULL);
     }
     else {
       printError("NO SUCH MODE");
@@ -362,6 +384,7 @@ int main(int argc, char* argv[])  ///< taking options
     // close all streams
     input->close();
     training->close();
+    answer->close();
   }
   
   namiTerm();
@@ -373,8 +396,8 @@ int main(int argc, char* argv[])  ///< taking options
 ///  ML_Machine
 ///
 
-ML_Machine::ML_Machine(ios *input, ios *training, ostream *output)
-  : input(input), training(training), output(output) {}
+ML_Machine::ML_Machine(ios *input, ios *training, ios *answer, ostream *output)
+  : input(input), training(training), answer(answer), output(output) {}
 
 ML_Machine::~ML_Machine() {}
 
@@ -383,8 +406,8 @@ ML_Machine::~ML_Machine() {}
 ///  CE_Machine
 ///
 
-CE_Machine::CE_Machine(ios *input, ios *training, ostream *output)
-  : ML_Machine(input, training, output) {
+CE_Machine::CE_Machine(ios *input, ios *training, ios *answer, ostream *output)
+  : ML_Machine(input, training, answer, output) {
   ce = NULL;
 }
 
@@ -447,13 +470,43 @@ bool CE_Machine::train()
   return false; // code error
 }
 
-bool CE_Machine::predict()
+bool CE_Machine::predict(void)
 {
+  /* these three counters are for perfomance test with generated inputs */
+  int total = 0;      ///< the number of total inputs
+  int dontknow = 0;   ///< the number of inputs predicted dontknow(?)
+  int wrong = 0;      ///< the number of inputs predicted wrong
+
   cout <<    "///" << "  Candidate Elimination Algorithm is predicting..."
   << endl;
   
   if (istream *inp = dynamic_cast <istream*> (input)) {
     ignoreBlank(inp); // prevent blank error
+    
+    istream *ans = NULL;
+    Hypothesis *ans_h = NULL;
+    if (answer) { // do performance test
+      if (ans = dynamic_cast <istream*> (answer)) {
+        AttrVal *tmp_a = new AttrVal[size];
+        for (int i = 0; i < size; i++) {
+          char c = ans->get();
+          switch(c) {
+            case 't':
+              tmp_a[i] = vTrue; break;
+            case 'f':
+              tmp_a[i] = vFalse; break;
+            case '?':
+              tmp_a[i] = vAllAccept; break;
+            default:
+              return false; break; // answer file error
+          }
+          ignoreBlank(ans);
+        }
+        ans_h = new Hypothesis(size, tmp_a);
+      } else {
+        return false; // istream error
+      }
+    }
 
     do {
       bool* in = new bool[size];
@@ -473,16 +526,46 @@ bool CE_Machine::predict()
       }
       char out;
       switch(ce->predict(in)) {
-        case r_true: out = 't'; break;
-        case r_false: out = 'f'; break;
-        case r_dontknow: out = '?'; break;
-        default: out = 'x'; break; // error
+        case r_true: 
+          out = 't';
+          if (answer)
+            if (!ans_h->isCover(in)) // should be covered
+              wrong++;
+          break;
+        case r_false: 
+          out = 'f'; 
+          if (answer)
+            if (ans_h->isCover(in)) // should be uncovered
+              wrong++;
+          break;
+        case r_dontknow: 
+          out = '?';
+          if (answer)
+            dontknow++; // increase dontknow counter
+          break;
+        default: 
+          out = 'x'; 
+          break; // error
       }
       (*output) << "=> " << out << endl;
+      
+      if (answer)
+        total++; // increase total counter
     } while (!inp->eof() && !inp->bad());
 
     cout <<    "///" << "                               -- finish"
     << endl << "///" << endl;
+
+    if (answer) {
+      cout <<    "///" << "  Perfomance Test Result :"
+      << endl << "///" << "    - total :        " << total
+      << endl << "///" << "    - dontknow :     " << dontknow
+      << endl << "///" << "    - wrong :        " << wrong
+      << endl << "///" << "    - Success Rate : "
+      << (total - dontknow - wrong) * 100 / total << " %"
+      << endl << "///" << endl;
+ 
+    }
 
     return true;
   } else { // reference error
@@ -613,23 +696,21 @@ represented training data" << endl;
   cout <<    "///" << "  - Input Data File Format:" << endl;
   cout <<    "///" << "   entire lines : sets of boolean value represented \
 unknown input data" << endl;
-  cout <<    "///" << "   (Each even line number has true input with the target \
-concept," << endl;
-  cout <<    "///" << "    and odd line number has false input as you can see below)" << endl;
   cout <<    "///" << endl;
   
   srand(time(0)); // time seeding to random
   ostream *inp = dynamic_cast <ostream*> (input);
   ostream *train = dynamic_cast <ostream*> (training);
-  if (!inp || !train)
+  ostream *ans = dynamic_cast <ostream*> (answer);
+  if (!inp || !train || !ans)
     return false;
     
   // step 1. define target information.
   
   // the number of attributes ( MIN_ATTR ~ MAX_ATTR )
   int numAttr = MIN_ATTR + (rand() % (MAX_ATTR - MIN_ATTR + 1));
-  // the number of training data ( 2 ^ (0.25 * numAttr) ~ 2 ^ (0.75 * numAttr) )
-  int numTrain = powerOfTwo((numAttr / 4) + (rand() % (numAttr / 2)));
+  // the number of training data ( 2 ^ (0.5 * numAttr) ~ 2 ^ (0.75 * numAttr) )
+  int numTrain = powerOfTwo((numAttr / 2) + (rand() % (numAttr / 4)));
   // the number of input data ( MIN_INPUT ~ MAX_INPUT )
   int numInput = MIN_INPUT + (rand() % (MAX_INPUT - MIN_INPUT + 1));
   
@@ -641,11 +722,17 @@ concept," << endl;
   for (int i = 0; i < numAttr; i++) {
     char cur = (target[i] == r_false) ? 'f' : (target[i] == r_true) ? 't' : '?';
     cout << cur;
-    if (i < numAttr -1)
+    (*ans) << cur;
+    if (i < numAttr -1) {
       cout << " ";
+      (*ans) << " ";
+    }
   }
   cout << endl << "///" << endl;
-  
+  cout <<    "///" << "  - Answer Data:" << endl;
+  cout <<    "///" << "   " << 1 << " answer data created" << endl;
+  cout <<    "///" << endl;
+
   // step 3. make training data from target concept.
   cout <<    "///" << "  - Training Data:" << endl;
   cout <<    "///" << "   " << numTrain << " training data created" << endl;
@@ -670,7 +757,7 @@ concept," << endl;
   cout <<    "///" << "   " << numInput << " input data created" << endl;
   cout <<    "///" << endl;
   for (int i = 0; i < numInput; i++) {
-    bool isTrue = (i % 2 == 0) ? false : true;
+    bool isTrue = (rand() % 2 == 0) ? false : true;
     bool *tmp_input = createInstance(numAttr, target, isTrue);
 
     for (int j = 0; j < numAttr; j++) {
