@@ -32,7 +32,7 @@
 #include <ctime>        ///< for time()
 #include "namiML.h"
 
-#define VERSION "v1.1"
+#define VERSION "v0.5"
 
 using namespace std;  ///< already declared by header file
 
@@ -235,6 +235,46 @@ void ignoreBlank(istream *i)
     i->get();
 }
 
+////////////////////////////////////////////////////////////////////////////////
+/// 
+/// @brief check if next istream token is white space
+/// 
+bool isWhite(istream *i)
+{
+  return (i->peek() == '\n' || i->peek() == '\t' || i->peek() == ' ');
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// 
+/// @brief get integer number from istream
+/// @details next token must be white token or given token
+///
+int istream_to_int(istream *i)
+{
+  int ret = 0;
+  while (!isWhite(i)) {
+    ret *= 10;
+    int tmp = i->get();
+    if (tmp < 48 || tmp > 57)
+      exit(-1);
+    ret += tmp - 48; // 48 - ASCII code '0' value
+  }
+  return ret;
+}
+
+int istream_to_int_by_token(istream *i, char token)
+{
+  int ret = 0;
+  while (i->peek() != token) {
+    ret *= 10;
+    int tmp = i->get();
+    if (tmp < 48 || tmp > 57)
+      exit(-1);
+    ret += tmp - 48; // 48 - ASCII code '0' value
+  }
+  return ret;
+}
+
 int main(int argc, char* argv[])  ///< taking options
 {
   cout <<    "////////////////////////////////////////////////////////////////////////////////"
@@ -306,8 +346,9 @@ int main(int argc, char* argv[])  ///< taking options
     const char* mode = argv[findOption('m', argc, argv) + 1];
     if (strcmp(mode, "concept") == 0) {
       machine = new CE_Machine(input, training, answer, output);
-    }
-    else {
+    } else if (strcmp(mode, "decision") == 0) {
+      machine = new ID3_Machine(input, training, answer, output);
+    } else {
       printError("NO SUCH MODE");
       namiTerm();
       exit(1);
@@ -378,8 +419,9 @@ int main(int argc, char* argv[])  ///< taking options
     const char* mode = argv[findOption('m', argc, argv) + 1];
     if (strcmp(mode, "concept") == 0) {
       machine = new CE_Machine(input, training, answer, NULL);
-    }
-    else {
+    } else if (strcmp(mode, "decision") == 0) {
+      machine = new ID3_Machine(input, training, answer, NULL);
+    } else {
       printError("NO SUCH MODE");
       namiTerm();
       exit(1);
@@ -586,10 +628,10 @@ bool CE_Machine::predict(void)
   return false; // code error
 }
 
-#define MAX_ATTR    20      ///< the maximum number of possible attributes
-#define MIN_ATTR    5       ///< the minimum number of possible attributes
-#define MAX_INPUT   100     ///< the maximum number of input data
-#define MIN_INPUT   5       ///< the minimum number of input data
+#define MAX_CE_ATTR    20      ///< the maximum number of possible attributes
+#define MIN_CE_ATTR    5       ///< the minimum number of possible attributes
+#define MAX_CE_INPUT   100     ///< the maximum number of input data
+#define MIN_CE_INPUT   5       ///< the minimum number of input data
 
 ////////////////////////////////////////////////////////////////////////////////
 ///  @brief calculate n power of two
@@ -603,19 +645,12 @@ static inline int powerOfTwo(int n) {
   return ret;
 }
 
-////////////////////////////////////////////////////////////////////////////////
-///  @brief create target concept
-///
-///  @param num the number of attributes
-///  @retval Result enum array which represents target concept
-///
-Result* createTarget(int num) {
-  Result *ret = new Result[num];
-  //srand(time(0)); // refresh random seed
+Result* CE_Machine::createTarget() {
+  Result *ret = new Result[size];
 
   while (true) {
     bool allDontknow = true;
-    for (int i = 0; i < num; i++) {
+    for (int i = 0; i < size; i++) {
       int tmp = rand() % 3;
       ret[i] = (tmp == 2) ? r_dontknow : (tmp == 1) ? r_true : r_false;
       if (ret[i] != r_dontknow)
@@ -629,7 +664,7 @@ Result* createTarget(int num) {
   return ret;
 }
 
-bool makeOneEntry(Result target, bool t) {
+bool CE_Machine::makeOneEntry(Result target, bool t) {
   bool ret;
 
   switch(target) {
@@ -653,23 +688,14 @@ bool makeOneEntry(Result target, bool t) {
   return ret;
 }
 
-////////////////////////////////////////////////////////////////////////////////
-///  @brief create instance from target concept
-///
-///  @param num the number of attributes
-///  @param target target concept
-///  @param t flag if true instance or false instance
-///  @retval Boolean array which represents instance
-///
-bool* createInstance(int num, Result* target, bool t) {
-  bool *ret = new bool[num + 1]; // the last entry is target attribute
-  //srand(time(0)); // refresh random seed
+bool* CE_Machine::createInstance(Result* target, bool t) {
+  bool *ret = new bool[size + 1]; // the last entry is target attribute
 
-  bool *entryBool = new bool[num];
+  bool *entryBool = new bool[size];
   if (!t) {
     while(true) {
       bool falseExist = false;
-      for (int i = 0; i < num; i++) {
+      for (int i = 0; i < size; i++) {
         entryBool[i] = (rand() % 2 == 0) ? false : true;
         if (target[i] != 2 && entryBool[i] == false)
           falseExist = true;
@@ -680,13 +706,13 @@ bool* createInstance(int num, Result* target, bool t) {
     }
   }
   
-  for (int i = 0; i < num; i++) {
+  for (int i = 0; i < size; i++) {
     if (t)
       ret[i] = makeOneEntry(target[i], true);
     else
       ret[i] = makeOneEntry(target[i], entryBool[i]);
   }
-  ret[num] = t;
+  ret[size] = t;
   
   return ret;
 }
@@ -699,8 +725,8 @@ input & training data..." << endl;
   cout <<    "///" << endl;
   cout <<    "///" << "  [Brief]" << endl;
   cout <<    "///" << "  - Training Data File Format:" << endl;
-  cout <<    "///" << "   top of line         : the number of training \
-data" << endl;
+  cout <<    "///" << "   top of line         : the number of attributes \
+except for target attr" << endl;
   cout <<    "///" << "   the following lines : sets of boolean value \
 represented training data" << endl;
   cout <<    "///" << endl;
@@ -718,18 +744,19 @@ unknown input data" << endl;
     
   // step 1. define target information.
   
-  // the number of attributes ( MIN_ATTR ~ MAX_ATTR )
-  int numAttr = MIN_ATTR + (rand() % (MAX_ATTR - MIN_ATTR + 1));
+  // the number of attributes ( MIN_CE_ATTR ~ MAX_CE_ATTR )
+  int numAttr = MIN_CE_ATTR + (rand() % (MAX_CE_ATTR - MIN_CE_ATTR + 1));
   // the number of training data ( 2 ^ (0.5 * numAttr) ~ 2 ^ (0.75 * numAttr) )
   int numTrain = powerOfTwo((numAttr / 2) + (rand() % (numAttr / 4)));
-  // the number of input data ( MIN_INPUT ~ MAX_INPUT )
-  int numInput = MIN_INPUT + (rand() % (MAX_INPUT - MIN_INPUT + 1));
-  
+  // the number of input data ( MIN_CE_INPUT ~ MAX_CE_INPUT )
+  int numInput = MIN_CE_INPUT + (rand() % (MAX_CE_INPUT - MIN_CE_INPUT + 1));
+  size = numAttr;
+
   // step 2. create a target concept.
   cout <<    "///" << "  [Details]" << endl;
   cout <<    "///" << "  - Target Concept:" << endl;
   cout <<    "///" << "   ";
-  Result *target = createTarget(numAttr);
+  Result *target = createTarget();
   for (int i = 0; i < numAttr; i++) {
     char cur = (target[i] == r_false) ? 'f' : (target[i] == r_true) ? 't' : '?';
     cout << cur;
@@ -751,7 +778,7 @@ unknown input data" << endl;
   (*train) << numAttr << endl; // write the number of attributes
   for (int i = 0; i < numTrain; i++) {
     bool isTrue = (rand() % 2 == 0) ? false : true;
-    bool *tmp_train = createInstance(numAttr, target, isTrue);
+    bool *tmp_train = createInstance(target, isTrue);
     
     for (int j = 0; j < numAttr + 1; j++) {
       char cur = (tmp_train[j] == true) ? 't' : 'f';
@@ -769,7 +796,7 @@ unknown input data" << endl;
   cout <<    "///" << endl;
   for (int i = 0; i < numInput; i++) {
     bool isTrue = (rand() % 2 == 0) ? false : true;
-    bool *tmp_input = createInstance(numAttr, target, isTrue);
+    bool *tmp_input = createInstance(target, isTrue);
 
     for (int j = 0; j < numAttr; j++) {
       char cur = (tmp_input[j] == true) ? 't' : 'f';
@@ -787,4 +814,498 @@ unknown input data" << endl;
   return true;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+///
+///  ID3_Machine
+///
+
+ID3_Machine::ID3_Machine(ios *input, ios *training, ios *answer, ostream *output)
+  : ML_Machine(input, training, answer, output) {
+  attSizes = NULL;
+  id3 = NULL;
+}
+
+ID3_Machine::~ID3_Machine() {
+  if (id3)
+    delete(id3);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+///
+///  @brief ID3 train procedure
+///  @details train text file format
+///           1st line :  the number of attr
+///           2nd line :  attr size array
+///           3rd line~:  train data ...
+///
+
+bool ID3_Machine::train()
+{
+  cout <<    "///" << "  ID3 Algorithm is training..."
+  << endl;
+
+  ATTVAL **train_dat = NULL;
+  ATTVAL **valid_dat = NULL;
+  int nr_train = 0;
+  int nr_valid = 0;
+
+  // training should reference istream class
+  if (istream *train = dynamic_cast <istream*> (training)) {
+    // get the number of attributes
+    nr_att = istream_to_int(train);
+    ignoreBlank(train);
+    
+    attSizes = new ATTVAL[nr_att];
+    // get the size of each attributes
+    for (int i = 0; i < nr_att; i++) {
+      attSizes[i] = (ATTVAL) istream_to_int(train);
+      ignoreBlank(train);
+    }
+    this->attSizes = attSizes;
+    
+    // get the size of real data in train
+    int full_size_of_train = istream_to_int(train);
+    ignoreBlank(train);
+    
+    // define the size of train & validation set
+    nr_valid = full_size_of_train / 4;
+    nr_train = full_size_of_train - nr_valid;
+    train_dat = new ATTVAL*[nr_train];
+    for (int i = 0; i < nr_train; i++)
+      train_dat[i] = new ATTVAL[nr_att];
+    valid_dat = new ATTVAL*[nr_valid];
+    for (int i = 0; i < nr_valid; i++)
+      valid_dat[i] = new ATTVAL[nr_att];
+   
+    // create ID3 engine
+    id3 = new ID3(attSizes, nr_att, train_dat, valid_dat, nr_train, nr_valid);
+
+    int cur_pos = 0;
+    do {
+      for (int i = 0; i < nr_att; i++) {
+        ATTVAL tmp = (ATTVAL) istream_to_int(train);
+        ignoreBlank(train);
+        if (cur_pos < nr_valid) { // validation set
+          valid_dat[cur_pos][i] = tmp;
+        } else { // train set
+          train_dat[cur_pos - nr_valid][i] = tmp;
+        }
+      }
+      cur_pos++;
+    } while (!train->eof() && !train->bad());
+    
+    cout <<    "///" << "    - making a decision tree" << endl;
+    cout <<    "///" << endl;
+    id3->makeTree(); // train decision tree
+    cout << endl << "///" << endl;
+    cout <<    "///" << "    - pruning the decision tree" << endl;
+    id3->prune(); // prune decision tree
+
+    cout <<    "///" << "                               -- finish"
+    << endl << "///" << endl;
+
+    return true;
+  } else { // reference error
+    return false;
+  }
+
+  return false; // code error
+}
+
+bool ID3_Machine::predict()
+{
+  /* these three counters are for perfomance test with generated inputs */
+  int total = 0;      ///< the number of total inputs
+  int wrong = 0;      ///< the number of inputs predicted wrong
+  int tmp = 0;
+
+  cout <<    "///" << "  ID3 Algorithm is predicting..."
+    << endl;
+
+  if (istream *inp = dynamic_cast <istream*> (input)) {
+    ignoreBlank(inp); // prevent blank error
+    
+    DTree *ans_tree = NULL;
+    if (answer) {
+      ans_tree = answer_tree_gen();
+      ans_tree->setAttSizeArray(attSizes);
+      ans_tree->setNrAtt(nr_att);
+    }
+    
+    do {
+      ATTVAL* in = new ATTVAL[nr_att - 1]; // except for target attr
+      for (int i = 0; i < nr_att - 1; i++) {
+        in[i] = istream_to_int(inp);
+        ignoreBlank(inp);
+        // update output too
+        (*output) << in[i] << " ";
+      }
+      ATTVAL out = id3->predict(in);
+      (*output) << "=> " << out << endl;
+      if (answer) {
+        if (out != ans_tree->getLeaf(in)->getVal())
+          wrong++;
+        total++; // increase total counter
+      }
+      delete []in;
+    } while (!inp->eof() && !inp->bad());
+
+    cout <<    "///" << "                               -- finish"
+    << endl << "///" << endl;
+
+    if (answer) {
+      cout <<    "///" << "  Perfomance Test Result :"
+        << endl << "///" << "    - total :        " << total
+        << endl << "///" << "    - wrong :        " << wrong
+        << endl << "///" << "    - Success Rate : "
+        << (total - wrong) * 100 / total << " %"
+        << endl << "///" << endl;
+      delete (ans_tree);
+    }
+
+    return true;
+  } else { // reference error
+    return false;
+  }
+
+  return false; // code error
+}
+
+void ID3_Machine::recursive_make_answer_tree(DTreeRoot *parent, bool *remainAtt, 
+  ostream *ans, int indent, bool first, bool last, DTree *tree, int ch_index) {
+  // count the number of remaining attrs
+  int nr_remain_attr = 0;
+  for (int i = 0; i < nr_att - 1; i++)
+    if (remainAtt[i])
+      nr_remain_attr++;
+
+  bool isLeaf = (nr_remain_attr <= 1) ? true : (rand() % nr_remain_attr == 0) ?
+    true : false;
+
+  if (!isLeaf) { // DTreeRoot
+    int attIndex;
+    for (int i = 0; i < nr_att - 1; i++)
+      if (remainAtt[i])
+        attIndex = i;
+
+    int randStep = rand() % (nr_att - 1);
+    for (int i = 0; i < randStep; i++) {
+      int tmpIndex = attIndex + 1;
+
+      while (!remainAtt[tmpIndex]) {
+        tmpIndex++;
+        if (tmpIndex >= nr_att - 1)
+          tmpIndex = 0;
+      } 
+
+      attIndex = tmpIndex;
+    }
+    
+    // handle standard out
+    if (indent != 0) {
+      if (first) {
+        cout << " - ";
+        cout << '(' << attIndex << ')';
+      } else {
+        cout << endl << "///\t   ";
+        for (int i = 0; i < indent - 1; i++)
+          cout << "      ";
+        if (last)
+          cout << " \\ ";
+        else
+          cout << " + ";
+        cout << '(' << attIndex << ')';
+      }
+    } else {
+      cout << "///\t" << '(' << attIndex << ')';
+    }
+    
+    // handle answer file
+    for (int i = 0; i < indent; i++)
+      (*ans) << '\t';
+    (*ans) << '(' << attIndex << ')' << endl;
+    
+    DTreeNode **child_array = new DTreeNode*[attSizes[attIndex]];
+    for (int i = 0; i < attSizes[attIndex]; i++)
+      child_array[i] = NULL;
+
+    DTreeRoot *cur = new DTreeRoot(attIndex, child_array, attSizes[attIndex]);
+    
+    if (!parent) { // must be root
+      if (tree) {
+        tree->setRoot(cur);
+      } else { // fatal error
+        cout << "ERROR: root must have tree info" << endl;
+        exit(1);
+      }
+    } else { // not root
+      if (tree) { // must have no tree
+        cout  << "ERROR: non-root must have no tree info" << endl;
+        exit(1);
+      } else {
+        parent->setOneChild(cur, ch_index);
+      }
+    }
+
+    bool *cpy_remain = new bool[nr_att - 1];
+    for (int i = 0; i < nr_att - 1; i++)
+      cpy_remain[i] = remainAtt[i];
+    cpy_remain[attIndex] = false;
+
+    for (int i = 0; i < attSizes[attIndex]; i++) {
+      recursive_make_answer_tree(cur, cpy_remain, ans, indent + 1,
+        (i == 0) ? true : false, (i == attSizes[attIndex] - 1) ? true : false, 
+        NULL, i);
+    }
+
+    free(cpy_remain);
+  }
+  else { // DTreeLeaf
+    int pred_val = rand() % attSizes[nr_att - 1];
+
+    // handle standard out
+    if (indent != 0) {
+      if (first) {
+        cout << " - ";
+        cout << '{' << pred_val << '}';
+      } else {
+        cout << endl << "///\t   ";
+        for (int i = 0; i < indent - 1; i++)
+          cout << "      ";
+        if (last)
+          cout << " \\ ";
+        else
+          cout << " + ";
+        cout << '{' << pred_val << '}';
+      }
+    } else {
+      cout << "///\t" << '{' << pred_val << '}';
+    }
+        
+    // handle answer file
+    for (int i = 0; i < indent; i++)
+      (*ans) << '\t';
+    (*ans) << '{' << pred_val << '}' << endl;
+
+    DTreeLeaf *cur = new DTreeLeaf(pred_val);
+
+    if (!parent) { // must be root
+      if (tree) {
+        tree->setRoot(cur);
+      } else { // fatal error
+        cout << "ERROR: root must have tree info" << endl;
+        exit(1);
+      }
+    } else { // not root
+      if (tree) { // must have no tree
+        cout  << "ERROR: non-root must have no tree info" << endl;
+        exit(1);
+      } else {
+        parent->setOneChild(cur, ch_index);
+      }
+    }
+  }
+}
+
+DTree* ID3_Machine::make_answer_tree(ostream *ans) {
+  DTree* answer_tree = NULL;
+  answer_tree = new DTree(); // make empty tree
+  
+  bool *remainAtt = new bool[nr_att - 1];
+  for (int i = 0; i < nr_att - 1; i++)
+    remainAtt[i] = true;
+
+  recursive_make_answer_tree(NULL, remainAtt, ans, 0, false, false, answer_tree, 0);
+  
+  free (remainAtt);
+  cout << endl << "///";
+
+  return answer_tree;
+}
+
+ATTVAL* ID3_Machine::createInstance() {
+  ATTVAL *ret = (ATTVAL*) new ATTVAL[nr_att];
+  
+  for (int i = 0; i < nr_att; i++)
+    ret[i] = rand() % attSizes[i];
+
+  return ret;
+}
+
+#define MAX_ID3_ATTR      5      ///< the maximum number of possible attributes
+#define MIN_ID3_ATTR      2       ///< the minimum number of possible attributes
+#define MAX_ID3_INPUT     100     ///< the maximum number of input data
+#define MIN_ID3_INPUT     5       ///< the minimum number of input data
+#define MAX_ID3_ATTR_SIZE 4      ///< the maximum number of attribute size
+#define MIN_ID3_ATTR_SIZE 2       ///< the minimum number of attribute size
+#define POWER_TRAIN       10      ///< the power coefficient of train data number
+#define ID3_ERROR_FREQ    20      ///< how often error data is created
+
+bool ID3_Machine::generate()
+{
+  cout <<    "///" << "  ID3 Algorithm is generating input & \
+training data..." << endl;
+  cout <<    "///" << endl;
+  cout <<    "///" << "  [Brief]" << endl;
+  cout <<    "///" << "  - Training Data File Format:" << endl;
+  cout <<    "///" << "   top of line         : the number of attributes \
+including target attr" << endl;
+  cout <<    "///" << "   second line         : attribute size array" << endl;
+  cout <<    "///" << "   the following lines : sets of integer value \
+represented training data" << endl;
+  cout <<    "///" << endl;
+  cout <<    "///" << "  - Input Data File Format:" << endl;
+  cout <<    "///" << "   entire lines : sets of integer value represented \
+unknown input data" << endl;
+  cout <<    "///" << endl;
+  
+  srand(time(0)); // time seeding to random
+  ostream *inp = dynamic_cast <ostream*> (input);
+  ostream *train = dynamic_cast <ostream*> (training);
+  ostream *ans = dynamic_cast <ostream*> (answer);
+  if (!inp || !train || !ans)
+    return false;
+    
+  // step 1. define target information.
+  
+  // the number of attributes ( MIN_ID3_ATTR ~ MAX_ID3_ATTR )
+  int numAttr = MIN_ID3_ATTR + (rand() % (MAX_ID3_ATTR - MIN_ID3_ATTR + 1));
+  // the number of training data ( 2 ^ (numAttr) ~ 2 ^ (1.5 * numAttr) )
+  int numTrain = POWER_TRAIN * powerOfTwo(numAttr + (rand() % (numAttr / 2)));
+  // the number of input data ( MIN_INPUT ~ MAX_INPUT )
+  int numInput = MIN_ID3_INPUT + (rand() % (MAX_ID3_INPUT - MIN_ID3_INPUT + 1));
+  nr_att = numAttr;
+  (*train) << numAttr << endl; // write the number of attributes
+
+  attSizes = new ATTVAL[numAttr];
+  for (int i = 0; i < numAttr; i++)
+    attSizes[i] = MIN_ID3_ATTR_SIZE + (rand() % (MAX_ID3_ATTR_SIZE - MIN_ID3_ATTR_SIZE +1));
+  
+  // step 2. create a target concept.
+  cout <<    "///" << "  [Details]" << endl;
+  cout <<    "///" << "  - Attribute size:" << endl;
+  cout <<    "///" << "    ";
+  for (int i = 0; i < numAttr; i++) {
+    cout << attSizes[i] << " ";
+    (*train) << attSizes[i] << " ";
+  }
+  (*train) << endl;
+  cout << endl << "///" << "  - Target Concept:" << endl;
+ 
+  DTree* answer_tree = make_answer_tree(ans);
+  answer_tree->setAttSizeArray(attSizes);
+  answer_tree->setNrAtt(nr_att);
+
+  cout << endl << "///" << endl;
+  cout <<    "///" << "  - Answer Data:" << endl;
+  cout <<    "///" << "   " << 1 << " answer data created" << endl;
+  cout <<    "///" << endl;
+
+  // step 3. make training data from target concept.
+  cout <<    "///" << "  - Training Data:" << endl;
+  cout <<    "///" << "   " << numTrain << " training data created" << endl;
+  cout <<    "///" << endl;
+  (*train) << numTrain << endl;
+  for (int i = 0; i < numTrain; i++) {
+    ATTVAL *tmp_train = createInstance();
+    
+    for (int j = 0; j < numAttr - 1; j++)
+      (*train) << tmp_train[j] << " ";
+    ATTVAL target = answer_tree->getLeaf(tmp_train)->getVal();
+    target = (rand() % ID3_ERROR_FREQ == 0) ?
+      (target + (rand() % (attSizes[numAttr - 1] - 1) + 1)) % attSizes[numAttr - 1] :      target;
+    (*train) << target << endl;  
+    delete (tmp_train);
+  }
+
+  // step 4. make input data from target concept.
+  cout <<    "///" << "  - Input Data:" << endl;
+  cout <<    "///" << "   " << numInput << " input data created" << endl;
+  cout <<    "///" << endl;
+  for (int i = 0; i < numInput; i++) {
+    ATTVAL *tmp_input = createInstance();
+
+    for (int j = 0; j < numAttr - 1; j++)
+      (*inp) << tmp_input[j] << " ";
+    (*inp) << endl;
+    delete (tmp_input);
+  }
+  
+  cout <<    "///" << "                               -- finish"
+  << endl << "///" << endl;
+  
+  return true;
+}
+
+DTree* ID3_Machine::answer_tree_gen()
+{
+  DTree* answer_tree = NULL;
+  if (istream *ans = dynamic_cast <istream*> (answer)) {
+    answer_tree = new DTree(); // make empty tree
+    ignoreBlank(ans);
+    recursive_answer_tree_gen(NULL, ans, answer_tree, 0);
+  }
+  else {
+    cout << "ERROR: answer istreamize fail" << endl;
+    exit(1);
+  }
+  return answer_tree;
+}
+
+void ID3_Machine::recursive_answer_tree_gen(DTreeRoot *parent, istream *ans,
+  DTree *tree, int ch_index) {
+  if (ans->peek() == '(') { // DTreeRoot
+    ans->get(); // consume '('
+    int attIndex = istream_to_int_by_token(ans, ')');
+    DTreeRoot *cur = new DTreeRoot(attIndex, new DTreeNode*[attSizes[attIndex]],
+                        attSizes[attIndex]);
+    ans->get(); // consume ')'
+    ignoreBlank(ans);
+    
+    if (!parent) { // must be root
+      if (tree) {
+        tree->setRoot(cur);
+      } else { // fatal error
+        cout << "ERROR: root must have tree info" << endl;
+        exit(1);
+      }
+    } else { // not root
+      if (tree) { // must have no tree
+        cout  << "ERROR: non-root must have no tree info" << endl;
+        exit(1);
+      } else {
+        parent->setOneChild(cur, ch_index);
+      }
+    }
+
+    for (int i = 0; i < attSizes[attIndex]; i++)
+      recursive_answer_tree_gen(cur, ans, NULL, i);
+  }
+  else if (ans->peek() == '{') { // DTreeLeaf
+    ans->get(); // consume '{'
+    DTreeLeaf *cur = new DTreeLeaf(istream_to_int_by_token(ans, '}'));
+    ans->get(); // consume '}'
+    ignoreBlank(ans);
+
+    if (!parent) { // must be root
+      if (tree) {
+        tree->setRoot(cur);
+      } else { // fatal error
+        cout << "ERROR: root must have tree info" << endl;
+        exit(1);
+      }
+    } else { // not root
+      if (tree) { // must have no tree
+        cout  << "ERROR: non-root must have no tree info" << endl;
+        exit(1);
+      } else {
+        parent->setOneChild(cur, ch_index);
+      }
+    }
+  }
+  else {
+    cout << "ERROR: token error" << endl;
+    exit(1);
+  }
+}
 

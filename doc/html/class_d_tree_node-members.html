@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Native Mechanic Intelligent Machine Learning (NamiML)
-   &#160;<span id="projectnumber">v 1.1</span>
+   &#160;<span id="projectnumber">v 0.5</span>
    </div>
   </td>
  </tr>
@@ -90,25 +90,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="class_d_tree_node.html">DTreeNode</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_d_tree_node.html#a204858f2594c3be92006e8d1d14a1f95">attIndex</a></td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a></td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_d_tree_node.html#a5899c8ebfd2d0a86c58d794d0481f10b">DTreeNode</a>(void)</td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_d_tree_node.html#a6c821eec550e23468400450be837cc66">DTreeNode</a>(DTreeNode **array, ATTINDEX index, ATTVAL n)</td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_d_tree_node.html#a9d2b13eef325d51228927f838ec64553">DTreeNode</a>(ATTVAL pred)</td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_d_tree_node.html#ae6da0a158ee855bd882d3f14a74f6d3b">getChild</a>(ATTVAL val) const </td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_d_tree_node.html#a5e3363efc84a9517200afc27923fa9c4">getIndex</a>(void) const </td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_d_tree_node.html#a37e035320e318a7eb9cfaa5f4c58102c">getNrVal</a>(void) const </td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_d_tree_node.html#a17d6ff9ec06aeb27c317ef4349c8d7c3">getPred</a>(void) const </td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_d_tree_node.html#a2cfaa385a4d4b7b438f947745f0d2252">isLeaf</a>(void) const </td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">nr_val</a></td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_d_tree_node.html#a9c4334b0d62483c126b3c0beef35cc02">predict</a></td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_d_tree_node.html#a98c09c69d21075b470b7eca04190ccec">setChild</a>(DTreeNode *node, ATTVAL val)</td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_d_tree_node.html#aec025d230c21306e0281ff4eb3e0f5d5">setValue</a>(ATTINDEX index, ATTVAL pred, ATTVAL nr)</td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_d_tree_node.html#a9f784807e4463c9624c3aa648ef18981">DTreeNode</a>(DTreeRoot *parent)</td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_d_tree_node.html#ae8797d7fd091f977791f9147c86ac2cd">for_polymorphism</a>(void)=0</td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_d_tree_node.html#a0486c51781298091f241c9422ff65213">getParent</a>(void) const </td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_d_tree_node.html#a76c5a99dcfbce7497486629bcde8c4c1">parent</a></td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_d_tree_node.html#ae27da1c41bf25d2053024371e4433f10">setParent</a>(DTreeRoot *parent)</td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_d_tree_node.html#a7680cec1048fa199c51d0e3ce1b574de">~DTreeNode</a>(void)</td><td class="entry"><a class="el" href="class_d_tree_node.html">DTreeNode</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 24 2015 15:02:01 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 26 2015 20:19:18 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Native Mechanic Intelligent Machine Learning (NamiML)
-   &#160;<span id="projectnumber">v 1.1</span>
+   &#160;<span id="projectnumber">v 0.5</span>
    </div>
   </td>
  </tr>
@@ -91,17 +91,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>This is the complete list of members for <a class="el" href="class_d_tree.html">DTree</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_d_tree.html#a1994ce9d5c0bbba606b29129132def08">att_size_array</a></td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_d_tree.html#a7bd21049c7f76939c6537fa2caaf3bfe">DTree</a>(ATTVAL *att_array, ATTINDEX n)</td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_d_tree.html#a0ec06782722d999e0482cd6e5a118762">getLeaf</a>(ATTVAL *attArray) const </td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_d_tree.html#a941198d7369f38dcac4e0842cae235f3">getRoot</a>(void) const </td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_d_tree.html#a623af4d9faa74f51f861a249d8ec5dc6">nr_Att</a></td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_d_tree.html#a9bf532a9cc2023d962425ba25b608fb1">root</a></td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_d_tree.html#a7a9785b69bde472a35efa2ff1d653c84">setRoot</a>(DTreeNode *root)</td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_d_tree.html#a8e793e64313c1383bdd9916d83367d16">~DTree</a>(void)</td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_d_tree.html#a3af5407f983dc3e4ac7cc1d892af1a18">DTree</a>(void)</td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_d_tree.html#a21883283cc6c588cf08b9b2e3a58f2a7">DTree</a>(DTreeNode *root, ATTVAL *att_size_array, ATTINDEX nr_att)</td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_d_tree.html#aa54f7ebd77c3f1dbce9fab709e14c924">getAttSizeArray</a>(void) const </td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_d_tree.html#a7329116d8ea9342e17ed33b8aeacd86c">getLeaf</a>(ATTVAL *attArray) const </td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_d_tree.html#ac5a52b7f870a5f62c04838743eee0221">getNrAtt</a>(void) const </td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_d_tree.html#a941198d7369f38dcac4e0842cae235f3">getRoot</a>(void) const </td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_d_tree.html#a645552d1ce2ddb03dfa5becde547c137">nr_att</a></td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_d_tree.html#a9bf532a9cc2023d962425ba25b608fb1">root</a></td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_d_tree.html#a63a3521202e7a04cd2264b8dd7479105">setAttSizeArray</a>(ATTVAL *att_size_array)</td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_d_tree.html#a36a66056eeaef83318072e7d6e6290b4">setNrAtt</a>(ATTINDEX nr_att)</td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_d_tree.html#a7a9785b69bde472a35efa2ff1d653c84">setRoot</a>(DTreeNode *root)</td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_d_tree.html#a8e793e64313c1383bdd9916d83367d16">~DTree</a>(void)</td><td class="entry"><a class="el" href="class_d_tree.html">DTree</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 24 2015 15:02:01 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 26 2015 20:19:18 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

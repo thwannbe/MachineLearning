@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Native Mechanic Intelligent Machine Learning (NamiML)
-   &#160;<span id="projectnumber">v 1.1</span>
+   &#160;<span id="projectnumber">v 0.5</span>
    </div>
   </td>
  </tr>
@@ -84,10 +84,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_d_tree_node-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">DTreeNode Class Reference</div>  </div>
+<div class="title">DTreeNode Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -95,72 +96,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="class_d_tree_node.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="decision_8h_source.html">decision.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for DTreeNode:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_d_tree_node.png" usemap="#DTreeNode_map" alt=""/>
+  <map id="DTreeNode_map" name="DTreeNode_map">
+<area href="class_d_tree_leaf.html" title="Decision Tree Leaf (Edge Node) Class. " alt="DTreeLeaf" shape="rect" coords="0,56,77,80"/>
+<area href="class_d_tree_root.html" title="Decision Tree Root (Linking Node) Class. " alt="DTreeRoot" shape="rect" coords="87,56,164,80"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ae8797d7fd091f977791f9147c86ac2cd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#ae8797d7fd091f977791f9147c86ac2cd">for_polymorphism</a> (void)=0</td></tr>
+<tr class="separator:ae8797d7fd091f977791f9147c86ac2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">constructor</div></td></tr>
 <tr class="memitem:a5899c8ebfd2d0a86c58d794d0481f10b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#a5899c8ebfd2d0a86c58d794d0481f10b">DTreeNode</a> (void)</td></tr>
 <tr class="memdesc:a5899c8ebfd2d0a86c58d794d0481f10b"><td class="mdescLeft">&#160;</td><td class="mdescRight">default constructor  <a href="#a5899c8ebfd2d0a86c58d794d0481f10b">More...</a><br/></td></tr>
 <tr class="separator:a5899c8ebfd2d0a86c58d794d0481f10b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c821eec550e23468400450be837cc66"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#a6c821eec550e23468400450be837cc66">DTreeNode</a> (<a class="el" href="class_d_tree_node.html">DTreeNode</a> **array, <a class="el" href="decision_8h.html#abe3548c749a47566bff4296fe5b1e351">ATTINDEX</a> index, <a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a> n)</td></tr>
-<tr class="memdesc:a6c821eec550e23468400450be837cc66"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor taking children  <a href="#a6c821eec550e23468400450be837cc66">More...</a><br/></td></tr>
-<tr class="separator:a6c821eec550e23468400450be837cc66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d2b13eef325d51228927f838ec64553"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#a9d2b13eef325d51228927f838ec64553">DTreeNode</a> (<a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a> pred)</td></tr>
-<tr class="memdesc:a9d2b13eef325d51228927f838ec64553"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor making leaf  <a href="#a9d2b13eef325d51228927f838ec64553">More...</a><br/></td></tr>
-<tr class="separator:a9d2b13eef325d51228927f838ec64553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f784807e4463c9624c3aa648ef18981"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#a9f784807e4463c9624c3aa648ef18981">DTreeNode</a> (<a class="el" href="class_d_tree_root.html">DTreeRoot</a> *<a class="el" href="class_d_tree_node.html#a76c5a99dcfbce7497486629bcde8c4c1">parent</a>)</td></tr>
+<tr class="memdesc:a9f784807e4463c9624c3aa648ef18981"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor taking parent  <a href="#a9f784807e4463c9624c3aa648ef18981">More...</a><br/></td></tr>
+<tr class="separator:a9f784807e4463c9624c3aa648ef18981"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">destructor</div></td></tr>
 <tr class="memitem:a7680cec1048fa199c51d0e3ce1b574de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#a7680cec1048fa199c51d0e3ce1b574de">~DTreeNode</a> (void)</td></tr>
 <tr class="memdesc:a7680cec1048fa199c51d0e3ce1b574de"><td class="mdescLeft">&#160;</td><td class="mdescRight">default destructor  <a href="#a7680cec1048fa199c51d0e3ce1b574de">More...</a><br/></td></tr>
 <tr class="separator:a7680cec1048fa199c51d0e3ce1b574de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Informative Attributes</div></td></tr>
-<tr class="memitem:ae6da0a158ee855bd882d3f14a74f6d3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_tree_node.html">DTreeNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#ae6da0a158ee855bd882d3f14a74f6d3b">getChild</a> (<a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a> val) const </td></tr>
-<tr class="memdesc:ae6da0a158ee855bd882d3f14a74f6d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">getting the child entry node  <a href="#ae6da0a158ee855bd882d3f14a74f6d3b">More...</a><br/></td></tr>
-<tr class="separator:ae6da0a158ee855bd882d3f14a74f6d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e3363efc84a9517200afc27923fa9c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="decision_8h.html#abe3548c749a47566bff4296fe5b1e351">ATTINDEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#a5e3363efc84a9517200afc27923fa9c4">getIndex</a> (void) const </td></tr>
-<tr class="memdesc:a5e3363efc84a9517200afc27923fa9c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">getting attribute index  <a href="#a5e3363efc84a9517200afc27923fa9c4">More...</a><br/></td></tr>
-<tr class="separator:a5e3363efc84a9517200afc27923fa9c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17d6ff9ec06aeb27c317ef4349c8d7c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#a17d6ff9ec06aeb27c317ef4349c8d7c3">getPred</a> (void) const </td></tr>
-<tr class="memdesc:a17d6ff9ec06aeb27c317ef4349c8d7c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">getting target prediction  <a href="#a17d6ff9ec06aeb27c317ef4349c8d7c3">More...</a><br/></td></tr>
-<tr class="separator:a17d6ff9ec06aeb27c317ef4349c8d7c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37e035320e318a7eb9cfaa5f4c58102c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#a37e035320e318a7eb9cfaa5f4c58102c">getNrVal</a> (void) const </td></tr>
-<tr class="memdesc:a37e035320e318a7eb9cfaa5f4c58102c"><td class="mdescLeft">&#160;</td><td class="mdescRight">getting the number of possible value  <a href="#a37e035320e318a7eb9cfaa5f4c58102c">More...</a><br/></td></tr>
-<tr class="separator:a37e035320e318a7eb9cfaa5f4c58102c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cfaa385a4d4b7b438f947745f0d2252"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#a2cfaa385a4d4b7b438f947745f0d2252">isLeaf</a> (void) const </td></tr>
-<tr class="memdesc:a2cfaa385a4d4b7b438f947745f0d2252"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if this node is leaf  <a href="#a2cfaa385a4d4b7b438f947745f0d2252">More...</a><br/></td></tr>
-<tr class="separator:a2cfaa385a4d4b7b438f947745f0d2252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0486c51781298091f241c9422ff65213"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_tree_root.html">DTreeRoot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#a0486c51781298091f241c9422ff65213">getParent</a> (void) const </td></tr>
+<tr class="memdesc:a0486c51781298091f241c9422ff65213"><td class="mdescLeft">&#160;</td><td class="mdescRight">getting the parent  <a href="#a0486c51781298091f241c9422ff65213">More...</a><br/></td></tr>
+<tr class="separator:a0486c51781298091f241c9422ff65213"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Functional Attributes</div></td></tr>
-<tr class="memitem:a98c09c69d21075b470b7eca04190ccec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#a98c09c69d21075b470b7eca04190ccec">setChild</a> (<a class="el" href="class_d_tree_node.html">DTreeNode</a> *node, <a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a> val)</td></tr>
-<tr class="memdesc:a98c09c69d21075b470b7eca04190ccec"><td class="mdescLeft">&#160;</td><td class="mdescRight">setting new child to this node  <a href="#a98c09c69d21075b470b7eca04190ccec">More...</a><br/></td></tr>
-<tr class="separator:a98c09c69d21075b470b7eca04190ccec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec025d230c21306e0281ff4eb3e0f5d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#aec025d230c21306e0281ff4eb3e0f5d5">setValue</a> (<a class="el" href="decision_8h.html#abe3548c749a47566bff4296fe5b1e351">ATTINDEX</a> index, <a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a> pred, <a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a> nr)</td></tr>
-<tr class="memdesc:aec025d230c21306e0281ff4eb3e0f5d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">setting new values  <a href="#aec025d230c21306e0281ff4eb3e0f5d5">More...</a><br/></td></tr>
-<tr class="separator:aec025d230c21306e0281ff4eb3e0f5d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae27da1c41bf25d2053024371e4433f10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#ae27da1c41bf25d2053024371e4433f10">setParent</a> (<a class="el" href="class_d_tree_root.html">DTreeRoot</a> *<a class="el" href="class_d_tree_node.html#a76c5a99dcfbce7497486629bcde8c4c1">parent</a>)</td></tr>
+<tr class="memdesc:ae27da1c41bf25d2053024371e4433f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">setting parent node  <a href="#ae27da1c41bf25d2053024371e4433f10">More...</a><br/></td></tr>
+<tr class="separator:ae27da1c41bf25d2053024371e4433f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a52a505fbe87b8f6f7770141cf62e7f83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_tree_node.html">DTreeNode</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a></td></tr>
-<tr class="memdesc:a52a505fbe87b8f6f7770141cf62e7f83"><td class="mdescLeft">&#160;</td><td class="mdescRight">The array of child node (array index means attr possible value)  <a href="#a52a505fbe87b8f6f7770141cf62e7f83">More...</a><br/></td></tr>
-<tr class="separator:a52a505fbe87b8f6f7770141cf62e7f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a204858f2594c3be92006e8d1d14a1f95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="decision_8h.html#abe3548c749a47566bff4296fe5b1e351">ATTINDEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#a204858f2594c3be92006e8d1d14a1f95">attIndex</a></td></tr>
-<tr class="memdesc:a204858f2594c3be92006e8d1d14a1f95"><td class="mdescLeft">&#160;</td><td class="mdescRight">current node attribute index  <a href="#a204858f2594c3be92006e8d1d14a1f95">More...</a><br/></td></tr>
-<tr class="separator:a204858f2594c3be92006e8d1d14a1f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c4334b0d62483c126b3c0beef35cc02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#a9c4334b0d62483c126b3c0beef35cc02">predict</a></td></tr>
-<tr class="memdesc:a9c4334b0d62483c126b3c0beef35cc02"><td class="mdescLeft">&#160;</td><td class="mdescRight">target prediction  <a href="#a9c4334b0d62483c126b3c0beef35cc02">More...</a><br/></td></tr>
-<tr class="separator:a9c4334b0d62483c126b3c0beef35cc02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdacaf53f0c4ef402229e58192f7f8ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">nr_val</a></td></tr>
-<tr class="memdesc:abdacaf53f0c4ef402229e58192f7f8ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">the number of possible value  <a href="#abdacaf53f0c4ef402229e58192f7f8ff">More...</a><br/></td></tr>
-<tr class="separator:abdacaf53f0c4ef402229e58192f7f8ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76c5a99dcfbce7497486629bcde8c4c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_tree_root.html">DTreeRoot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_tree_node.html#a76c5a99dcfbce7497486629bcde8c4c1">parent</a></td></tr>
+<tr class="memdesc:a76c5a99dcfbce7497486629bcde8c4c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">parent node  <a href="#a76c5a99dcfbce7497486629bcde8c4c1">More...</a><br/></td></tr>
+<tr class="separator:a76c5a99dcfbce7497486629bcde8c4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Decision Tree Node Class. </p>
-<p>Decision Tree Learning has no exact form of hypothesis, but <br/>
- the path which follows any tree node is one of hypothesis. <br/>
- Tree node has a list for possible values which this attribute <br/>
- can have, and a value which is target value means when this node <br/>
- is a leaf. When this node is not leaf, value means next test attribute <br/>
- index. </p>
 
-<p>Definition at line <a class="el" href="decision_8h_source.html#l00040">40</a> of file <a class="el" href="decision_8h_source.html">decision.h</a>.</p>
+<p>Definition at line <a class="el" href="decision_8h_source.html#l00038">38</a> of file <a class="el" href="decision_8h_source.html">decision.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5899c8ebfd2d0a86c58d794d0481f10b"></a>
 <div class="memitem">
@@ -179,109 +159,44 @@ Private Attributes</h2></td></tr>
 <p>default constructor </p>
 <p><a class="el" href="class_d_tree_node.html" title="Decision Tree Node Class. ">DTreeNode</a> class implementation </p>
 
-<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00032">32</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                     {  <span class="comment">// making empty node</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a> = <a class="code" href="decision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="class_d_tree_node.html#a204858f2594c3be92006e8d1d14a1f95">attIndex</a> = -1;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="class_d_tree_node.html#a9c4334b0d62483c126b3c0beef35cc02">predict</a> = -1;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">nr_val</a> = 0;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="ttc" id="decision_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="decision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00023">decision.h:23</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_a9c4334b0d62483c126b3c0beef35cc02"><div class="ttname"><a href="class_d_tree_node.html#a9c4334b0d62483c126b3c0beef35cc02">DTreeNode::predict</a></div><div class="ttdeci">ATTVAL predict</div><div class="ttdoc">target prediction </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00044">decision.h:44</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_abdacaf53f0c4ef402229e58192f7f8ff"><div class="ttname"><a href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">DTreeNode::nr_val</a></div><div class="ttdeci">ATTVAL nr_val</div><div class="ttdoc">the number of possible value </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00045">decision.h:45</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_a52a505fbe87b8f6f7770141cf62e7f83"><div class="ttname"><a href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">DTreeNode::child</a></div><div class="ttdeci">DTreeNode ** child</div><div class="ttdoc">The array of child node (array index means attr possible value) </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00042">decision.h:42</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_a204858f2594c3be92006e8d1d14a1f95"><div class="ttname"><a href="class_d_tree_node.html#a204858f2594c3be92006e8d1d14a1f95">DTreeNode::attIndex</a></div><div class="ttdeci">ATTINDEX attIndex</div><div class="ttdoc">current node attribute index </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00043">decision.h:43</a></div></div>
+<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00048">48</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                     {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="class_d_tree_node.html#a76c5a99dcfbce7497486629bcde8c4c1">parent</a> = <a class="code" href="decision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="ttc" id="decision_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="decision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00024">decision.h:24</a></div></div>
+<div class="ttc" id="class_d_tree_node_html_a76c5a99dcfbce7497486629bcde8c4c1"><div class="ttname"><a href="class_d_tree_node.html#a76c5a99dcfbce7497486629bcde8c4c1">DTreeNode::parent</a></div><div class="ttdeci">DTreeRoot * parent</div><div class="ttdoc">parent node </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00040">decision.h:40</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a6c821eec550e23468400450be837cc66"></a>
+<a class="anchor" id="a9f784807e4463c9624c3aa648ef18981"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">DTreeNode::DTreeNode </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_d_tree_node.html">DTreeNode</a> **&#160;</td>
-          <td class="paramname"><em>array</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="decision_8h.html#abe3548c749a47566bff4296fe5b1e351">ATTINDEX</a>&#160;</td>
-          <td class="paramname"><em>index</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a>&#160;</td>
-          <td class="paramname"><em>n</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>constructor taking children </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">array</td><td>child array </td></tr>
-    <tr><td class="paramname">index</td><td>attribute index </td></tr>
-    <tr><td class="paramname">n</td><td>the number of possible value </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00039">39</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                                { <span class="comment">// making linking node</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a> = array;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="class_d_tree_node.html#a204858f2594c3be92006e8d1d14a1f95">attIndex</a> = index;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="class_d_tree_node.html#a9c4334b0d62483c126b3c0beef35cc02">predict</a> = -1;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">nr_val</a> = n;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="ttc" id="class_d_tree_node_html_a9c4334b0d62483c126b3c0beef35cc02"><div class="ttname"><a href="class_d_tree_node.html#a9c4334b0d62483c126b3c0beef35cc02">DTreeNode::predict</a></div><div class="ttdeci">ATTVAL predict</div><div class="ttdoc">target prediction </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00044">decision.h:44</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_abdacaf53f0c4ef402229e58192f7f8ff"><div class="ttname"><a href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">DTreeNode::nr_val</a></div><div class="ttdeci">ATTVAL nr_val</div><div class="ttdoc">the number of possible value </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00045">decision.h:45</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_a52a505fbe87b8f6f7770141cf62e7f83"><div class="ttname"><a href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">DTreeNode::child</a></div><div class="ttdeci">DTreeNode ** child</div><div class="ttdoc">The array of child node (array index means attr possible value) </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00042">decision.h:42</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_a204858f2594c3be92006e8d1d14a1f95"><div class="ttname"><a href="class_d_tree_node.html#a204858f2594c3be92006e8d1d14a1f95">DTreeNode::attIndex</a></div><div class="ttdeci">ATTINDEX attIndex</div><div class="ttdoc">current node attribute index </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00043">decision.h:43</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a9d2b13eef325d51228927f838ec64553"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DTreeNode::DTreeNode </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a>&#160;</td>
-          <td class="paramname"><em>pred</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_d_tree_root.html">DTreeRoot</a> *&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>constructor making leaf </p>
+<p>constructor taking parent </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pred</td><td>target prediction value </td></tr>
+    <tr><td class="paramname">parent</td><td>parent <a class="el" href="class_d_tree_root.html" title="Decision Tree Root (Linking Node) Class. ">DTreeRoot</a> </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00046">46</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                { <span class="comment">// making leaf</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a> = <a class="code" href="decision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="class_d_tree_node.html#a204858f2594c3be92006e8d1d14a1f95">attIndex</a> = -1;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="class_d_tree_node.html#a9c4334b0d62483c126b3c0beef35cc02">predict</a> = pred;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">nr_val</a> = 0;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="ttc" id="decision_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="decision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00023">decision.h:23</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_a9c4334b0d62483c126b3c0beef35cc02"><div class="ttname"><a href="class_d_tree_node.html#a9c4334b0d62483c126b3c0beef35cc02">DTreeNode::predict</a></div><div class="ttdeci">ATTVAL predict</div><div class="ttdoc">target prediction </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00044">decision.h:44</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_abdacaf53f0c4ef402229e58192f7f8ff"><div class="ttname"><a href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">DTreeNode::nr_val</a></div><div class="ttdeci">ATTVAL nr_val</div><div class="ttdoc">the number of possible value </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00045">decision.h:45</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_a52a505fbe87b8f6f7770141cf62e7f83"><div class="ttname"><a href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">DTreeNode::child</a></div><div class="ttdeci">DTreeNode ** child</div><div class="ttdoc">The array of child node (array index means attr possible value) </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00042">decision.h:42</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_a204858f2594c3be92006e8d1d14a1f95"><div class="ttname"><a href="class_d_tree_node.html#a204858f2594c3be92006e8d1d14a1f95">DTreeNode::attIndex</a></div><div class="ttdeci">ATTINDEX attIndex</div><div class="ttdoc">current node attribute index </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00043">decision.h:43</a></div></div>
+<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00052">52</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                      {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  ASSERT (parent != <a class="code" href="decision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  this-&gt;parent = <a class="code" href="class_d_tree_node.html#a76c5a99dcfbce7497486629bcde8c4c1">parent</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="ttc" id="decision_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="decision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00024">decision.h:24</a></div></div>
+<div class="ttc" id="class_d_tree_node_html_a76c5a99dcfbce7497486629bcde8c4c1"><div class="ttname"><a href="class_d_tree_node.html#a76c5a99dcfbce7497486629bcde8c4c1">DTreeNode::parent</a></div><div class="ttdeci">DTreeRoot * parent</div><div class="ttdoc">parent node </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00040">decision.h:40</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -301,301 +216,102 @@ Private Attributes</h2></td></tr>
 
 <p>default destructor </p>
 
-<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00053">53</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                      {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a>)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a> i = 0; i &lt; <a class="code" href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">nr_val</a>; i++)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a>[i])</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">delete</span>(<a class="code" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a>[i]);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">delete</span>(<a class="code" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="ttc" id="decision_8h_html_a774a7aeda7b22334c0f9d2a82ad3d519"><div class="ttname"><a href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a></div><div class="ttdeci">int ATTVAL</div><div class="ttdoc">means an attribute value </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00027">decision.h:27</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_abdacaf53f0c4ef402229e58192f7f8ff"><div class="ttname"><a href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">DTreeNode::nr_val</a></div><div class="ttdeci">ATTVAL nr_val</div><div class="ttdoc">the number of possible value </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00045">decision.h:45</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_a52a505fbe87b8f6f7770141cf62e7f83"><div class="ttname"><a href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">DTreeNode::child</a></div><div class="ttdeci">DTreeNode ** child</div><div class="ttdoc">The array of child node (array index means attr possible value) </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00042">decision.h:42</a></div></div>
+<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00057">57</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                      {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ae6da0a158ee855bd882d3f14a74f6d3b"></a>
+<a class="anchor" id="ae8797d7fd091f977791f9147c86ac2cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void DTreeNode::for_polymorphism </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_d_tree_leaf.html#af32296f6c1771f93f28cf9589ded16d6">DTreeLeaf</a>, and <a class="el" href="class_d_tree_root.html#a797a71f48d0387f064ac42ee470df2a9">DTreeRoot</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0486c51781298091f241c9422ff65213"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_d_tree_node.html">DTreeNode</a> * DTreeNode::getChild </td>
+          <td class="memname"><a class="el" href="class_d_tree_root.html">DTreeRoot</a> * DTreeNode::getParent </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a>&#160;</td>
-          <td class="paramname"><em>val</em></td><td>)</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>getting the child entry node </p>
+<p>getting the parent </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">parent</td><td>entry node </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00060">60</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                      {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_d_tree_node.html#a76c5a99dcfbce7497486629bcde8c4c1">parent</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="ttc" id="class_d_tree_node_html_a76c5a99dcfbce7497486629bcde8c4c1"><div class="ttname"><a href="class_d_tree_node.html#a76c5a99dcfbce7497486629bcde8c4c1">DTreeNode::parent</a></div><div class="ttdeci">DTreeRoot * parent</div><div class="ttdoc">parent node </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00040">decision.h:40</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae27da1c41bf25d2053024371e4433f10"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DTreeNode::setParent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_d_tree_root.html">DTreeRoot</a> *&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>setting parent node </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">val</td><td>child possible value </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">child</td><td>entry node </td></tr>
-    <tr><td class="paramname">NULL</td><td>if fail to get </td></tr>
+    <tr><td class="paramname">parent</td><td>parent <a class="el" href="class_d_tree_root.html" title="Decision Tree Root (Linking Node) Class. ">DTreeRoot</a> </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00061">61</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                               {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">if</span> (val &gt;= <a class="code" href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">nr_val</a>)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="decision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a>[val];</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="ttc" id="decision_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="decision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00023">decision.h:23</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_abdacaf53f0c4ef402229e58192f7f8ff"><div class="ttname"><a href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">DTreeNode::nr_val</a></div><div class="ttdeci">ATTVAL nr_val</div><div class="ttdoc">the number of possible value </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00045">decision.h:45</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_a52a505fbe87b8f6f7770141cf62e7f83"><div class="ttname"><a href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">DTreeNode::child</a></div><div class="ttdeci">DTreeNode ** child</div><div class="ttdoc">The array of child node (array index means attr possible value) </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00042">decision.h:42</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a5e3363efc84a9517200afc27923fa9c4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="decision_8h.html#abe3548c749a47566bff4296fe5b1e351">ATTINDEX</a> DTreeNode::getIndex </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>getting attribute index </p>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">attribute</td><td>index </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00068">68</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                   {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_d_tree_node.html#a204858f2594c3be92006e8d1d14a1f95">attIndex</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="ttc" id="class_d_tree_node_html_a204858f2594c3be92006e8d1d14a1f95"><div class="ttname"><a href="class_d_tree_node.html#a204858f2594c3be92006e8d1d14a1f95">DTreeNode::attIndex</a></div><div class="ttdeci">ATTINDEX attIndex</div><div class="ttdoc">current node attribute index </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00043">decision.h:43</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a37e035320e318a7eb9cfaa5f4c58102c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a> DTreeNode::getNrVal </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>getting the number of possible value </p>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">the</td><td>number of possible value </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00076">76</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                 {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">nr_val</a>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-<div class="ttc" id="class_d_tree_node_html_abdacaf53f0c4ef402229e58192f7f8ff"><div class="ttname"><a href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">DTreeNode::nr_val</a></div><div class="ttdeci">ATTVAL nr_val</div><div class="ttdoc">the number of possible value </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00045">decision.h:45</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a17d6ff9ec06aeb27c317ef4349c8d7c3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a> DTreeNode::getPred </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>getting target prediction </p>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">target</td><td>prediction </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00072">72</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="class_d_tree_node.html#a9c4334b0d62483c126b3c0beef35cc02">predict</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="ttc" id="class_d_tree_node_html_a9c4334b0d62483c126b3c0beef35cc02"><div class="ttname"><a href="class_d_tree_node.html#a9c4334b0d62483c126b3c0beef35cc02">DTreeNode::predict</a></div><div class="ttdeci">ATTVAL predict</div><div class="ttdoc">target prediction </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00044">decision.h:44</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a2cfaa385a4d4b7b438f947745f0d2252"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool DTreeNode::isLeaf </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>check if this node is leaf </p>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">true</td><td>if it is leaf </td></tr>
-    <tr><td class="paramname">false</td><td>if it is not leaf </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00080">80</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                             {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">return</span> (<a class="code" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a>) ? <span class="keyword">false</span> : <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="ttc" id="class_d_tree_node_html_a52a505fbe87b8f6f7770141cf62e7f83"><div class="ttname"><a href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">DTreeNode::child</a></div><div class="ttdeci">DTreeNode ** child</div><div class="ttdoc">The array of child node (array index means attr possible value) </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00042">decision.h:42</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a98c09c69d21075b470b7eca04190ccec"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool DTreeNode::setChild </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_d_tree_node.html">DTreeNode</a> *&#160;</td>
-          <td class="paramname"><em>node</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a>&#160;</td>
-          <td class="paramname"><em>val</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>setting new child to this node </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">node</td><td>new child node </td></tr>
-    <tr><td class="paramname">val</td><td>this attribute possible value which links to child </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">true</td><td>if success to add, otherwise false </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00084">84</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                                    {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">if</span> (val &gt;= <a class="code" href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">nr_val</a>)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a>) { <span class="comment">// making child</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a> = <span class="keyword">new</span> <a class="code" href="class_d_tree_node.html">DTreeNode</a>*[<a class="code" href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">nr_val</a>];</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">nr_val</a>; i++)</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <a class="code" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a>[i] = <a class="code" href="decision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a>[val]) <span class="comment">// overwrite</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">delete</span>(<a class="code" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a>[val]);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <a class="code" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">child</a>[val] = node;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
-<div class="ttc" id="decision_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="decision_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00023">decision.h:23</a></div></div>
-<div class="ttc" id="class_d_tree_node_html"><div class="ttname"><a href="class_d_tree_node.html">DTreeNode</a></div><div class="ttdoc">Decision Tree Node Class. </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00040">decision.h:40</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_abdacaf53f0c4ef402229e58192f7f8ff"><div class="ttname"><a href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">DTreeNode::nr_val</a></div><div class="ttdeci">ATTVAL nr_val</div><div class="ttdoc">the number of possible value </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00045">decision.h:45</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_a52a505fbe87b8f6f7770141cf62e7f83"><div class="ttname"><a href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">DTreeNode::child</a></div><div class="ttdeci">DTreeNode ** child</div><div class="ttdoc">The array of child node (array index means attr possible value) </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00042">decision.h:42</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="aec025d230c21306e0281ff4eb3e0f5d5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DTreeNode::setValue </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="decision_8h.html#abe3548c749a47566bff4296fe5b1e351">ATTINDEX</a>&#160;</td>
-          <td class="paramname"><em>index</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a>&#160;</td>
-          <td class="paramname"><em>pred</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a>&#160;</td>
-          <td class="paramname"><em>nr</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>setting new values </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">index</td><td>attribute index </td></tr>
-    <tr><td class="paramname">pred</td><td>target prediction </td></tr>
-    <tr><td class="paramname">nr</td><td>the number of possible value </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00101">101</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                                               {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <a class="code" href="class_d_tree_node.html#a204858f2594c3be92006e8d1d14a1f95">attIndex</a> = index;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <a class="code" href="class_d_tree_node.html#a9c4334b0d62483c126b3c0beef35cc02">predict</a> = pred;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">nr_val</a> = nr;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
-<div class="ttc" id="class_d_tree_node_html_a9c4334b0d62483c126b3c0beef35cc02"><div class="ttname"><a href="class_d_tree_node.html#a9c4334b0d62483c126b3c0beef35cc02">DTreeNode::predict</a></div><div class="ttdeci">ATTVAL predict</div><div class="ttdoc">target prediction </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00044">decision.h:44</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_abdacaf53f0c4ef402229e58192f7f8ff"><div class="ttname"><a href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">DTreeNode::nr_val</a></div><div class="ttdeci">ATTVAL nr_val</div><div class="ttdoc">the number of possible value </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00045">decision.h:45</a></div></div>
-<div class="ttc" id="class_d_tree_node_html_a204858f2594c3be92006e8d1d14a1f95"><div class="ttname"><a href="class_d_tree_node.html#a204858f2594c3be92006e8d1d14a1f95">DTreeNode::attIndex</a></div><div class="ttdeci">ATTINDEX attIndex</div><div class="ttdoc">current node attribute index </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00043">decision.h:43</a></div></div>
+<p>Definition at line <a class="el" href="decision_8cpp_source.html#l00064">64</a> of file <a class="el" href="decision_8cpp_source.html">decision.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                           {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="comment">// if parent = NULL, this node is root</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  this-&gt;parent = <a class="code" href="class_d_tree_node.html#a76c5a99dcfbce7497486629bcde8c4c1">parent</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="ttc" id="class_d_tree_node_html_a76c5a99dcfbce7497486629bcde8c4c1"><div class="ttname"><a href="class_d_tree_node.html#a76c5a99dcfbce7497486629bcde8c4c1">DTreeNode::parent</a></div><div class="ttdeci">DTreeRoot * parent</div><div class="ttdoc">parent node </div><div class="ttdef"><b>Definition:</b> <a href="decision_8h_source.html#l00040">decision.h:40</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a204858f2594c3be92006e8d1d14a1f95"></a>
+<a class="anchor" id="a76c5a99dcfbce7497486629bcde8c4c1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -603,7 +319,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="decision_8h.html#abe3548c749a47566bff4296fe5b1e351">ATTINDEX</a> DTreeNode::attIndex</td>
+          <td class="memname"><a class="el" href="class_d_tree_root.html">DTreeRoot</a>* DTreeNode::parent</td>
         </tr>
       </table>
   </td>
@@ -613,81 +329,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>current node attribute index </p>
+<p>parent node </p>
 
-<p>Definition at line <a class="el" href="decision_8h_source.html#l00043">43</a> of file <a class="el" href="decision_8h_source.html">decision.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a52a505fbe87b8f6f7770141cf62e7f83"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_d_tree_node.html">DTreeNode</a>** DTreeNode::child</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The array of child node (array index means attr possible value) </p>
-
-<p>Definition at line <a class="el" href="decision_8h_source.html#l00042">42</a> of file <a class="el" href="decision_8h_source.html">decision.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="abdacaf53f0c4ef402229e58192f7f8ff"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a> DTreeNode::nr_val</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>the number of possible value </p>
-
-<p>Definition at line <a class="el" href="decision_8h_source.html#l00045">45</a> of file <a class="el" href="decision_8h_source.html">decision.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9c4334b0d62483c126b3c0beef35cc02"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="decision_8h.html#a774a7aeda7b22334c0f9d2a82ad3d519">ATTVAL</a> DTreeNode::predict</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>target prediction </p>
-
-<p>Definition at line <a class="el" href="decision_8h_source.html#l00044">44</a> of file <a class="el" href="decision_8h_source.html">decision.h</a>.</p>
+<p>Definition at line <a class="el" href="decision_8h_source.html#l00040">40</a> of file <a class="el" href="decision_8h_source.html">decision.h</a>.</p>
 
 </div>
 </div>
@@ -698,7 +342,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 24 2015 15:02:01 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 26 2015 20:19:18 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Native Mechanic Intelligent Machine Learning (NamiML)
-   &#160;<span id="projectnumber">v 1.1</span>
+   &#160;<span id="projectnumber">v 0.5</span>
    </div>
   </td>
  </tr>
@@ -80,6 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_a"><span>a</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_h"><span>h</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
@@ -121,14 +122,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>answer
 : <a class="el" href="class_m_l___machine.html#a5abecc090331a42ed5a7c71a022b0b2f">ML_Machine</a>
 </li>
+<li>answer_tree_gen()
+: <a class="el" href="class_i_d3___machine.html#a0558642d0e1f404938440e9fda0a7297">ID3_Machine</a>
+</li>
 <li>att_size_array
 : <a class="el" href="class_d_tree.html#a1994ce9d5c0bbba606b29129132def08">DTree</a>
 </li>
 <li>attIndex
-: <a class="el" href="class_d_tree_node.html#a204858f2594c3be92006e8d1d14a1f95">DTreeNode</a>
+: <a class="el" href="class_d_tree_root.html#a34c21a3c2fba6cc1f35a2d47b1df3cef">DTreeRoot</a>
 </li>
 <li>attSizes
 : <a class="el" href="class_i_d3.html#a05f4be9f53e252c27b0fca994e1469f2">ID3</a>
+, <a class="el" href="class_i_d3___machine.html#aebd6ac4f822717ce5d306989d682f565">ID3_Machine</a>
 </li>
 </ul>
 
@@ -150,13 +155,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_c_e___machine.html#a117b942cfac01f70a250dad07f8bf954">CE_Machine</a>
 </li>
 <li>child
-: <a class="el" href="class_d_tree_node.html#a52a505fbe87b8f6f7770141cf62e7f83">DTreeNode</a>
+: <a class="el" href="class_d_tree_root.html#a224568c12c038ef5aa984cc8f31d9d80">DTreeRoot</a>
 </li>
 <li>content
 : <a class="el" href="class_list_node.html#a75aabe0bfbeace74391ab20546454e05">ListNode&lt; T &gt;</a>
 </li>
 <li>countInstance()
 : <a class="el" href="class_i_d3.html#a0a5f1a4fbcb0e33e6c809b62c3164e40">ID3</a>
+</li>
+<li>createInstance()
+: <a class="el" href="class_i_d3___machine.html#a24887c79f83f27653beca5696dffb596">ID3_Machine</a>
+, <a class="el" href="class_c_e___machine.html#a027e7746536ba576907071de0614d594">CE_Machine</a>
+</li>
+<li>createTarget()
+: <a class="el" href="class_c_e___machine.html#a36abd80ab2668b790b7c4f5c046a5c39">CE_Machine</a>
 </li>
 </ul>
 
@@ -165,14 +177,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>delNode()
 : <a class="el" href="class_list.html#af4e9e7db2b56cd948ec225445f3250da">List&lt; T &gt;</a>
 </li>
-<li>DTree()
-: <a class="el" href="class_d_tree.html#a7bd21049c7f76939c6537fa2caaf3bfe">DTree</a>
-</li>
 <li>dtree
 : <a class="el" href="class_i_d3.html#a46471c61fc24cc49c5869d6040116cfd">ID3</a>
 </li>
+<li>DTree()
+: <a class="el" href="class_d_tree.html#a21883283cc6c588cf08b9b2e3a58f2a7">DTree</a>
+</li>
+<li>DTreeLeaf()
+: <a class="el" href="class_d_tree_leaf.html#a3ab2bc78292c926522fa30ba67882b02">DTreeLeaf</a>
+</li>
 <li>DTreeNode()
 : <a class="el" href="class_d_tree_node.html#a5899c8ebfd2d0a86c58d794d0481f10b">DTreeNode</a>
+</li>
+<li>DTreeRoot()
+: <a class="el" href="class_d_tree_root.html#ad5fdd061a6d9fefb774b32684cc009da">DTreeRoot</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
+<li>for_polymorphism()
+: <a class="el" href="class_d_tree_node.html#ae8797d7fd091f977791f9147c86ac2cd">DTreeNode</a>
+, <a class="el" href="class_d_tree_leaf.html#af32296f6c1771f93f28cf9589ded16d6">DTreeLeaf</a>
+, <a class="el" href="class_d_tree_root.html#a797a71f48d0387f064ac42ee470df2a9">DTreeRoot</a>
 </li>
 </ul>
 
@@ -192,12 +219,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_s___bound.html#a28f0422a496646053461879bd46ab787">S_Bound</a>
 </li>
 <li>generate()
-: <a class="el" href="class_i_d3___machine.html#a3baad2de145e6bd14f7e172885690591">ID3_Machine</a>
+: <a class="el" href="class_i_d3___machine.html#a2529c903b9f90a20c58f4a5ddb7d3796">ID3_Machine</a>
 , <a class="el" href="class_m_l___machine.html#a9050d02df5a44d26ba1c1bf15b877f87">ML_Machine</a>
 , <a class="el" href="class_c_e___machine.html#a6601d4ab85261b7f9da5f1781cbc3ef7">CE_Machine</a>
 </li>
-<li>getChild()
-: <a class="el" href="class_d_tree_node.html#ae6da0a158ee855bd882d3f14a74f6d3b">DTreeNode</a>
+<li>getAttIndex()
+: <a class="el" href="class_d_tree_root.html#a909d39288d6d1077f9219eec005ae55d">DTreeRoot</a>
+</li>
+<li>getAttSizeArray()
+: <a class="el" href="class_d_tree.html#aa54f7ebd77c3f1dbce9fab709e14c924">DTree</a>
+</li>
+<li>getChildArray()
+: <a class="el" href="class_d_tree_root.html#ae70de355ec7cba1a8c4c352ce98046fc">DTreeRoot</a>
 </li>
 <li>getContent()
 : <a class="el" href="class_list_node.html#a53d6da0c514950a40956955bc1e383ab">ListNode&lt; T &gt;</a>
@@ -209,11 +242,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>getHypo()
 : <a class="el" href="class_hypothesis.html#a601cd415f0c319f3be507951336d3bda">Hypothesis</a>
 </li>
-<li>getIndex()
-: <a class="el" href="class_d_tree_node.html#a5e3363efc84a9517200afc27923fa9c4">DTreeNode</a>
-</li>
 <li>getLeaf()
-: <a class="el" href="class_d_tree.html#a0ec06782722d999e0482cd6e5a118762">DTree</a>
+: <a class="el" href="class_d_tree.html#a7329116d8ea9342e17ed33b8aeacd86c">DTree</a>
 </li>
 <li>getNext()
 : <a class="el" href="class_list_node.html#a35941e2759ff02e220815f806d0f7858">ListNode&lt; T &gt;</a>
@@ -221,11 +251,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>getNode()
 : <a class="el" href="class_list.html#a5aaa131805b461db4664a5dc7a28d7a9">List&lt; T &gt;</a>
 </li>
-<li>getNrVal()
-: <a class="el" href="class_d_tree_node.html#a37e035320e318a7eb9cfaa5f4c58102c">DTreeNode</a>
+<li>getNrAtt()
+: <a class="el" href="class_d_tree.html#ac5a52b7f870a5f62c04838743eee0221">DTree</a>
 </li>
-<li>getPred()
-: <a class="el" href="class_d_tree_node.html#a17d6ff9ec06aeb27c317ef4349c8d7c3">DTreeNode</a>
+<li>getNrChild()
+: <a class="el" href="class_d_tree_root.html#af4c651a8df1db9e8279a18d497d00359">DTreeRoot</a>
+</li>
+<li>getOneChild()
+: <a class="el" href="class_d_tree_root.html#a9e11af3a85c872c3330c7d45f51a76d4">DTreeRoot</a>
+</li>
+<li>getParent()
+: <a class="el" href="class_d_tree_node.html#a0486c51781298091f241c9422ff65213">DTreeNode</a>
 </li>
 <li>getPrev()
 : <a class="el" href="class_list_node.html#ac306f4fad1304c1e45e4b298b658ded9">ListNode&lt; T &gt;</a>
@@ -235,6 +271,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>getSize()
 : <a class="el" href="class_list.html#a4d8d3acaf718d470e1084814a6155814">List&lt; T &gt;</a>
+</li>
+<li>getVal()
+: <a class="el" href="class_d_tree_leaf.html#a8bc6103fbbc2a258c1775fd37e5db38a">DTreeLeaf</a>
 </li>
 </ul>
 
@@ -254,7 +293,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>ID3()
-: <a class="el" href="class_i_d3.html#ae1883c7293f08e51028ddcfb507b9c08">ID3</a>
+: <a class="el" href="class_i_d3.html#a6324601e9fde01541f35a8603ac5e6bf">ID3</a>
 </li>
 <li>id3
 : <a class="el" href="class_i_d3___machine.html#aad91e58458d4700d43cd5c01ad55f71f">ID3_Machine</a>
@@ -267,9 +306,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>isCover()
 : <a class="el" href="class_hypothesis.html#a38c5f393775c1dd9eada90c7e5f163e0">Hypothesis</a>
-</li>
-<li>isLeaf()
-: <a class="el" href="class_d_tree_node.html#a2cfaa385a4d4b7b438f947745f0d2252">DTreeNode</a>
 </li>
 <li>isMoreGeneralThanEqualTo()
 : <a class="el" href="class_hypothesis.html#ad0d80b24404c0398ef502740b5115f4a">Hypothesis</a>
@@ -288,11 +324,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>make_answer_tree()
+: <a class="el" href="class_i_d3___machine.html#aa98a1fdd7a9d94e1a9f4cc5ba226667c">ID3_Machine</a>
+</li>
 <li>makeNewExam()
-: <a class="el" href="class_i_d3.html#aa79b8a1b53175628ea46f3878160333d">ID3</a>
+: <a class="el" href="class_i_d3.html#a0499755003e512461664d6b29c0a65b0">ID3</a>
+</li>
+<li>makeOneEntry()
+: <a class="el" href="class_c_e___machine.html#af3631c7f864278b2318657361c25fb3d">CE_Machine</a>
 </li>
 <li>makeTree()
-: <a class="el" href="class_i_d3.html#ae970db25b7e72dd006eea079dc6a10cc">ID3</a>
+: <a class="el" href="class_i_d3.html#ad1a48f2897f3cf9d3e6994999d89409a">ID3</a>
 </li>
 <li>ML_Machine()
 : <a class="el" href="class_m_l___machine.html#af0e03c338bf50008e5190308186c70f0">ML_Machine</a>
@@ -308,15 +350,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>next
 : <a class="el" href="class_list_node.html#a97909c9598053ffd24b77ec715f745f1">ListNode&lt; T &gt;</a>
 </li>
-<li>nr_Att
-: <a class="el" href="class_d_tree.html#a623af4d9faa74f51f861a249d8ec5dc6">DTree</a>
-, <a class="el" href="class_i_d3.html#a4eba19b242eb0c4e93aa5b38a3d9c74f">ID3</a>
+<li>nr_att
+: <a class="el" href="class_d_tree.html#a645552d1ce2ddb03dfa5becde547c137">DTree</a>
+, <a class="el" href="class_i_d3.html#a436a1b7e7cb99df66f7a2923e9cf32ae">ID3</a>
+, <a class="el" href="class_i_d3___machine.html#abb01aea919798a60a4dc3f24e084ac60">ID3_Machine</a>
+</li>
+<li>nr_child
+: <a class="el" href="class_d_tree_root.html#a67555dd46bcc57a47e8f8718c452fb13">DTreeRoot</a>
 </li>
 <li>nr_train
 : <a class="el" href="class_i_d3.html#a77fdeacdd21fc4ff95cba8664707d7d5">ID3</a>
-</li>
-<li>nr_val
-: <a class="el" href="class_d_tree_node.html#abdacaf53f0c4ef402229e58192f7f8ff">DTreeNode</a>
 </li>
 <li>nr_valid
 : <a class="el" href="class_i_d3.html#a8d4a553dea52025a42b6e403d8b123c2">ID3</a>
@@ -332,30 +375,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
+<li>parent
+: <a class="el" href="class_d_tree_node.html#a76c5a99dcfbce7497486629bcde8c4c1">DTreeNode</a>
+</li>
 <li>posUpdate()
 : <a class="el" href="class_s___bound.html#a819f6cff5025a4916e6c1e5c798721f5">S_Bound</a>
 , <a class="el" href="class_g___bound.html#ad44aeb38feed0ff7e9a2f29f2ada0ac9">G_Bound</a>
 </li>
 <li>predict()
-: <a class="el" href="class_s___bound.html#a4bea23a52a99756a86c7c883a578ae40">S_Bound</a>
-, <a class="el" href="class_i_d3___machine.html#aa881a83ffde50cc1a56f385057901981">ID3_Machine</a>
-, <a class="el" href="class_m_l___machine.html#af9cc11e8475137f8fe9017685d49c73c">ML_Machine</a>
+: <a class="el" href="class_i_d3___machine.html#aac32ae54893dcdc7ae700f6decaf175b">ID3_Machine</a>
 , <a class="el" href="class_c_e___machine.html#a9d4119019e5958901a49c75a4e7454a9">CE_Machine</a>
+, <a class="el" href="class_s___bound.html#a4bea23a52a99756a86c7c883a578ae40">S_Bound</a>
 , <a class="el" href="class_i_d3.html#aacd28fd8bf31fa51fbfdd21e27b3e506">ID3</a>
-, <a class="el" href="class_c_e.html#a66c1015e6889104f2d64349d2b6f114a">CE</a>
+, <a class="el" href="class_m_l___machine.html#af9cc11e8475137f8fe9017685d49c73c">ML_Machine</a>
 , <a class="el" href="class_g___bound.html#add933c8bb37f279fcbd3dcff4eea3e76">G_Bound</a>
-, <a class="el" href="class_d_tree_node.html#a9c4334b0d62483c126b3c0beef35cc02">DTreeNode</a>
+, <a class="el" href="class_c_e.html#a66c1015e6889104f2d64349d2b6f114a">CE</a>
 </li>
 <li>prev
 : <a class="el" href="class_list_node.html#a997ca532d810ebd030726ff880ba76b5">ListNode&lt; T &gt;</a>
 </li>
 <li>prune()
-: <a class="el" href="class_i_d3.html#acb8dbe9268df8d52ca983d4e6fce5fc0">ID3</a>
+: <a class="el" href="class_i_d3.html#ad4782d27c5d3307aa539d411ae035174">ID3</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>recursive_answer_tree_gen()
+: <a class="el" href="class_i_d3___machine.html#a16c84a8879f26eec70bab1fb403d0265">ID3_Machine</a>
+</li>
+<li>recursive_make_answer_tree()
+: <a class="el" href="class_i_d3___machine.html#a2ec309360581128ad84f2201bf693940">ID3_Machine</a>
+</li>
+<li>recursive_make_tree()
+: <a class="el" href="class_i_d3.html#a0d08a012371e672671e72acc2ece2b97">ID3</a>
+</li>
+<li>recursive_prune_tree()
+: <a class="el" href="class_i_d3.html#abcbd2916c48a5133e51005fa1cb96411">ID3</a>
+</li>
 <li>root
 : <a class="el" href="class_d_tree.html#a9bf532a9cc2023d962425ba25b608fb1">DTree</a>
 </li>
@@ -372,15 +429,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>sb_Array
 : <a class="el" href="class_s___bound.html#a2fa303e4f1e4c2df793e1474f0aa6481">S_Bound</a>
 </li>
-<li>setChild()
-: <a class="el" href="class_d_tree_node.html#a98c09c69d21075b470b7eca04190ccec">DTreeNode</a>
+<li>setAttIndex()
+: <a class="el" href="class_d_tree_root.html#aa533092cfeddde8ec8be857bc1a4e059">DTreeRoot</a>
+</li>
+<li>setAttSizeArray()
+: <a class="el" href="class_d_tree.html#a63a3521202e7a04cd2264b8dd7479105">DTree</a>
+</li>
+<li>setChildArray()
+: <a class="el" href="class_d_tree_root.html#a3a3b2f266499543343a3a48457ecd3c9">DTreeRoot</a>
 </li>
 <li>setContent()
-: <a class="el" href="class_list_node.html#af6f3ae03b93789922f0482f285a05a3a">ListNode&lt; T &gt;</a>
-, <a class="el" href="class_list.html#adfc10aaf74f0ffc4a48b6ed46c192093">List&lt; T &gt;</a>
+: <a class="el" href="class_list.html#adfc10aaf74f0ffc4a48b6ed46c192093">List&lt; T &gt;</a>
+, <a class="el" href="class_list_node.html#af6f3ae03b93789922f0482f285a05a3a">ListNode&lt; T &gt;</a>
 </li>
 <li>setNext()
 : <a class="el" href="class_list_node.html#a98d9eb542018713a5fc8d284aa62b3a5">ListNode&lt; T &gt;</a>
+</li>
+<li>setNrAtt()
+: <a class="el" href="class_d_tree.html#a36a66056eeaef83318072e7d6e6290b4">DTree</a>
+</li>
+<li>setNrChild()
+: <a class="el" href="class_d_tree_root.html#aeab5da16225d87eb090ac524f65e18c6">DTreeRoot</a>
+</li>
+<li>setOneChild()
+: <a class="el" href="class_d_tree_root.html#af8cb99507eb1622e74bf96d6c05d1262">DTreeRoot</a>
+</li>
+<li>setParent()
+: <a class="el" href="class_d_tree_node.html#ae27da1c41bf25d2053024371e4433f10">DTreeNode</a>
 </li>
 <li>setPrev()
 : <a class="el" href="class_list_node.html#a66ddf2d4a22600f256d93a3f60740c13">ListNode&lt; T &gt;</a>
@@ -388,16 +463,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>setRoot()
 : <a class="el" href="class_d_tree.html#a7a9785b69bde472a35efa2ff1d653c84">DTree</a>
 </li>
-<li>setValue()
-: <a class="el" href="class_d_tree_node.html#aec025d230c21306e0281ff4eb3e0f5d5">DTreeNode</a>
+<li>setVal()
+: <a class="el" href="class_d_tree_leaf.html#a9491a0419308117b5f6ba8bc9f9fe1de">DTreeLeaf</a>
 </li>
 <li>size
-: <a class="el" href="class_c_e___machine.html#a9548d0c3e292bfefaa630570316cc1df">CE_Machine</a>
-, <a class="el" href="class_g___bound.html#a2583e4243c89d01b3131ce8fb40940a9">G_Bound</a>
+: <a class="el" href="class_s___bound.html#a9742961078971270b164bb793b64ee06">S_Bound</a>
+, <a class="el" href="class_c_e___machine.html#a9548d0c3e292bfefaa630570316cc1df">CE_Machine</a>
 , <a class="el" href="class_c_e.html#a379f23d0ec5cc0448ad7c1428403e005">CE</a>
+, <a class="el" href="class_g___bound.html#a2583e4243c89d01b3131ce8fb40940a9">G_Bound</a>
 , <a class="el" href="class_list.html#a02655774bc5fa5f8bbff3d2b028525b0">List&lt; T &gt;</a>
 , <a class="el" href="class_hypothesis.html#a2fda5511fef4765414c3229ea6780e1e">Hypothesis</a>
-, <a class="el" href="class_s___bound.html#a9742961078971270b164bb793b64ee06">S_Bound</a>
 </li>
 <li>specialize()
 : <a class="el" href="class_g___bound.html#acd21b1bb8bd73218d5000bf1fd12872e">G_Bound</a>
@@ -411,7 +486,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>train
 : <a class="el" href="class_i_d3.html#aa423d59f4db1d1bcba12f7dce28e91c6">ID3</a>
-, <a class="el" href="class_i_d3___machine.html#adc87fd7608835d9e088988b6a27a7978">ID3_Machine</a>
+, <a class="el" href="class_i_d3___machine.html#a494bf34f20853a53220cf28592b49dcc">ID3_Machine</a>
 , <a class="el" href="class_c_e___machine.html#a2eda1e6c87aad87fdcf07ef847be4686">CE_Machine</a>
 , <a class="el" href="class_m_l___machine.html#adc4862cb2890135c78f986ab8f09d1a8">ML_Machine</a>
 </li>
@@ -429,6 +504,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
+<li>val
+: <a class="el" href="class_d_tree_leaf.html#af98f467cef1699dfc0047e10111d9dbf">DTreeLeaf</a>
+</li>
 <li>valid
 : <a class="el" href="class_i_d3.html#ae8e74f6f2d7de2e5459335199d740e50">ID3</a>
 </li>
@@ -445,8 +523,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>~DTree()
 : <a class="el" href="class_d_tree.html#a8e793e64313c1383bdd9916d83367d16">DTree</a>
 </li>
+<li>~DTreeLeaf()
+: <a class="el" href="class_d_tree_leaf.html#aea339d5d947bc533f307af787daae547">DTreeLeaf</a>
+</li>
 <li>~DTreeNode()
 : <a class="el" href="class_d_tree_node.html#a7680cec1048fa199c51d0e3ce1b574de">DTreeNode</a>
+</li>
+<li>~DTreeRoot()
+: <a class="el" href="class_d_tree_root.html#ab2fba1f814ce9e9ffe71685687405510">DTreeRoot</a>
 </li>
 <li>~G_Bound()
 : <a class="el" href="class_g___bound.html#a38ff1d10b4fce5df85429f8196a36964">G_Bound</a>
@@ -458,7 +542,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_i_d3.html#aacd9aaf1a616ddecd82da77a79b14994">ID3</a>
 </li>
 <li>~ID3_Machine()
-: <a class="el" href="class_i_d3___machine.html#aa06c1fd2ec32ed341cc55d82502c9a39">ID3_Machine</a>
+: <a class="el" href="class_i_d3___machine.html#a37e4dbe19daf624d150423d50f9cfe80">ID3_Machine</a>
 </li>
 <li>~List()
 : <a class="el" href="class_list.html#a9ecd03e07c7d1555de8c709f7b438097">List&lt; T &gt;</a>
@@ -476,7 +560,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 24 2015 15:02:01 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 26 2015 20:19:18 for Native Mechanic Intelligent Machine Learning (NamiML) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

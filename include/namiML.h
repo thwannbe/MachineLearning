@@ -81,6 +81,24 @@ class CE_Machine : public ML_Machine {
 private:
   int size;       ///< hypothesis attribute number
   CE* ce;         ///< candidate elimination engine
+  
+  /// @brief create target concept
+  ///
+  /// @retval Result enum array which represents target concept
+  Result* createTarget(void);
+  
+  /// @brief make one entry
+  ///
+  /// @param target target concept attribute value
+  /// @param t true or false
+  bool makeOneEntry(Result target, bool t);
+
+  /// @brief create instance from target concept
+  ///
+  /// @param target target concept
+  /// @param t flag if true instance or false instance
+  /// @retval Boolean array which represents instance
+  bool* createInstance(Result* target, bool t);
 
 public:
   /// @name constructor & destructor
@@ -129,7 +147,45 @@ public:
 
 class ID3_Machine : public ML_Machine {
 private:
+  ATTVAL* attSizes; ///< attribute size information array including target
+  ATTINDEX nr_att;    ///< the number of attr including target attr
   ID3* id3;         ///< ID3 engine
+  
+  /// @brief recursively making answer tree randomly
+  ///
+  /// @param parent parent DTreeRoot
+  /// @param remainAtt remain attribute flags array
+  /// @param ans answer output stream
+  /// @param indent indentation for answer file & standard output
+  /// @param first flag for whether current node is first child of parent
+  /// @param last flag for whether current node is last child of parent
+  /// @param tree master tree
+  /// @param ch_index index for child number of parent
+  void recursive_make_answer_tree(DTreeRoot *parent, bool *remainAtt, 
+  ostream *ans, int indent, bool first, bool last, DTree *tree, int ch_index); 
+  /// @brief making answer tree
+  ///
+  /// @retval answer tree
+  DTree* make_answer_tree(ostream *ans);
+
+  /// @brief recursively generating answer tree
+  ///
+  /// @param parent parent DTreeRoot
+  /// @param ans answer text file istream
+  /// @param tree master tree
+  /// @param ch_index child index
+  void recursive_answer_tree_gen(DTreeRoot *parent, istream *ans, DTree *tree,
+  int ch_index);
+   
+  /// @brief generating answer tree
+  ///
+  /// @retval answer tree
+  DTree* answer_tree_gen(void);
+    
+  /// @brief creating a ID3 instance
+  ///
+  /// @retval ID3 instance array
+  ATTVAL* createInstance(void);
 
 public:
   /// @name constructor & destructor
